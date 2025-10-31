@@ -1,0 +1,145 @@
+{
+  "lab_number": 1,
+  "question_number": 1,
+  "num_answers": 5,
+  "baseline_flip_rate": 20.0,
+  "qd_flip_rate": 0.0,
+  "improvement": 20.0,
+  "qds_used": [
+    {
+      "name": "ExpandsAcronym",
+      "definition": "The response explicitly states that HAL stands for \u201cHardware Abstraction Layer.\u201d",
+      "operator": "SPLIT",
+      "explanation": "The original IdentifiesHAL combined two ideas (knowing the concept and spelling out the acronym). Splitting isolates the literal expansion, making grading of missing expansions consistent."
+    },
+    {
+      "name": "DescribesHALConcept",
+      "definition": "The response indicates that HAL is a software layer that abstracts hardware functionality (e.g., provides a uniform API, hides low\u2011level details).",
+      "operator": "SPLIT",
+      "explanation": "Separating the conceptual description from the acronym expansion lets graders award credit when the student understands HAL even if they omit the full form, reducing disagreement."
+    },
+    {
+      "name": "ExplainsSimplificationAndBenefit",
+      "definition": "The response explains that the HAL simplifies interaction with hardware **and** mentions at least one correct additional benefit such as portability, modularity, easier driver development, or reduced code duplication.",
+      "operator": "MERGE",
+      "explanation": "The original two dimensions (purpose explanation and extra details) were often judged inconsistently when a student gave only one of them. Merging them into a single, objective requirement that both purpose and a benefit be present creates a clearer pass/fail criterion."
+    },
+    {
+      "name": "NoFactualErrors",
+      "definition": "The response contains no incorrect statements or omissions about the HAL concept as described in the rubric.",
+      "operator": "KEEP",
+      "explanation": "Retaining this dimension (renamed for clarity) continues to capture factual accuracy, which is essential for grading but does not need modification."
+    }
+  ],
+  "operations_applied": [
+    {
+      "iteration": 1,
+      "operations": [
+        {
+          "qd_name": "ExpandsAcronym",
+          "operator": "SPLIT",
+          "explanation": "The original IdentifiesHAL combined two ideas (knowing the concept and spelling out the acronym). Splitting isolates the literal expansion, making grading of missing expansions consistent."
+        },
+        {
+          "qd_name": "DescribesHALConcept",
+          "operator": "SPLIT",
+          "explanation": "Separating the conceptual description from the acronym expansion lets graders award credit when the student understands HAL even if they omit the full form, reducing disagreement."
+        },
+        {
+          "qd_name": "ExplainsSimplificationAndBenefit",
+          "operator": "MERGE",
+          "explanation": "The original two dimensions (purpose explanation and extra details) were often judged inconsistently when a student gave only one of them. Merging them into a single, objective requirement that both purpose and a benefit be present creates a clearer pass/fail criterion."
+        },
+        {
+          "qd_name": "NoFactualErrors",
+          "operator": "KEEP",
+          "explanation": "Retaining this dimension (renamed for clarity) continues to capture factual accuracy, which is essential for grading but does not need modification."
+        }
+      ]
+    }
+  ],
+  "baseline_results": {
+    "0": {
+      "grades": [
+        0,
+        1,
+        0
+      ],
+      "has_flip": true
+    },
+    "1": {
+      "grades": [
+        1,
+        1,
+        1
+      ],
+      "has_flip": false
+    },
+    "2": {
+      "grades": [
+        1,
+        1,
+        1
+      ],
+      "has_flip": false
+    },
+    "3": {
+      "grades": [
+        1,
+        1,
+        1
+      ],
+      "has_flip": false
+    },
+    "4": {
+      "grades": [
+        1,
+        1,
+        1
+      ],
+      "has_flip": false
+    }
+  },
+  "qd_results": {
+    "0": {
+      "grades": [
+        1,
+        1,
+        1
+      ],
+      "has_flip": false
+    },
+    "1": {
+      "grades": [
+        0,
+        0,
+        0
+      ],
+      "has_flip": false
+    },
+    "2": {
+      "grades": [
+        1,
+        1,
+        1
+      ],
+      "has_flip": false
+    },
+    "3": {
+      "grades": [
+        0,
+        0,
+        0
+      ],
+      "has_flip": false
+    },
+    "4": {
+      "grades": [
+        1,
+        1,
+        1
+      ],
+      "has_flip": false
+    }
+  }
+}
