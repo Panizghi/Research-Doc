@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q1",
+  "response_id": "R17",
+  "response_text": "In the lab, we used an array to hold multiple Thread Control Blocks (TCBs), but a queue offers a more natural mapping to round-robin scheduling. When a thread becomes ready, its TCB is enqueued at the tail; when the scheduler runs, it dequeues the head TCB, dispatches that thread, and then\u2014if the thread remains runnable\u2014re-enqueues it at the tail. This \u201ctake your turn and go to the back of the line\u201d approach can be implemented with O(1) enqueue and dequeue operations, avoiding the need to shift array elements. A queue also supports dynamic sizing: you can grow or shrink the queue at runtime to match exactly the number of ready threads. Finally, removing a thread from the middle of a queue when it blocks (for example on I/O) and re-enqueuing it when it unblocks is straightforward and does not disturb the positions of other TCBs. These benefits\u2014constant-time operations, dynamic resizing, and easy blocking/unblocking\u2014make a queue an appealing alternative to a fixed-size array for a production-quality scheduler.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:21:42.540334",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:21:48.669267",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:21:55.561199",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:22:02.627471",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:22:09.204283",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:22:16.826545",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:22:24.575015",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:22:31.853451",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:22:39.456563",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:22:45.910876",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 0,
+    "fail_count": 10
+  }
+}

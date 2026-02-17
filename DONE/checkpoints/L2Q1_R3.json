@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q1",
+  "response_id": "R3",
+  "response_text": "When the PC was changed to hold the function pointer to the print continuously function, this told the CPU that the next instruction to run would be the first instruction of the print continuously function, and to proceed from there. This is similar to what happens when a function is called the normal way, but without the initialization of stack variables.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T02:58:44.504133",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T02:58:50.841911",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T02:58:56.988158",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T02:59:03.667665",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T02:59:10.051458",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T02:59:15.656786",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T02:59:21.714811",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T02:59:27.605355",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T02:59:33.554781",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T02:59:40.024516",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

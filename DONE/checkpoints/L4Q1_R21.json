@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q1",
+  "response_id": "R21",
+  "response_text": "Round-robin scheduling with a queue works by treating the queue as a circular data structure where threads are dequeued from the front and enqueued at the back. When a context switch occurs, the currently running thread is moved to the rear of the queue, and the thread at the front becomes the next to run. This naturally implements the round-robin \"take turns\" behavior without needing index arithmetic or wraparound logic. The benefits are significant: First, adding and removing threads becomes O(1) operations - you simply enqueue new threads and dequeue terminated ones without shifting array elements or managing gaps. Second, the queue inherently handles the circular nature of round-robin scheduling, eliminating the need for modulo operations and current thread index tracking. Third, dynamic thread management becomes cleaner since you don't need to search for empty slots in a fixed-size array. Fourth, priority scheduling extensions become easier - you could maintain separate queues for different priority levels. Finally, the code becomes more intuitive and less error-prone since the data structure naturally matches the scheduling algorithm's behavior, reducing the likelihood of off-by-one errors or incorrect wraparound handling that can occur with array-based implementations.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:27:07.283706",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:27:14.597322",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:27:20.709054",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:27:27.744236",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:27:35.101872",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:27:43.014430",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:27:51.710985",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:27:58.533355",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:28:07.095850",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:28:13.288138",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 0,
+    "fail_count": 10
+  }
+}

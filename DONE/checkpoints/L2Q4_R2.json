@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q4",
+  "response_id": "R2",
+  "response_text": "The PSP (Process Stack Pointer) points to the memory location of where the thread\u2019s stack exists. Before running a thread, we will need to switch modes using the __set_PSP function so that the CPU will use the expected memory location required to run threads. If the __set_PSP function wasn\u2019t called, the CPU will try to access invalid memory locations or even dereference a NULL pointer and will result in a hard fault and crash the program. Setting the PSP ensures that the thread has a valid stack to use for local variables, context saving, and return addresses.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:32:16.437030",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:32:25.454336",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:32:33.165388",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:32:43.547588",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:32:49.429924",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:32:58.731222",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:33:03.653956",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:33:12.584111",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:33:22.559546",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:33:31.779489",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

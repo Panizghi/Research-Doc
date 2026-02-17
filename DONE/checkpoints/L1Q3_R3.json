@@ -1,0 +1,156 @@
+{
+  "question_id": "L1Q3",
+  "response_id": "R3",
+  "response_text": "We used the debugger to view the memory that is being accessed. The debugger allows us to view the values of the different registers and where they are stored inside the memory. The debugger is used for this instead of a function like printf as one the debugger is a lower level program than printf has access to. Also using a function like printf would likely need to create new variables which would change values in the registers before it was able to print, thus it is much easier to use the debugger to view this instead.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:48:57.726215",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:49:04.405519",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:49:11.292729",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:49:17.594351",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:49:23.636424",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:49:26.875916",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:49:33.723138",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:49:40.386044",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:49:46.675708",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:49:53.500642",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:49:59.411228",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:50:05.887537",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:50:12.147448",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:50:20.229604",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:50:26.873196",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:50:33.452778",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:50:39.829441",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:50:45.906445",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:50:52.751835",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:50:59.749461",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 20,
+    "pass_count": 20,
+    "fail_count": 0
+  },
+  "version_progression": [
+    {
+      "version": "baseline",
+      "version_label": "Baseline (Rubric)",
+      "metrics": {
+        "consensus": 100.0,
+        "flip_rate": 0.0,
+        "majority": 1,
+        "sample_size": 20,
+        "pass_count": 20,
+        "fail_count": 0
+      },
+      "flip_rate_change_vs_baseline": 0.0,
+      "timestamp": "2025-11-11T09:50:59.763481"
+    }
+  ],
+  "qd_initial_version": "v1",
+  "qd_version_selected": "v1",
+  "skip_reason": "baseline_already_stable"
+}

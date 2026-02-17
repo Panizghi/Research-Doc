@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q4",
+  "response_id": "R3",
+  "response_text": "The use of C functions makes it easier for the operating system programmer to implement more complicated scheduling algorithms as required, which is harder to implement in low level languages like assembly. The advantage of using assembly is for startup code, since assembly doesn\u2019t need a existing stack setup to run while using C functions does. It also allows us greater control over the register directly as opposed to using C functions.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:19:11.792169",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:19:17.544151",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:19:24.503086",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:19:29.613214",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:19:36.273604",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:19:44.176122",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:19:52.877272",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:19:59.941633",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:20:05.785606",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:20:11.364080",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

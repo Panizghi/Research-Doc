@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q1",
+  "response_id": "R8",
+  "response_text": "Looking at the output of our code, the code still outputs \u201cHello, PC!\u201d continuously, regardless of if the function was called in main or by manipulation of the PC register. However, these outcomes are vastly different when considered how the function was executed. The PC register is one that holds the address of the next instruction that needs to be executed, and so the print_continuously function wouldn\u2019t initially held inside the PC before runtime. Instead, the CPU would call the print_continuously function in the main program, pushing a return address into the stack before jumping (Setting the address into the PC). This provides a way for the program to return to the main program if print_continously function hypothetically had a way to finish its instruction. Conversely, using a no return function called jumpAssembly, taking the address of our print_continuously function (and consequently being stored into r0), and moving it from the r0 register to the PC register does not provide a way to go back to the main program because it wasn\u2019t manually coded in. This causes the program to permanently execute the print_continously function, without a way to go back to the main program.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:04:02.488601",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:04:08.459047",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:04:15.077848",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:04:19.941356",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:04:27.109850",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:04:33.691537",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:04:40.369045",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:04:45.577647",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:04:57.860492",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:05:03.588567",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

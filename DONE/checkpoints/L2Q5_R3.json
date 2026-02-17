@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q5",
+  "response_id": "R3",
+  "response_text": "If the thread simply printed something once and then returned it would be missing a return address as this isn\u2019t defined in the thread. If the address is missing the Cortex M4 would not know where to go in memory once the thread has been completed and it would likely go to an invalid address which would cause the thread to hard fault. This can be prevented by having a return address that can be popped that contains the location of the instructions that the OS needs to run next.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:18:52.101694",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:18:59.649662",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:19:06.949311",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:19:16.786778",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:19:24.966893",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:19:34.967014",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:19:43.236904",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:19:49.625268",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:20:00.896747",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:20:08.325803",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

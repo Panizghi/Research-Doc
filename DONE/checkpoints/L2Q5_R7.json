@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q5",
+  "response_id": "R7",
+  "response_text": "Our thread function loops continuously and never returns, meaning that the OS runs indefinitely. If our thread function instead executed a single command and returned (in this case without a return address), the program would crash in a hard fault, as the program would not have an address in memory to return to.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:25:19.644457",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:25:27.456541",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:25:39.599586",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:25:47.956324",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:25:55.864652",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:26:06.562849",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:26:14.811293",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:26:26.458208",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:26:34.527751",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:26:45.789416",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 50.0,
+    "flip_rate": 50.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 5,
+    "fail_count": 5
+  }
+}

@@ -1,0 +1,2618 @@
+{
+  "lab": 1,
+  "question": 2,
+  "baseline_flip_rate": 35.714285714285715,
+  "qd_flip_rate": 35.714285714285715,
+  "improvement": 0.0,
+  "num_answers": 14,
+  "operations": [
+    {
+      "iteration": 1,
+      "input_qds": [
+        {
+          "name": "identifies_helper_function",
+          "definition": "Student explicitly states that __io_putchar is a helper function that enables printing to the UART or console."
+        },
+        {
+          "name": "links_to_printf",
+          "definition": "Student explicitly mentions that the __io_putchar function is used by the printf function."
+        },
+        {
+          "name": "explains_hardware_abstraction_need",
+          "definition": "Student explains that __io_putchar is required because different projects may need different hardware for printing, so the programmer must provide an implementation."
+        }
+      ],
+      "sample_answers": [
+        "The __io_putchar function is required in embedded systems because the printf function does not know by default where to send the output. It usually expects an output stream, which does not exist in microcontrollers. Implement this function helps us define how and where each character from printf should be sent (e.g. UART). This allows printf to be used in embedded systems by routing output to hardware-specific interfaces. Without __io_putchar there would be no output from printf, since there\u2019s no default output in most embedded environments.\\n",
+        "The __io_putchar function sends a single character to a hardware peripheral, usually UART, allowing printf to display output in embedded systems. It\u2019s needed because embedded devices don\u2019t have standard output by default, so programmers must implement this function to define how characters are transmitted, typically over serial communication.\\n",
+        "__io_putchar pushes a character over the UART interface (using HAL_UART_Transmit), it then returns the same character. This method is used by printf() in order to help us send data over UART. This allows us to monitor variables and/or logs that the microcontroller has during runtime. Based off the fact that __io_putchar uses \u201cIO\u201d instead of \u201cUART\u201d, this method is probably overloaded depending on the target system in order to provide printf() or any other a method to output characters. For example, you might overload __io_putchar to push a character into stream instead of UART on your personal computer; it depends on the platform. The return type of __io_putchar is to just verify that it has succeeded, it is not the main reason the function exists and is for error checking.\\n",
+        "The __io_putchar function is meant to send a single character to the uart2 I/O channel. The function then returns this letter so that the printf function can output them as a string to the output channel. The __io_putchar function specifically allows the programmer to select which output is used, if this was part of a standard library than the programmer wouldn\u2019t be able to do this. This allows the programmer to better test that certain features are being used correctly.\\n",
+        "__io_putchar acts as a wrapper function that is called by the printf function to output individual characters to the UART or console. Since the printf function is part of the stdio library, which is designed for general-purpose systems, a wrapper like __io_putchar is necessary to bridge the gap between the library and the hardware-specific input/output channel.\\n",
+        "The _io_putchar function is a return function that returns the very same character that was inputted as it\u2019s char parameter. This is a needed function especially when using printf, as it calls the _io_putchar function multiple times to print out the desired input string. Another reason why the _io_putchar function is required to be implemented is because the <stdio.h> library, where the printf function comes from is mainly reliant on these helper functions to allow it to interact with various kinds of hardware that provide different configurations of the output. The _io_putchar function is interpreted differently for each type of hardware so that the printf function can flexibly function.\\n",
+        "In this lab, the _io_putchar function is a return function that writes the inputted character into the UART2 IO channel. This is a needed function especially when using printf, as it calls the _io_putchar function multiple times to print out the desired input string. Another reason why the _io_putchar function is required to be implemented is because the <stdio.h> library, where the printf function comes from is mainly reliant on these helper functions to allow it to interact with various kinds of hardware that provide different configurations of the output. The _io_putchar function is interpreted differently for each type of hardware so that the printf function can flexibly function.\\n",
+        "While printf is normally used to print output to a console, it is a part of the stdio.h library. This entire library relies on helper functions to interact with the hardware, meaning printf can\u2019t directly interact with hardware by itself. The __io_putchar uses a function HAL_URT_Transmit that \u201cputs\u201d a character into the specified output channel (in this case it is UART2, a peripheral set up by the HAL used to print from the MCU to the PC), and is repeatedly called by printf to print all the characters in the string passed to it. Finally, because the function works using the HAL, the underlying hardware can be changed without needing to change the user code. The HAL provides a generic base to interact with many different types of hardware, which allows this function to still be applicable across many different devices. Without such a function (and without the HAL in general), a hardware-specific version would be needed for each different device, significantly and negatively impacting portability and adaptability.\\n",
+        "The __io_putchar function is used to redirect output from functions (ex. printf) to a specific output device. For embedded systems, printf(), for example, doesn\u2019t know where it should be sending its output by default (there is no screen or console on a computer), and so by defining __io_putchar, you\u2019re essentially telling the system how to handle each character that printf() wats to print. The function is needed to make standard C functions work properly on microcontrollers.\\n",
+        "The __io_putchar function defines how the standard printf function outputs characters to a hardware interface, commonly UART. While printf is part of the C standard library, it lacks direct hardware support. By implementing __io_putchar, character output can be routed to specific peripherals. In this lab, the function enabled communication with a serial terminal via UART. Modifying this function allows redirection of output to other devices, such as USB or an LCD, making it an essential component in adapting standard output functions for embedded environments.\\n",
+        "The __io_putchar function takes a character input (a 1-byte variable representing any value defined in the ASCII table of codes, characters, and symbols) and internally calls the HAL_UART_Transmit function to send that character over the Nucleo board\u2019s primary UART interface. This is achieved by passing &huart2 as the UART handler to the HAL_UART_Transmit function. Since the STM platform offers multiple serial I/O interfaces, this function effectively encapsulates the process of transmitting a single character over the serial bus, and it is used by the printf function to transmit data that gets displayed on the serial console. It serves as a modular and user-friendly building block that can be extended to transmit entire strings and further sequences of characters over UART I/O.\\n",
+        "The __io_putchar function redirects standard output functions like printf() to a specific hardware interface, such as UART. In embedded systems, unlike traditional software environments, there is no default console output\u2014so the program must explicitly define where output should go. This function takes each character from printf() and transmits it over UART, allowing developers to see output in a terminal connected to the device. It's necessary because it bridges the gap between standard C library functions and the specific hardware in use. Importantly, the way __io_putchar is implemented can vary between projects depending on the hardware\u2014some systems may use UART, while others may use USB, semihosting, or other interfaces. This hardware variability means developers must customize the function to match the output method available on their particular device.\\n",
+        "The __io_putchar function is used to write single characters to the right IO channel. The printf calls this function multiple times when a string is printed out. It is used because the standard printf() function does not know where to send characters on the device. The characters are sent using UART.\\n",
+        "The __io_putchar function is used to send a single character out through the UART, and it is required in order for the printf function to work on the microcontroller. Although printf is part of the standard C library, it doesn\u2019t know how to send characters to hardware by default. On embedded systems, we must manually connect printf to UART2.\\n"
+      ],
+      "qd_results_before_refinement": {
+        "0": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "1": {
+          "grades": [
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 3,
+            "count_1": 7,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.7
+          }
+        },
+        "2": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "3": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "4": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "5": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "6": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "7": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "8": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 2,
+            "count_1": 8,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.8
+          }
+        },
+        "9": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "10": {
+          "grades": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 9,
+            "count_1": 1,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 0.9
+          }
+        },
+        "11": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "12": {
+          "grades": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 9,
+            "count_1": 1,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 0.9
+          }
+        },
+        "13": {
+          "grades": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 6,
+            "count_1": 4,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 0.6
+          }
+        }
+      },
+      "comparison_baseline": "original baseline",
+      "comparison_results": {
+        "0": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "1": {
+          "grades": [
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 2,
+            "count_1": 8,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.8
+          }
+        },
+        "2": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "3": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "4": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "5": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 2,
+            "count_1": 8,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.8
+          }
+        },
+        "6": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "7": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "8": {
+          "grades": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "stats": {
+            "count_0": 8,
+            "count_1": 2,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 0.8
+          }
+        },
+        "9": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "10": {
+          "grades": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "stats": {
+            "count_0": 10,
+            "count_1": 0,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 1.0
+          }
+        },
+        "11": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "12": {
+          "grades": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          "stats": {
+            "count_0": 4,
+            "count_1": 6,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.6
+          }
+        },
+        "13": {
+          "grades": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0
+          ],
+          "stats": {
+            "count_0": 5,
+            "count_1": 5,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 0.5
+          }
+        }
+      },
+      "operations": [
+        {
+          "qd_name": "outputs_character_to_uart",
+          "operator": "KEEP",
+          "from_qd": "identifies_helper_function",
+          "explanation": "The original wording \"helper function\" caused graders to miss answers that described the function in terms of output rather than as a generic helper. By focusing on the concrete action (sending a character to UART/console) the criterion becomes objective and matches the intent of the original QD while reducing false negatives."
+        },
+        {
+          "qd_name": "used_by_printf",
+          "operator": "KEEP",
+          "from_qd": "links_to_printf",
+          "explanation": "The link to printf is a clear, binary fact. Keeping this QD unchanged preserves the original intent and ensures consistency because every correct answer either names printf directly or does not; there is no ambiguity in the wording."
+        },
+        {
+          "qd_name": "reason_for_implementation",
+          "operator": "SPLIT",
+          "from_qd": "explains_hardware_abstraction_need",
+          "explanation": "The original QD demanded a specific mention of \"different projects may need different hardware,\" which many correct answers omitted while still giving a valid reason (e.g., lack of default stdout). Splitting the dimension into an OR\u2011condition captures all acceptable explanations, eliminating the inconsistency where graders marked an answer wrong simply because it used a synonym or a simpler justification."
+        }
+      ],
+      "output_qds": [
+        {
+          "name": "outputs_character_to_uart",
+          "definition": "Student explicitly states that __io_putchar sends or outputs a single character to the UART (or console) hardware peripheral."
+        },
+        {
+          "name": "used_by_printf",
+          "definition": "Student explicitly mentions that the __io_putchar function is called by, used by, or required for the printf function to work."
+        },
+        {
+          "name": "reason_for_implementation",
+          "definition": "Student provides a correct rationale for why __io_putchar must be implemented, satisfying at least one of the following: (a) embedded systems have no default standard output (no screen/console), or (b) different hardware projects require a custom implementation to route characters to the appropriate output device."
+        }
+      ]
+    }
+  ],
+  "final_qds": [
+    {
+      "name": "identifies_helper_function",
+      "definition": "Student explicitly states that __io_putchar is a helper function that enables printing to the UART or console."
+    },
+    {
+      "name": "links_to_printf",
+      "definition": "Student explicitly mentions that the __io_putchar function is used by the printf function."
+    },
+    {
+      "name": "explains_hardware_abstraction_need",
+      "definition": "Student explains that __io_putchar is required because different projects may need different hardware for printing, so the programmer must provide an implementation."
+    }
+  ],
+  "iteration_qds": [
+    {
+      "iteration": 0,
+      "qds": [
+        {
+          "name": "identifies_helper_function",
+          "definition": "Student explicitly states that __io_putchar is a helper function that enables printing to the UART or console."
+        },
+        {
+          "name": "links_to_printf",
+          "definition": "Student explicitly mentions that the __io_putchar function is used by the printf function."
+        },
+        {
+          "name": "explains_hardware_abstraction_need",
+          "definition": "Student explains that __io_putchar is required because different projects may need different hardware for printing, so the programmer must provide an implementation."
+        }
+      ],
+      "flip_rate": 35.714285714285715,
+      "majority_violations": 2,
+      "is_best": true,
+      "sample_answers": [
+        "The __io_putchar function is required in embedded systems because the printf function does not know by default where to send the output. It usually expects an output stream, which does not exist in microcontrollers. Implement this function helps us define how and where each character from printf should be sent (e.g. UART). This allows printf to be used in embedded systems by routing output to hardware-specific interfaces. Without __io_putchar there would be no output from printf, since there\u2019s no default output in most embedded environments.\\n",
+        "The __io_putchar function sends a single character to a hardware peripheral, usually UART, allowing printf to display output in embedded systems. It\u2019s needed because embedded devices don\u2019t have standard output by default, so programmers must implement this function to define how characters are transmitted, typically over serial communication.\\n",
+        "__io_putchar pushes a character over the UART interface (using HAL_UART_Transmit), it then returns the same character. This method is used by printf() in order to help us send data over UART. This allows us to monitor variables and/or logs that the microcontroller has during runtime. Based off the fact that __io_putchar uses \u201cIO\u201d instead of \u201cUART\u201d, this method is probably overloaded depending on the target system in order to provide printf() or any other a method to output characters. For example, you might overload __io_putchar to push a character into stream instead of UART on your personal computer; it depends on the platform. The return type of __io_putchar is to just verify that it has succeeded, it is not the main reason the function exists and is for error checking.\\n",
+        "The __io_putchar function is meant to send a single character to the uart2 I/O channel. The function then returns this letter so that the printf function can output them as a string to the output channel. The __io_putchar function specifically allows the programmer to select which output is used, if this was part of a standard library than the programmer wouldn\u2019t be able to do this. This allows the programmer to better test that certain features are being used correctly.\\n",
+        "__io_putchar acts as a wrapper function that is called by the printf function to output individual characters to the UART or console. Since the printf function is part of the stdio library, which is designed for general-purpose systems, a wrapper like __io_putchar is necessary to bridge the gap between the library and the hardware-specific input/output channel.\\n",
+        "The _io_putchar function is a return function that returns the very same character that was inputted as it\u2019s char parameter. This is a needed function especially when using printf, as it calls the _io_putchar function multiple times to print out the desired input string. Another reason why the _io_putchar function is required to be implemented is because the <stdio.h> library, where the printf function comes from is mainly reliant on these helper functions to allow it to interact with various kinds of hardware that provide different configurations of the output. The _io_putchar function is interpreted differently for each type of hardware so that the printf function can flexibly function.\\n",
+        "In this lab, the _io_putchar function is a return function that writes the inputted character into the UART2 IO channel. This is a needed function especially when using printf, as it calls the _io_putchar function multiple times to print out the desired input string. Another reason why the _io_putchar function is required to be implemented is because the <stdio.h> library, where the printf function comes from is mainly reliant on these helper functions to allow it to interact with various kinds of hardware that provide different configurations of the output. The _io_putchar function is interpreted differently for each type of hardware so that the printf function can flexibly function.\\n",
+        "While printf is normally used to print output to a console, it is a part of the stdio.h library. This entire library relies on helper functions to interact with the hardware, meaning printf can\u2019t directly interact with hardware by itself. The __io_putchar uses a function HAL_URT_Transmit that \u201cputs\u201d a character into the specified output channel (in this case it is UART2, a peripheral set up by the HAL used to print from the MCU to the PC), and is repeatedly called by printf to print all the characters in the string passed to it. Finally, because the function works using the HAL, the underlying hardware can be changed without needing to change the user code. The HAL provides a generic base to interact with many different types of hardware, which allows this function to still be applicable across many different devices. Without such a function (and without the HAL in general), a hardware-specific version would be needed for each different device, significantly and negatively impacting portability and adaptability.\\n",
+        "The __io_putchar function is used to redirect output from functions (ex. printf) to a specific output device. For embedded systems, printf(), for example, doesn\u2019t know where it should be sending its output by default (there is no screen or console on a computer), and so by defining __io_putchar, you\u2019re essentially telling the system how to handle each character that printf() wats to print. The function is needed to make standard C functions work properly on microcontrollers.\\n",
+        "The __io_putchar function defines how the standard printf function outputs characters to a hardware interface, commonly UART. While printf is part of the C standard library, it lacks direct hardware support. By implementing __io_putchar, character output can be routed to specific peripherals. In this lab, the function enabled communication with a serial terminal via UART. Modifying this function allows redirection of output to other devices, such as USB or an LCD, making it an essential component in adapting standard output functions for embedded environments.\\n",
+        "The __io_putchar function takes a character input (a 1-byte variable representing any value defined in the ASCII table of codes, characters, and symbols) and internally calls the HAL_UART_Transmit function to send that character over the Nucleo board\u2019s primary UART interface. This is achieved by passing &huart2 as the UART handler to the HAL_UART_Transmit function. Since the STM platform offers multiple serial I/O interfaces, this function effectively encapsulates the process of transmitting a single character over the serial bus, and it is used by the printf function to transmit data that gets displayed on the serial console. It serves as a modular and user-friendly building block that can be extended to transmit entire strings and further sequences of characters over UART I/O.\\n",
+        "The __io_putchar function redirects standard output functions like printf() to a specific hardware interface, such as UART. In embedded systems, unlike traditional software environments, there is no default console output\u2014so the program must explicitly define where output should go. This function takes each character from printf() and transmits it over UART, allowing developers to see output in a terminal connected to the device. It's necessary because it bridges the gap between standard C library functions and the specific hardware in use. Importantly, the way __io_putchar is implemented can vary between projects depending on the hardware\u2014some systems may use UART, while others may use USB, semihosting, or other interfaces. This hardware variability means developers must customize the function to match the output method available on their particular device.\\n",
+        "The __io_putchar function is used to write single characters to the right IO channel. The printf calls this function multiple times when a string is printed out. It is used because the standard printf() function does not know where to send characters on the device. The characters are sent using UART.\\n",
+        "The __io_putchar function is used to send a single character out through the UART, and it is required in order for the printf function to work on the microcontroller. Although printf is part of the standard C library, it doesn\u2019t know how to send characters to hardware by default. On embedded systems, we must manually connect printf to UART2.\\n"
+      ],
+      "qd_results": {
+        "0": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "1": {
+          "grades": [
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 3,
+            "count_1": 7,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.7
+          }
+        },
+        "2": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "3": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "4": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "5": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "6": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "7": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "8": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 2,
+            "count_1": 8,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.8
+          }
+        },
+        "9": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "10": {
+          "grades": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 9,
+            "count_1": 1,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 0.9
+          }
+        },
+        "11": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "12": {
+          "grades": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 9,
+            "count_1": 1,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 0.9
+          }
+        },
+        "13": {
+          "grades": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 6,
+            "count_1": 4,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 0.6
+          }
+        }
+      },
+      "comparison_baseline": "original baseline",
+      "comparison_results": {
+        "0": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "1": {
+          "grades": [
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 2,
+            "count_1": 8,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.8
+          }
+        },
+        "2": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "3": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "4": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "5": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 2,
+            "count_1": 8,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.8
+          }
+        },
+        "6": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "7": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "8": {
+          "grades": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "stats": {
+            "count_0": 8,
+            "count_1": 2,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 0.8
+          }
+        },
+        "9": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "10": {
+          "grades": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "stats": {
+            "count_0": 10,
+            "count_1": 0,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 1.0
+          }
+        },
+        "11": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "12": {
+          "grades": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          "stats": {
+            "count_0": 4,
+            "count_1": 6,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.6
+          }
+        },
+        "13": {
+          "grades": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0
+          ],
+          "stats": {
+            "count_0": 5,
+            "count_1": 5,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 0.5
+          }
+        }
+      }
+    },
+    {
+      "iteration": 1,
+      "qds": [
+        {
+          "name": "outputs_character_to_uart",
+          "definition": "Student explicitly states that __io_putchar sends or outputs a single character to the UART (or console) hardware peripheral."
+        },
+        {
+          "name": "used_by_printf",
+          "definition": "Student explicitly mentions that the __io_putchar function is called by, used by, or required for the printf function to work."
+        },
+        {
+          "name": "reason_for_implementation",
+          "definition": "Student provides a correct rationale for why __io_putchar must be implemented, satisfying at least one of the following: (a) embedded systems have no default standard output (no screen/console), or (b) different hardware projects require a custom implementation to route characters to the appropriate output device."
+        }
+      ],
+      "flip_rate": 7.142857142857142,
+      "majority_violations": 3,
+      "is_best": false,
+      "sample_answers": [
+        "The __io_putchar function is required in embedded systems because the printf function does not know by default where to send the output. It usually expects an output stream, which does not exist in microcontrollers. Implement this function helps us define how and where each character from printf should be sent (e.g. UART). This allows printf to be used in embedded systems by routing output to hardware-specific interfaces. Without __io_putchar there would be no output from printf, since there\u2019s no default output in most embedded environments.\\n",
+        "The __io_putchar function sends a single character to a hardware peripheral, usually UART, allowing printf to display output in embedded systems. It\u2019s needed because embedded devices don\u2019t have standard output by default, so programmers must implement this function to define how characters are transmitted, typically over serial communication.\\n",
+        "__io_putchar pushes a character over the UART interface (using HAL_UART_Transmit), it then returns the same character. This method is used by printf() in order to help us send data over UART. This allows us to monitor variables and/or logs that the microcontroller has during runtime. Based off the fact that __io_putchar uses \u201cIO\u201d instead of \u201cUART\u201d, this method is probably overloaded depending on the target system in order to provide printf() or any other a method to output characters. For example, you might overload __io_putchar to push a character into stream instead of UART on your personal computer; it depends on the platform. The return type of __io_putchar is to just verify that it has succeeded, it is not the main reason the function exists and is for error checking.\\n",
+        "The __io_putchar function is meant to send a single character to the uart2 I/O channel. The function then returns this letter so that the printf function can output them as a string to the output channel. The __io_putchar function specifically allows the programmer to select which output is used, if this was part of a standard library than the programmer wouldn\u2019t be able to do this. This allows the programmer to better test that certain features are being used correctly.\\n",
+        "__io_putchar acts as a wrapper function that is called by the printf function to output individual characters to the UART or console. Since the printf function is part of the stdio library, which is designed for general-purpose systems, a wrapper like __io_putchar is necessary to bridge the gap between the library and the hardware-specific input/output channel.\\n",
+        "The _io_putchar function is a return function that returns the very same character that was inputted as it\u2019s char parameter. This is a needed function especially when using printf, as it calls the _io_putchar function multiple times to print out the desired input string. Another reason why the _io_putchar function is required to be implemented is because the <stdio.h> library, where the printf function comes from is mainly reliant on these helper functions to allow it to interact with various kinds of hardware that provide different configurations of the output. The _io_putchar function is interpreted differently for each type of hardware so that the printf function can flexibly function.\\n",
+        "In this lab, the _io_putchar function is a return function that writes the inputted character into the UART2 IO channel. This is a needed function especially when using printf, as it calls the _io_putchar function multiple times to print out the desired input string. Another reason why the _io_putchar function is required to be implemented is because the <stdio.h> library, where the printf function comes from is mainly reliant on these helper functions to allow it to interact with various kinds of hardware that provide different configurations of the output. The _io_putchar function is interpreted differently for each type of hardware so that the printf function can flexibly function.\\n",
+        "While printf is normally used to print output to a console, it is a part of the stdio.h library. This entire library relies on helper functions to interact with the hardware, meaning printf can\u2019t directly interact with hardware by itself. The __io_putchar uses a function HAL_URT_Transmit that \u201cputs\u201d a character into the specified output channel (in this case it is UART2, a peripheral set up by the HAL used to print from the MCU to the PC), and is repeatedly called by printf to print all the characters in the string passed to it. Finally, because the function works using the HAL, the underlying hardware can be changed without needing to change the user code. The HAL provides a generic base to interact with many different types of hardware, which allows this function to still be applicable across many different devices. Without such a function (and without the HAL in general), a hardware-specific version would be needed for each different device, significantly and negatively impacting portability and adaptability.\\n",
+        "The __io_putchar function is used to redirect output from functions (ex. printf) to a specific output device. For embedded systems, printf(), for example, doesn\u2019t know where it should be sending its output by default (there is no screen or console on a computer), and so by defining __io_putchar, you\u2019re essentially telling the system how to handle each character that printf() wats to print. The function is needed to make standard C functions work properly on microcontrollers.\\n",
+        "The __io_putchar function defines how the standard printf function outputs characters to a hardware interface, commonly UART. While printf is part of the C standard library, it lacks direct hardware support. By implementing __io_putchar, character output can be routed to specific peripherals. In this lab, the function enabled communication with a serial terminal via UART. Modifying this function allows redirection of output to other devices, such as USB or an LCD, making it an essential component in adapting standard output functions for embedded environments.\\n",
+        "The __io_putchar function takes a character input (a 1-byte variable representing any value defined in the ASCII table of codes, characters, and symbols) and internally calls the HAL_UART_Transmit function to send that character over the Nucleo board\u2019s primary UART interface. This is achieved by passing &huart2 as the UART handler to the HAL_UART_Transmit function. Since the STM platform offers multiple serial I/O interfaces, this function effectively encapsulates the process of transmitting a single character over the serial bus, and it is used by the printf function to transmit data that gets displayed on the serial console. It serves as a modular and user-friendly building block that can be extended to transmit entire strings and further sequences of characters over UART I/O.\\n",
+        "The __io_putchar function redirects standard output functions like printf() to a specific hardware interface, such as UART. In embedded systems, unlike traditional software environments, there is no default console output\u2014so the program must explicitly define where output should go. This function takes each character from printf() and transmits it over UART, allowing developers to see output in a terminal connected to the device. It's necessary because it bridges the gap between standard C library functions and the specific hardware in use. Importantly, the way __io_putchar is implemented can vary between projects depending on the hardware\u2014some systems may use UART, while others may use USB, semihosting, or other interfaces. This hardware variability means developers must customize the function to match the output method available on their particular device.\\n",
+        "The __io_putchar function is used to write single characters to the right IO channel. The printf calls this function multiple times when a string is printed out. It is used because the standard printf() function does not know where to send characters on the device. The characters are sent using UART.\\n",
+        "The __io_putchar function is used to send a single character out through the UART, and it is required in order for the printf function to work on the microcontroller. Although printf is part of the standard C library, it doesn\u2019t know how to send characters to hardware by default. On embedded systems, we must manually connect printf to UART2.\\n"
+      ],
+      "qd_results": {
+        "0": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "1": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "2": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "3": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "4": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "5": {
+          "grades": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 1,
+            "count_1": 9,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.9
+          }
+        },
+        "6": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "7": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "8": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "9": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "10": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "11": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "12": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "13": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        }
+      },
+      "comparison_baseline": "original baseline",
+      "comparison_results": {
+        "0": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "1": {
+          "grades": [
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 2,
+            "count_1": 8,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.8
+          }
+        },
+        "2": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "3": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "4": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "5": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 2,
+            "count_1": 8,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.8
+          }
+        },
+        "6": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "7": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "8": {
+          "grades": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "stats": {
+            "count_0": 8,
+            "count_1": 2,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 0.8
+          }
+        },
+        "9": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "10": {
+          "grades": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "stats": {
+            "count_0": 10,
+            "count_1": 0,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 1.0
+          }
+        },
+        "11": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "12": {
+          "grades": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          "stats": {
+            "count_0": 4,
+            "count_1": 6,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.6
+          }
+        },
+        "13": {
+          "grades": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0
+          ],
+          "stats": {
+            "count_0": 5,
+            "count_1": 5,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 0.5
+          }
+        }
+      }
+    }
+  ],
+  "per_answer_results": [
+    {
+      "answer_index": 0,
+      "question_text": "The __io_putchar function is required in embedded systems because the printf function does not know by default where to send the output. It usually expects an output stream, which does not exist in microcontrollers. Implement this function helps us define how and where each character from printf should be sent (e.g. UART). This allows printf to be used in embedded systems by routing output to hardware-specific interfaces. Without __io_putchar there would be no output from printf, since there\u2019s no default output in most embedded environments.\\n",
+      "usernames": [
+        "a2ajay"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 1,
+      "question_text": "The __io_putchar function sends a single character to a hardware peripheral, usually UART, allowing printf to display output in embedded systems. It\u2019s needed because embedded devices don\u2019t have standard output by default, so programmers must implement this function to define how characters are transmitted, typically over serial communication.\\n",
+      "usernames": [
+        "a2parapa"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": true,
+      "qd_flip": true,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 2,
+      "question_text": "__io_putchar pushes a character over the UART interface (using HAL_UART_Transmit), it then returns the same character. This method is used by printf() in order to help us send data over UART. This allows us to monitor variables and/or logs that the microcontroller has during runtime. Based off the fact that __io_putchar uses \u201cIO\u201d instead of \u201cUART\u201d, this method is probably overloaded depending on the target system in order to provide printf() or any other a method to output characters. For example, you might overload __io_putchar to push a character into stream instead of UART on your personal computer; it depends on the platform. The return type of __io_putchar is to just verify that it has succeeded, it is not the main reason the function exists and is for error checking.\\n",
+      "usernames": [
+        "a329liu"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 3,
+      "question_text": "The __io_putchar function is meant to send a single character to the uart2 I/O channel. The function then returns this letter so that the printf function can output them as a string to the output channel. The __io_putchar function specifically allows the programmer to select which output is used, if this was part of a standard library than the programmer wouldn\u2019t be able to do this. This allows the programmer to better test that certain features are being used correctly.\\n",
+      "usernames": [
+        "b2lovegr"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 4,
+      "question_text": "__io_putchar acts as a wrapper function that is called by the printf function to output individual characters to the UART or console. Since the printf function is part of the stdio library, which is designed for general-purpose systems, a wrapper like __io_putchar is necessary to bridge the gap between the library and the hardware-specific input/output channel.\\n",
+      "usernames": [
+        "c6shao"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 5,
+      "question_text": "The _io_putchar function is a return function that returns the very same character that was inputted as it\u2019s char parameter. This is a needed function especially when using printf, as it calls the _io_putchar function multiple times to print out the desired input string. Another reason why the _io_putchar function is required to be implemented is because the <stdio.h> library, where the printf function comes from is mainly reliant on these helper functions to allow it to interact with various kinds of hardware that provide different configurations of the output. The _io_putchar function is interpreted differently for each type of hardware so that the printf function can flexibly function.\\n",
+      "usernames": [
+        "j254kim"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": true,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 6,
+      "question_text": "In this lab, the _io_putchar function is a return function that writes the inputted character into the UART2 IO channel. This is a needed function especially when using printf, as it calls the _io_putchar function multiple times to print out the desired input string. Another reason why the _io_putchar function is required to be implemented is because the <stdio.h> library, where the printf function comes from is mainly reliant on these helper functions to allow it to interact with various kinds of hardware that provide different configurations of the output. The _io_putchar function is interpreted differently for each type of hardware so that the printf function can flexibly function.\\n",
+      "usernames": [
+        "j254kim"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 7,
+      "question_text": "While printf is normally used to print output to a console, it is a part of the stdio.h library. This entire library relies on helper functions to interact with the hardware, meaning printf can\u2019t directly interact with hardware by itself. The __io_putchar uses a function HAL_URT_Transmit that \u201cputs\u201d a character into the specified output channel (in this case it is UART2, a peripheral set up by the HAL used to print from the MCU to the PC), and is repeatedly called by printf to print all the characters in the string passed to it. Finally, because the function works using the HAL, the underlying hardware can be changed without needing to change the user code. The HAL provides a generic base to interact with many different types of hardware, which allows this function to still be applicable across many different devices. Without such a function (and without the HAL in general), a hardware-specific version would be needed for each different device, significantly and negatively impacting portability and adaptability.\\n",
+      "usernames": [
+        "j3hou"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 8,
+      "question_text": "The __io_putchar function is used to redirect output from functions (ex. printf) to a specific output device. For embedded systems, printf(), for example, doesn\u2019t know where it should be sending its output by default (there is no screen or console on a computer), and so by defining __io_putchar, you\u2019re essentially telling the system how to handle each character that printf() wats to print. The function is needed to make standard C functions work properly on microcontrollers.\\n",
+      "usernames": [
+        "j7jiao"
+      ],
+      "baseline_scores": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "baseline_flip": true,
+      "qd_flip": true,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 9,
+      "question_text": "The __io_putchar function defines how the standard printf function outputs characters to a hardware interface, commonly UART. While printf is part of the C standard library, it lacks direct hardware support. By implementing __io_putchar, character output can be routed to specific peripherals. In this lab, the function enabled communication with a serial terminal via UART. Modifying this function allows redirection of output to other devices, such as USB or an LCD, making it an essential component in adapting standard output functions for embedded environments.\\n",
+      "usernames": [
+        "m2dang"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 10,
+      "question_text": "The __io_putchar function takes a character input (a 1-byte variable representing any value defined in the ASCII table of codes, characters, and symbols) and internally calls the HAL_UART_Transmit function to send that character over the Nucleo board\u2019s primary UART interface. This is achieved by passing &huart2 as the UART handler to the HAL_UART_Transmit function. Since the STM platform offers multiple serial I/O interfaces, this function effectively encapsulates the process of transmitting a single character over the serial bus, and it is used by the printf function to transmit data that gets displayed on the serial console. It serves as a modular and user-friendly building block that can be extended to transmit entire strings and further sequences of characters over UART I/O.\\n",
+      "usernames": [
+        "s3quadri"
+      ],
+      "baseline_scores": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "qd_scores": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "baseline_flip": false,
+      "qd_flip": true,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 11,
+      "question_text": "The __io_putchar function redirects standard output functions like printf() to a specific hardware interface, such as UART. In embedded systems, unlike traditional software environments, there is no default console output\u2014so the program must explicitly define where output should go. This function takes each character from printf() and transmits it over UART, allowing developers to see output in a terminal connected to the device. It's necessary because it bridges the gap between standard C library functions and the specific hardware in use. Importantly, the way __io_putchar is implemented can vary between projects depending on the hardware\u2014some systems may use UART, while others may use USB, semihosting, or other interfaces. This hardware variability means developers must customize the function to match the output method available on their particular device.\\n",
+      "usernames": [
+        "s9chow"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 12,
+      "question_text": "The __io_putchar function is used to write single characters to the right IO channel. The printf calls this function multiple times when a string is printed out. It is used because the standard printf() function does not know where to send characters on the device. The characters are sent using UART.\\n",
+      "usernames": [
+        "sbhatnag"
+      ],
+      "baseline_scores": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "qd_scores": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "baseline_flip": true,
+      "qd_flip": true,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 13,
+      "question_text": "The __io_putchar function is used to send a single character out through the UART, and it is required in order for the printf function to work on the microcontroller. Although printf is part of the standard C library, it doesn\u2019t know how to send characters to hardware by default. On embedded systems, we must manually connect printf to UART2.\\n",
+      "usernames": [
+        "z63yang"
+      ],
+      "baseline_scores": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "qd_scores": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "baseline_flip": true,
+      "qd_flip": true,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    }
+  ]
+}

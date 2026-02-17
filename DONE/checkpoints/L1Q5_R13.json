@@ -1,0 +1,156 @@
+{
+  "question_id": "L1Q5",
+  "response_id": "R13",
+  "response_text": "Let N be the number of stacks you want to create. For the Cortex M4, there is a file called \u201cSTM32F401RETX_RAM.ld\u201d that sets the minimum stack and heap sizes. Here you can get and set the stack size. Call the main stack size MSS and the process stack size PSS.\\nFirst you need to find the beginning of the main stack by dereferencing the double pointer at 0x0 (call this MSP_INIT_VAL). As each process thread takes the same amount of memory PSS, you can find the pointer to the i-th process stack (ith_PSP) using this equation:\\nith_PSP = MSP_INIT_VAL \u2013 MSS \u2013 i * PSS\\nTo ensure that a process stack address is valid, at compile time, compute all of your N stack pointer addresses and store them in an array. Then you can check if the current stack pointer i is valid by comparing it with the ith and (i+1)th bounds in the array \u2013 since the stack grows downwards, a valid address would be between the start of your array and the start of the next one.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T20:03:26.692920",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T20:03:56.652382",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2025-11-11T20:04:57.675601",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T20:05:32.007773",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2025-11-11T20:06:33.029056",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T20:07:06.517382",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2025-11-11T20:08:07.543464",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T20:08:42.092085",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2025-11-11T20:09:43.117299",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T20:10:08.868303",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T20:10:47.578477",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2025-11-11T20:11:48.628254",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T20:12:22.234775",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T20:12:29.779889",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T20:13:04.844043",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T20:13:11.956807",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T20:13:44.500013",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T20:13:50.725321",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T20:13:56.651863",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T20:14:02.335675",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 20,
+    "pass_count": 20,
+    "fail_count": 0
+  },
+  "version_progression": [
+    {
+      "version": "baseline",
+      "version_label": "Baseline (Rubric)",
+      "metrics": {
+        "consensus": 100.0,
+        "flip_rate": 0.0,
+        "majority": 1,
+        "sample_size": 20,
+        "pass_count": 20,
+        "fail_count": 0
+      },
+      "flip_rate_change_vs_baseline": 0.0,
+      "timestamp": "2025-11-11T20:14:03.461654"
+    }
+  ],
+  "qd_initial_version": "v1",
+  "qd_version_selected": "v1",
+  "skip_reason": "baseline_already_stable"
+}

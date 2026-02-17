@@ -1,0 +1,40 @@
+2025-11-02 13:33:17,204 - exp_ff5effcf - INFO - Initialized experiment ff5effcf
+2025-11-02 13:33:17,204 - exp_ff5effcf - INFO - 
+############################################################
+2025-11-02 13:33:17,205 - exp_ff5effcf - INFO - STARTING EXPERIMENT ff5effcf
+2025-11-02 13:33:17,205 - exp_ff5effcf - INFO - Questions: 5
+2025-11-02 13:33:17,205 - exp_ff5effcf - INFO - Trials: 10
+2025-11-02 13:33:17,205 - exp_ff5effcf - INFO - Max refinements: 3
+2025-11-02 13:33:17,205 - exp_ff5effcf - INFO - ############################################################
+2025-11-02 13:33:17,466 - exp_ff5effcf.data - INFO - Loaded 8344 responses from database
+2025-11-02 13:33:17,468 - exp_ff5effcf.data - INFO - Loaded 25 rubrics from database
+2025-11-02 13:33:17,473 - exp_ff5effcf.data - INFO - L1Q1: 27 train, 13 test
+2025-11-02 13:33:17,474 - exp_ff5effcf.data - INFO - L1Q2: 27 train, 13 test
+2025-11-02 13:33:17,475 - exp_ff5effcf.data - INFO - L1Q3: 27 train, 13 test
+2025-11-02 13:33:17,478 - exp_ff5effcf.data - INFO - L1Q4: 27 train, 13 test
+2025-11-02 13:33:17,480 - exp_ff5effcf.data - INFO - L1Q5: 27 train, 13 test
+2025-11-02 13:33:17,483 - exp_ff5effcf.data - INFO - L2Q1: 27 train, 13 test
+2025-11-02 13:33:17,486 - exp_ff5effcf.data - INFO - L2Q2: 27 train, 13 test
+2025-11-02 13:33:17,488 - exp_ff5effcf.data - INFO - L2Q3: 27 train, 13 test
+2025-11-02 13:33:17,490 - exp_ff5effcf.data - INFO - L2Q4: 27 train, 13 test
+2025-11-02 13:33:17,492 - exp_ff5effcf.data - INFO - L2Q5: 27 train, 13 test
+2025-11-02 13:33:17,495 - exp_ff5effcf.data - INFO - L3Q1: 27 train, 13 test
+2025-11-02 13:33:17,497 - exp_ff5effcf.data - INFO - L3Q2: 27 train, 13 test
+2025-11-02 13:33:17,499 - exp_ff5effcf.data - INFO - L3Q3: 27 train, 13 test
+2025-11-02 13:33:17,500 - exp_ff5effcf.data - INFO - L3Q4: 27 train, 13 test
+2025-11-02 13:33:17,504 - exp_ff5effcf.data - INFO - L3Q5: 27 train, 13 test
+2025-11-02 13:33:17,506 - exp_ff5effcf.data - INFO - L4Q1: 27 train, 13 test
+2025-11-02 13:33:17,508 - exp_ff5effcf.data - INFO - L4Q2: 27 train, 13 test
+2025-11-02 13:33:17,509 - exp_ff5effcf.data - INFO - L4Q3: 27 train, 13 test
+2025-11-02 13:33:17,510 - exp_ff5effcf.data - INFO - L4Q4: 27 train, 13 test
+2025-11-02 13:33:17,513 - exp_ff5effcf.data - INFO - L4Q5: 27 train, 13 test
+2025-11-02 13:33:17,515 - exp_ff5effcf.data - INFO - L5Q1: 27 train, 13 test
+2025-11-02 13:33:17,516 - exp_ff5effcf.data - INFO - L5Q2: 27 train, 13 test
+2025-11-02 13:33:17,519 - exp_ff5effcf.data - INFO - L5Q3: 27 train, 13 test
+2025-11-02 13:33:17,523 - exp_ff5effcf.data - INFO - L5Q4: 27 train, 13 test
+2025-11-02 13:33:17,524 - exp_ff5effcf.data - INFO - L5Q5: 27 train, 13 test
+2025-11-02 13:33:17,531 - exp_ff5effcf - INFO - 
+============================================================
+2025-11-02 13:33:17,532 - exp_ff5effcf - INFO - Starting Lab 2, Question 4
+2025-11-02 13:33:17,533 - exp_ff5effcf - WARNING - Only 27 training samples
+2025-11-02 13:33:17,534 - exp_ff5effcf - INFO - Running baseline grading with rubric...

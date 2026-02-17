@@ -1,0 +1,156 @@
+{
+  "question_id": "L1Q5",
+  "response_id": "R6",
+  "response_text": "To assign multiple stacks to threads using the same approach, start with MSP_init_val and divide it into equal parts based on the number of threads and stack size. For each thread, we can determine its start address by subtracting (thread_index + 1) times the stack size from MSP_init_val. Store these addresses in an array or separate variables, ensuring each thread has its own non-overlapping stack space.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T12:45:43.368569",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2025-11-11T12:46:44.384277",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2025-11-11T12:47:45.405073",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2025-11-11T12:48:46.426115",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T12:49:23.837835",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2025-11-11T12:50:24.860495",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T12:51:02.303614",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2025-11-11T12:52:03.320377",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T12:52:36.442518",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T12:53:15.694491",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2025-11-11T12:54:17.773783",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T12:54:51.846962",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T12:55:31.884225",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2025-11-11T12:56:32.900879",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T12:57:16.945861",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T12:57:54.252282",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2025-11-11T12:58:55.278032",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T12:59:28.523993",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2025-11-11T13:00:29.548643",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T13:01:16.811679",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 20,
+    "pass_count": 20,
+    "fail_count": 0
+  },
+  "version_progression": [
+    {
+      "version": "baseline",
+      "version_label": "Baseline (Rubric)",
+      "metrics": {
+        "consensus": 100.0,
+        "flip_rate": 0.0,
+        "majority": 1,
+        "sample_size": 20,
+        "pass_count": 20,
+        "fail_count": 0
+      },
+      "flip_rate_change_vs_baseline": 0.0,
+      "timestamp": "2025-11-11T19:38:06.749320"
+    }
+  ],
+  "qd_initial_version": "v1",
+  "qd_version_selected": "v1",
+  "skip_reason": "baseline_already_stable"
+}

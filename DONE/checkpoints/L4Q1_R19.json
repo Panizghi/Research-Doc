@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q1",
+  "response_id": "R19",
+  "response_text": "Using a queue is better than using just an array since it aligns well with the FIFO methodology. When a task yields or is pre-empted, its TCB is placed at the back of the queue and the scheduler selects the next TCB from the front. This simplifies rotation logic as the queue inherently provides the necessary order of execution. Compared to using an array, which would require manual indexing and cycling, a queue reduces the user overhead and the necessary work needed to implement the idea. It also avoids errors such as index overflow. Additionally, queues make it easier to dynamically add or remove tasks, which increases flexibility and scalability.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:23:54.802239",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:24:04.762925",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:24:15.879343",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:24:25.279109",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:24:35.041185",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:24:46.244898",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:24:53.912928",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:25:04.439148",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:25:13.662680",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:25:22.994738",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 0,
+    "fail_count": 10
+  }
+}

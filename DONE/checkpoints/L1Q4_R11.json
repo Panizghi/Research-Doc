@@ -1,0 +1,876 @@
+{
+  "question_id": "L1Q4",
+  "response_id": "R11",
+  "response_text": "The stack allocation method we used works by using the MSP_init_val and PSP_val to define the memory bounds of the stack; the MSP_init_val defines the start of the stack in memory, and we got the value for PSP_val by subtracting the desired stack size from the initial MSP memory address. This created a block of memory starting at 0x0 for the stack to access. We needed to know the initial location of MSP because the size of the stack is defined by two memory addresses \u2013 the initial MSP and the PSP \u2013 so the total size of the stack in bytes can be set by knowing the initial memory address \u2013 the initial MSP value \u2013 and getting the final memory address by subtracting the difference.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-10T20:58:55.034485",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T20:59:05.242539",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T20:59:12.807128",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-10T20:59:22.391847",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T20:59:31.940446",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T20:59:39.903290",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T20:59:47.013031",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T20:59:55.195619",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T21:00:01.072266",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T21:00:08.718779",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Correct computation of PSP_val** \u2013 The response explicitly states that the new PSP value is obtained by adding the required offset to the previously\u2011obtained\u202fMSP_init_val (e.g., \u201cPSP = MSP_init_val\u202f+\u202foffset\u201d).",
+        "**Accurate offset description** \u2013 The response identifies the exact offset used (the size of the stack frame or the amount subtracted from MSP) and shows that this offset is applied to MSP_init_val to form PSP_val.",
+        "**Explanation of why MSP_init_val is needed** \u2013 The response clearly explains that knowing the initial location of the Main Stack Pointer (MSP) is necessary to ensure that the calculated PSP address lies within a valid stack region and will not overlap other memory.",
+        "**Absence of contradictory or incorrect statements** \u2013 The response contains no statements that contradict the correct computation of PSP_val or the necessity of MSP_init_val; any such error results in a fail for this dimension."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1\nDimension 2: 0\nDimension 3: 1\nDimension 4: 0\nOverall: 0",
+      "timestamp": "2025-11-10T21:00:24.480102",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Correct computation of PSP_val** \u2013 The response explicitly states that the new PSP value is obtained by adding the required offset to the previously\u2011obtained\u202fMSP_init_val (e.g., \u201cPSP = MSP_init_val\u202f+\u202foffset\u201d).",
+        "**Accurate offset description** \u2013 The response identifies the exact offset used (the size of the stack frame or the amount subtracted from MSP) and shows that this offset is applied to MSP_init_val to form PSP_val.",
+        "**Explanation of why MSP_init_val is needed** \u2013 The response clearly explains that knowing the initial location of the Main Stack Pointer (MSP) is necessary to ensure that the calculated PSP address lies within a valid stack region and will not overlap other memory.",
+        "**Absence of contradictory or incorrect statements** \u2013 The response contains no statements that contradict the correct computation of PSP_val or the necessity of MSP_init_val; any such error results in a fail for this dimension."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 0  \nOverall: 0",
+      "timestamp": "2025-11-10T21:00:42.720024",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct computation of PSP_val** \u2013 The response explicitly states that the new PSP value is obtained by adding the required offset to the previously\u2011obtained\u202fMSP_init_val (e.g., \u201cPSP = MSP_init_val\u202f+\u202foffset\u201d).",
+        "**Accurate offset description** \u2013 The response identifies the exact offset used (the size of the stack frame or the amount subtracted from MSP) and shows that this offset is applied to MSP_init_val to form PSP_val.",
+        "**Explanation of why MSP_init_val is needed** \u2013 The response clearly explains that knowing the initial location of the Main Stack Pointer (MSP) is necessary to ensure that the calculated PSP address lies within a valid stack region and will not overlap other memory.",
+        "**Absence of contradictory or incorrect statements** \u2013 The response contains no statements that contradict the correct computation of PSP_val or the necessity of MSP_init_val; any such error results in a fail for this dimension."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T21:00:53.349973",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Correct computation of PSP_val** \u2013 The response explicitly states that the new PSP value is obtained by adding the required offset to the previously\u2011obtained\u202fMSP_init_val (e.g., \u201cPSP = MSP_init_val\u202f+\u202foffset\u201d).",
+        "**Accurate offset description** \u2013 The response identifies the exact offset used (the size of the stack frame or the amount subtracted from MSP) and shows that this offset is applied to MSP_init_val to form PSP_val.",
+        "**Explanation of why MSP_init_val is needed** \u2013 The response clearly explains that knowing the initial location of the Main Stack Pointer (MSP) is necessary to ensure that the calculated PSP address lies within a valid stack region and will not overlap other memory.",
+        "**Absence of contradictory or incorrect statements** \u2013 The response contains no statements that contradict the correct computation of PSP_val or the necessity of MSP_init_val; any such error results in a fail for this dimension."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 0\nOverall: 0",
+      "timestamp": "2025-11-10T21:01:05.710591",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Correct computation of PSP_val** \u2013 The response explicitly states that the new PSP value is obtained by adding the required offset to the previously\u2011obtained\u202fMSP_init_val (e.g., \u201cPSP = MSP_init_val\u202f+\u202foffset\u201d).",
+        "**Accurate offset description** \u2013 The response identifies the exact offset used (the size of the stack frame or the amount subtracted from MSP) and shows that this offset is applied to MSP_init_val to form PSP_val.",
+        "**Explanation of why MSP_init_val is needed** \u2013 The response clearly explains that knowing the initial location of the Main Stack Pointer (MSP) is necessary to ensure that the calculated PSP address lies within a valid stack region and will not overlap other memory.",
+        "**Absence of contradictory or incorrect statements** \u2013 The response contains no statements that contradict the correct computation of PSP_val or the necessity of MSP_init_val; any such error results in a fail for this dimension."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 0\nOverall: 0",
+      "timestamp": "2025-11-10T21:01:25.223035",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Correct computation of PSP_val** \u2013 The response explicitly states that the new PSP value is obtained by adding the required offset to the previously\u2011obtained\u202fMSP_init_val (e.g., \u201cPSP = MSP_init_val\u202f+\u202foffset\u201d).",
+        "**Accurate offset description** \u2013 The response identifies the exact offset used (the size of the stack frame or the amount subtracted from MSP) and shows that this offset is applied to MSP_init_val to form PSP_val.",
+        "**Explanation of why MSP_init_val is needed** \u2013 The response clearly explains that knowing the initial location of the Main Stack Pointer (MSP) is necessary to ensure that the calculated PSP address lies within a valid stack region and will not overlap other memory.",
+        "**Absence of contradictory or incorrect statements** \u2013 The response contains no statements that contradict the correct computation of PSP_val or the necessity of MSP_init_val; any such error results in a fail for this dimension."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 0\nOverall: 0",
+      "timestamp": "2025-11-10T21:01:42.748666",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Correct computation of PSP_val** \u2013 The response explicitly states that the new PSP value is obtained by adding the required offset to the previously\u2011obtained\u202fMSP_init_val (e.g., \u201cPSP = MSP_init_val\u202f+\u202foffset\u201d).",
+        "**Accurate offset description** \u2013 The response identifies the exact offset used (the size of the stack frame or the amount subtracted from MSP) and shows that this offset is applied to MSP_init_val to form PSP_val.",
+        "**Explanation of why MSP_init_val is needed** \u2013 The response clearly explains that knowing the initial location of the Main Stack Pointer (MSP) is necessary to ensure that the calculated PSP address lies within a valid stack region and will not overlap other memory.",
+        "**Absence of contradictory or incorrect statements** \u2013 The response contains no statements that contradict the correct computation of PSP_val or the necessity of MSP_init_val; any such error results in a fail for this dimension."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1\nDimension 2: 0\nDimension 3: 1\nDimension 4: 0\nOverall: 0",
+      "timestamp": "2025-11-10T21:01:56.448879",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Correct computation of PSP_val** \u2013 The response explicitly states that the new PSP value is obtained by adding the required offset to the previously\u2011obtained\u202fMSP_init_val (e.g., \u201cPSP = MSP_init_val\u202f+\u202foffset\u201d).",
+        "**Accurate offset description** \u2013 The response identifies the exact offset used (the size of the stack frame or the amount subtracted from MSP) and shows that this offset is applied to MSP_init_val to form PSP_val.",
+        "**Explanation of why MSP_init_val is needed** \u2013 The response clearly explains that knowing the initial location of the Main Stack Pointer (MSP) is necessary to ensure that the calculated PSP address lies within a valid stack region and will not overlap other memory.",
+        "**Absence of contradictory or incorrect statements** \u2013 The response contains no statements that contradict the correct computation of PSP_val or the necessity of MSP_init_val; any such error results in a fail for this dimension."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 0\nOverall: 0",
+      "timestamp": "2025-11-10T21:02:23.057414",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Correct computation of PSP_val** \u2013 The response explicitly states that the new PSP value is obtained by adding the required offset to the previously\u2011obtained\u202fMSP_init_val (e.g., \u201cPSP = MSP_init_val\u202f+\u202foffset\u201d).",
+        "**Accurate offset description** \u2013 The response identifies the exact offset used (the size of the stack frame or the amount subtracted from MSP) and shows that this offset is applied to MSP_init_val to form PSP_val.",
+        "**Explanation of why MSP_init_val is needed** \u2013 The response clearly explains that knowing the initial location of the Main Stack Pointer (MSP) is necessary to ensure that the calculated PSP address lies within a valid stack region and will not overlap other memory.",
+        "**Absence of contradictory or incorrect statements** \u2013 The response contains no statements that contradict the correct computation of PSP_val or the necessity of MSP_init_val; any such error results in a fail for this dimension."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0\nDimension 2: 0\nDimension 3: 1\nDimension 4: 0\nOverall: 0",
+      "timestamp": "2025-11-10T21:02:39.832645",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Correct computation of PSP_val** \u2013 The response explicitly states that the new PSP value is obtained by adding the required offset to the previously\u2011obtained\u202fMSP_init_val (e.g., \u201cPSP = MSP_init_val\u202f+\u202foffset\u201d).",
+        "**Accurate offset description** \u2013 The response identifies the exact offset used (the size of the stack frame or the amount subtracted from MSP) and shows that this offset is applied to MSP_init_val to form PSP_val.",
+        "**Explanation of why MSP_init_val is needed** \u2013 The response clearly explains that knowing the initial location of the Main Stack Pointer (MSP) is necessary to ensure that the calculated PSP address lies within a valid stack region and will not overlap other memory.",
+        "**Absence of contradictory or incorrect statements** \u2013 The response contains no statements that contradict the correct computation of PSP_val or the necessity of MSP_init_val; any such error results in a fail for this dimension."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 0  \nOverall: 0",
+      "timestamp": "2025-11-10T21:02:52.249350",
+      "method": "qd"
+    }
+  ],
+  "qd_refined_iterations": [
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Offset computation** - The answer must state that PSP_val is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val - offset\" or \"PSP = MSP_init_val + (offset)\"). Simply saying that PSP is \"derived from\" MSP without mentioning an offset is insufficient.",
+        "**Downward stack growth** - The response must indicate that the CortexM4 stack grows toward lower memory addresses, so the offset is applied in the decreasingaddress direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset).",
+        "**Purpose of knowing MSP_init_val** - The answer must explain that knowing the initial MSP location provides a reliable reference point, ensuring that the calculated PSP address lies within a valid stack region. Without this reference we cannot guarantee that PSP points to a legitimate stack address.",
+        "**No contradictory direction claim** - The response must not contain any statement that contradicts the actual stack direction (e.g., claiming the stack grows upward). Any such contradictory claim results in a fail."
+      ],
+      "qd_version": "v6",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 1",
+      "timestamp": "2025-11-10T21:42:07.707540",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Offset computation** - The answer must state that PSP_val is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val - offset\" or \"PSP = MSP_init_val + (offset)\"). Simply saying that PSP is \"derived from\" MSP without mentioning an offset is insufficient.",
+        "**Downward stack growth** - The response must indicate that the CortexM4 stack grows toward lower memory addresses, so the offset is applied in the decreasingaddress direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset).",
+        "**Purpose of knowing MSP_init_val** - The answer must explain that knowing the initial MSP location provides a reliable reference point, ensuring that the calculated PSP address lies within a valid stack region. Without this reference we cannot guarantee that PSP points to a legitimate stack address.",
+        "**No contradictory direction claim** - The response must not contain any statement that contradicts the actual stack direction (e.g., claiming the stack grows upward). Any such contradictory claim results in a fail."
+      ],
+      "qd_version": "v6",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T21:42:18.115616",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Offset computation** - The answer must state that PSP_val is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val - offset\" or \"PSP = MSP_init_val + (offset)\"). Simply saying that PSP is \"derived from\" MSP without mentioning an offset is insufficient.",
+        "**Downward stack growth** - The response must indicate that the CortexM4 stack grows toward lower memory addresses, so the offset is applied in the decreasingaddress direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset).",
+        "**Purpose of knowing MSP_init_val** - The answer must explain that knowing the initial MSP location provides a reliable reference point, ensuring that the calculated PSP address lies within a valid stack region. Without this reference we cannot guarantee that PSP points to a legitimate stack address.",
+        "**No contradictory direction claim** - The response must not contain any statement that contradicts the actual stack direction (e.g., claiming the stack grows upward). Any such contradictory claim results in a fail."
+      ],
+      "qd_version": "v6",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 1",
+      "timestamp": "2025-11-10T21:42:32.119838",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Offset computation** - The answer must state that PSP_val is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val - offset\" or \"PSP = MSP_init_val + (offset)\"). Simply saying that PSP is \"derived from\" MSP without mentioning an offset is insufficient.",
+        "**Downward stack growth** - The response must indicate that the CortexM4 stack grows toward lower memory addresses, so the offset is applied in the decreasingaddress direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset).",
+        "**Purpose of knowing MSP_init_val** - The answer must explain that knowing the initial MSP location provides a reliable reference point, ensuring that the calculated PSP address lies within a valid stack region. Without this reference we cannot guarantee that PSP points to a legitimate stack address.",
+        "**No contradictory direction claim** - The response must not contain any statement that contradicts the actual stack direction (e.g., claiming the stack grows upward). Any such contradictory claim results in a fail."
+      ],
+      "qd_version": "v6",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T21:42:45.303181",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Offset computation** - The answer must state that PSP_val is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val - offset\" or \"PSP = MSP_init_val + (offset)\"). Simply saying that PSP is \"derived from\" MSP without mentioning an offset is insufficient.",
+        "**Downward stack growth** - The response must indicate that the CortexM4 stack grows toward lower memory addresses, so the offset is applied in the decreasingaddress direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset).",
+        "**Purpose of knowing MSP_init_val** - The answer must explain that knowing the initial MSP location provides a reliable reference point, ensuring that the calculated PSP address lies within a valid stack region. Without this reference we cannot guarantee that PSP points to a legitimate stack address.",
+        "**No contradictory direction claim** - The response must not contain any statement that contradicts the actual stack direction (e.g., claiming the stack grows upward). Any such contradictory claim results in a fail."
+      ],
+      "qd_version": "v6",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T21:42:55.360064",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Offset computation** - The answer must state that PSP_val is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val - offset\" or \"PSP = MSP_init_val + (offset)\"). Simply saying that PSP is \"derived from\" MSP without mentioning an offset is insufficient.",
+        "**Downward stack growth** - The response must indicate that the CortexM4 stack grows toward lower memory addresses, so the offset is applied in the decreasingaddress direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset).",
+        "**Purpose of knowing MSP_init_val** - The answer must explain that knowing the initial MSP location provides a reliable reference point, ensuring that the calculated PSP address lies within a valid stack region. Without this reference we cannot guarantee that PSP points to a legitimate stack address.",
+        "**No contradictory direction claim** - The response must not contain any statement that contradicts the actual stack direction (e.g., claiming the stack grows upward). Any such contradictory claim results in a fail."
+      ],
+      "qd_version": "v6",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T21:43:07.383829",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Offset computation** - The answer must state that PSP_val is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val - offset\" or \"PSP = MSP_init_val + (offset)\"). Simply saying that PSP is \"derived from\" MSP without mentioning an offset is insufficient.",
+        "**Downward stack growth** - The response must indicate that the CortexM4 stack grows toward lower memory addresses, so the offset is applied in the decreasingaddress direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset).",
+        "**Purpose of knowing MSP_init_val** - The answer must explain that knowing the initial MSP location provides a reliable reference point, ensuring that the calculated PSP address lies within a valid stack region. Without this reference we cannot guarantee that PSP points to a legitimate stack address.",
+        "**No contradictory direction claim** - The response must not contain any statement that contradicts the actual stack direction (e.g., claiming the stack grows upward). Any such contradictory claim results in a fail."
+      ],
+      "qd_version": "v6",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T21:43:18.017291",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Offset computation** - The answer must state that PSP_val is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val - offset\" or \"PSP = MSP_init_val + (offset)\"). Simply saying that PSP is \"derived from\" MSP without mentioning an offset is insufficient.",
+        "**Downward stack growth** - The response must indicate that the CortexM4 stack grows toward lower memory addresses, so the offset is applied in the decreasingaddress direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset).",
+        "**Purpose of knowing MSP_init_val** - The answer must explain that knowing the initial MSP location provides a reliable reference point, ensuring that the calculated PSP address lies within a valid stack region. Without this reference we cannot guarantee that PSP points to a legitimate stack address.",
+        "**No contradictory direction claim** - The response must not contain any statement that contradicts the actual stack direction (e.g., claiming the stack grows upward). Any such contradictory claim results in a fail."
+      ],
+      "qd_version": "v6",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T21:43:27.857833",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Offset computation** - The answer must state that PSP_val is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val - offset\" or \"PSP = MSP_init_val + (offset)\"). Simply saying that PSP is \"derived from\" MSP without mentioning an offset is insufficient.",
+        "**Downward stack growth** - The response must indicate that the CortexM4 stack grows toward lower memory addresses, so the offset is applied in the decreasingaddress direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset).",
+        "**Purpose of knowing MSP_init_val** - The answer must explain that knowing the initial MSP location provides a reliable reference point, ensuring that the calculated PSP address lies within a valid stack region. Without this reference we cannot guarantee that PSP points to a legitimate stack address.",
+        "**No contradictory direction claim** - The response must not contain any statement that contradicts the actual stack direction (e.g., claiming the stack grows upward). Any such contradictory claim results in a fail."
+      ],
+      "qd_version": "v6",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 1",
+      "timestamp": "2025-11-10T21:43:41.129336",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Offset computation** - The answer must state that PSP_val is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val - offset\" or \"PSP = MSP_init_val + (offset)\"). Simply saying that PSP is \"derived from\" MSP without mentioning an offset is insufficient.",
+        "**Downward stack growth** - The response must indicate that the CortexM4 stack grows toward lower memory addresses, so the offset is applied in the decreasingaddress direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset).",
+        "**Purpose of knowing MSP_init_val** - The answer must explain that knowing the initial MSP location provides a reliable reference point, ensuring that the calculated PSP address lies within a valid stack region. Without this reference we cannot guarantee that PSP points to a legitimate stack address.",
+        "**No contradictory direction claim** - The response must not contain any statement that contradicts the actual stack direction (e.g., claiming the stack grows upward). Any such contradictory claim results in a fail."
+      ],
+      "qd_version": "v6",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T21:43:50.745956",
+      "method": "qd"
+    }
+  ],
+  "baseline_metrics": {
+    "consensus": 80.0,
+    "flip_rate": 20.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 8,
+    "fail_count": 2
+  },
+  "qd_initial_version": "v1",
+  "qd_initial_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 0,
+    "fail_count": 10
+  },
+  "qd_result": "improved_or_maintained",
+  "refinement_reason": "majority_changed",
+  "baseline_majority": 1,
+  "qd_majority": 0,
+  "qd_refined_metrics": {
+    "consensus": 90.0,
+    "flip_rate": 10.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 9,
+    "fail_count": 1
+  },
+  "qd_refined_version": "v6",
+  "refinement_result": "success",
+  "refinement_attempt_count": 0,
+  "abandoned_reason": "After 2 refinement attempts (v2, v3), still success - marking as maintained",
+  "qd_refined_iterations_v6": [
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Offset computation** - The answer must state that PSP_val is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val - offset\" or \"PSP = MSP_init_val + (offset)\"). Simply saying that PSP is \"derived from\" MSP without mentioning an offset is insufficient.",
+        "**Downward stack growth** - The response must indicate that the CortexM4 stack grows toward lower memory addresses, so the offset is applied in the decreasingaddress direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset).",
+        "**Purpose of knowing MSP_init_val** - The answer must explain that knowing the initial MSP location provides a reliable reference point, ensuring that the calculated PSP address lies within a valid stack region. Without this reference we cannot guarantee that PSP points to a legitimate stack address.",
+        "**No contradictory direction claim** - The response must not contain any statement that contradicts the actual stack direction (e.g., claiming the stack grows upward). Any such contradictory claim results in a fail."
+      ],
+      "qd_version": "v6",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 1",
+      "timestamp": "2025-11-10T21:42:07.707540",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Offset computation** - The answer must state that PSP_val is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val - offset\" or \"PSP = MSP_init_val + (offset)\"). Simply saying that PSP is \"derived from\" MSP without mentioning an offset is insufficient.",
+        "**Downward stack growth** - The response must indicate that the CortexM4 stack grows toward lower memory addresses, so the offset is applied in the decreasingaddress direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset).",
+        "**Purpose of knowing MSP_init_val** - The answer must explain that knowing the initial MSP location provides a reliable reference point, ensuring that the calculated PSP address lies within a valid stack region. Without this reference we cannot guarantee that PSP points to a legitimate stack address.",
+        "**No contradictory direction claim** - The response must not contain any statement that contradicts the actual stack direction (e.g., claiming the stack grows upward). Any such contradictory claim results in a fail."
+      ],
+      "qd_version": "v6",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T21:42:18.115616",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Offset computation** - The answer must state that PSP_val is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val - offset\" or \"PSP = MSP_init_val + (offset)\"). Simply saying that PSP is \"derived from\" MSP without mentioning an offset is insufficient.",
+        "**Downward stack growth** - The response must indicate that the CortexM4 stack grows toward lower memory addresses, so the offset is applied in the decreasingaddress direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset).",
+        "**Purpose of knowing MSP_init_val** - The answer must explain that knowing the initial MSP location provides a reliable reference point, ensuring that the calculated PSP address lies within a valid stack region. Without this reference we cannot guarantee that PSP points to a legitimate stack address.",
+        "**No contradictory direction claim** - The response must not contain any statement that contradicts the actual stack direction (e.g., claiming the stack grows upward). Any such contradictory claim results in a fail."
+      ],
+      "qd_version": "v6",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 1",
+      "timestamp": "2025-11-10T21:42:32.119838",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Offset computation** - The answer must state that PSP_val is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val - offset\" or \"PSP = MSP_init_val + (offset)\"). Simply saying that PSP is \"derived from\" MSP without mentioning an offset is insufficient.",
+        "**Downward stack growth** - The response must indicate that the CortexM4 stack grows toward lower memory addresses, so the offset is applied in the decreasingaddress direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset).",
+        "**Purpose of knowing MSP_init_val** - The answer must explain that knowing the initial MSP location provides a reliable reference point, ensuring that the calculated PSP address lies within a valid stack region. Without this reference we cannot guarantee that PSP points to a legitimate stack address.",
+        "**No contradictory direction claim** - The response must not contain any statement that contradicts the actual stack direction (e.g., claiming the stack grows upward). Any such contradictory claim results in a fail."
+      ],
+      "qd_version": "v6",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T21:42:45.303181",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Offset computation** - The answer must state that PSP_val is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val - offset\" or \"PSP = MSP_init_val + (offset)\"). Simply saying that PSP is \"derived from\" MSP without mentioning an offset is insufficient.",
+        "**Downward stack growth** - The response must indicate that the CortexM4 stack grows toward lower memory addresses, so the offset is applied in the decreasingaddress direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset).",
+        "**Purpose of knowing MSP_init_val** - The answer must explain that knowing the initial MSP location provides a reliable reference point, ensuring that the calculated PSP address lies within a valid stack region. Without this reference we cannot guarantee that PSP points to a legitimate stack address.",
+        "**No contradictory direction claim** - The response must not contain any statement that contradicts the actual stack direction (e.g., claiming the stack grows upward). Any such contradictory claim results in a fail."
+      ],
+      "qd_version": "v6",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T21:42:55.360064",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Offset computation** - The answer must state that PSP_val is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val - offset\" or \"PSP = MSP_init_val + (offset)\"). Simply saying that PSP is \"derived from\" MSP without mentioning an offset is insufficient.",
+        "**Downward stack growth** - The response must indicate that the CortexM4 stack grows toward lower memory addresses, so the offset is applied in the decreasingaddress direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset).",
+        "**Purpose of knowing MSP_init_val** - The answer must explain that knowing the initial MSP location provides a reliable reference point, ensuring that the calculated PSP address lies within a valid stack region. Without this reference we cannot guarantee that PSP points to a legitimate stack address.",
+        "**No contradictory direction claim** - The response must not contain any statement that contradicts the actual stack direction (e.g., claiming the stack grows upward). Any such contradictory claim results in a fail."
+      ],
+      "qd_version": "v6",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T21:43:07.383829",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Offset computation** - The answer must state that PSP_val is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val - offset\" or \"PSP = MSP_init_val + (offset)\"). Simply saying that PSP is \"derived from\" MSP without mentioning an offset is insufficient.",
+        "**Downward stack growth** - The response must indicate that the CortexM4 stack grows toward lower memory addresses, so the offset is applied in the decreasingaddress direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset).",
+        "**Purpose of knowing MSP_init_val** - The answer must explain that knowing the initial MSP location provides a reliable reference point, ensuring that the calculated PSP address lies within a valid stack region. Without this reference we cannot guarantee that PSP points to a legitimate stack address.",
+        "**No contradictory direction claim** - The response must not contain any statement that contradicts the actual stack direction (e.g., claiming the stack grows upward). Any such contradictory claim results in a fail."
+      ],
+      "qd_version": "v6",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T21:43:18.017291",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Offset computation** - The answer must state that PSP_val is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val - offset\" or \"PSP = MSP_init_val + (offset)\"). Simply saying that PSP is \"derived from\" MSP without mentioning an offset is insufficient.",
+        "**Downward stack growth** - The response must indicate that the CortexM4 stack grows toward lower memory addresses, so the offset is applied in the decreasingaddress direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset).",
+        "**Purpose of knowing MSP_init_val** - The answer must explain that knowing the initial MSP location provides a reliable reference point, ensuring that the calculated PSP address lies within a valid stack region. Without this reference we cannot guarantee that PSP points to a legitimate stack address.",
+        "**No contradictory direction claim** - The response must not contain any statement that contradicts the actual stack direction (e.g., claiming the stack grows upward). Any such contradictory claim results in a fail."
+      ],
+      "qd_version": "v6",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T21:43:27.857833",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Offset computation** - The answer must state that PSP_val is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val - offset\" or \"PSP = MSP_init_val + (offset)\"). Simply saying that PSP is \"derived from\" MSP without mentioning an offset is insufficient.",
+        "**Downward stack growth** - The response must indicate that the CortexM4 stack grows toward lower memory addresses, so the offset is applied in the decreasingaddress direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset).",
+        "**Purpose of knowing MSP_init_val** - The answer must explain that knowing the initial MSP location provides a reliable reference point, ensuring that the calculated PSP address lies within a valid stack region. Without this reference we cannot guarantee that PSP points to a legitimate stack address.",
+        "**No contradictory direction claim** - The response must not contain any statement that contradicts the actual stack direction (e.g., claiming the stack grows upward). Any such contradictory claim results in a fail."
+      ],
+      "qd_version": "v6",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 1",
+      "timestamp": "2025-11-10T21:43:41.129336",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Offset computation** - The answer must state that PSP_val is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val - offset\" or \"PSP = MSP_init_val + (offset)\"). Simply saying that PSP is \"derived from\" MSP without mentioning an offset is insufficient.",
+        "**Downward stack growth** - The response must indicate that the CortexM4 stack grows toward lower memory addresses, so the offset is applied in the decreasingaddress direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset).",
+        "**Purpose of knowing MSP_init_val** - The answer must explain that knowing the initial MSP location provides a reliable reference point, ensuring that the calculated PSP address lies within a valid stack region. Without this reference we cannot guarantee that PSP points to a legitimate stack address.",
+        "**No contradictory direction claim** - The response must not contain any statement that contradicts the actual stack direction (e.g., claiming the stack grows upward). Any such contradictory claim results in a fail."
+      ],
+      "qd_version": "v6",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T21:43:50.745956",
+      "method": "qd"
+    }
+  ],
+  "qd_refined_iterations_v5": [
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Explicit offset relationship** - The response must state that the new PSP value is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val  OFFSET\"). Merely saying PSP is \"derived from\" MSP is insufficient; the offset operation must be mentioned.",
+        "**Correct stackgrowth direction for the offset** - The answer must identify that the CortexM4 stack grows downward and therefore the offset is applied in that direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset). The exact numeric size of the offset is optional, but the sign must be consistent with downward stack growth.",
+        "**Reason for needing the initial MSP address** - The response must explain that knowing the initial MSP location gives a reliable reference point, ensuring that the computed PSP address lies within a valid stack region. Without that reference we cannot guarantee PSP points to a legitimate stack address.",
+        "**No contradictory stackdirection claim** - The answer must not contain any statement that contradicts the actual CortexM4 stack direction (e.g., it must not claim that the stack grows upward). Any such contradictory claim results in a Fail."
+      ],
+      "qd_version": "v5",
+      "raw_response": "Dimension 1: 1\nDimension 2: 0\nDimension 3: 1\nDimension 4: 1\nOverall: 0",
+      "timestamp": "2025-11-10T21:30:12.624933",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Explicit offset relationship** - The response must state that the new PSP value is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val  OFFSET\"). Merely saying PSP is \"derived from\" MSP is insufficient; the offset operation must be mentioned.",
+        "**Correct stackgrowth direction for the offset** - The answer must identify that the CortexM4 stack grows downward and therefore the offset is applied in that direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset). The exact numeric size of the offset is optional, but the sign must be consistent with downward stack growth.",
+        "**Reason for needing the initial MSP address** - The response must explain that knowing the initial MSP location gives a reliable reference point, ensuring that the computed PSP address lies within a valid stack region. Without that reference we cannot guarantee PSP points to a legitimate stack address.",
+        "**No contradictory stackdirection claim** - The answer must not contain any statement that contradicts the actual CortexM4 stack direction (e.g., it must not claim that the stack grows upward). Any such contradictory claim results in a Fail."
+      ],
+      "qd_version": "v5",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T21:30:23.049829",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Explicit offset relationship** - The response must state that the new PSP value is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val  OFFSET\"). Merely saying PSP is \"derived from\" MSP is insufficient; the offset operation must be mentioned.",
+        "**Correct stackgrowth direction for the offset** - The answer must identify that the CortexM4 stack grows downward and therefore the offset is applied in that direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset). The exact numeric size of the offset is optional, but the sign must be consistent with downward stack growth.",
+        "**Reason for needing the initial MSP address** - The response must explain that knowing the initial MSP location gives a reliable reference point, ensuring that the computed PSP address lies within a valid stack region. Without that reference we cannot guarantee PSP points to a legitimate stack address.",
+        "**No contradictory stackdirection claim** - The answer must not contain any statement that contradicts the actual CortexM4 stack direction (e.g., it must not claim that the stack grows upward). Any such contradictory claim results in a Fail."
+      ],
+      "qd_version": "v5",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T21:30:40.745508",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Explicit offset relationship** - The response must state that the new PSP value is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val  OFFSET\"). Merely saying PSP is \"derived from\" MSP is insufficient; the offset operation must be mentioned.",
+        "**Correct stackgrowth direction for the offset** - The answer must identify that the CortexM4 stack grows downward and therefore the offset is applied in that direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset). The exact numeric size of the offset is optional, but the sign must be consistent with downward stack growth.",
+        "**Reason for needing the initial MSP address** - The response must explain that knowing the initial MSP location gives a reliable reference point, ensuring that the computed PSP address lies within a valid stack region. Without that reference we cannot guarantee PSP points to a legitimate stack address.",
+        "**No contradictory stackdirection claim** - The answer must not contain any statement that contradicts the actual CortexM4 stack direction (e.g., it must not claim that the stack grows upward). Any such contradictory claim results in a Fail."
+      ],
+      "qd_version": "v5",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T21:30:49.083999",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Explicit offset relationship** - The response must state that the new PSP value is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val  OFFSET\"). Merely saying PSP is \"derived from\" MSP is insufficient; the offset operation must be mentioned.",
+        "**Correct stackgrowth direction for the offset** - The answer must identify that the CortexM4 stack grows downward and therefore the offset is applied in that direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset). The exact numeric size of the offset is optional, but the sign must be consistent with downward stack growth.",
+        "**Reason for needing the initial MSP address** - The response must explain that knowing the initial MSP location gives a reliable reference point, ensuring that the computed PSP address lies within a valid stack region. Without that reference we cannot guarantee PSP points to a legitimate stack address.",
+        "**No contradictory stackdirection claim** - The answer must not contain any statement that contradicts the actual CortexM4 stack direction (e.g., it must not claim that the stack grows upward). Any such contradictory claim results in a Fail."
+      ],
+      "qd_version": "v5",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 1",
+      "timestamp": "2025-11-10T21:30:57.646974",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Explicit offset relationship** - The response must state that the new PSP value is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val  OFFSET\"). Merely saying PSP is \"derived from\" MSP is insufficient; the offset operation must be mentioned.",
+        "**Correct stackgrowth direction for the offset** - The answer must identify that the CortexM4 stack grows downward and therefore the offset is applied in that direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset). The exact numeric size of the offset is optional, but the sign must be consistent with downward stack growth.",
+        "**Reason for needing the initial MSP address** - The response must explain that knowing the initial MSP location gives a reliable reference point, ensuring that the computed PSP address lies within a valid stack region. Without that reference we cannot guarantee PSP points to a legitimate stack address.",
+        "**No contradictory stackdirection claim** - The answer must not contain any statement that contradicts the actual CortexM4 stack direction (e.g., it must not claim that the stack grows upward). Any such contradictory claim results in a Fail."
+      ],
+      "qd_version": "v5",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 1",
+      "timestamp": "2025-11-10T21:31:05.329199",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Explicit offset relationship** - The response must state that the new PSP value is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val  OFFSET\"). Merely saying PSP is \"derived from\" MSP is insufficient; the offset operation must be mentioned.",
+        "**Correct stackgrowth direction for the offset** - The answer must identify that the CortexM4 stack grows downward and therefore the offset is applied in that direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset). The exact numeric size of the offset is optional, but the sign must be consistent with downward stack growth.",
+        "**Reason for needing the initial MSP address** - The response must explain that knowing the initial MSP location gives a reliable reference point, ensuring that the computed PSP address lies within a valid stack region. Without that reference we cannot guarantee PSP points to a legitimate stack address.",
+        "**No contradictory stackdirection claim** - The answer must not contain any statement that contradicts the actual CortexM4 stack direction (e.g., it must not claim that the stack grows upward). Any such contradictory claim results in a Fail."
+      ],
+      "qd_version": "v5",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T21:31:23.305115",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Explicit offset relationship** - The response must state that the new PSP value is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val  OFFSET\"). Merely saying PSP is \"derived from\" MSP is insufficient; the offset operation must be mentioned.",
+        "**Correct stackgrowth direction for the offset** - The answer must identify that the CortexM4 stack grows downward and therefore the offset is applied in that direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset). The exact numeric size of the offset is optional, but the sign must be consistent with downward stack growth.",
+        "**Reason for needing the initial MSP address** - The response must explain that knowing the initial MSP location gives a reliable reference point, ensuring that the computed PSP address lies within a valid stack region. Without that reference we cannot guarantee PSP points to a legitimate stack address.",
+        "**No contradictory stackdirection claim** - The answer must not contain any statement that contradicts the actual CortexM4 stack direction (e.g., it must not claim that the stack grows upward). Any such contradictory claim results in a Fail."
+      ],
+      "qd_version": "v5",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 1",
+      "timestamp": "2025-11-10T21:31:34.547444",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Explicit offset relationship** - The response must state that the new PSP value is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val  OFFSET\"). Merely saying PSP is \"derived from\" MSP is insufficient; the offset operation must be mentioned.",
+        "**Correct stackgrowth direction for the offset** - The answer must identify that the CortexM4 stack grows downward and therefore the offset is applied in that direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset). The exact numeric size of the offset is optional, but the sign must be consistent with downward stack growth.",
+        "**Reason for needing the initial MSP address** - The response must explain that knowing the initial MSP location gives a reliable reference point, ensuring that the computed PSP address lies within a valid stack region. Without that reference we cannot guarantee PSP points to a legitimate stack address.",
+        "**No contradictory stackdirection claim** - The answer must not contain any statement that contradicts the actual CortexM4 stack direction (e.g., it must not claim that the stack grows upward). Any such contradictory claim results in a Fail."
+      ],
+      "qd_version": "v5",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 1",
+      "timestamp": "2025-11-10T21:31:41.888637",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Explicit offset relationship** - The response must state that the new PSP value is obtained by applying a fixed arithmetic offset to the previously obtained MSP_init_val (e.g., \"PSP = MSP_init_val  OFFSET\"). Merely saying PSP is \"derived from\" MSP is insufficient; the offset operation must be mentioned.",
+        "**Correct stackgrowth direction for the offset** - The answer must identify that the CortexM4 stack grows downward and therefore the offset is applied in that direction (i.e., a subtraction from MSP_init_val or an addition of a negative offset). The exact numeric size of the offset is optional, but the sign must be consistent with downward stack growth.",
+        "**Reason for needing the initial MSP address** - The response must explain that knowing the initial MSP location gives a reliable reference point, ensuring that the computed PSP address lies within a valid stack region. Without that reference we cannot guarantee PSP points to a legitimate stack address.",
+        "**No contradictory stackdirection claim** - The answer must not contain any statement that contradicts the actual CortexM4 stack direction (e.g., it must not claim that the stack grows upward). Any such contradictory claim results in a Fail."
+      ],
+      "qd_version": "v5",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T21:31:56.168850",
+      "method": "qd"
+    }
+  ],
+  "qd_refined_metrics_v6": {
+    "consensus": 90.0,
+    "flip_rate": 10.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 9,
+    "fail_count": 1
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "question_id": "L1Q4",
+  "response_id": "R15",
+  "response_text": "The stack grows towards 0 from the higher edge. So essentially from the MSP_init_val, we get a new value for PSP_Val by going 400 bytes down the stack. We needed to know the initial location of MSP so that when we assigned a value for PSP we knew we weren\u2019t overwriting over values or using memory that wasn\u2019t available.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T02:32:51.513489",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T02:32:57.761299",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T02:33:04.989609",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T02:33:09.698521",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T02:33:15.077721",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T02:33:20.465361",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T02:33:26.767158",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T02:33:32.743619",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T02:33:38.480480",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T02:33:44.832976",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T02:34:12.528281",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T02:34:42.522151",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T02:35:11.837275",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T02:35:18.017888",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T02:35:24.585099",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T02:35:30.613425",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T02:35:36.482047",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T02:35:42.018403",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T02:35:47.696937",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T02:35:55.919517",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 20,
+    "pass_count": 20,
+    "fail_count": 0
+  },
+  "version_progression": [
+    {
+      "version": "baseline",
+      "version_label": "Baseline (Rubric)",
+      "metrics": {
+        "consensus": 100.0,
+        "flip_rate": 0.0,
+        "majority": 1,
+        "sample_size": 20,
+        "pass_count": 20,
+        "fail_count": 0
+      },
+      "flip_rate_change_vs_baseline": 0.0,
+      "timestamp": "2025-11-11T02:35:55.923412"
+    }
+  ],
+  "qd_initial_version": "v1",
+  "qd_version_selected": "v1",
+  "skip_reason": "baseline_already_stable"
+}

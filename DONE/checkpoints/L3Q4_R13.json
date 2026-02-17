@@ -1,0 +1,77 @@
+{
+  "question_id": "L3Q4",
+  "response_id": "R13",
+  "response_text": "A stack pool is a section of memory that is specifically for storing stack space for multiple threads. To properly function, a thread needs to have local variables, function calls, and information to switch between threads. To store this information, each thread is assigned and allocated a stack, where this memory is within the stack pool. In a future lab, to enable multiple threads, each thread is assigned a section of memory from the stack pool (assigned an initial value and this is set at the pointer to the thread and instructions are given to assign future values of the stack, i.e growing upwards or downwards). This allows each thread to have its own stack with its own personal information so no threads overwrite instructions for another thread. This also allow switching between threads, as the OS can save the stack pointer in the registers and restore once the thread wants to be resumed.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:35:24.707901",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:35:32.936436",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:35:41.121768",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:35:49.709539",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:35:58.310466",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:36:07.164680",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:36:16.548020",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:36:25.609768",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:36:30.612953",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:36:38.923855",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

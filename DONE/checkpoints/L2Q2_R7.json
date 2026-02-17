@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q2",
+  "response_id": "R7",
+  "response_text": "A system call is a method that allows the user to pass specific instructions from the program to the OS to either perform certain function or access hardware. In this lab, this is achieved using the SVC instruction to create a system call framework. Using assembly, the line __asm(\u201cSVC\u201d # xx\u201d) triggers this system call, which is like telling the OS to do a certain action. It will pass this into the SVC_Handler function which prepares the stack and calls the C function SVC_Handler. This function controls the actual system call and performs the task based on the number xx passed by the assembly line. This method provided a secure way to handle tasks like I/O or memory management.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:25:19.661443",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:25:30.169555",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:25:39.138847",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:25:48.418189",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:25:52.850043",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:26:02.491984",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:26:12.134040",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:26:20.305927",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:26:29.628218",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:26:38.297808",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

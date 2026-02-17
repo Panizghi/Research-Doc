@@ -1,0 +1,77 @@
+{
+  "question_id": "L3Q3",
+  "response_id": "R4",
+  "response_text": "To set up and start a thread from the user\u2019s perspective, you begin by initializing the kernel, which prepares the internal data structures and variables needed by the operating system. Then, you write a thread function that contains the code you want the thread to execute. This function must follow the required format, typically taking a void* argument and returning nothing. When creating the thread, you provide the address of this function to the kernel, which is how the operating system knows what code the thread should run. Supplying the address is different from just writing the function, because the kernel needs a reference it can use to begin execution. After the thread is created and properly set up with its own stack, you start the kernel, which begins executing the thread by switching to its context and calling the function at the provided address. If everything is done correctly, the thread will start running and its behavior can be observed.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:02:59.673411",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:03:05.919545",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:03:10.381331",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:03:19.473738",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:03:29.012651",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:03:31.769608",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:03:40.690779",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:03:48.545261",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:03:51.647336",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:03:58.041930",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

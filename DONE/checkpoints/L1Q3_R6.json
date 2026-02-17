@@ -1,0 +1,156 @@
+{
+  "question_id": "L1Q3",
+  "response_id": "R6",
+  "response_text": "The debugger is a useful tool that acts as a method to \u201cview\u201d the internal process of a code at various points of time. Specifically, it investigates data such as values of local and global variables, the order of function calls, and importantly, registers. The debugger uses a concept known as breakpoints, which is placed by the user before pressing the debug button. Its function is to allow the program to run the debugging process and stop at each indicated breakpoint, where the variable and register values can be viewed AT the moment where the code hit the breakpoint. This allows users to identify exactly where errors were made in the program. In this lab, it was important that the debugger tool displayed the values of all the registers at the desired breakpoint. These registers include the registers r0 to r12, sp, pc, and xpsr. In the lab we used the debugger to view the register that stores the address of variables MSP and PSP values to see if they were spaced properly in the stack that was created. Simply using the printf function to check values isn\u2019t as efficient, printf only displays as many outputs at one instance, which doesn\u2019t grant as much flexibility as the debugger with breakpoints. Furthermore, using printf functions can potentially alter the behaviour of the general code.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:55:49.566946",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:55:54.733325",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:55:58.602608",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:56:03.543479",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:56:07.081970",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:56:12.772013",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:56:17.340438",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:56:22.390053",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:56:27.948523",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:56:34.395005",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:56:39.560025",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:56:43.423311",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:56:46.736617",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:56:50.668917",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:56:55.991683",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:57:02.141086",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:57:08.144664",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:57:12.877306",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:57:16.853266",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:57:22.776273",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 20,
+    "pass_count": 20,
+    "fail_count": 0
+  },
+  "version_progression": [
+    {
+      "version": "baseline",
+      "version_label": "Baseline (Rubric)",
+      "metrics": {
+        "consensus": 100.0,
+        "flip_rate": 0.0,
+        "majority": 1,
+        "sample_size": 20,
+        "pass_count": 20,
+        "fail_count": 0
+      },
+      "flip_rate_change_vs_baseline": 0.0,
+      "timestamp": "2025-11-11T09:57:22.778862"
+    }
+  ],
+  "qd_initial_version": "v1",
+  "qd_version_selected": "v1",
+  "skip_reason": "baseline_already_stable"
+}

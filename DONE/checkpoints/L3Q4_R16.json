@@ -1,0 +1,77 @@
+{
+  "question_id": "L3Q4",
+  "response_id": "R16",
+  "response_text": "The kernel contains the low-level code that controls how threads run, manages stacks, and interacts with the hardware. The user code is what we write to actually use those kernel functions \u2014 like creating threads and defining what the threads should do. Keeping them separate makes things cleaner and safer, because the user doesn\u2019t need to know all the complicated stuff the kernel is doing in the background. From the user\u2019s perspective, it\u2019s like having a toolbox \u2014 I just need to know what tools are available and how to use them, not how they were built.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:38:40.345640",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:38:45.293039",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:38:50.039201",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:38:55.476171",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:38:57.810435",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:39:02.550798",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:39:07.227697",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:39:12.363303",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:39:17.892765",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:39:23.622004",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 0,
+    "fail_count": 10
+  }
+}

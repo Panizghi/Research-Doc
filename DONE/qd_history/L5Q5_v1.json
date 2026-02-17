@@ -1,0 +1,13 @@
+{
+  "dimensions": [
+    "**Mentions the PendSV handler (or an interrupt) as the mechanism that performs context switching** - the response must explicitly name PendSV or state that an interrupt routine carries out the switch.",
+    "**States that the same contextswitching code/logic is used for both yielding and timebased preemptive switches** - the answer must indicate that the OS invokes identical switching routines regardless of whether the switch is cooperative or interruptdriven.",
+    "**Explains that the trigger (yield vs. interrupt) does not affect the switching process** - the response must assert that how the switch is initiated is irrelevant to the actual contextswitch operation.",
+    "**Contains no factual errors or contradictions about the interaction of yielding and preemptive switching** - any statement that misrepresents the role of PendSV, the shared code, or the triggerindependence results in a fail for this dimension."
+  ],
+  "raw_response": "1. **Mentions the PendSV handler (or an interrupt) as the mechanism that performs context switching** - the response must explicitly name PendSV or state that an interrupt routine carries out the switch.  \n\n2. **States that the same contextswitching code/logic is used for both yielding and timebased preemptive switches** - the answer must indicate that the OS invokes identical switching routines regardless of whether the switch is cooperative or interruptdriven.  \n\n3. **Explains that the trigger (yield vs. interrupt) does not affect the switching process** - the response must assert that how the switch is initiated is irrelevant to the actual contextswitch operation.  \n\n4. **Contains no factual errors or contradictions about the interaction of yielding and preemptive switching** - any statement that misrepresents the role of PendSV, the shared code, or the triggerindependence results in a fail for this dimension.  ",
+  "timestamp": "2025-11-10T22:35:22.363019",
+  "version": "v1",
+  "operation": "initial_generation",
+  "parent_version": null
+}

@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q5",
+  "response_id": "R6",
+  "response_text": "The program would still run as intended, but there would a lot of unnecessary thread \u201cswitching\u201d given that the only thread that it can switch to would be the single thread that is being run. Explaining the sequence of events with the print_continuously function, the thread would run and print out a message, then call osYield(), triggering the PendSV interrupt to perform a context switch, storing the register values onto the current stack pointer. At this point, osSched() would be called to switch to the next thread, however with only one thread available the next thread ends up being the print_continously function again. The register values would then be restored onto the stack so that the thread would perform. The context switch in this case was unnecessary and only slows the runtime of the program when compared to just forever looping the print_continuously function. An analogy that represents this behaviour would be to open the door multiple times over and over again to go in; it\u2019s redundant and in the end the same outcome would be achieved.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x10f8d53d0>: Failed to resolve 'ece-nebula16.eng.uwaterloo.ca' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "timestamp": "2025-11-12T08:27:12.577065",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x10f65c1d0>: Failed to resolve 'ece-nebula16.eng.uwaterloo.ca' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "timestamp": "2025-11-12T08:27:13.584786",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x10f8838c0>: Failed to resolve 'ece-nebula16.eng.uwaterloo.ca' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "timestamp": "2025-11-12T08:27:14.597567",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x10b7f2c90>: Failed to resolve 'ece-nebula16.eng.uwaterloo.ca' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "timestamp": "2025-11-12T08:27:15.613977",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x10f8d4d10>: Failed to resolve 'ece-nebula16.eng.uwaterloo.ca' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "timestamp": "2025-11-12T08:27:16.625783",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x10f8d5820>: Failed to resolve 'ece-nebula16.eng.uwaterloo.ca' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "timestamp": "2025-11-12T08:27:17.633586",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x10f8d6870>: Failed to resolve 'ece-nebula16.eng.uwaterloo.ca' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "timestamp": "2025-11-12T08:27:18.647078",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x10f8d7530>: Failed to resolve 'ece-nebula16.eng.uwaterloo.ca' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "timestamp": "2025-11-12T08:27:19.657201",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x10f883b60>: Failed to resolve 'ece-nebula16.eng.uwaterloo.ca' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "timestamp": "2025-11-12T08:27:20.665522",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x10f8d7530>: Failed to resolve 'ece-nebula16.eng.uwaterloo.ca' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "timestamp": "2025-11-12T08:27:21.673985",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 0,
+    "fail_count": 10
+  }
+}

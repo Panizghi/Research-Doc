@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q4",
+  "response_id": "R2",
+  "response_text": "Benefits of calling C functions:\\nReadability and maintainability: C is much easier to read and write than assembly.\\nPortability: C code can be reused or ported to other architectures with fewer changes.\\nFaster development: Writing logic like thread selection or bookkeeping is faster and less error-prone in C.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T08:17:58.242853",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T08:18:01.751873",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:18:10.570502",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T08:18:18.452798",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T08:18:22.007850",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T08:18:29.107445",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T08:18:38.165493",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T08:18:45.897748",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T08:18:58.237538",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:19:06.152332",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 80.0,
+    "flip_rate": 20.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 2,
+    "fail_count": 8
+  }
+}

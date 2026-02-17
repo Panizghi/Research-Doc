@@ -1,0 +1,40 @@
+2025-11-02 13:25:32,325 - exp_aa0f1f3d - INFO - Initialized experiment aa0f1f3d
+2025-11-02 13:25:32,326 - exp_aa0f1f3d - INFO - 
+############################################################
+2025-11-02 13:25:32,326 - exp_aa0f1f3d - INFO - STARTING EXPERIMENT aa0f1f3d
+2025-11-02 13:25:32,326 - exp_aa0f1f3d - INFO - Questions: 5
+2025-11-02 13:25:32,326 - exp_aa0f1f3d - INFO - Trials: 10
+2025-11-02 13:25:32,326 - exp_aa0f1f3d - INFO - Max refinements: 3
+2025-11-02 13:25:32,327 - exp_aa0f1f3d - INFO - ############################################################
+2025-11-02 13:25:32,415 - exp_aa0f1f3d.data - INFO - Loaded 8344 responses from database
+2025-11-02 13:25:32,417 - exp_aa0f1f3d.data - INFO - Loaded 25 rubrics from database
+2025-11-02 13:25:32,420 - exp_aa0f1f3d.data - INFO - L1Q1: 27 train, 13 test
+2025-11-02 13:25:32,421 - exp_aa0f1f3d.data - INFO - L1Q2: 27 train, 13 test
+2025-11-02 13:25:32,422 - exp_aa0f1f3d.data - INFO - L1Q3: 27 train, 13 test
+2025-11-02 13:25:32,423 - exp_aa0f1f3d.data - INFO - L1Q4: 27 train, 13 test
+2025-11-02 13:25:32,424 - exp_aa0f1f3d.data - INFO - L1Q5: 27 train, 13 test
+2025-11-02 13:25:32,425 - exp_aa0f1f3d.data - INFO - L2Q1: 27 train, 13 test
+2025-11-02 13:25:32,426 - exp_aa0f1f3d.data - INFO - L2Q2: 27 train, 13 test
+2025-11-02 13:25:32,428 - exp_aa0f1f3d.data - INFO - L2Q3: 27 train, 13 test
+2025-11-02 13:25:32,429 - exp_aa0f1f3d.data - INFO - L2Q4: 27 train, 13 test
+2025-11-02 13:25:32,431 - exp_aa0f1f3d.data - INFO - L2Q5: 27 train, 13 test
+2025-11-02 13:25:32,432 - exp_aa0f1f3d.data - INFO - L3Q1: 27 train, 13 test
+2025-11-02 13:25:32,433 - exp_aa0f1f3d.data - INFO - L3Q2: 27 train, 13 test
+2025-11-02 13:25:32,435 - exp_aa0f1f3d.data - INFO - L3Q3: 27 train, 13 test
+2025-11-02 13:25:32,436 - exp_aa0f1f3d.data - INFO - L3Q4: 27 train, 13 test
+2025-11-02 13:25:32,437 - exp_aa0f1f3d.data - INFO - L3Q5: 27 train, 13 test
+2025-11-02 13:25:32,438 - exp_aa0f1f3d.data - INFO - L4Q1: 27 train, 13 test
+2025-11-02 13:25:32,440 - exp_aa0f1f3d.data - INFO - L4Q2: 27 train, 13 test
+2025-11-02 13:25:32,442 - exp_aa0f1f3d.data - INFO - L4Q3: 27 train, 13 test
+2025-11-02 13:25:32,445 - exp_aa0f1f3d.data - INFO - L4Q4: 27 train, 13 test
+2025-11-02 13:25:32,446 - exp_aa0f1f3d.data - INFO - L4Q5: 27 train, 13 test
+2025-11-02 13:25:32,448 - exp_aa0f1f3d.data - INFO - L5Q1: 27 train, 13 test
+2025-11-02 13:25:32,450 - exp_aa0f1f3d.data - INFO - L5Q2: 27 train, 13 test
+2025-11-02 13:25:32,451 - exp_aa0f1f3d.data - INFO - L5Q3: 27 train, 13 test
+2025-11-02 13:25:32,452 - exp_aa0f1f3d.data - INFO - L5Q4: 27 train, 13 test
+2025-11-02 13:25:32,453 - exp_aa0f1f3d.data - INFO - L5Q5: 27 train, 13 test
+2025-11-02 13:25:32,460 - exp_aa0f1f3d - INFO - 
+============================================================
+2025-11-02 13:25:32,460 - exp_aa0f1f3d - INFO - Starting Lab 2, Question 4
+2025-11-02 13:25:32,460 - exp_aa0f1f3d - WARNING - Only 27 training samples
+2025-11-02 13:25:32,461 - exp_aa0f1f3d - INFO - Running baseline grading with rubric...

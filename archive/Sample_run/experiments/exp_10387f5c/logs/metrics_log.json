@@ -1,0 +1,225 @@
+[
+  {
+    "experiment_id": "10387f5c",
+    "lab": 2,
+    "question": 4,
+    "iteration": -1,
+    "metric_name": "flip_rate_baseline",
+    "value": 0.0,
+    "details": {
+      "flip_rate": 0.0,
+      "flips": 0,
+      "total_answers": 2,
+      "borderline_rate": 50.0,
+      "borderline_count": 1,
+      "avg_confidence": 0.895,
+      "std_confidence": 0.04499999999999999,
+      "avg_consistency": 1.0,
+      "overall_pass_rate": 0.5
+    },
+    "timestamp": "2025-11-02T13:14:41.531613"
+  },
+  {
+    "experiment_id": "10387f5c",
+    "lab": 2,
+    "question": 4,
+    "iteration": 0,
+    "metric_name": "flip_rate",
+    "value": 0.0,
+    "details": {
+      "flip_rate": 0.0,
+      "flips": 0,
+      "total_answers": 2,
+      "borderline_rate": 0.0,
+      "borderline_count": 0,
+      "avg_confidence": 0.895,
+      "std_confidence": 0.03500000000000003,
+      "avg_consistency": 1.0,
+      "overall_pass_rate": 1.0
+    },
+    "timestamp": "2025-11-02T13:15:51.217519"
+  },
+  {
+    "experiment_id": "10387f5c",
+    "lab": 2,
+    "question": 4,
+    "iteration": 0,
+    "metric_name": "borderline_rate",
+    "value": 0.0,
+    "details": null,
+    "timestamp": "2025-11-02T13:15:51.218272"
+  },
+  {
+    "experiment_id": "10387f5c",
+    "lab": 2,
+    "question": 4,
+    "iteration": 0,
+    "metric_name": "avg_mutual_info",
+    "value": 0.0,
+    "details": {
+      "qd_names": [
+        "SeparateThreadStack",
+        "PSPUsedForThreads",
+        "SetPSPToThreadStack",
+        "ConsequenceOfNotSettingPSP"
+      ],
+      "orthogonality_score": NaN,
+      "mutual_info_matrix": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "correlation_matrix": [
+        [
+          NaN,
+          NaN,
+          NaN,
+          NaN
+        ],
+        [
+          NaN,
+          NaN,
+          NaN,
+          NaN
+        ],
+        [
+          NaN,
+          NaN,
+          NaN,
+          NaN
+        ],
+        [
+          NaN,
+          NaN,
+          NaN,
+          0.9999999999999999
+        ]
+      ],
+      "co_occurrence_matrix": [
+        [
+          1.0,
+          1.0,
+          1.0,
+          0.5
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          0.5
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ],
+      "avg_mutual_info": 0.0,
+      "avg_correlation": NaN,
+      "avg_co_occurrence": 0.75,
+      "avg_coupling": NaN,
+      "diagnostic_pairs": [
+        {
+          "qd1": "SeparateThreadStack",
+          "qd2": "PSPUsedForThreads",
+          "mi": 0.0,
+          "corr": NaN,
+          "co": 1.0,
+          "coupling_score": NaN
+        },
+        {
+          "qd1": "SeparateThreadStack",
+          "qd2": "SetPSPToThreadStack",
+          "mi": 0.0,
+          "corr": NaN,
+          "co": 1.0,
+          "coupling_score": NaN
+        },
+        {
+          "qd1": "SeparateThreadStack",
+          "qd2": "ConsequenceOfNotSettingPSP",
+          "mi": 0.0,
+          "corr": NaN,
+          "co": 0.5,
+          "coupling_score": NaN
+        },
+        {
+          "qd1": "PSPUsedForThreads",
+          "qd2": "SetPSPToThreadStack",
+          "mi": 0.0,
+          "corr": NaN,
+          "co": 1.0,
+          "coupling_score": NaN
+        },
+        {
+          "qd1": "PSPUsedForThreads",
+          "qd2": "ConsequenceOfNotSettingPSP",
+          "mi": 0.0,
+          "corr": NaN,
+          "co": 0.5,
+          "coupling_score": NaN
+        }
+      ],
+      "num_coupled_pairs": 0
+    },
+    "timestamp": "2025-11-02T13:15:51.219074"
+  },
+  {
+    "experiment_id": "10387f5c",
+    "lab": 2,
+    "question": 4,
+    "iteration": 0,
+    "metric_name": "avg_correlation",
+    "value": NaN,
+    "details": null,
+    "timestamp": "2025-11-02T13:15:51.219729"
+  },
+  {
+    "experiment_id": "10387f5c",
+    "lab": 2,
+    "question": 4,
+    "iteration": 0,
+    "metric_name": "avg_co_occurrence",
+    "value": 0.75,
+    "details": null,
+    "timestamp": "2025-11-02T13:15:51.220283"
+  },
+  {
+    "experiment_id": "10387f5c",
+    "lab": 2,
+    "question": 4,
+    "iteration": 0,
+    "metric_name": "num_coupled_pairs",
+    "value": 0,
+    "details": null,
+    "timestamp": "2025-11-02T13:15:51.220766"
+  }
+]

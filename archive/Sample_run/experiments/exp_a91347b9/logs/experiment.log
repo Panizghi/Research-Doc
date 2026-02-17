@@ -1,0 +1,141 @@
+2025-11-02 13:58:49,617 - exp_a91347b9 - INFO - Initialized experiment a91347b9
+2025-11-02 13:58:49,617 - exp_a91347b9 - INFO - 
+############################################################
+2025-11-02 13:58:49,617 - exp_a91347b9 - INFO - STARTING EXPERIMENT a91347b9
+2025-11-02 13:58:49,618 - exp_a91347b9 - INFO - Questions: 5
+2025-11-02 13:58:49,618 - exp_a91347b9 - INFO - Trials: 10
+2025-11-02 13:58:49,618 - exp_a91347b9 - INFO - Max refinements: 3
+2025-11-02 13:58:49,618 - exp_a91347b9 - INFO - ############################################################
+2025-11-02 13:58:49,758 - exp_a91347b9.data - INFO - Loaded 8344 responses from database
+2025-11-02 13:58:49,760 - exp_a91347b9.data - INFO - Loaded 25 rubrics from database
+2025-11-02 13:58:49,762 - exp_a91347b9.data - INFO - DEBUG L1Q1: Total rows in group: 356
+2025-11-02 13:58:49,762 - exp_a91347b9.data - INFO - DEBUG L1Q1: Sampling down from 356 to 40
+2025-11-02 13:58:49,763 - exp_a91347b9.data - INFO - DEBUG L1Q1: After limiting/padding: 40
+2025-11-02 13:58:49,765 - exp_a91347b9.data - INFO - DEBUG L1Q1: Split with stratification: train=27, test=13
+2025-11-02 13:58:49,765 - exp_a91347b9.data - INFO - L1Q1: 27 train, 13 test
+2025-11-02 13:58:49,765 - exp_a91347b9.data - INFO - DEBUG L1Q2: Total rows in group: 351
+2025-11-02 13:58:49,766 - exp_a91347b9.data - INFO - DEBUG L1Q2: Sampling down from 351 to 40
+2025-11-02 13:58:49,766 - exp_a91347b9.data - INFO - DEBUG L1Q2: After limiting/padding: 40
+2025-11-02 13:58:49,767 - exp_a91347b9.data - INFO - DEBUG L1Q2: Split with stratification: train=27, test=13
+2025-11-02 13:58:49,767 - exp_a91347b9.data - INFO - L1Q2: 27 train, 13 test
+2025-11-02 13:58:49,767 - exp_a91347b9.data - INFO - DEBUG L1Q3: Total rows in group: 351
+2025-11-02 13:58:49,767 - exp_a91347b9.data - INFO - DEBUG L1Q3: Sampling down from 351 to 40
+2025-11-02 13:58:49,768 - exp_a91347b9.data - INFO - DEBUG L1Q3: After limiting/padding: 40
+2025-11-02 13:58:49,768 - exp_a91347b9.data - INFO - DEBUG L1Q3: Split with stratification: train=27, test=13
+2025-11-02 13:58:49,769 - exp_a91347b9.data - INFO - L1Q3: 27 train, 13 test
+2025-11-02 13:58:49,769 - exp_a91347b9.data - INFO - DEBUG L1Q4: Total rows in group: 351
+2025-11-02 13:58:49,769 - exp_a91347b9.data - INFO - DEBUG L1Q4: Sampling down from 351 to 40
+2025-11-02 13:58:49,769 - exp_a91347b9.data - INFO - DEBUG L1Q4: After limiting/padding: 40
+2025-11-02 13:58:49,770 - exp_a91347b9.data - INFO - DEBUG L1Q4: Split with stratification: train=27, test=13
+2025-11-02 13:58:49,770 - exp_a91347b9.data - INFO - L1Q4: 27 train, 13 test
+2025-11-02 13:58:49,771 - exp_a91347b9.data - INFO - DEBUG L1Q5: Total rows in group: 337
+2025-11-02 13:58:49,771 - exp_a91347b9.data - INFO - DEBUG L1Q5: Sampling down from 337 to 40
+2025-11-02 13:58:49,771 - exp_a91347b9.data - INFO - DEBUG L1Q5: After limiting/padding: 40
+2025-11-02 13:58:49,772 - exp_a91347b9.data - INFO - DEBUG L1Q5: Split with stratification: train=27, test=13
+2025-11-02 13:58:49,772 - exp_a91347b9.data - INFO - L1Q5: 27 train, 13 test
+2025-11-02 13:58:49,772 - exp_a91347b9.data - INFO - DEBUG L2Q1: Total rows in group: 396
+2025-11-02 13:58:49,773 - exp_a91347b9.data - INFO - DEBUG L2Q1: Sampling down from 396 to 40
+2025-11-02 13:58:49,773 - exp_a91347b9.data - INFO - DEBUG L2Q1: After limiting/padding: 40
+2025-11-02 13:58:49,774 - exp_a91347b9.data - INFO - DEBUG L2Q1: Split with stratification: train=27, test=13
+2025-11-02 13:58:49,774 - exp_a91347b9.data - INFO - L2Q1: 27 train, 13 test
+2025-11-02 13:58:49,775 - exp_a91347b9.data - INFO - DEBUG L2Q2: Total rows in group: 395
+2025-11-02 13:58:49,775 - exp_a91347b9.data - INFO - DEBUG L2Q2: Sampling down from 395 to 40
+2025-11-02 13:58:49,775 - exp_a91347b9.data - INFO - DEBUG L2Q2: After limiting/padding: 40
+2025-11-02 13:58:49,776 - exp_a91347b9.data - INFO - DEBUG L2Q2: Split with stratification: train=27, test=13
+2025-11-02 13:58:49,776 - exp_a91347b9.data - INFO - L2Q2: 27 train, 13 test
+2025-11-02 13:58:49,777 - exp_a91347b9.data - INFO - DEBUG L2Q3: Total rows in group: 392
+2025-11-02 13:58:49,777 - exp_a91347b9.data - INFO - DEBUG L2Q3: Sampling down from 392 to 40
+2025-11-02 13:58:49,777 - exp_a91347b9.data - INFO - DEBUG L2Q3: After limiting/padding: 40
+2025-11-02 13:58:49,778 - exp_a91347b9.data - INFO - DEBUG L2Q3: Split with stratification: train=27, test=13
+2025-11-02 13:58:49,778 - exp_a91347b9.data - INFO - L2Q3: 27 train, 13 test
+2025-11-02 13:58:49,778 - exp_a91347b9.data - INFO - DEBUG L2Q4: Total rows in group: 386
+2025-11-02 13:58:49,779 - exp_a91347b9.data - INFO - DEBUG L2Q4: Sampling down from 386 to 40
+2025-11-02 13:58:49,779 - exp_a91347b9.data - INFO - DEBUG L2Q4: After limiting/padding: 40
+2025-11-02 13:58:49,783 - exp_a91347b9.data - INFO - DEBUG L2Q4: Split with stratification: train=27, test=13
+2025-11-02 13:58:49,783 - exp_a91347b9.data - INFO - L2Q4: 27 train, 13 test
+2025-11-02 13:58:49,784 - exp_a91347b9.data - INFO - DEBUG L2Q5: Total rows in group: 378
+2025-11-02 13:58:49,784 - exp_a91347b9.data - INFO - DEBUG L2Q5: Sampling down from 378 to 40
+2025-11-02 13:58:49,785 - exp_a91347b9.data - INFO - DEBUG L2Q5: After limiting/padding: 40
+2025-11-02 13:58:49,786 - exp_a91347b9.data - INFO - DEBUG L2Q5: Split with stratification: train=27, test=13
+2025-11-02 13:58:49,786 - exp_a91347b9.data - INFO - L2Q5: 27 train, 13 test
+2025-11-02 13:58:49,786 - exp_a91347b9.data - INFO - DEBUG L3Q1: Total rows in group: 325
+2025-11-02 13:58:49,787 - exp_a91347b9.data - INFO - DEBUG L3Q1: Sampling down from 325 to 40
+2025-11-02 13:58:49,787 - exp_a91347b9.data - INFO - DEBUG L3Q1: After limiting/padding: 40
+2025-11-02 13:58:49,787 - exp_a91347b9.data - INFO - DEBUG L3Q1: Split with stratification: train=27, test=13
+2025-11-02 13:58:49,788 - exp_a91347b9.data - INFO - L3Q1: 27 train, 13 test
+2025-11-02 13:58:49,788 - exp_a91347b9.data - INFO - DEBUG L3Q2: Total rows in group: 325
+2025-11-02 13:58:49,788 - exp_a91347b9.data - INFO - DEBUG L3Q2: Sampling down from 325 to 40
+2025-11-02 13:58:49,788 - exp_a91347b9.data - INFO - DEBUG L3Q2: After limiting/padding: 40
+2025-11-02 13:58:49,789 - exp_a91347b9.data - INFO - DEBUG L3Q2: Split with stratification: train=27, test=13
+2025-11-02 13:58:49,789 - exp_a91347b9.data - INFO - L3Q2: 27 train, 13 test
+2025-11-02 13:58:49,789 - exp_a91347b9.data - INFO - DEBUG L3Q3: Total rows in group: 325
+2025-11-02 13:58:49,789 - exp_a91347b9.data - INFO - DEBUG L3Q3: Sampling down from 325 to 40
+2025-11-02 13:58:49,790 - exp_a91347b9.data - INFO - DEBUG L3Q3: After limiting/padding: 40
+2025-11-02 13:58:49,791 - exp_a91347b9.data - INFO - DEBUG L3Q3: Split with stratification: train=27, test=13
+2025-11-02 13:58:49,792 - exp_a91347b9.data - INFO - L3Q3: 27 train, 13 test
+2025-11-02 13:58:49,793 - exp_a91347b9.data - INFO - DEBUG L3Q4: Total rows in group: 325
+2025-11-02 13:58:49,793 - exp_a91347b9.data - INFO - DEBUG L3Q4: Sampling down from 325 to 40
+2025-11-02 13:58:49,793 - exp_a91347b9.data - INFO - DEBUG L3Q4: After limiting/padding: 40
+2025-11-02 13:58:49,794 - exp_a91347b9.data - INFO - DEBUG L3Q4: Split with stratification: train=27, test=13
+2025-11-02 13:58:49,794 - exp_a91347b9.data - INFO - L3Q4: 27 train, 13 test
+2025-11-02 13:58:49,795 - exp_a91347b9.data - INFO - DEBUG L3Q5: Total rows in group: 316
+2025-11-02 13:58:49,795 - exp_a91347b9.data - INFO - DEBUG L3Q5: Sampling down from 316 to 40
+2025-11-02 13:58:49,795 - exp_a91347b9.data - INFO - DEBUG L3Q5: After limiting/padding: 40
+2025-11-02 13:58:49,796 - exp_a91347b9.data - INFO - DEBUG L3Q5: Split with stratification: train=27, test=13
+2025-11-02 13:58:49,796 - exp_a91347b9.data - INFO - L3Q5: 27 train, 13 test
+2025-11-02 13:58:49,796 - exp_a91347b9.data - INFO - DEBUG L4Q1: Total rows in group: 344
+2025-11-02 13:58:49,797 - exp_a91347b9.data - INFO - DEBUG L4Q1: Sampling down from 344 to 40
+2025-11-02 13:58:49,797 - exp_a91347b9.data - INFO - DEBUG L4Q1: After limiting/padding: 40
+2025-11-02 13:58:49,798 - exp_a91347b9.data - INFO - DEBUG L4Q1: Split with stratification: train=27, test=13
+2025-11-02 13:58:49,800 - exp_a91347b9.data - INFO - L4Q1: 27 train, 13 test
+2025-11-02 13:58:49,800 - exp_a91347b9.data - INFO - DEBUG L4Q2: Total rows in group: 344
+2025-11-02 13:58:49,801 - exp_a91347b9.data - INFO - DEBUG L4Q2: Sampling down from 344 to 40
+2025-11-02 13:58:49,801 - exp_a91347b9.data - INFO - DEBUG L4Q2: After limiting/padding: 40
+2025-11-02 13:58:49,802 - exp_a91347b9.data - INFO - DEBUG L4Q2: Split with stratification: train=27, test=13
+2025-11-02 13:58:49,802 - exp_a91347b9.data - INFO - L4Q2: 27 train, 13 test
+2025-11-02 13:58:49,802 - exp_a91347b9.data - INFO - DEBUG L4Q3: Total rows in group: 344
+2025-11-02 13:58:49,803 - exp_a91347b9.data - INFO - DEBUG L4Q3: Sampling down from 344 to 40
+2025-11-02 13:58:49,803 - exp_a91347b9.data - INFO - DEBUG L4Q3: After limiting/padding: 40
+2025-11-02 13:58:49,804 - exp_a91347b9.data - INFO - DEBUG L4Q3: Split with stratification: train=27, test=13
+2025-11-02 13:58:49,804 - exp_a91347b9.data - INFO - L4Q3: 27 train, 13 test
+2025-11-02 13:58:49,804 - exp_a91347b9.data - INFO - DEBUG L4Q4: Total rows in group: 344
+2025-11-02 13:58:49,804 - exp_a91347b9.data - INFO - DEBUG L4Q4: Sampling down from 344 to 40
+2025-11-02 13:58:49,805 - exp_a91347b9.data - INFO - DEBUG L4Q4: After limiting/padding: 40
+2025-11-02 13:58:49,805 - exp_a91347b9.data - INFO - DEBUG L4Q4: Split with stratification: train=27, test=13
+2025-11-02 13:58:49,809 - exp_a91347b9.data - INFO - L4Q4: 27 train, 13 test
+2025-11-02 13:58:49,809 - exp_a91347b9.data - INFO - DEBUG L4Q5: Total rows in group: 343
+2025-11-02 13:58:49,809 - exp_a91347b9.data - INFO - DEBUG L4Q5: Sampling down from 343 to 40
+2025-11-02 13:58:49,810 - exp_a91347b9.data - INFO - DEBUG L4Q5: After limiting/padding: 40
+2025-11-02 13:58:49,811 - exp_a91347b9.data - INFO - DEBUG L4Q5: Split with stratification: train=27, test=13
+2025-11-02 13:58:49,812 - exp_a91347b9.data - INFO - L4Q5: 27 train, 13 test
+2025-11-02 13:58:49,812 - exp_a91347b9.data - INFO - DEBUG L5Q1: Total rows in group: 264
+2025-11-02 13:58:49,812 - exp_a91347b9.data - INFO - DEBUG L5Q1: Sampling down from 264 to 40
+2025-11-02 13:58:49,813 - exp_a91347b9.data - INFO - DEBUG L5Q1: After limiting/padding: 40
+2025-11-02 13:58:49,814 - exp_a91347b9.data - INFO - DEBUG L5Q1: Split with stratification: train=27, test=13
+2025-11-02 13:58:49,814 - exp_a91347b9.data - INFO - L5Q1: 27 train, 13 test
+2025-11-02 13:58:49,814 - exp_a91347b9.data - INFO - DEBUG L5Q2: Total rows in group: 264
+2025-11-02 13:58:49,815 - exp_a91347b9.data - INFO - DEBUG L5Q2: Sampling down from 264 to 40
+2025-11-02 13:58:49,815 - exp_a91347b9.data - INFO - DEBUG L5Q2: After limiting/padding: 40
+2025-11-02 13:58:49,817 - exp_a91347b9.data - INFO - DEBUG L5Q2: Split with stratification: train=27, test=13
+2025-11-02 13:58:49,817 - exp_a91347b9.data - INFO - L5Q2: 27 train, 13 test
+2025-11-02 13:58:49,817 - exp_a91347b9.data - INFO - DEBUG L5Q3: Total rows in group: 264
+2025-11-02 13:58:49,817 - exp_a91347b9.data - INFO - DEBUG L5Q3: Sampling down from 264 to 40
+2025-11-02 13:58:49,818 - exp_a91347b9.data - INFO - DEBUG L5Q3: After limiting/padding: 40
+2025-11-02 13:58:49,819 - exp_a91347b9.data - INFO - DEBUG L5Q3: Split with stratification: train=27, test=13
+2025-11-02 13:58:49,819 - exp_a91347b9.data - INFO - L5Q3: 27 train, 13 test
+2025-11-02 13:58:49,819 - exp_a91347b9.data - INFO - DEBUG L5Q4: Total rows in group: 264
+2025-11-02 13:58:49,819 - exp_a91347b9.data - INFO - DEBUG L5Q4: Sampling down from 264 to 40
+2025-11-02 13:58:49,820 - exp_a91347b9.data - INFO - DEBUG L5Q4: After limiting/padding: 40
+2025-11-02 13:58:49,823 - exp_a91347b9.data - INFO - DEBUG L5Q4: Split with stratification: train=27, test=13
+2025-11-02 13:58:49,824 - exp_a91347b9.data - INFO - L5Q4: 27 train, 13 test
+2025-11-02 13:58:49,824 - exp_a91347b9.data - INFO - DEBUG L5Q5: Total rows in group: 260
+2025-11-02 13:58:49,824 - exp_a91347b9.data - INFO - DEBUG L5Q5: Sampling down from 260 to 40
+2025-11-02 13:58:49,825 - exp_a91347b9.data - INFO - DEBUG L5Q5: After limiting/padding: 40
+2025-11-02 13:58:49,826 - exp_a91347b9.data - INFO - DEBUG L5Q5: Split with stratification: train=27, test=13
+2025-11-02 13:58:49,826 - exp_a91347b9.data - INFO - L5Q5: 27 train, 13 test
+2025-11-02 13:58:49,828 - exp_a91347b9.data - INFO - DEBUG: Total train size: 675, Total test size: 325
+2025-11-02 13:58:49,834 - exp_a91347b9 - INFO - 
+============================================================
+2025-11-02 13:58:49,834 - exp_a91347b9 - INFO - Starting Lab 2, Question 4
+2025-11-02 13:58:49,836 - exp_a91347b9 - WARNING - Only 27 training samples
+2025-11-02 13:58:49,836 - exp_a91347b9 - INFO - Running baseline grading with rubric...

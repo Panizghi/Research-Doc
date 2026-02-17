@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Identifies PSP usage for thread stack",
+    "definition": "Answer states that the Process Stack Pointer (PSP) is used for thread execution.",
+    "rationale": "The rubric requires students to recognize that PSP, not the default stack pointer, holds the thread\u2019s stack."
+  },
+  {
+    "name": "Distinguishes PSP from MSP",
+    "definition": "Answer notes that the thread\u2019s stack location differs from the CPU\u2019s main stack pointer (MSP).",
+    "rationale": "Students must explain the separation between the thread stack and the CPU\u2019s current stack pointer."
+  },
+  {
+    "name": "Specifies __set_PSP sets PSP to thread stack address",
+    "definition": "Answer mentions that __set_PSP assigns PSP the thread\u2019s stack pointer value.",
+    "rationale": "The core action required by the code is to load the thread\u2019s stack address into PSP."
+  },
+  {
+    "name": "Links missing PSP set to hard fault/crash",
+    "definition": "Answer explains that not setting PSP would cause a hard fault or crash.",
+    "rationale": "The rubric expects students to connect the omission of the PSP setup with the resulting fault."
+  }
+]

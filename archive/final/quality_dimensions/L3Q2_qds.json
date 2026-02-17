@@ -1,0 +1,11 @@
+{
+  "dimensions": [
+    "**Correctly identifies the multiple\u2011definition problem** \u2013 the response explicitly states that including a\u202f*.c\u202ffile can cause \u201cmultiple definitions\u201d (or \u201credefinition\u201d) errors when the program is linked.",
+    "**Explains the compilation model for\u202f*.c\u202ffiles** \u2013 the response mentions that\u202f*.c\u202ffiles are compiled separately into object files and that the linker later combines those objects.",
+    "**Distinguishes between header and source files** \u2013 the response notes that\u202f*.h\u202ffiles are meant for inclusion (e.g., contain declarations, guards, etc.) whereas\u202f*.c\u202ffiles contain definitions and should not be #included.",
+    "**Mentions the proper way to share code** \u2013 the response advises using a header file with declarations (and include guards) and linking the compiled\u202f*.c\u202fmodule, rather than #including the source file."
+  ],
+  "raw_response": "1. **Correctly identifies the multiple\u2011definition problem** \u2013 the response explicitly states that including a\u202f*.c\u202ffile can cause \u201cmultiple definitions\u201d (or \u201credefinition\u201d) errors when the program is linked.  \n\n2. **Explains the compilation model for\u202f*.c\u202ffiles** \u2013 the response mentions that\u202f*.c\u202ffiles are compiled separately into object files and that the linker later combines those objects.  \n\n3. **Distinguishes between header and source files** \u2013 the response notes that\u202f*.h\u202ffiles are meant for inclusion (e.g., contain declarations, guards, etc.) whereas\u202f*.c\u202ffiles contain definitions and should not be #included.  \n\n4. **Mentions the proper way to share code** \u2013 the response advises using a header file with declarations (and include guards) and linking the compiled\u202f*.c\u202fmodule, rather than #including the source file.  \n\n*(Each dimension is evaluated as \u201cpass\u201d if the student\u2019s answer contains the required element, otherwise \u201cfail.\u201d)*",
+  "timestamp": "2025-11-09T18:43:14.942104",
+  "version": "initial"
+}

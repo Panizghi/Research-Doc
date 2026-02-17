@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q4",
+  "response_id": "R24",
+  "response_text": "The __set_PSP function tells the processor where the new thread is located in its memory, by setting where the top (address) of the top of the stack is allocated, and then to use this memory address for building the rest of the stack. If this function was not run, then the processor would result in a hard fault, as the rest of the code is referring to memory that has not yet been allocated (invalid memory addresses) and high chance of the memory being misaligned if some memory has been assumed. By using the __set_PSP function, this allows the thread\u2019s stack to have a private stack that is not related to the MSP value and all the variables/stacks/memory that is located there. Using the __set_PSP function ensures that the stack starts from a memory address that fits all requirements to ensure no crashes, this includes (but not limited to); properly aligned memory, not overwriting existing memory, etc. By using the wrong stack pointers, these elements are not confirmed, and thus could result in a hard fault.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:04:57.992099",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:05:05.746909",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:05:13.156427",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:05:26.736689",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:05:34.519739",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:05:43.531127",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:05:49.957771",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:05:57.649659",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:06:09.439737",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:06:16.208061",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

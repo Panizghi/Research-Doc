@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q1",
+  "response_id": "R15",
+  "response_text": "When PC held the print continuously function, the function still operated as expected without a direct call to the print continuously function. A function seeks to separate chunks of logic where a function call will execute logic or in some cases can output values. PC is set to hold the address of what was inside R0 to then executing the print continuously function provided without a return path available. This is beneficial for testing a certain amount of logic within a program promptly as the function is then run immediately from the PC register instead of calling the function directly. In comparison, a function call will take more time, but there is a return path. The \u201cMOV\u201d aspect changed the register of which the value is stored from R0 to PC through copying the data over. A call frame is not produced for the function and no additional memory is created, the PC just accesses the instructions already stored. Nevertheless, the concept of using PC to hold the function pointer is equivalent to a function call as they both seek to retrieve information from a function and execute the given logic. Thus, leading to the same output of the infinite loop from the print continuously function.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:12:09.579486",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:12:19.607066",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:12:31.024536",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:12:43.725181",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:12:53.826273",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:13:05.327461",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:13:14.804217",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:13:26.266714",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:13:41.580457",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:13:51.397972",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

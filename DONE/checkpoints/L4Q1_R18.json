@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q1",
+  "response_id": "R18",
+  "response_text": "Using a queue to implement round robin scheduling can be done by having the threads be enqueued into the queue with the queue holding the functions stack pointer and function pointer for each thread in order. When a thread has to be run, it is dequeued from the front of the queue and runs until the task finishes or the interrupt is generated. If the thread is not yet finished, it is enqueued at the back of the queue, and if it is finished, can be simply discarded from the queue. The advantage of the queue over an array is that once tasks are finished, the order of tasks are automatically moved up instead of having to do individual access on each array element in order to update the order. The current round-robin scheduler already in a way behaves like a queue since it moves from the first to last elements in the array structure over and over again. A queue is simply a more organised and efficient data structure to implement this ordering behaviour. In addition, a queue is better suited to the task we need since we only need access to the first thread in the queue to run and the last position in the queue to enqueue new threads, so the extra overhead of an array which allows you to access any element is not required.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:22:52.538300",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:22:57.329678",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:23:02.898780",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:23:09.288719",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:23:15.686901",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:23:22.026628",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:23:27.168664",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:23:32.913181",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:23:39.439911",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:23:45.349685",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

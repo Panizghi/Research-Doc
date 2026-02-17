@@ -1,0 +1,691 @@
+{
+  "question_id": "L3Q1",
+  "response_id": "R5",
+  "response_text": "The compilation process happens in three steps. First, the preprocessor passes through all of the .c files and modifies the code wherever there\u2019s a preprocessor directive (i.e. macro definition, conditional compilation). Second, each file containing high level code are converted into machine code that the CPU can understand and transformed into individual object files by the compiler.\\nTypically, it is convenient to divide code between multiple files for organization, to control function and variable visibility, and to facilitate code reuse. As such, during the last step it is the job of the linker to consolidate all the independent object files containing code and libraries, by packaging them into a single executable file that can be run by the system. It does this by adding code between each file which essentially\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:42:39.251638",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:42:45.402295",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:42:49.184369",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:42:57.786877",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:43:03.401410",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:43:11.783582",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:43:16.934932",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:43:24.176057",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:43:29.681136",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:43:37.825875",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:43:43.703761",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:43:47.694775",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:43:54.733248",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:44:02.569960",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:44:10.080583",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:44:14.084319",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:44:22.182832",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:44:26.562323",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:44:34.765537",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:44:39.599916",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-09T23:44:55.415500",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-09T23:45:09.120137",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \n\nOverall: 1",
+      "timestamp": "2025-11-09T23:45:23.654707",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-09T23:45:38.145160",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-09T23:45:52.629053",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-09T23:46:03.182890",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-09T23:46:19.910757",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-09T23:46:33.240426",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-09T23:46:50.886548",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-09T23:47:06.712132",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \n\nOverall: 1",
+      "timestamp": "2025-11-09T23:47:20.759759",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-09T23:47:34.476100",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-09T23:47:48.542424",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-09T23:48:02.329613",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-09T23:48:12.758811",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-09T23:48:25.472704",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-09T23:48:37.940300",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \n\nOverall: 1",
+      "timestamp": "2025-11-09T23:48:51.272746",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-09T23:49:05.690709",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-09T23:49:20.635474",
+      "method": "qd"
+    }
+  ],
+  "qd_refined_iterations": [
+    {
+      "grade": -1,
+      "dimension_scores": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x154754c20>: Failed to resolve 'ece-nebula16.eng.uwaterloo.ca' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "timestamp": "2025-11-10T02:02:56.471731",
+      "method": "qd"
+    },
+    {
+      "grade": -1,
+      "dimension_scores": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x154755ee0>: Failed to resolve 'ece-nebula16.eng.uwaterloo.ca' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "timestamp": "2025-11-10T02:02:57.473359",
+      "method": "qd"
+    },
+    {
+      "grade": -1,
+      "dimension_scores": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x1547576b0>: Failed to resolve 'ece-nebula16.eng.uwaterloo.ca' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "timestamp": "2025-11-10T02:02:58.485945",
+      "method": "qd"
+    },
+    {
+      "grade": -1,
+      "dimension_scores": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x1547864e0>: Failed to resolve 'ece-nebula16.eng.uwaterloo.ca' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "timestamp": "2025-11-10T02:02:59.498186",
+      "method": "qd"
+    },
+    {
+      "grade": -1,
+      "dimension_scores": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x15476be90>: Failed to resolve 'ece-nebula16.eng.uwaterloo.ca' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "timestamp": "2025-11-10T02:03:00.513811",
+      "method": "qd"
+    },
+    {
+      "grade": -1,
+      "dimension_scores": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x1547577a0>: Failed to resolve 'ece-nebula16.eng.uwaterloo.ca' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "timestamp": "2025-11-10T02:03:01.526986",
+      "method": "qd"
+    },
+    {
+      "grade": -1,
+      "dimension_scores": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x1547568a0>: Failed to resolve 'ece-nebula16.eng.uwaterloo.ca' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "timestamp": "2025-11-10T02:03:02.535035",
+      "method": "qd"
+    },
+    {
+      "grade": -1,
+      "dimension_scores": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x1547687a0>: Failed to resolve 'ece-nebula16.eng.uwaterloo.ca' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "timestamp": "2025-11-10T02:03:03.546160",
+      "method": "qd"
+    },
+    {
+      "grade": -1,
+      "dimension_scores": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x154757bc0>: Failed to resolve 'ece-nebula16.eng.uwaterloo.ca' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "timestamp": "2025-11-10T02:03:04.596891",
+      "method": "qd"
+    },
+    {
+      "grade": -1,
+      "dimension_scores": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x154754530>: Failed to resolve 'ece-nebula16.eng.uwaterloo.ca' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "timestamp": "2025-11-10T02:03:05.609080",
+      "method": "qd"
+    },
+    {
+      "grade": -1,
+      "dimension_scores": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x1547864b0>: Failed to resolve 'ece-nebula16.eng.uwaterloo.ca' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "timestamp": "2025-11-10T02:03:06.619471",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nDimension 5: 1  \nDimension 6: 1  \nDimension 7: 1  \nDimension 8: 1  \n\nOverall: 0",
+      "timestamp": "2025-11-10T02:03:52.756626",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nDimension 5: 1  \nDimension 6: 1  \nDimension 7: 1  \nDimension 8: 1  \n\nOverall: 0",
+      "timestamp": "2025-11-10T02:04:35.824712",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nDimension 5: 0  \nDimension 6: 1  \nDimension 7: 1  \nDimension 8: 1  \n\nOverall: 0",
+      "timestamp": "2025-11-10T02:05:18.655924",
+      "method": "qd"
+    },
+    {
+      "grade": -1,
+      "dimension_scores": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2025-11-10T02:06:19.681665",
+      "method": "qd"
+    },
+    {
+      "grade": -1,
+      "dimension_scores": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x15409ac90>, 'Connection to ece-nebula16.eng.uwaterloo.ca timed out. (connect timeout=60)'))",
+      "timestamp": "2025-11-10T03:02:26.002148",
+      "method": "qd"
+    },
+    {
+      "grade": -1,
+      "dimension_scores": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x155b84e60>, 'Connection to ece-nebula16.eng.uwaterloo.ca timed out. (connect timeout=60)'))",
+      "timestamp": "2025-11-10T03:03:27.054759",
+      "method": "qd"
+    },
+    {
+      "grade": -1,
+      "dimension_scores": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x155b86240>, 'Connection to ece-nebula16.eng.uwaterloo.ca timed out. (connect timeout=60)'))",
+      "timestamp": "2025-11-10T03:04:28.088488",
+      "method": "qd"
+    },
+    {
+      "grade": -1,
+      "dimension_scores": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x15404bc80>, 'Connection to ece-nebula16.eng.uwaterloo.ca timed out. (connect timeout=60)'))",
+      "timestamp": "2025-11-10T03:05:29.119321",
+      "method": "qd"
+    },
+    {
+      "grade": -1,
+      "dimension_scores": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x155b85dc0>, 'Connection to ece-nebula16.eng.uwaterloo.ca timed out. (connect timeout=60)'))",
+      "timestamp": "2025-11-10T03:06:30.148340",
+      "method": "qd"
+    }
+  ]
+}

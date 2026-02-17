@@ -1,0 +1,77 @@
+{
+  "question_id": "L3Q5",
+  "response_id": "R2",
+  "response_text": "In an operating system, there is a critical separation between user code and kernel code, and this distinction determines which files different parts of the code belong to.\\nKernel code is the core of the operating system. It controls hardware, manages memory, handles scheduling, and performs context switching between threads. This code goes into files like kernel.c and is written to run in privileged mode, meaning it has full access to the processor and hardware.\\nUser code includes the functions and logic written by application developers to perform tasks using the OS\u2019s services. This code goes into files like main.c or other application-specific files and runs in unprivileged mode, meaning it cannot directly access hardware or critical system functions.\\nFrom the user's perspective, this separation is important for several reasons:\\nSafety and Security: Keeping user code separate from kernel code prevents bugs or malicious behavior in applications from crashing or corrupting the entire system.\\nModularity: The user only needs to know how to interact with the kernel through defined interfaces (e.g., system calls). This simplifies development and makes it easier to use or replace components.\\nClear Boundaries: By knowing what goes where, users can focus on writing application logic without worrying about low-level hardware details, while kernel developers can ensure consistent behavior and resource management.\\nOverall, the distinction ensures a more stable, maintainable, and secure operating system.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:42:22.131381",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:42:28.537775",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:42:34.281456",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:42:46.890488",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:42:55.223946",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:43:01.936297",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:43:10.972067",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:43:19.456083",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:43:28.495261",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:43:34.324482",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 90.0,
+    "flip_rate": 10.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 9,
+    "fail_count": 1
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "question_id": "L3Q3",
+  "response_id": "R11",
+  "response_text": "From a user\u2019s perspective they must first write the function which they want to run in the thread.  Once that is done, they have to initialize the kernel by calling the relevant kernel_init() or os_start() function. This allows the kernel to start tracking the number of threads and to set the MSP accordingly to prepare to run threads. Then they have to call the create thread function, passing it the function they want to run as a parameter. This function allows the kernel to allocate stack space for the thread and to load the correct context into the registers in order to prepare to run the thread. Lastly a function to start the thread executing such as start_thread() has to be used. This tells the kernel to load the context into the registers and begin execution of the process thread.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:12:25.422288",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:12:31.186051",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:12:37.984921",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:12:43.952756",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:12:50.564530",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:12:57.475642",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:13:04.553097",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:13:11.045655",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:13:18.540791",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:13:24.101420",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

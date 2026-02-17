@@ -1,0 +1,27 @@
+{
+  "experiment_id": "10387f5c",
+  "timestamp": "2025-11-02T13:18:04.346753",
+  "num_questions": 1,
+  "config": {
+    "num_trials": 1,
+    "max_refinements": 1,
+    "train_test_split": 0.7,
+    "orthogonal_threshold": 0.6
+  },
+  "results": {
+    "avg_baseline_flip_train": 0.0,
+    "avg_best_qd_flip_train": 0.0,
+    "avg_baseline_flip_test": 0.0,
+    "avg_qd_flip_test": 0.0,
+    "avg_improvement": 0.0,
+    "questions_improved": 0
+  },
+  "per_question": [
+    {
+      "lab": 2,
+      "question": 4,
+      "train_improvement": 0.0,
+      "test_improvement": 0.0
+    }
+  ]
+}

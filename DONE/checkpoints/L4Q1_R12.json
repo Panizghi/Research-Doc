@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q1",
+  "response_id": "R12",
+  "response_text": "Round-robin scheduling can be implemented using a queue by enqueuing each thread control block (TCB) as it is created. When the kernel starts, the first thread is dequeued and assigned to a variable like active_thread. During a context switch, the scheduler dequeues the next thread in the queue (the one that has waited longest), enqueues the currently running thread back into the queue, and updates active_thread to the new thread. This ensures each thread gets a turn in a cyclical and fair order.\\nThis queue-based design has some benefits. It makes the cyclical nature of round-robin scheduling explicit and eliminates the need to manually wrap array indices. It can also simplify removing or skipping threads\u2014for example, when a thread is blocked or terminated\u2014since the scheduler can simply skip enqueuing those threads instead of managing flags or shifting array entries. Encapsulating scheduling behavior in queue operations also helps keep the scheduler code clean and modular.\\nHowever, the array-based scheduler used in the lab already behaves similarly to a queue: it iterates through an array of threads in a circular manner using modulo arithmetic. So, in that sense, it already simulates a round-robin queue using simpler data structures.\\nAdditionally, using an actual queue structure may introduce overhead. Dynamic queues often require pointer manipulation or memory allocation, which can increase complexity and runtime cost\u2014especially in a small embedded system. In contrast, the array approach has minimal overhead and predictable memory usage, which can be important for performance and determinism in real-time systems.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:14:59.088565",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:15:04.929448",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:15:10.722129",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:15:15.219155",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:15:21.696462",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:15:27.491121",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:15:33.068172",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:15:38.479350",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:15:44.745052",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:15:51.120216",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

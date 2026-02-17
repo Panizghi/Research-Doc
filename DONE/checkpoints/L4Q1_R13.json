@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q1",
+  "response_id": "R13",
+  "response_text": "The concept of round-robin scheduling involves allowing an ordered list of tasks to run in a rotating order for a short, but equal amount of time. At the end of this time, if a task has not completed, it is paused, sent to the back of the list, and the next task begins to run. This process can be implemented with a queue, which uses the heap to address each task dynamically in memory (using pointers) to enqueue and dequeue tasks as they run in a rotating schedule. Scheduling with an array (static memory), however, requires manual indexing and shifting of task positions in a list, which can be a more complex process in terms of processing time, allocated memory, and code needed for implementation. Using a queue for a rotating schedule of tasks is more beneficial in this case as it allows for flexible queue sizes and more straightforward written implementation.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:15:59.254963",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:16:09.620274",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:16:18.062202",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:16:26.513209",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:16:33.899962",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:16:41.669869",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:16:49.386953",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:16:57.124442",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:17:04.590704",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:17:11.659332",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 0,
+    "fail_count": 10
+  }
+}

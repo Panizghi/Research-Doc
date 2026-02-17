@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q3",
+  "response_id": "R17",
+  "response_text": "This is a bad idea because it could possibly result in lower priority tasks being starved, while higher priority tasks consume all the CPU resources. For example, there could be multiple low priority tasks that have a small competition time and could be completed in 2 time quantum\u2019s. In addition, there is one highest priority tasks, but it takes a very long time to complete. Based on the scheduling scenario in the question, the highest priority tasks would consume all CPU resources for a long time and leave the other small tasks starved, which is not desirable. In contrast, a round robin scheduling algorithm would be better for this, because it would all the smaller tasks to finish quickly, while the CPU resources are equally shared among the current tasks, and would not cause any starvation in that case.\\nA second issue that could occur in the scenario described is priority inversion. Priority inversion is when a higher priority task needs a resource that is currently being held by a lower priority task. In the scheduling algorithm described in the question, is would be possibly for the lower priority tasks to be pre-empted and then suffer from starvation. As a result, the lower priority tasks would not finish executing and therefore would maintain usage of the resources. In turn, this would cause the higher priority tasks to not run, and it would be blocked for a long time (until the lower priority tasks finishes and frees the resource) at which point the higher priority task could run.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:09:18.379405",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:09:25.474679",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:09:31.912656",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:09:40.189072",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:09:48.005550",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:09:56.255779",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:10:03.346742",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:10:11.121110",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:10:18.079634",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:10:24.690335",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

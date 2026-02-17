@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q3",
+  "response_id": "R21",
+  "response_text": "Thread\u2019s stack was set up by manually placing key register values onto the stack, in the exact order that they would be popped off. Once the stack is ready and the PSP is pointing to it, the system is made to believe that it is \u201cresuming\u201d operations from the thread as if it were interrupted from it. This is done by setting a specific value for the xPSR to enable Thumb mode and the address of the function to the PC. Values for the other registers are also provided since the CPU is expecting them and will attempt to pop them from the stack regardless. If dummy values for those registers are not provided, it could result in the system crashing or a hard fault. This allows the system to fully restore the execution context of the thread, without which the program flow would be interrupted. We are essentially forming a synthetic snapshot for the CPU to restore from it and begin execution from the specified function. This is needed for enabling thread switching, ensuring that the program continues correctly as if the thread had always been running.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:22:52.018101",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:23:01.892000",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:23:12.728872",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:23:26.271664",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:23:31.205901",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:23:41.713843",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:23:50.431938",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:24:02.763123",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:24:16.454361",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:24:28.960796",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

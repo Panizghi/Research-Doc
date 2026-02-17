@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q3",
+  "response_id": "R13",
+  "response_text": "Once the function fell out of its last instruction and executed\u00a0BX LR, the core would load whatever value we pre-stuffed into the thread\u2019s link register. In our setup that LR is just a sentinel (e.g.,\u00a00xFFFFFFFD\u00a0or\u00a00xDEADDEAD), not a real code address, so the CPU would branch to an unmapped or mis-aligned location, immediately triggering a fault that escalates into a HardFault. Because the scheduler assumes threads never \u201creturn\u201d the normal C way, letting one do so leaves the processor with nowhere valid to go and crashes the program.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:08:45.933455",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:08:53.983763",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:09:02.677802",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:09:08.332501",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:09:12.205207",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:09:17.733911",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:09:22.545465",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:09:29.307269",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:09:33.510974",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:09:40.365929",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 0,
+    "fail_count": 10
+  }
+}

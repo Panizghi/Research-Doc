@@ -1,0 +1,156 @@
+{
+  "question_id": "L1Q5",
+  "response_id": "R4",
+  "response_text": "To allocate multiple stacks using the same method, we would need to define a separate memory region for each thread\u2019s stack. Starting from MSP_init_val, we would subtract fixed-size chunks of memory \u2014 one per thread \u2014 to determine each new stack\u2019s base address. In the code, we could create an array to store the stack pointer values, where each entry is calculated as:\\nPSP_base[i] = MSP_init_val - (i + 1) * STACK_SIZE;\\nThis ensures each stack starts at a unique, non-overlapping memory location determined at compile time.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T12:12:54.671327",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T12:13:33.581662",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2025-11-11T12:14:34.677369",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T12:15:07.697658",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2025-11-11T12:16:08.755918",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T12:16:51.080496",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T12:17:35.297444",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2025-11-11T12:18:36.362562",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T12:19:12.322320",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T12:20:12.939955",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T12:20:51.593470",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T12:21:51.888947",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T12:22:31.503016",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2025-11-11T12:23:32.525234",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T12:24:08.928260",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2025-11-11T12:25:10.626268",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T12:25:40.628991",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2025-11-11T12:26:41.650855",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2025-11-11T12:27:42.678368",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T12:28:39.010642",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 20,
+    "pass_count": 20,
+    "fail_count": 0
+  },
+  "version_progression": [
+    {
+      "version": "baseline",
+      "version_label": "Baseline (Rubric)",
+      "metrics": {
+        "consensus": 100.0,
+        "flip_rate": 0.0,
+        "majority": 1,
+        "sample_size": 20,
+        "pass_count": 20,
+        "fail_count": 0
+      },
+      "flip_rate_change_vs_baseline": 0.0,
+      "timestamp": "2025-11-11T19:38:06.744735"
+    }
+  ],
+  "qd_initial_version": "v1",
+  "qd_version_selected": "v1",
+  "skip_reason": "baseline_already_stable"
+}

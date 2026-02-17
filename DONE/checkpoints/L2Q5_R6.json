@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q5",
+  "response_id": "R6",
+  "response_text": "If the thread function simply printed once and returned, then the CPU would attempt run another instruction by using the Link Register, however, without a valid return address to go back to (because the arbitrary value of 0xA isn\u2019t a real address in LR), it will try to pop the invalid LR value leading to a potential crash at hard fault. OSes typically never run into this problem because they never return, instead they exit, run continuously, or yield control over to another thread. Our code doesn\u2019t have a proper method of returning the thread to a valid address and so it would simply result in a crash.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:23:27.227011",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:23:37.617996",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:23:48.456561",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:24:00.227991",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:24:11.109997",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:24:23.479874",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:24:33.637001",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:24:44.206408",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:24:55.276838",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:25:09.115784",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 90.0,
+    "flip_rate": 10.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 1,
+    "fail_count": 9
+  }
+}

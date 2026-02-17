@@ -1,0 +1,77 @@
+{
+  "question_id": "L3Q4",
+  "response_id": "R1",
+  "response_text": "The stack pool is a set amount (dedicated region) of memory in RAM, set aside exclusively for storing thread stacks. Each thread needs its own private thread stack to keep track of local variables, registers, function calls, and return addresses (especially during context switches).\\nIn our case, the stack pool is 0x4000, and our desired thread stack size is 0x400. So, we can carve out a dedicated block of memory (the stack pool), to be able to allocate stacks for new threads as needed. So, if I wanted to create a new thread, all that is required in terms of memory is to create a new stack that takes up the next available 0x400-size block in the stack pool (while ensuring it still fits within the stack pool), and this stack would be specific to the new thread.\\nIn a future lab, multi-threaded programs would require multiple thread stacks (one stack for one thread). We would be able to allocate multiple thread stacks (can fit 10 thread stacks each of size 0x400 bytes in the entire stack pool of 0x4000). Thus, we would be able to run multiple threads, and each thread would get its own space for safe execution. This is essential for context switching (switching to, from, and between threads) and being able to save and restore the stack pointer (PSP) specific to each thread.\\nSeparate stacks are required to prevent multiple threads accessing and writing to the same data. If one stack were shared between threads, there is a high likeliness of data corruption and crashes.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:22:30.406460",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:22:35.784984",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:22:41.422064",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:22:45.476377",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:22:49.614113",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:22:53.478285",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:22:59.218319",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:23:04.131637",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:23:09.508125",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:23:15.933919",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

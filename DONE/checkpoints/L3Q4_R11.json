@@ -1,0 +1,77 @@
+{
+  "question_id": "L3Q4",
+  "response_id": "R11",
+  "response_text": "The stack pool is the region in memory where the individual stacks for any threads are stored. This region is divided into memory chunks of equal size (eg. 0x400 bytes) where threads of 0x400 bytes or less can be stored. Each new thread is assigned its own chunk, which is necessary so that a thread doesn\u2019t overwrite another thread\u2019s data. This also allows threads to be indexed easily, as they are always allocated 0x400 bytes in memory below the last thread.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:33:10.970510",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:33:18.050981",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:33:26.297408",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:33:34.262686",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:33:43.246494",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:33:50.512582",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:33:54.812812",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:34:05.223005",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:34:11.913357",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:34:19.595045",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 90.0,
+    "flip_rate": 10.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 9,
+    "fail_count": 1
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q4",
+  "response_id": "R22",
+  "response_text": "Setting the PSP using __set_PSP in the SVC_Handler_Main function ensures that each thread has a correctly configured stack pointer. Without this, the system would attempt to run threads with incorrect stack configurations, leading to stack corruption, invalid memory access, and ultimately, a hard fault. When switching between threads, the system must save the current thread's context (including the stack pointer) and load the context of the next thread to run so that each thread can resume execution as if it had never been interrupted. Managing the PSP is essential for the stability, safety, and reliability of a multitasking system.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:01:40.471044",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:01:52.295511",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:02:01.230656",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:02:13.088888",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:02:29.525499",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:02:41.010603",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:02:53.399407",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:03:06.592809",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:03:21.074356",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:03:35.529254",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 60.0,
+    "flip_rate": 40.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 6,
+    "fail_count": 4
+  }
+}

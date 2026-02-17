@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q3",
+  "response_id": "R6",
+  "response_text": "Changing the scheduler to always select the task with the highest priority is a bad idea because it effectively prevents all lower-priority tasks from ever running. If one thread has a higher priority than all others and is always ready to run, the scheduler will choose that same thread every time. As a result, the lower-priority threads are completely starved of CPU time\u2014they are never given a chance to run, regardless of how long they\u2019ve been waiting or whether they are critical to system functionality.\\nThis is different from scheduling among high-priority threads. In this case, only the single thread with the highest priority runs, over and over, as long as it remains ready. The system does not alternate between multiple high-priority threads unless they happen to share the exact same priority value. Therefore, if a high-priority thread never blocks or yields, the system becomes effectively single-threaded.\\nThis behavior breaks the fairness that round-robin or multi-level scheduling normally provides. It also introduces the risk of priority inversion, where a low-priority thread holds a resource needed by the high-priority thread but never gets a chance to release it. Even essential background tasks like I/O handling, logging, or watchdog resets may be blocked entirely if they don\u2019t share the highest priority.\\nTo prevent this, a better approach would combine priority-based selection with fairness mechanisms\u2014such as aging, or round-robin scheduling within each priority level\u2014to ensure that all threads eventually get CPU time.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:56:31.408612",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:56:37.202358",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:56:43.557279",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:56:49.235748",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:56:57.136061",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:57:03.581840",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:57:08.682350",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:57:14.589937",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:57:20.719358",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:57:26.810947",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

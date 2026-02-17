@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q1",
+  "response_id": "R3",
+  "response_text": "Round-robin scheduling naturally matches how a queue works: you take the task at the front of the line, let it run, and then put it at the back when it yields. This behavior is exactly what queues are designed for. Using an array can work too, but then you have to manually track which index you're at and wrap around when needed. With a queue, advancing to the next thread happens automatically through enqueue and dequeue operations. Queues also make it easier to add or remove tasks (for example, if a thread blocks or exits), while arrays may leave unused slots or need compacting. However, arrays use less memory per thread, which is important in embedded systems. In this lab, both approaches are fine, but a queue better models real multitasking behavior.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:58:56.678638",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:59:12.805312",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:59:29.954301",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:59:38.852134",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:59:57.839961",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:00:19.466615",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:00:33.218859",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:00:51.590570",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:01:08.311130",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:01:19.953264",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 70.0,
+    "flip_rate": 30.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 3,
+    "fail_count": 7
+  }
+}

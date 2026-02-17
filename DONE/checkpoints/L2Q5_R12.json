@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q5",
+  "response_id": "R12",
+  "response_text": "If the thread function did not loop continuously the thread would terminate as soon as the function terminated and would result in a hard fault due to a lack of a return address. When the processor attempts to return to an address that does not exist, a hard fault occurs to protect the system and to stop the processor from going to a random area of memory. The return address would be stored on the link register at the point when print_continuously was first called, and would tell the thread what to do afterwards, because the link register is not updated properly, it would hard fault when print_continuously terminates\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:32:58.968619",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:33:08.466254",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:33:21.774417",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:33:30.679998",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:33:39.632102",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:33:47.183096",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:33:55.546723",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:34:07.163361",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:34:16.473373",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:34:25.406642",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 80.0,
+    "flip_rate": 20.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 2,
+    "fail_count": 8
+  }
+}

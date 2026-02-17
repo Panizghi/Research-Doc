@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q4",
+  "response_id": "R16",
+  "response_text": "Upon calling the RUN_FIRST_STACK_TRHEAD case we wrote within the SVC_Handler_Main, it will pop the values from the current stack pointer and store them into the cortexM4 registers.\\nIn our code we primed the thread switching by pushing in the desired register values into the PSP pointer.\\nHowever, without actually setting the stack pointer to be at our PSP value, that means that all the effort we took to setting the register values was all for nought, and the program stack will still be in the MSP.  As such, whatever is on the main stack will be transferred into the registers while it is executing code. This can lead to undefined behaviour, especially since the main stack handles important OS processes like interrupts. Since SVC is an interrupt, the registers that the MSP uses must be clean so that they can be handled by the main stack.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:52:52.755039",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:53:04.203218",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:53:14.519959",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:53:23.567347",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:53:33.340163",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:53:46.104955",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:53:57.328012",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:54:08.181072",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:54:18.010706",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:54:27.256688",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

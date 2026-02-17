@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q2",
+  "response_id": "R10",
+  "response_text": "PendSV_Handler executes a context switch with an interrupt within SVC. SVC is first triggered which has a higher priority number for an interrupt in comparison to the Pend which has a lower priority number. This causes the Pend to wait until the SVC is finished, where the SVC is triggered, runs and then uses the registers to restore to the previous state prior to the interrupt and then the Pend is triggered. Pend is still within the interrupt though which is what allows for the context switch.\\nPendSV identifies and access the current thread\u2019s stack, this is done by using the PSP registers which contains the stack pointer for the current running thread. R4-R11 are pushed onto the current thread\u2019s stack as they are not manually saved. This needs to be saved as the values in the registers are important to when the thread will resume.\\nThe scheduler then is used to determine which thread should run next. This makes the scheduler update the global variable of TCB to the next thread. Which triggers the PSP to be updated to the pointer of the stack of the next thread. R4-R11 are restored for that desired stack.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:49:00.157673",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:49:11.511978",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:49:21.477838",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:49:33.923178",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:49:46.375478",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:49:58.712219",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:50:09.231771",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:50:16.882456",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:50:28.084364",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:50:43.853706",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 70.0,
+    "flip_rate": 30.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 3,
+    "fail_count": 7
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "question_id": "L3Q3",
+  "response_id": "R12",
+  "response_text": "Threads are units of execution within a process, while the kernel is the core of the operating system that manages everything; as such, the kernel must be started first so that there is an environment in which processes and threads can run. The kernel must be initialized, then the thread must be registered, and then the kernel must be started. Then, to set up and start a thread from the user\u2019s perspective, the necessary variables (e.g. the initial value of MSP and the default size of a stack) and thread structs must be first initialized followed by a check for sufficient stack space (in this case, 0x400 for the size of the stack). Next, a target function is passed to the thread, and then the method to start the thread is called to execute the previously passed task in a new concurrently running thread.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:13:36.566811",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:13:47.572280",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:13:57.332475",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:14:07.728748",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:14:20.487364",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:14:27.645838",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:14:38.961899",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:14:46.773714",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:14:59.593766",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:15:07.580858",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 80.0,
+    "flip_rate": 20.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 8,
+    "fail_count": 2
+  }
+}

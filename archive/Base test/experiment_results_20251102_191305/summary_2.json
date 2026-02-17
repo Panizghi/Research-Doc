@@ -1,0 +1,1050 @@
+{
+  "timestamp": "2025-11-02T19:13:05.411180",
+  "experiment_name": "test_experiment",
+  "total_questions": 1,
+  "avg_baseline_flip_rate": 20.0,
+  "avg_qd_flip_rate": 20.0,
+  "avg_improvement": 0.0,
+  "improved_count": 0,
+  "per_question_results": [
+    {
+      "lab": 1,
+      "question": 1,
+      "baseline_flip_rate": 20.0,
+      "qd_flip_rate": 20.0,
+      "improvement": 0.0,
+      "num_answers": 5,
+      "operations": [
+        {
+          "iteration": 1,
+          "input_qds": [
+            {
+              "name": "defines_HAL",
+              "definition": "The response explicitly defines HAL as the Hardware Abstraction Layer."
+            },
+            {
+              "name": "states_HAL_purpose",
+              "definition": "The response correctly states that the HAL is used to simplify interaction with the hardware."
+            },
+            {
+              "name": "provides_additional_HAL_benefits",
+              "definition": "The response includes extra, correct details explaining why having a HAL is useful (e.g., portability, code reuse, easier testing, abstraction of hardware specifics)."
+            }
+          ],
+          "sample_answers": [
+            "The HAL is an acronym for hardware abstraction layer and it is a base layer of functionality and functions that we can use to develop and implement functionality onto hardware. The HAL operate as a medium between which the OS and the hardware. The HAL helps us communicate with our STM32 and setup our code so that we can create a general embedded project in a timely manner.\\n",
+            "The HAL (Hardware Abstraction Layer) is a black box of setup code that lets users go directly to programming on the MCU. It provides a set of APIs to interact with components like the libraries and stacks, which are generic and allow a wide range of uses, letting the user skip having to code this base layer.\\n",
+            "The HAL stands for hardware abstraction layer. It sits underneath the operating system, and it provides the interface needed for the operating system to interact with directly with the hardware resources. The layer is \u201cabstract\u201d as it leaves out complex hardware details. This abstraction makes the HAL useful with working with embedded systems, as it generalizes the OS to hardware interface so that the software is not specific to any hardware resources.\\n",
+            "The HAL is a software layer that provides general libraries and functions that allows you to directly work with hardware, so we don\u2019t need to deal with hardware settings and low-level code for registers. For example, if you want to work GPIO or timers, you can call a high-level HAL function instead of figuring out individual register values.\\n",
+            "The HAL is a hardware abstraction layer. It is useful in connecting the software of the computer, in this case the IDE, with the hardware of the Nucleo microcontroller. It is used within a general embedded project to control machines through transmitting information. For instance, in this lab, numbers were transmitted through a function involving HAL between the hardware and the software. The HAL is not necessarily a necessity, but rather a convenience to operate low-level functions within the hardware.\\n"
+          ],
+          "qd_results_before_refinement": {
+            "0": {
+              "grades": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "has_flip": false,
+              "stats": {
+                "count_0": 0,
+                "count_1": 10,
+                "total": 10,
+                "majority": 1,
+                "majority_ratio": 1.0
+              }
+            },
+            "1": {
+              "grades": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "has_flip": false,
+              "stats": {
+                "count_0": 0,
+                "count_1": 10,
+                "total": 10,
+                "majority": 1,
+                "majority_ratio": 1.0
+              }
+            },
+            "2": {
+              "grades": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "has_flip": false,
+              "stats": {
+                "count_0": 0,
+                "count_1": 10,
+                "total": 10,
+                "majority": 1,
+                "majority_ratio": 1.0
+              }
+            },
+            "3": {
+              "grades": [
+                0,
+                1,
+                1,
+                0,
+                0,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "has_flip": true,
+              "stats": {
+                "count_0": 3,
+                "count_1": 7,
+                "total": 10,
+                "majority": 1,
+                "majority_ratio": 0.7
+              }
+            },
+            "4": {
+              "grades": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "has_flip": false,
+              "stats": {
+                "count_0": 0,
+                "count_1": 10,
+                "total": 10,
+                "majority": 1,
+                "majority_ratio": 1.0
+              }
+            }
+          },
+          "comparison_baseline": "original rubric baseline",
+          "comparison_results": {
+            "0": {
+              "grades": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "stats": {
+                "count_0": 0,
+                "count_1": 10,
+                "total": 10,
+                "majority": 1,
+                "majority_ratio": 1.0
+              }
+            },
+            "1": {
+              "grades": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "stats": {
+                "count_0": 0,
+                "count_1": 10,
+                "total": 10,
+                "majority": 1,
+                "majority_ratio": 1.0
+              }
+            },
+            "2": {
+              "grades": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "stats": {
+                "count_0": 0,
+                "count_1": 10,
+                "total": 10,
+                "majority": 1,
+                "majority_ratio": 1.0
+              }
+            },
+            "3": {
+              "grades": [
+                1,
+                0,
+                0,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "stats": {
+                "count_0": 6,
+                "count_1": 4,
+                "total": 10,
+                "majority": 0,
+                "majority_ratio": 0.6
+              }
+            },
+            "4": {
+              "grades": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "stats": {
+                "count_0": 0,
+                "count_1": 10,
+                "total": 10,
+                "majority": 1,
+                "majority_ratio": 1.0
+              }
+            }
+          },
+          "operations": [
+            {
+              "qd_name": "mentions_HAL_term",
+              "operator": "SPLIT",
+              "from_qd": "defines_HAL",
+              "explanation": "Separating the requirement to name the layer removes ambiguity where graders differed on whether a functional description sufficed. Answers that omit the exact term will consistently receive 0, eliminating mixed grades."
+            },
+            {
+              "qd_name": "describes_HAL_as_software_abstraction",
+              "operator": "SPLIT",
+              "from_qd": "defines_HAL",
+              "explanation": "Captures the core functional description without needing the exact term. Graders can uniformly award this criterion, preventing the previous inconsistency where some counted it as a correct definition."
+            },
+            {
+              "qd_name": "states_HAL_simplifies_interaction",
+              "operator": "KEEP",
+              "from_qd": "states_HAL_purpose",
+              "explanation": "Clarifies that the purpose must be expressed directly (e.g., \"simplify interaction with hardware\"). This reduces variation in interpreting implicit phrasing."
+            },
+            {
+              "qd_name": "provides_additional_HAL_benefits",
+              "operator": "KEEP",
+              "from_qd": "provides_additional_HAL_benefits",
+              "explanation": "The original criterion is clear and unambiguous; keeping it preserves the ability to award extra credit for deeper understanding."
+            }
+          ],
+          "output_qds": [
+            {
+              "name": "mentions_HAL_term",
+              "definition": "The response explicitly contains the phrase \"Hardware Abstraction Layer\" (or defines HAL as such)."
+            },
+            {
+              "name": "describes_HAL_as_software_abstraction",
+              "definition": "The response describes HAL as a software layer that abstracts or hides hardware details (e.g., provides libraries/functions, shields from registers)."
+            },
+            {
+              "name": "states_HAL_simplifies_interaction",
+              "definition": "The response explicitly states that the HAL is used to simplify, ease, or abstract interaction with hardware."
+            },
+            {
+              "name": "provides_additional_HAL_benefits",
+              "definition": "The response includes at least one correct additional benefit of using a HAL (e.g., portability, code reuse, easier testing, isolation of hardware specifics)."
+            }
+          ]
+        }
+      ],
+      "final_qds": [
+        {
+          "name": "defines_HAL",
+          "definition": "The response explicitly defines HAL as the Hardware Abstraction Layer."
+        },
+        {
+          "name": "states_HAL_purpose",
+          "definition": "The response correctly states that the HAL is used to simplify interaction with the hardware."
+        },
+        {
+          "name": "provides_additional_HAL_benefits",
+          "definition": "The response includes extra, correct details explaining why having a HAL is useful (e.g., portability, code reuse, easier testing, abstraction of hardware specifics)."
+        }
+      ],
+      "iteration_qds": [
+        {
+          "iteration": 0,
+          "qds": [
+            {
+              "name": "defines_HAL",
+              "definition": "The response explicitly defines HAL as the Hardware Abstraction Layer."
+            },
+            {
+              "name": "states_HAL_purpose",
+              "definition": "The response correctly states that the HAL is used to simplify interaction with the hardware."
+            },
+            {
+              "name": "provides_additional_HAL_benefits",
+              "definition": "The response includes extra, correct details explaining why having a HAL is useful (e.g., portability, code reuse, easier testing, abstraction of hardware specifics)."
+            }
+          ],
+          "flip_rate": 20.0,
+          "majority_violations": 1,
+          "is_best": true,
+          "sample_answers": [
+            "The HAL is an acronym for hardware abstraction layer and it is a base layer of functionality and functions that we can use to develop and implement functionality onto hardware. The HAL operate as a medium between which the OS and the hardware. The HAL helps us communicate with our STM32 and setup our code so that we can create a general embedded project in a timely manner.\\n",
+            "The HAL (Hardware Abstraction Layer) is a black box of setup code that lets users go directly to programming on the MCU. It provides a set of APIs to interact with components like the libraries and stacks, which are generic and allow a wide range of uses, letting the user skip having to code this base layer.\\n",
+            "The HAL stands for hardware abstraction layer. It sits underneath the operating system, and it provides the interface needed for the operating system to interact with directly with the hardware resources. The layer is \u201cabstract\u201d as it leaves out complex hardware details. This abstraction makes the HAL useful with working with embedded systems, as it generalizes the OS to hardware interface so that the software is not specific to any hardware resources.\\n",
+            "The HAL is a software layer that provides general libraries and functions that allows you to directly work with hardware, so we don\u2019t need to deal with hardware settings and low-level code for registers. For example, if you want to work GPIO or timers, you can call a high-level HAL function instead of figuring out individual register values.\\n",
+            "The HAL is a hardware abstraction layer. It is useful in connecting the software of the computer, in this case the IDE, with the hardware of the Nucleo microcontroller. It is used within a general embedded project to control machines through transmitting information. For instance, in this lab, numbers were transmitted through a function involving HAL between the hardware and the software. The HAL is not necessarily a necessity, but rather a convenience to operate low-level functions within the hardware.\\n"
+          ],
+          "qd_results": {
+            "0": {
+              "grades": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "has_flip": false,
+              "stats": {
+                "count_0": 0,
+                "count_1": 10,
+                "total": 10,
+                "majority": 1,
+                "majority_ratio": 1.0
+              }
+            },
+            "1": {
+              "grades": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "has_flip": false,
+              "stats": {
+                "count_0": 0,
+                "count_1": 10,
+                "total": 10,
+                "majority": 1,
+                "majority_ratio": 1.0
+              }
+            },
+            "2": {
+              "grades": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "has_flip": false,
+              "stats": {
+                "count_0": 0,
+                "count_1": 10,
+                "total": 10,
+                "majority": 1,
+                "majority_ratio": 1.0
+              }
+            },
+            "3": {
+              "grades": [
+                0,
+                1,
+                1,
+                0,
+                0,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "has_flip": true,
+              "stats": {
+                "count_0": 3,
+                "count_1": 7,
+                "total": 10,
+                "majority": 1,
+                "majority_ratio": 0.7
+              }
+            },
+            "4": {
+              "grades": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "has_flip": false,
+              "stats": {
+                "count_0": 0,
+                "count_1": 10,
+                "total": 10,
+                "majority": 1,
+                "majority_ratio": 1.0
+              }
+            }
+          },
+          "comparison_baseline": "baseline",
+          "comparison_results": {
+            "0": {
+              "grades": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "stats": {
+                "count_0": 0,
+                "count_1": 10,
+                "total": 10,
+                "majority": 1,
+                "majority_ratio": 1.0
+              }
+            },
+            "1": {
+              "grades": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "stats": {
+                "count_0": 0,
+                "count_1": 10,
+                "total": 10,
+                "majority": 1,
+                "majority_ratio": 1.0
+              }
+            },
+            "2": {
+              "grades": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "stats": {
+                "count_0": 0,
+                "count_1": 10,
+                "total": 10,
+                "majority": 1,
+                "majority_ratio": 1.0
+              }
+            },
+            "3": {
+              "grades": [
+                1,
+                0,
+                0,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "stats": {
+                "count_0": 6,
+                "count_1": 4,
+                "total": 10,
+                "majority": 0,
+                "majority_ratio": 0.6
+              }
+            },
+            "4": {
+              "grades": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "stats": {
+                "count_0": 0,
+                "count_1": 10,
+                "total": 10,
+                "majority": 1,
+                "majority_ratio": 1.0
+              }
+            }
+          }
+        },
+        {
+          "iteration": 1,
+          "qds": [
+            {
+              "name": "mentions_HAL_term",
+              "definition": "The response explicitly contains the phrase \"Hardware Abstraction Layer\" (or defines HAL as such)."
+            },
+            {
+              "name": "describes_HAL_as_software_abstraction",
+              "definition": "The response describes HAL as a software layer that abstracts or hides hardware details (e.g., provides libraries/functions, shields from registers)."
+            },
+            {
+              "name": "states_HAL_simplifies_interaction",
+              "definition": "The response explicitly states that the HAL is used to simplify, ease, or abstract interaction with hardware."
+            },
+            {
+              "name": "provides_additional_HAL_benefits",
+              "definition": "The response includes at least one correct additional benefit of using a HAL (e.g., portability, code reuse, easier testing, isolation of hardware specifics)."
+            }
+          ],
+          "flip_rate": 20.0,
+          "majority_violations": 2,
+          "is_best": false,
+          "sample_answers": [
+            "The HAL is an acronym for hardware abstraction layer and it is a base layer of functionality and functions that we can use to develop and implement functionality onto hardware. The HAL operate as a medium between which the OS and the hardware. The HAL helps us communicate with our STM32 and setup our code so that we can create a general embedded project in a timely manner.\\n",
+            "The HAL (Hardware Abstraction Layer) is a black box of setup code that lets users go directly to programming on the MCU. It provides a set of APIs to interact with components like the libraries and stacks, which are generic and allow a wide range of uses, letting the user skip having to code this base layer.\\n",
+            "The HAL stands for hardware abstraction layer. It sits underneath the operating system, and it provides the interface needed for the operating system to interact with directly with the hardware resources. The layer is \u201cabstract\u201d as it leaves out complex hardware details. This abstraction makes the HAL useful with working with embedded systems, as it generalizes the OS to hardware interface so that the software is not specific to any hardware resources.\\n",
+            "The HAL is a software layer that provides general libraries and functions that allows you to directly work with hardware, so we don\u2019t need to deal with hardware settings and low-level code for registers. For example, if you want to work GPIO or timers, you can call a high-level HAL function instead of figuring out individual register values.\\n",
+            "The HAL is a hardware abstraction layer. It is useful in connecting the software of the computer, in this case the IDE, with the hardware of the Nucleo microcontroller. It is used within a general embedded project to control machines through transmitting information. For instance, in this lab, numbers were transmitted through a function involving HAL between the hardware and the software. The HAL is not necessarily a necessity, but rather a convenience to operate low-level functions within the hardware.\\n"
+          ],
+          "qd_results": {
+            "0": {
+              "grades": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "has_flip": false,
+              "stats": {
+                "count_0": 0,
+                "count_1": 10,
+                "total": 10,
+                "majority": 1,
+                "majority_ratio": 1.0
+              }
+            },
+            "1": {
+              "grades": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "has_flip": false,
+              "stats": {
+                "count_0": 0,
+                "count_1": 10,
+                "total": 10,
+                "majority": 1,
+                "majority_ratio": 1.0
+              }
+            },
+            "2": {
+              "grades": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "has_flip": false,
+              "stats": {
+                "count_0": 0,
+                "count_1": 10,
+                "total": 10,
+                "majority": 1,
+                "majority_ratio": 1.0
+              }
+            },
+            "3": {
+              "grades": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "has_flip": false,
+              "stats": {
+                "count_0": 10,
+                "count_1": 0,
+                "total": 10,
+                "majority": 0,
+                "majority_ratio": 1.0
+              }
+            },
+            "4": {
+              "grades": [
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "has_flip": true,
+              "stats": {
+                "count_0": 7,
+                "count_1": 3,
+                "total": 10,
+                "majority": 0,
+                "majority_ratio": 0.7
+              }
+            }
+          },
+          "comparison_baseline": "previous iteration",
+          "comparison_results": {
+            "0": {
+              "grades": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "stats": {
+                "count_0": 0,
+                "count_1": 10,
+                "total": 10,
+                "majority": 1,
+                "majority_ratio": 1.0
+              }
+            },
+            "1": {
+              "grades": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "stats": {
+                "count_0": 0,
+                "count_1": 10,
+                "total": 10,
+                "majority": 1,
+                "majority_ratio": 1.0
+              }
+            },
+            "2": {
+              "grades": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "stats": {
+                "count_0": 0,
+                "count_1": 10,
+                "total": 10,
+                "majority": 1,
+                "majority_ratio": 1.0
+              }
+            },
+            "3": {
+              "grades": [
+                0,
+                1,
+                1,
+                0,
+                0,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "stats": {
+                "count_0": 3,
+                "count_1": 7,
+                "total": 10,
+                "majority": 1,
+                "majority_ratio": 0.7
+              }
+            },
+            "4": {
+              "grades": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "stats": {
+                "count_0": 0,
+                "count_1": 10,
+                "total": 10,
+                "majority": 1,
+                "majority_ratio": 1.0
+              }
+            }
+          }
+        }
+      ],
+      "per_answer_results": [
+        {
+          "answer_index": 0,
+          "question_text": "The HAL is an acronym for hardware abstraction layer and it is a base layer of functionality and functions that we can use to develop and implement functionality onto hardware. The HAL operate as a medium between which the OS and the hardware. The HAL helps us communicate with our STM32 and setup our code so that we can create a general embedded project in a timely manner.\\n",
+          "usernames": [
+            "ktcollin"
+          ],
+          "baseline_scores": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "qd_scores": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "baseline_flip": false,
+          "qd_flip": false,
+          "borderline_flags": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "answer_index": 1,
+          "question_text": "The HAL (Hardware Abstraction Layer) is a black box of setup code that lets users go directly to programming on the MCU. It provides a set of APIs to interact with components like the libraries and stacks, which are generic and allow a wide range of uses, letting the user skip having to code this base layer.\\n",
+          "usernames": [
+            "j3hou"
+          ],
+          "baseline_scores": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "qd_scores": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "baseline_flip": false,
+          "qd_flip": false,
+          "borderline_flags": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "answer_index": 2,
+          "question_text": "The HAL stands for hardware abstraction layer. It sits underneath the operating system, and it provides the interface needed for the operating system to interact with directly with the hardware resources. The layer is \u201cabstract\u201d as it leaves out complex hardware details. This abstraction makes the HAL useful with working with embedded systems, as it generalizes the OS to hardware interface so that the software is not specific to any hardware resources.\\n",
+          "usernames": [
+            "m6riley"
+          ],
+          "baseline_scores": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "qd_scores": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "baseline_flip": false,
+          "qd_flip": false,
+          "borderline_flags": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "answer_index": 3,
+          "question_text": "The HAL is a software layer that provides general libraries and functions that allows you to directly work with hardware, so we don\u2019t need to deal with hardware settings and low-level code for registers. For example, if you want to work GPIO or timers, you can call a high-level HAL function instead of figuring out individual register values.\\n",
+          "usernames": [
+            "jbluo"
+          ],
+          "baseline_scores": [
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "qd_scores": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "baseline_flip": true,
+          "qd_flip": true,
+          "borderline_flags": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "answer_index": 4,
+          "question_text": "The HAL is a hardware abstraction layer. It is useful in connecting the software of the computer, in this case the IDE, with the hardware of the Nucleo microcontroller. It is used within a general embedded project to control machines through transmitting information. For instance, in this lab, numbers were transmitted through a function involving HAL between the hardware and the software. The HAL is not necessarily a necessity, but rather a convenience to operate low-level functions within the hardware.\\n",
+          "usernames": [
+            "p64jain"
+          ],
+          "baseline_scores": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "qd_scores": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "baseline_flip": false,
+          "qd_flip": false,
+          "borderline_flags": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      ]
+    }
+  ]
+}

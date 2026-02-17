@@ -1,0 +1,1240 @@
+{
+  "question_id": "L1Q2",
+  "response_id": "R11",
+  "response_text": "The __io_putchar function takes a character input (a 1-byte variable representing any value defined in the ASCII table of codes, characters, and symbols) and internally calls the HAL_UART_Transmit function to send that character over the Nucleo board\u2019s primary UART interface. This is achieved by passing &huart2 as the UART handler to the HAL_UART_Transmit function. Since the STM platform offers multiple serial I/O interfaces, this function effectively encapsulates the process of transmitting a single character over the serial bus, and it is used by the printf function to transmit data that gets displayed on the serial console. It serves as a modular and user-friendly building block that can be extended to transmit entire strings and further sequences of characters over UART I/O.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:14:16.962772",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:14:24.482795",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:14:28.348640",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:14:36.701239",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:14:47.857284",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:14:53.965449",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:15:00.183120",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:15:04.089234",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:15:10.808454",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:15:14.839727",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:15:23.761532",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:15:30.845003",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T09:15:41.329890",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:15:50.394977",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:15:57.046642",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T09:16:07.029177",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T09:16:15.890875",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:16:25.206461",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:16:30.921893",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T09:16:37.680709",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "The response explicitly states that **__io_putchar** is a helper routine that sends a character to the UART (or other console) for output.",
+        "The response explicitly indicates that the standard **printf** function uses **__io_putchar** (directly or indirectly) to transmit each character it prints.",
+        "The response explicitly explains that a programmer must provide (or customize) **__io_putchar** because different projects may require different hardwarespecific output mechanisms, so the function is needed to bridge the C library I/O calls to the actual device."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 0\nOverall: 0",
+      "timestamp": "2025-11-11T09:16:53.066427",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "The response explicitly states that **__io_putchar** is a helper routine that sends a character to the UART (or other console) for output.",
+        "The response explicitly indicates that the standard **printf** function uses **__io_putchar** (directly or indirectly) to transmit each character it prints.",
+        "The response explicitly explains that a programmer must provide (or customize) **__io_putchar** because different projects may require different hardwarespecific output mechanisms, so the function is needed to bridge the C library I/O calls to the actual device."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T09:17:06.200539",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "The response explicitly states that **__io_putchar** is a helper routine that sends a character to the UART (or other console) for output.",
+        "The response explicitly indicates that the standard **printf** function uses **__io_putchar** (directly or indirectly) to transmit each character it prints.",
+        "The response explicitly explains that a programmer must provide (or customize) **__io_putchar** because different projects may require different hardwarespecific output mechanisms, so the function is needed to bridge the C library I/O calls to the actual device."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T09:17:19.520017",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "The response explicitly states that **__io_putchar** is a helper routine that sends a character to the UART (or other console) for output.",
+        "The response explicitly indicates that the standard **printf** function uses **__io_putchar** (directly or indirectly) to transmit each character it prints.",
+        "The response explicitly explains that a programmer must provide (or customize) **__io_putchar** because different projects may require different hardwarespecific output mechanisms, so the function is needed to bridge the C library I/O calls to the actual device."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 0\nOverall: 0",
+      "timestamp": "2025-11-11T09:17:36.343677",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "The response explicitly states that **__io_putchar** is a helper routine that sends a character to the UART (or other console) for output.",
+        "The response explicitly indicates that the standard **printf** function uses **__io_putchar** (directly or indirectly) to transmit each character it prints.",
+        "The response explicitly explains that a programmer must provide (or customize) **__io_putchar** because different projects may require different hardwarespecific output mechanisms, so the function is needed to bridge the C library I/O calls to the actual device."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T09:17:51.539185",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "The response explicitly states that **__io_putchar** is a helper routine that sends a character to the UART (or other console) for output.",
+        "The response explicitly indicates that the standard **printf** function uses **__io_putchar** (directly or indirectly) to transmit each character it prints.",
+        "The response explicitly explains that a programmer must provide (or customize) **__io_putchar** because different projects may require different hardwarespecific output mechanisms, so the function is needed to bridge the C library I/O calls to the actual device."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T09:18:10.879068",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "The response explicitly states that **__io_putchar** is a helper routine that sends a character to the UART (or other console) for output.",
+        "The response explicitly indicates that the standard **printf** function uses **__io_putchar** (directly or indirectly) to transmit each character it prints.",
+        "The response explicitly explains that a programmer must provide (or customize) **__io_putchar** because different projects may require different hardwarespecific output mechanisms, so the function is needed to bridge the C library I/O calls to the actual device."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T09:18:24.101684",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "The response explicitly states that **__io_putchar** is a helper routine that sends a character to the UART (or other console) for output.",
+        "The response explicitly indicates that the standard **printf** function uses **__io_putchar** (directly or indirectly) to transmit each character it prints.",
+        "The response explicitly explains that a programmer must provide (or customize) **__io_putchar** because different projects may require different hardwarespecific output mechanisms, so the function is needed to bridge the C library I/O calls to the actual device."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T09:18:36.864496",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "The response explicitly states that **__io_putchar** is a helper routine that sends a character to the UART (or other console) for output.",
+        "The response explicitly indicates that the standard **printf** function uses **__io_putchar** (directly or indirectly) to transmit each character it prints.",
+        "The response explicitly explains that a programmer must provide (or customize) **__io_putchar** because different projects may require different hardwarespecific output mechanisms, so the function is needed to bridge the C library I/O calls to the actual device."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T09:18:49.078911",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "The response explicitly states that **__io_putchar** is a helper routine that sends a character to the UART (or other console) for output.",
+        "The response explicitly indicates that the standard **printf** function uses **__io_putchar** (directly or indirectly) to transmit each character it prints.",
+        "The response explicitly explains that a programmer must provide (or customize) **__io_putchar** because different projects may require different hardwarespecific output mechanisms, so the function is needed to bridge the C library I/O calls to the actual device."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T09:19:00.462585",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "The response explicitly states that **__io_putchar** is a helper routine that sends a character to the UART (or other console) for output.",
+        "The response explicitly indicates that the standard **printf** function uses **__io_putchar** (directly or indirectly) to transmit each character it prints.",
+        "The response explicitly explains that a programmer must provide (or customize) **__io_putchar** because different projects may require different hardwarespecific output mechanisms, so the function is needed to bridge the C library I/O calls to the actual device."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T09:19:12.595527",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "The response explicitly states that **__io_putchar** is a helper routine that sends a character to the UART (or other console) for output.",
+        "The response explicitly indicates that the standard **printf** function uses **__io_putchar** (directly or indirectly) to transmit each character it prints.",
+        "The response explicitly explains that a programmer must provide (or customize) **__io_putchar** because different projects may require different hardwarespecific output mechanisms, so the function is needed to bridge the C library I/O calls to the actual device."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T09:19:26.703836",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "The response explicitly states that **__io_putchar** is a helper routine that sends a character to the UART (or other console) for output.",
+        "The response explicitly indicates that the standard **printf** function uses **__io_putchar** (directly or indirectly) to transmit each character it prints.",
+        "The response explicitly explains that a programmer must provide (or customize) **__io_putchar** because different projects may require different hardwarespecific output mechanisms, so the function is needed to bridge the C library I/O calls to the actual device."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nOverall: 1",
+      "timestamp": "2025-11-11T09:19:43.912416",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "The response explicitly states that **__io_putchar** is a helper routine that sends a character to the UART (or other console) for output.",
+        "The response explicitly indicates that the standard **printf** function uses **__io_putchar** (directly or indirectly) to transmit each character it prints.",
+        "The response explicitly explains that a programmer must provide (or customize) **__io_putchar** because different projects may require different hardwarespecific output mechanisms, so the function is needed to bridge the C library I/O calls to the actual device."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T09:19:57.933401",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "The response explicitly states that **__io_putchar** is a helper routine that sends a character to the UART (or other console) for output.",
+        "The response explicitly indicates that the standard **printf** function uses **__io_putchar** (directly or indirectly) to transmit each character it prints.",
+        "The response explicitly explains that a programmer must provide (or customize) **__io_putchar** because different projects may require different hardwarespecific output mechanisms, so the function is needed to bridge the C library I/O calls to the actual device."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T09:20:08.722782",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "The response explicitly states that **__io_putchar** is a helper routine that sends a character to the UART (or other console) for output.",
+        "The response explicitly indicates that the standard **printf** function uses **__io_putchar** (directly or indirectly) to transmit each character it prints.",
+        "The response explicitly explains that a programmer must provide (or customize) **__io_putchar** because different projects may require different hardwarespecific output mechanisms, so the function is needed to bridge the C library I/O calls to the actual device."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T09:20:22.395881",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "The response explicitly states that **__io_putchar** is a helper routine that sends a character to the UART (or other console) for output.",
+        "The response explicitly indicates that the standard **printf** function uses **__io_putchar** (directly or indirectly) to transmit each character it prints.",
+        "The response explicitly explains that a programmer must provide (or customize) **__io_putchar** because different projects may require different hardwarespecific output mechanisms, so the function is needed to bridge the C library I/O calls to the actual device."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T09:20:35.312052",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "The response explicitly states that **__io_putchar** is a helper routine that sends a character to the UART (or other console) for output.",
+        "The response explicitly indicates that the standard **printf** function uses **__io_putchar** (directly or indirectly) to transmit each character it prints.",
+        "The response explicitly explains that a programmer must provide (or customize) **__io_putchar** because different projects may require different hardwarespecific output mechanisms, so the function is needed to bridge the C library I/O calls to the actual device."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 0\nOverall: 0",
+      "timestamp": "2025-11-11T09:20:49.305583",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "The response explicitly states that **__io_putchar** is a helper routine that sends a character to the UART (or other console) for output.",
+        "The response explicitly indicates that the standard **printf** function uses **__io_putchar** (directly or indirectly) to transmit each character it prints.",
+        "The response explicitly explains that a programmer must provide (or customize) **__io_putchar** because different projects may require different hardwarespecific output mechanisms, so the function is needed to bridge the C library I/O calls to the actual device."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 0\nOverall: 0",
+      "timestamp": "2025-11-11T09:21:01.664690",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "The response explicitly states that **__io_putchar** is a helper routine that sends a character to the UART (or other console) for output.",
+        "The response explicitly indicates that the standard **printf** function uses **__io_putchar** (directly or indirectly) to transmit each character it prints.",
+        "The response explicitly explains that a programmer must provide (or customize) **__io_putchar** because different projects may require different hardwarespecific output mechanisms, so the function is needed to bridge the C library I/O calls to the actual device."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 0\nOverall: 0",
+      "timestamp": "2025-11-11T09:21:14.493454",
+      "method": "qd"
+    }
+  ],
+  "qd_refined_iterations": [
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:47:46.298883",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:48:27.293103",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 0\nOverall: 0",
+      "timestamp": "2025-11-16T12:49:08.897158",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:49:47.388395",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:50:28.467661",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 0\nOverall: 0",
+      "timestamp": "2025-11-16T12:51:05.387561",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nOverall: 1",
+      "timestamp": "2025-11-16T12:51:53.178951",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 0\nOverall: 0",
+      "timestamp": "2025-11-16T12:52:30.457435",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:53:09.119265",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:53:21.638872",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:53:36.023064",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:53:50.089467",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:54:02.153231",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:54:40.858954",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:55:18.988186",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:55:58.187713",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:56:41.378726",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:57:18.193709",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:57:57.502861",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 0\nOverall: 0",
+      "timestamp": "2025-11-16T12:58:37.581350",
+      "method": "qd"
+    }
+  ],
+  "baseline_metrics": {
+    "consensus": 85.0,
+    "flip_rate": 15.0,
+    "majority": 1,
+    "sample_size": 20,
+    "pass_count": 17,
+    "fail_count": 3
+  },
+  "version_progression": [
+    {
+      "version": "baseline",
+      "version_label": "Baseline (Rubric)",
+      "metrics": {
+        "consensus": 85.0,
+        "flip_rate": 15.0,
+        "majority": 1,
+        "sample_size": 20,
+        "pass_count": 17,
+        "fail_count": 3
+      },
+      "flip_rate_change_vs_baseline": 0.0,
+      "timestamp": "2025-11-11T09:16:37.685270"
+    },
+    {
+      "version": "v1",
+      "version_label": "QD v1 (Initial)",
+      "metrics": {
+        "consensus": 95.0,
+        "flip_rate": 5.0,
+        "majority": 0,
+        "sample_size": 20,
+        "pass_count": 1,
+        "fail_count": 19
+      },
+      "flip_rate_change_vs_baseline": 10.0,
+      "timestamp": "2025-11-11T09:21:14.499116"
+    },
+    {
+      "version": "v2",
+      "version_label": "QD v2 (Refined)",
+      "metrics": {
+        "consensus": 95.0,
+        "flip_rate": 5.0,
+        "majority": 0,
+        "sample_size": 20,
+        "pass_count": 1,
+        "fail_count": 19
+      },
+      "flip_rate_change_vs_baseline": 10.0,
+      "refinement_result": "",
+      "timestamp": "2025-11-16T12:58:37.585103"
+    }
+  ],
+  "qd_initial_version": "v1",
+  "qd_version_selected": "v1",
+  "qd_initial_metrics": {
+    "consensus": 95.0,
+    "flip_rate": 5.0,
+    "majority": 0,
+    "sample_size": 20,
+    "pass_count": 1,
+    "fail_count": 19
+  },
+  "qd_result": "maintained",
+  "refinement_reason": "majority_changed",
+  "baseline_majority": 1,
+  "qd_majority": 0,
+  "flip_rate_change_vs_baseline": 10.0,
+  "qd_refined_iterations_v2": [
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:47:46.298883",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:48:27.293103",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 0\nOverall: 0",
+      "timestamp": "2025-11-16T12:49:08.897158",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:49:47.388395",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:50:28.467661",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 0\nOverall: 0",
+      "timestamp": "2025-11-16T12:51:05.387561",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nOverall: 1",
+      "timestamp": "2025-11-16T12:51:53.178951",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 0\nOverall: 0",
+      "timestamp": "2025-11-16T12:52:30.457435",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:53:09.119265",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:53:21.638872",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:53:36.023064",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:53:50.089467",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:54:02.153231",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:54:40.858954",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:55:18.988186",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:55:58.187713",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:56:41.378726",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:57:18.193709",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nOverall: 0",
+      "timestamp": "2025-11-16T12:57:57.502861",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0
+      ],
+      "quality_dimensions": [
+        "**Charactertooutput description** - The answer explicitly says that **__io_putchar** is a routine that takes a single character argument and sends that character to the target output device (e.g., UART, semihosting console, etc.). It must mention both \"character\" and the concrete output mechanism (UART/console).",
+        "**Link to printf** - The answer explicitly states that the standard C library output functions such as **printf** (or its underlying lowlevel routine) rely on **__io_putchar** (directly or indirectly) to transmit each character that they print.",
+        "**Need for programmerprovided implementation** - The answer explicitly explains that a developer must supply (or customise) **__io_putchar** because the C library has no knowledge of the boardspecific hardware; different projects may use different UARTs, ITM ports, or other output peripherals, so the function is required to bridge the library's I/O calls to the actual device."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 0\nOverall: 0",
+      "timestamp": "2025-11-16T12:58:37.581350",
+      "method": "qd"
+    }
+  ],
+  "qd_refined_metrics": {
+    "consensus": 95.0,
+    "flip_rate": 5.0,
+    "majority": 0,
+    "sample_size": 20,
+    "pass_count": 1,
+    "fail_count": 19
+  },
+  "qd_refined_metrics_v2": {
+    "consensus": 95.0,
+    "flip_rate": 5.0,
+    "majority": 0,
+    "sample_size": 20,
+    "pass_count": 1,
+    "fail_count": 19
+  },
+  "qd_refined_version": "v2",
+  "refinement_result": "failed",
+  "refinement_attempt_count": 1
+}

@@ -1,0 +1,3 @@
+2025-11-10 20:04:59 - qd_operation_analysis - INFO - [qd_operation_analysis.py:54] - Logging to file: logs/qd_analysis_20251110_200459.log
+2025-11-10 20:10:04 - qd_operation_analysis - INFO - [qd_operation_analysis.py:68] - Loading QD lineage for L3Q2 from qd_history
+2025-11-10 20:10:04 - qd_operation_analysis - INFO - [qd_operation_analysis.py:83] - Loaded 1 QD versions for L3Q2

@@ -1,0 +1,205 @@
+{
+  "lab": 1,
+  "question": 1,
+  "baseline_flip_rate": 0.0,
+  "qd_flip_rate": 0.0,
+  "improvement": 0.0,
+  "num_answers": 12,
+  "operations": [],
+  "final_qds": [],
+  "iteration_qds": [],
+  "per_answer_results": [
+    {
+      "answer_index": 0,
+      "question_text": "HAL stands for Hardware Abstraction Layer. It consists of pre-written setup code provided by the IDE vendor to simplify development with microcontrollers, which can otherwise be complex and low-level.\\n",
+      "usernames": [
+        "c6shao"
+      ],
+      "baseline_scores": [
+        1
+      ],
+      "qd_scores": [],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false
+      ]
+    },
+    {
+      "answer_index": 1,
+      "question_text": "The HAL is a set of software functions that makes it easy to control hardware like pins, timers, and communication ports without dealing directly with complex hardware details. It saves time, prevents mistakes, and helps your code work on different chips with little change, making embedded projects faster and simpler to develop.\\n",
+      "usernames": [
+        "g223zhan"
+      ],
+      "baseline_scores": [
+        0
+      ],
+      "qd_scores": [],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false
+      ]
+    },
+    {
+      "answer_index": 2,
+      "question_text": "The HAL (Hardware Abstraction Layer) is a black box of setup code that lets users go directly to programming on the MCU. It provides a set of APIs to interact with components like the libraries and stacks, which are generic and allow a wide range of uses, letting the user skip having to code this base layer.\\n",
+      "usernames": [
+        "j3hou"
+      ],
+      "baseline_scores": [
+        1
+      ],
+      "qd_scores": [],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false
+      ]
+    },
+    {
+      "answer_index": 3,
+      "question_text": "The HAL is a software layer that provides general libraries and functions that allows you to directly work with hardware, so we don\u2019t need to deal with hardware settings and low-level code for registers. For example, if you want to work GPIO or timers, you can call a high-level HAL function instead of figuring out individual register values.\\n",
+      "usernames": [
+        "jbluo"
+      ],
+      "baseline_scores": [
+        0
+      ],
+      "qd_scores": [],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false
+      ]
+    },
+    {
+      "answer_index": 4,
+      "question_text": "The HAL is an acronym for hardware abstraction layer and it is a base layer of functionality and functions that we can use to develop and implement functionality onto hardware. The HAL operate as a medium between which the OS and the hardware. The HAL helps us communicate with our STM32 and setup our code so that we can create a general embedded project in a timely manner.\\n",
+      "usernames": [
+        "ktcollin"
+      ],
+      "baseline_scores": [
+        1
+      ],
+      "qd_scores": [],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false
+      ]
+    },
+    {
+      "answer_index": 5,
+      "question_text": "The Hardware Abstraction Layer (HAL) is a software interface that standardizes interaction between application code and hardware peripherals. Rather than requiring low-level register manipulation, HAL functions allow configuration and control of features such as timers, digital I/O, and communication protocols. This abstraction simplifies firmware development, enhances portability across different microcontroller platforms, and improves code maintainability by isolating hardware-specific details.\\n",
+      "usernames": [
+        "m2dang"
+      ],
+      "baseline_scores": [
+        1
+      ],
+      "qd_scores": [],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false
+      ]
+    },
+    {
+      "answer_index": 6,
+      "question_text": "The HAL stands for hardware abstraction layer. It sits underneath the operating system, and it provides the interface needed for the operating system to interact with directly with the hardware resources. The layer is \u201cabstract\u201d as it leaves out complex hardware details. This abstraction makes the HAL useful with working with embedded systems, as it generalizes the OS to hardware interface so that the software is not specific to any hardware resources.\\n",
+      "usernames": [
+        "m6riley"
+      ],
+      "baseline_scores": [
+        1
+      ],
+      "qd_scores": [],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false
+      ]
+    },
+    {
+      "answer_index": 7,
+      "question_text": "The HAL is a hardware abstraction layer. It is useful in connecting the software of the computer, in this case the IDE, with the hardware of the Nucleo microcontroller. It is used within a general embedded project to control machines through transmitting information. For instance, in this lab, numbers were transmitted through a function involving HAL between the hardware and the software. The HAL is not necessarily a necessity, but rather a convenience to operate low-level functions within the hardware.\\n",
+      "usernames": [
+        "p64jain"
+      ],
+      "baseline_scores": [
+        1
+      ],
+      "qd_scores": [],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false
+      ]
+    },
+    {
+      "answer_index": 8,
+      "question_text": "HAL is the Hardware Abstraction Layer is a set of high level functions that simplifies communication with microcontroller hardware which the IDE usually does for us.\\n",
+      "usernames": [
+        "r242huan"
+      ],
+      "baseline_scores": [
+        1
+      ],
+      "qd_scores": [],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false
+      ]
+    },
+    {
+      "answer_index": 9,
+      "question_text": "HAL acts as the layer that directly configures the hardware and provides them as libraries and functions for us to use, so instead of directly working with the hardware, we can now simply call a function to help us do so using HAL. The consist of high level functions that lets developers interact with hardware components like GPIO, UART and timers, without the need to configure the hardware registers.\\nQuestion\\nIn your own words, explain what the __io_putchar function does and why it is needed.",
+      "usernames": [
+        "r36dong"
+      ],
+      "baseline_scores": [
+        1
+      ],
+      "qd_scores": [],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false
+      ]
+    },
+    {
+      "answer_index": 10,
+      "question_text": "The hardware abstraction layer (HAL) is a software component used to interface with hardware devices on a \u2018general\u2019 level. It is often used in general embedded projects as a simple way to interact with hardware through programming interfaces.\\n",
+      "usernames": [
+        "r42liu"
+      ],
+      "baseline_scores": [
+        1
+      ],
+      "qd_scores": [],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false
+      ]
+    },
+    {
+      "answer_index": 11,
+      "question_text": "The hardware abstraction layer provides a standardized way for programs to interact with hardware devices without having to know details about the device. This allows the programmer to write code that does not depend on the device being used. It works by abstracting the low-level details of the device being used. It is useful because it saves time as the programmer does not have to know the details of the device being interfaced. It also makes the code more portable since it can be used for other hardware devices with minimal changes.\\n",
+      "usernames": [
+        "sbhatnag"
+      ],
+      "baseline_scores": [
+        1
+      ],
+      "qd_scores": [],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false
+      ]
+    }
+  ]
+}

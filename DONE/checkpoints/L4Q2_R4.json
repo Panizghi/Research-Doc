@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q2",
+  "response_id": "R4",
+  "response_text": "The PendSV_Handler function is responsible for performing a context switch, which involves saving the current thread\u2019s state and restoring the state of the next thread to run. Specifically, it saves the callee-saved registers (R4\u2013R11) of the currently running thread onto its process stack and stores the current stack pointer value in its corresponding TCB. Then it calls a C function, such as osSched, to determine the next thread to run. Once the next TCB is selected, PendSV_Handler restores that thread\u2019s saved stack pointer and pops the saved registers from its stack. The stack pointer is then set to the restored value, so when execution resumes, it picks up exactly where the next thread left off. This ensures seamless task switching. The use of PendSV is crucial because it is a low-priority interrupt that allows safe deferral of the context switch until all other higher-priority interrupts are serviced.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:38:32.417580",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:38:40.598554",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:38:48.335542",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:38:57.727502",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:39:06.474487",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:39:19.218967",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:39:27.125195",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:39:35.702590",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:39:43.640234",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:39:53.927621",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 0,
+    "fail_count": 10
+  }
+}

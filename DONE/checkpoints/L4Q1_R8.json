@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q1",
+  "response_id": "R8",
+  "response_text": "A queue holds each new TCB at the back and always picks the front TCB when a time slice ends or a thread yields. After running, the thread\u2019s TCB goes back to the rear so every task takes turns in first-in, first-out order. Using a queue means you never worry about managing wrap-around indices or skipping inactive slots in an array. Enqueue and dequeue are both constant-time, so the scheduler stays simple and fair.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:08:30.121520",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:08:40.563145",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:08:49.692693",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:09:02.109449",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:09:12.728660",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:09:20.121487",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:09:28.683183",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:09:38.481288",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:09:52.627105",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:10:03.420151",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 90.0,
+    "flip_rate": 10.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 1,
+    "fail_count": 9
+  }
+}

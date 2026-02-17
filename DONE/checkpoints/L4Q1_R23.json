@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q1",
+  "response_id": "R23",
+  "response_text": "Round-robin scheduling with a queue works by treating the queue as a rotating list of runnable threads. Each time a thread yields, the scheduler removes its TCB from the front of the queue and puts it in the back of the queue. The new thread in the front of the queue then runs. As a result, the threads are cycled through in order.\\nWhen a thread finishes or is created, we can push back or erase from the queue in constant time without having to leaves gaps between elements of the queue. We would not have to shift the elements to fill in the gaps either. In an array, we have to either waste slots due to empty spaces between elements or use a O(n) time complexity to compact the array. Additionally, the use of a queue means that we do not have to keep track of indices as the front of the queue always contains the next thread to be run. As a result, we do not have to calculate the next thread to be run.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:30:14.995384",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:30:22.606727",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:30:29.784035",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:30:36.068981",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:30:45.763047",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:30:52.333395",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:31:00.781960",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:31:07.452781",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:31:15.963645",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:31:25.877708",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 0,
+    "fail_count": 10
+  }
+}

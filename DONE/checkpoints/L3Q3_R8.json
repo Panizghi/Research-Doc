@@ -1,0 +1,77 @@
+{
+  "question_id": "L3Q3",
+  "response_id": "R8",
+  "response_text": "Setup:\\nThe kernel must create the thread, so the kernel must get the initial value of the MSP stack (which is initializing the OS\u2019 kernel).\\nWith the known stack size of the user\u2019s thread, the kernel must subtract this stack size offset from the MSP stack pointer and assign this new address to the thread\u2019s stack pointer. Only do this step if there is enough space in the stack left for the new thread\u2019s stack size (and have this validated).\\nThe kernel must create the context of the registers within the thread\u2019s stack (a.k.a setting up the thread stack). Accessing register by register can be done by decrementing the thread\u2019s stack pointer to go from the xPSR register to the R0 register, allowing the assignment of values per register. An important register here is storing the value of the user-defined thread\u2019s function into the PC register here.\\nCreate a case for the SVC Main Handler that handles the specific assembly value that should trigger the thread to start.\\nStartup: The user starts the kernel with a user-defined startup function that has an assembly value (a function that has this) which triggers the SVC main handler to handle that assembly value and run the PC which has the thread function\u2019s address.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:07:32.184906",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:07:49.833995",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:08:00.740874",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:08:08.625901",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:08:19.118496",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:08:35.834763",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:08:42.994733",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:08:52.199879",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:09:00.944238",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:09:07.047828",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 80.0,
+    "flip_rate": 20.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 2,
+    "fail_count": 8
+  }
+}

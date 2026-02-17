@@ -1,0 +1,8 @@
+*.csv
+*.txt
+.venv/
+.env
+mlruns/
+__pycache__/
+*.csv
+*/*.json

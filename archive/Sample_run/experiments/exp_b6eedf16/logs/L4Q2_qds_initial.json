@@ -1,0 +1,27 @@
+[
+  {
+    "name": "ReadsPSP",
+    "definition": "Mentions reading PSP to locate the current thread's stack.",
+    "rationale": "The first required step in the rubric; confirms the student identifies how the current stack is found."
+  },
+  {
+    "name": "PushesRegisters",
+    "definition": "Mentions pushing registers R4\u2011R11 onto the stack.",
+    "rationale": "Second required step; shows the student knows which registers are saved during the switch."
+  },
+  {
+    "name": "CallsScheduler",
+    "definition": "Mentions calling osSched (or equivalent) to select a new thread.",
+    "rationale": "Third required step; verifies the student includes the scheduling function that chooses the next task."
+  },
+  {
+    "name": "RestoresNewThread",
+    "definition": "Mentions locating new thread's stack and popping registers R4\u2011R11.",
+    "rationale": "Final required actions; confirms the student describes both stack location for the new thread and register restoration."
+  },
+  {
+    "name": "CorrectOrder",
+    "definition": "Lists the required steps in the correct sequential order.",
+    "rationale": "The rubric explicitly demands the steps be presented in order; this binary check distinguishes ordered from unordered responses."
+  }
+]

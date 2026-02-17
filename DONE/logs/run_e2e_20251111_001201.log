@@ -1,0 +1,33 @@
+2025-11-11 00:12:01 - run_single_question_e2e - INFO - [run_single_question_e2e.py:80] - Logging to file: logs/run_e2e_20251111_001201.log
+2025-11-11 00:12:02 - run_single_question_e2e - INFO - [run_single_question_e2e.py:609] - Running script with JSON path: /var/folders/tq/51lzs6fs387bwv1r_7v0yn9w0000gn/T/tmpywla6d09.json and num_iterations: 20
+2025-11-11 00:12:02 - run_single_question_e2e - INFO - [run_single_question_e2e.py:157] - ================================================================================
+2025-11-11 00:12:02 - run_single_question_e2e - INFO - [run_single_question_e2e.py:158] - Starting end-to-end pipeline
+2025-11-11 00:12:02 - run_single_question_e2e - INFO - [run_single_question_e2e.py:159] - ================================================================================
+2025-11-11 00:12:02 - run_single_question_e2e - INFO - [run_single_question_e2e.py:160] - JSON path: /var/folders/tq/51lzs6fs387bwv1r_7v0yn9w0000gn/T/tmpywla6d09.json
+2025-11-11 00:12:02 - run_single_question_e2e - INFO - [run_single_question_e2e.py:161] - Num iterations: 20
+2025-11-11 00:12:02 - run_single_question_e2e - INFO - [run_single_question_e2e.py:170] - Loading question data from JSON
+2025-11-11 00:12:02 - run_single_question_e2e - INFO - [run_single_question_e2e.py:182] - Successfully loaded JSON file: /var/folders/tq/51lzs6fs387bwv1r_7v0yn9w0000gn/T/tmpywla6d09.json
+2025-11-11 00:12:02 - run_single_question_e2e - INFO - [run_single_question_e2e.py:209] - Processing question: L1Q1
+2025-11-11 00:12:02 - run_single_question_e2e - INFO - [run_single_question_e2e.py:210] - Question text: You are a helpful teaching assistant giving detailed, actionable feedback to students on their lab r...
+2025-11-11 00:12:02 - run_single_question_e2e - INFO - [run_single_question_e2e.py:211] - Number of responses: 1
+2025-11-11 00:12:02 - run_single_question_e2e - INFO - [run_single_question_e2e.py:212] - Iterations per response: 20
+2025-11-11 00:12:02 - run_single_question_e2e - INFO - [run_single_question_e2e.py:222] - Initializing checkpoints for all responses
+2025-11-11 00:12:02 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q1_R10
+2025-11-11 00:12:02 - run_single_question_e2e - INFO - [run_single_question_e2e.py:238] - Ensuring QDs exist
+2025-11-11 00:12:02 - run_single_question_e2e - INFO - [run_single_question_e2e.py:111] - Checking QDs for L1Q1
+2025-11-11 00:12:04 - run_single_question_e2e - INFO - [run_single_question_e2e.py:133] - QDs already exist for L1Q1 (initial version v1, latest v3, best v3, 8 dimensions)
+2025-11-11 00:12:06 - run_single_question_e2e - INFO - [run_single_question_e2e.py:252] - Starting grading phase
+2025-11-11 00:12:06 - run_single_question_e2e - INFO - [run_single_question_e2e.py:259] - Grading response 1/1: R10
+2025-11-11 00:18:59 - run_single_question_e2e - INFO - [run_single_question_e2e.py:262] - Completed grading for R10
+2025-11-11 00:18:59 - run_single_question_e2e - INFO - [run_single_question_e2e.py:271] - Starting refinement phase
+2025-11-11 00:18:59 - run_single_question_e2e - INFO - [run_single_question_e2e.py:277] - Refinement phase completed
+2025-11-11 00:18:59 - run_single_question_e2e - INFO - [run_single_question_e2e.py:286] - Starting analysis phase
+2025-11-11 00:25:12 - run_single_question_e2e - INFO - [run_single_question_e2e.py:290] - Analysis complete: 8 records
+2025-11-11 00:25:13 - run_single_question_e2e - INFO - [run_single_question_e2e.py:300] - Generating per-response details
+2025-11-11 00:25:13 - run_single_question_e2e - INFO - [run_single_question_e2e.py:399] - Found 3 QD versions for L1Q1
+2025-11-11 00:25:13 - run_single_question_e2e - INFO - [run_single_question_e2e.py:416] - ================================================================================
+2025-11-11 00:25:13 - run_single_question_e2e - INFO - [run_single_question_e2e.py:417] - Pipeline execution complete
+2025-11-11 00:25:13 - run_single_question_e2e - INFO - [run_single_question_e2e.py:418] - ================================================================================
+2025-11-11 00:25:13 - run_single_question_e2e - INFO - [run_single_question_e2e.py:419] - Checkpoints saved in: ./checkpoints/
+2025-11-11 00:25:13 - run_single_question_e2e - INFO - [run_single_question_e2e.py:420] - QDs saved in: ./quality_dimensions/ and ./refined_qds/
+2025-11-11 00:25:13 - run_single_question_e2e - INFO - [run_single_question_e2e.py:611] - Script completed successfully

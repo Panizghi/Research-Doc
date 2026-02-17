@@ -1,0 +1,15 @@
+2025-11-11 08:42:05 - qd_operation_analysis - INFO - [qd_operation_analysis.py:54] - Logging to file: logs/qd_analysis_20251111_084205.log
+2025-11-11 09:35:12 - qd_operation_analysis - INFO - [qd_operation_analysis.py:382] - Printing dimension comparison for L1Q2_R6
+2025-11-11 09:35:12 - qd_operation_analysis - INFO - [qd_operation_analysis.py:340] - Comparing dimension stability across versions for L1Q2_R6
+2025-11-11 09:35:12 - qd_operation_analysis - INFO - [qd_operation_analysis.py:265] - Analyzing dimension score stability for L1Q2_R6 with QD version v1
+2025-11-11 09:35:12 - qd_operation_analysis - INFO - [qd_operation_analysis.py:324] - Dimension stability analysis: 3 dimensions, avg flip_rate=0.00%
+2025-11-11 09:35:12 - qd_operation_analysis - INFO - [qd_operation_analysis.py:361] - Added v1 analysis: 3 dimensions
+2025-11-11 09:35:12 - qd_operation_analysis - INFO - [qd_operation_analysis.py:372] - Comparison complete: 1 versions analyzed
+2025-11-11 09:35:12 - qd_operation_analysis - INFO - [qd_operation_analysis.py:382] - Printing dimension comparison for L1Q2_R11
+2025-11-11 09:35:12 - qd_operation_analysis - INFO - [qd_operation_analysis.py:340] - Comparing dimension stability across versions for L1Q2_R11
+2025-11-11 09:35:12 - qd_operation_analysis - INFO - [qd_operation_analysis.py:265] - Analyzing dimension score stability for L1Q2_R11 with QD version v1
+2025-11-11 09:35:12 - qd_operation_analysis - INFO - [qd_operation_analysis.py:324] - Dimension stability analysis: 3 dimensions, avg flip_rate=1.67%
+2025-11-11 09:35:12 - qd_operation_analysis - INFO - [qd_operation_analysis.py:361] - Added v1 analysis: 3 dimensions
+2025-11-11 09:35:12 - qd_operation_analysis - INFO - [qd_operation_analysis.py:372] - Comparison complete: 1 versions analyzed
+2025-11-11 09:35:12 - qd_operation_analysis - INFO - [qd_operation_analysis.py:68] - Loading QD lineage for L1Q2 from qd_history
+2025-11-11 09:35:12 - qd_operation_analysis - INFO - [qd_operation_analysis.py:83] - Loaded 1 QD versions for L1Q2

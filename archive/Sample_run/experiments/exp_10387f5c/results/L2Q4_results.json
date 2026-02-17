@@ -1,0 +1,215 @@
+{
+  "lab": 2,
+  "question": 4,
+  "num_train": 2,
+  "num_test": 1,
+  "iterations": [
+    {
+      "iteration": 0,
+      "qds": [
+        {
+          "name": "SeparateThreadStack",
+          "definition": "States that the thread's stack is different from the CPU's current stack pointer.",
+          "rationale": "The rubric requires students to recognize that the thread stack is not at the same location as the CPU stack pointer."
+        },
+        {
+          "name": "PSPUsedForThreads",
+          "definition": "Identifies the Process Stack Pointer (PSP) as the stack pointer used for threads.",
+          "rationale": "Correctly naming PSP shows the student understands which stack pointer should be switched for thread execution."
+        },
+        {
+          "name": "SetPSPToThreadStack",
+          "definition": "Specifies that __set_PSP must load PSP with the thread's stack address before running.",
+          "rationale": "The core requirement is that PSP's value must equal the thread's stack pointer address for the thread to run correctly."
+        },
+        {
+          "name": "ConsequenceOfNotSettingPSP",
+          "definition": "Notes that failing to set PSP leads to a hard fault or system crash.",
+          "rationale": "The rubric expects students to explain the failure mode (hard fault) when PSP is not correctly set."
+        }
+      ],
+      "metrics": {
+        "flip_rate": 0.0,
+        "flips": 0,
+        "total_answers": 2,
+        "borderline_rate": 0.0,
+        "borderline_count": 0,
+        "avg_confidence": 0.895,
+        "std_confidence": 0.03500000000000003,
+        "avg_consistency": 1.0,
+        "overall_pass_rate": 1.0
+      },
+      "orthogonality": {
+        "qd_names": [
+          "SeparateThreadStack",
+          "PSPUsedForThreads",
+          "SetPSPToThreadStack",
+          "ConsequenceOfNotSettingPSP"
+        ],
+        "orthogonality_score": NaN,
+        "mutual_info_matrix": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "correlation_matrix": [
+          [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ],
+          [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ],
+          [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ],
+          [
+            NaN,
+            NaN,
+            NaN,
+            0.9999999999999999
+          ]
+        ],
+        "co_occurrence_matrix": [
+          [
+            1.0,
+            1.0,
+            1.0,
+            0.5
+          ],
+          [
+            1.0,
+            1.0,
+            1.0,
+            0.5
+          ],
+          [
+            1.0,
+            1.0,
+            1.0,
+            0.5
+          ],
+          [
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ]
+        ],
+        "avg_mutual_info": 0.0,
+        "avg_correlation": NaN,
+        "avg_co_occurrence": 0.75,
+        "avg_coupling": NaN,
+        "diagnostic_pairs": [
+          {
+            "qd1": "SeparateThreadStack",
+            "qd2": "PSPUsedForThreads",
+            "mi": 0.0,
+            "corr": NaN,
+            "co": 1.0,
+            "coupling_score": NaN
+          },
+          {
+            "qd1": "SeparateThreadStack",
+            "qd2": "SetPSPToThreadStack",
+            "mi": 0.0,
+            "corr": NaN,
+            "co": 1.0,
+            "coupling_score": NaN
+          },
+          {
+            "qd1": "SeparateThreadStack",
+            "qd2": "ConsequenceOfNotSettingPSP",
+            "mi": 0.0,
+            "corr": NaN,
+            "co": 0.5,
+            "coupling_score": NaN
+          },
+          {
+            "qd1": "PSPUsedForThreads",
+            "qd2": "SetPSPToThreadStack",
+            "mi": 0.0,
+            "corr": NaN,
+            "co": 1.0,
+            "coupling_score": NaN
+          },
+          {
+            "qd1": "PSPUsedForThreads",
+            "qd2": "ConsequenceOfNotSettingPSP",
+            "mi": 0.0,
+            "corr": NaN,
+            "co": 0.5,
+            "coupling_score": NaN
+          }
+        ],
+        "num_coupled_pairs": 0
+      }
+    }
+  ],
+  "baseline": {
+    "flip_rate": 0.0,
+    "flips": 0,
+    "total_answers": 2,
+    "borderline_rate": 50.0,
+    "borderline_count": 1,
+    "avg_confidence": 0.895,
+    "std_confidence": 0.04499999999999999,
+    "avg_consistency": 1.0,
+    "overall_pass_rate": 0.5
+  },
+  "test_validation": {
+    "baseline": {
+      "flip_rate": 0.0,
+      "flips": 0,
+      "total_answers": 1,
+      "borderline_rate": 0.0,
+      "borderline_count": 0,
+      "avg_confidence": 0.9199999999999999,
+      "std_confidence": 0.029439202887759478,
+      "avg_consistency": 1.0,
+      "overall_pass_rate": 1.0
+    },
+    "qd": {
+      "flip_rate": 0.0,
+      "flips": 0,
+      "total_answers": 1,
+      "borderline_rate": 100.0,
+      "borderline_count": 1,
+      "avg_confidence": 0.94,
+      "std_confidence": 0.01414213562373091,
+      "avg_consistency": 1.0,
+      "overall_pass_rate": 1.0
+    },
+    "improvement": 0.0,
+    "best_iteration": 0
+  }
+}

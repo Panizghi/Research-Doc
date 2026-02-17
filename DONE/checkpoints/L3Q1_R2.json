@@ -1,0 +1,77 @@
+{
+  "question_id": "L3Q1",
+  "response_id": "R2",
+  "response_text": "To best explain how multiple *.c files are created, there are 3 main steps for a user program during the compilation process. The first step is preprocessing, which is where to the *.c files are organized into a form where it is readable for the compiler. This includes things like removing comments, expanding of the inclusion files and macros. Although this process doesn\u2019t include header (*.h) files, it will compile those that are included by and *.c program by copying its contexts during the expansion of includes. Then, the next step involves the actual compiling and assembling of the code. This turns all the *.c files into object files, often incomplete by themselves when multiple *.c files exist, allowing it to be read into machine code that is only understood by the CPU. It should be noted that each of the *.c files undergo these first two steps separately as individual object files, where they are then put together as one single executable, which is the last step, of the compilation process, also referred to linking. This resolves all the function calls made across the different files and allows the program to execute the program in it\u2019s entirety.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:49:17.747924",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:49:25.197183",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:49:33.018523",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:49:39.511912",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:49:50.305425",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:50:02.064238",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:50:08.590632",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:50:12.835150",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:50:20.880929",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:50:27.149112",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

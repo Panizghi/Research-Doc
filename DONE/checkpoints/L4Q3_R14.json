@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q3",
+  "response_id": "R14",
+  "response_text": "Always selecting the task with the numerically highest priority is attractive in theory but disastrous in practice when combined with cooperative yielding. A single highest-priority task can monopolise the CPU simply by failing to call yield(), starving every lower-priority task indefinitely. Even if the system is modified to pre-empt on a timer, strict \u201crun the highest\u201d scheduling introduces fairness and latency problems: lower-priority housekeeping or I/O tasks may wait unbounded amounts of time, potentially violating real-time deadlines. The policy also creates opportunities for priority inversion, where a low-priority task holds a shared resource needed by a high-priority task, blocking the latter unless extra priority-inheritance mechanisms are added. For these reasons, real systems either combine priority with round-robin time slices inside each level or employ ageing algorithms that gradually boost the priority of long-waiting tasks.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:05:47.485159",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:05:56.691564",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:06:04.855321",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:06:10.974133",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:06:17.757743",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:06:24.520741",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:06:30.461031",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:06:36.663347",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:06:42.192963",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:06:48.377424",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

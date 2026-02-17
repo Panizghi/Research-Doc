@@ -1,0 +1,751 @@
+{
+  "question_id": "L1Q1",
+  "response_id": "R4",
+  "response_text": "The HAL is a software layer that provides general libraries and functions that allows you to directly work with hardware, so we don\u2019t need to deal with hardware settings and low-level code for registers. For example, if you want to work GPIO or timers, you can call a high-level HAL function instead of figuring out individual register values.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T19:36:49.285133",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T19:37:20.363696",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-09T19:37:49.606261",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-09T19:37:56.217007",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T19:38:00.829062",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T19:38:08.810872",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T19:38:14.707776",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T19:38:20.395236",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T19:38:24.350639",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-09T19:38:31.582474",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T19:38:38.281862",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T19:38:44.643601",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T19:38:50.513389",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T19:38:56.315743",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T19:39:04.669403",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T19:39:11.873196",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T19:39:22.255201",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T19:39:28.275387",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T19:39:36.337973",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T19:39:44.778037",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nDimension 5: 1  \n\nOverall: 0",
+      "timestamp": "2025-11-09T19:40:00.205573",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T19:40:10.787644",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 1  \n\nOverall: 0",
+      "timestamp": "2025-11-09T19:40:22.765264",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T19:40:36.065443",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T19:40:51.649085",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nDimension 5: 1  \n\nOverall: 0",
+      "timestamp": "2025-11-09T19:41:03.571104",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nDimension 5: 1  \n\nOverall: 0",
+      "timestamp": "2025-11-09T19:41:17.534693",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nDimension 5: 1  \n\nOverall: 0",
+      "timestamp": "2025-11-09T19:41:32.552049",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 1  \n\nOverall: 0",
+      "timestamp": "2025-11-09T19:41:42.308385",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nDimension 5: 1  \n\nOverall: 0",
+      "timestamp": "2025-11-09T19:41:53.297973",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 1  \n\nOverall: 0",
+      "timestamp": "2025-11-09T19:42:05.561083",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T19:42:19.088312",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nDimension 5: 1  \n\nOverall: 0",
+      "timestamp": "2025-11-09T19:42:32.172739",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T19:42:44.565067",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T19:43:20.566429",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T19:43:57.125470",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nDimension 5: 1  \n\nOverall: 0",
+      "timestamp": "2025-11-09T19:44:34.592452",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T19:45:09.524913",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T19:45:43.200017",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T19:46:18.910522",
+      "method": "qd"
+    }
+  ],
+  "qd_refined_iterations": [
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 9: 1  \nDimension 10: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T21:25:37.367004",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 0  \nOverall: 0",
+      "timestamp": "2025-11-09T21:25:55.682825",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T21:26:15.477755",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T21:26:41.884959",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T21:26:59.461986",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T21:27:17.005828",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T21:27:36.956618",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T21:27:55.536797",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T21:28:13.371876",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T21:28:29.726538",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 0  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T21:28:52.106300",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T21:29:10.187429",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T21:29:29.396881",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T21:29:46.817480",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T21:30:10.877399",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T21:30:33.713858",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T21:31:00.757225",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T21:31:21.250183",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 0  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T21:31:44.830228",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T21:32:05.220866",
+      "method": "qd"
+    }
+  ]
+}

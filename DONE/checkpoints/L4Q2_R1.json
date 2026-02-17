@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q2",
+  "response_id": "R1",
+  "response_text": "PendSV\u00a0is set to the\u00a0lowest\u00a0interrupt priority, and it is\u00a0pended\u00a0by SVC (via\u00a0yield) only after SVC completes, so the context switch occurs in a clean, tail end interrupt with no higher-priority ISR preemption of the switch itself. On entry to\u00a0PendSV, the Cortex-M hardware has already\u00a0auto-stacked\u00a0{r0\u2013r3, r12, lr, pc, xPSR}\u00a0to the current thread\u2019s\u00a0PSP. The assembly stub then saves the remaining\u00a0callee-saved\u00a0registers\u00a0r4\u2013r11\u00a0to that same PSP stack frame and calls the C scheduler: Save current thread:\u00a0osSched()\u00a0stores the current thread\u2019s\u00a0PSP\u00a0into its TCB. Pick next thread:\u00a0osSched()\u00a0selects the next READY TCB (front of the ready queue) and loads its saved\u00a0PSP\u00a0into a CPU register for restore. Restore next thread:\u00a0Back in\u00a0PendSV, the stub sets\u00a0LR\u00a0to an\u00a0EXC_RETURN\u00a0value that returns to\u00a0Thread mode using PSP\u00a0(0xFFFFFFFD),\u00a0pops\u00a0r4\u2013r11\u00a0from the next thread\u2019s stack,\u00a0writes PSP, and\u00a0BX LR. The exception return causes hardware to unstack\u00a0{r0\u2013r3, r12, lr, pc, xPSR}\u00a0from that same PSP, resuming the chosen thread exactly where it left off. This split\u2014tiny, deterministic assembly for save/restore plus C for policy in\u00a0osSched, keeps the CPU-specific pieces minimal while letting you express scheduling logic clearly.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:32:50.842928",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:33:05.085869",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:33:16.615998",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:33:29.482325",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:33:44.896188",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:33:59.264291",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:34:17.994449",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:34:29.815208",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:34:39.705414",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:34:55.605161",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

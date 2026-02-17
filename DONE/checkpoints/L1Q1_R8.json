@@ -1,0 +1,77 @@
+{
+  "question_id": "L1Q1",
+  "response_id": "R8",
+  "response_text": "The HAL is a hardware abstraction layer. It is useful in connecting the software of the computer, in this case the IDE, with the hardware of the Nucleo microcontroller. It is used within a general embedded project to control machines through transmitting information. For instance, in this lab, numbers were transmitted through a function involving HAL between the hardware and the software. The HAL is not necessarily a necessity, but rather a convenience to operate low-level functions within the hardware.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T00:49:56.434936",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T00:50:02.996514",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T00:50:10.319031",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T00:50:17.631547",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T00:50:24.930901",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T00:50:33.831149",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T00:50:40.118921",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T00:50:47.023715",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T00:50:54.083451",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T00:51:00.860880",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 90.0,
+    "flip_rate": 10.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 9,
+    "fail_count": 1
+  }
+}

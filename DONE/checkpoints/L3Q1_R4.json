@@ -1,0 +1,77 @@
+{
+  "question_id": "L3Q1",
+  "response_id": "R4",
+  "response_text": "The process by which multiple *.c files get complied into a single executable can be broken into four steps defined as preprocessing, compilation, linking, and generating the final executable. First, preprocessing prepares the source code for compilation by handling all directives. These include, #define substitution of macros and #include to insert the contents of header files as well as other conditional compilation directives like #ifdef or #ifndef. Preprocessing expands the source code by replacing macros and including all included files so that the compiler has one cohesive, error free source code input.\\nSecond, compilation involves taking each .c file and converting them into a .o object file with machine code. The compiler will check each file for syntax errors and will translate the variables and functions in it into a low-level code with placeholders for references and external definitions. These placeholders are dealt with by the linker in the next step in which the linker combines these object files. It is the linker\u2019s role to connect placeholders to actual definitions and integrate any system libraries to ensure all parts of the program can work together.\\nLast, the unified executable file is generated and can be run by the operating system. In the lab, we used a modular design to break up our code into main.c, kernel.c, and kernel.h files. This approach was adapted because it provides higher modularity, simplifying updates to individual parts of code while maintaining a structured system.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:51:39.697751",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:51:48.813500",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:51:57.107370",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:52:06.265155",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:52:15.005315",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:52:23.153406",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:52:35.131734",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:52:48.886212",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:52:59.211445",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:53:08.132008",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 0,
+    "fail_count": 10
+  }
+}

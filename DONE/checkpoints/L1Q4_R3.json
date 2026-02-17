@@ -1,0 +1,600 @@
+{
+  "question_id": "L1Q4",
+  "response_id": "R3",
+  "response_text": "To set up multiple stacks using the same method from the lab, we just start with the initial MSP value and divide up the memory into equal-sized blocks for each thread. Each thread gets a fixed stack size, and we also leave space for the main stack. The starting address for thread j is found by adding the main stack size to the MSP value, then adding (j - 1) times the thread stack size. This way, each thread\u2019s stack gets placed one after the other in memory, right after the main stack. We also need to make sure the stack sizes are multiples of 8 to stay aligned\u2014otherwise the processor could crash. On top of that, we have to check that all the stack memory fits in RAM and doesn\u2019t overlap with anything else. As long as we do all that, we can figure out safe and separate stack locations for every thread ahead of time.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T01:18:32.690975",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T01:18:41.727127",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T01:18:57.440959",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T01:19:05.769516",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T01:19:19.357827",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T01:19:30.977252",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T01:19:41.107636",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T01:19:48.704369",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T01:20:00.036169",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T01:20:09.581042",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T01:20:19.543687",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T01:20:27.160423",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T01:20:36.809681",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T01:21:08.557986",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T01:21:41.759828",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T01:21:50.782544",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T01:21:56.699030",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T01:22:09.579933",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T01:22:22.042204",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T01:22:37.284017",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**PSP computation identified** - The response explicitly states that the new PSP value is obtained by applying a numeric offset to MSP_init_val (e.g., \"PSP_val = MSP_init_val  offset\").",
+        "**Correct offset magnitude mentioned** - The response includes the exact offset value used in the lab (e.g., \"offset = 0x200 bytes\") or correctly describes it as the size of the reserved threadstack region.",
+        "**Need for initial MSP location explained** - The response explains that knowing the initial MSP address is necessary to guarantee that the computed PSP address lies within a valid stack region (i.e., to verify PSP is a legal RAM address).",
+        "**Terminology used accurately** - All references to \"MSP\", \"PSP\", \"stack allocation\", and \"offset\" are correct and consistent with the lab context (no contradictory or misleading usage).",
+        "**Answer completeness (covers all rubric points)** - The response addresses both required elements: (a) how PSP_val is derived from MSP_init_val and (b) why the initial MSP location is required."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T01:23:13.910288",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**PSP computation identified** - The response explicitly states that the new PSP value is obtained by applying a numeric offset to MSP_init_val (e.g., \"PSP_val = MSP_init_val  offset\").",
+        "**Correct offset magnitude mentioned** - The response includes the exact offset value used in the lab (e.g., \"offset = 0x200 bytes\") or correctly describes it as the size of the reserved threadstack region.",
+        "**Need for initial MSP location explained** - The response explains that knowing the initial MSP address is necessary to guarantee that the computed PSP address lies within a valid stack region (i.e., to verify PSP is a legal RAM address).",
+        "**Terminology used accurately** - All references to \"MSP\", \"PSP\", \"stack allocation\", and \"offset\" are correct and consistent with the lab context (no contradictory or misleading usage).",
+        "**Answer completeness (covers all rubric points)** - The response addresses both required elements: (a) how PSP_val is derived from MSP_init_val and (b) why the initial MSP location is required."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T01:23:55.186359",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**PSP computation identified** - The response explicitly states that the new PSP value is obtained by applying a numeric offset to MSP_init_val (e.g., \"PSP_val = MSP_init_val  offset\").",
+        "**Correct offset magnitude mentioned** - The response includes the exact offset value used in the lab (e.g., \"offset = 0x200 bytes\") or correctly describes it as the size of the reserved threadstack region.",
+        "**Need for initial MSP location explained** - The response explains that knowing the initial MSP address is necessary to guarantee that the computed PSP address lies within a valid stack region (i.e., to verify PSP is a legal RAM address).",
+        "**Terminology used accurately** - All references to \"MSP\", \"PSP\", \"stack allocation\", and \"offset\" are correct and consistent with the lab context (no contradictory or misleading usage).",
+        "**Answer completeness (covers all rubric points)** - The response addresses both required elements: (a) how PSP_val is derived from MSP_init_val and (b) why the initial MSP location is required."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T01:24:08.739159",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**PSP computation identified** - The response explicitly states that the new PSP value is obtained by applying a numeric offset to MSP_init_val (e.g., \"PSP_val = MSP_init_val  offset\").",
+        "**Correct offset magnitude mentioned** - The response includes the exact offset value used in the lab (e.g., \"offset = 0x200 bytes\") or correctly describes it as the size of the reserved threadstack region.",
+        "**Need for initial MSP location explained** - The response explains that knowing the initial MSP address is necessary to guarantee that the computed PSP address lies within a valid stack region (i.e., to verify PSP is a legal RAM address).",
+        "**Terminology used accurately** - All references to \"MSP\", \"PSP\", \"stack allocation\", and \"offset\" are correct and consistent with the lab context (no contradictory or misleading usage).",
+        "**Answer completeness (covers all rubric points)** - The response addresses both required elements: (a) how PSP_val is derived from MSP_init_val and (b) why the initial MSP location is required."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T01:24:19.476050",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**PSP computation identified** - The response explicitly states that the new PSP value is obtained by applying a numeric offset to MSP_init_val (e.g., \"PSP_val = MSP_init_val  offset\").",
+        "**Correct offset magnitude mentioned** - The response includes the exact offset value used in the lab (e.g., \"offset = 0x200 bytes\") or correctly describes it as the size of the reserved threadstack region.",
+        "**Need for initial MSP location explained** - The response explains that knowing the initial MSP address is necessary to guarantee that the computed PSP address lies within a valid stack region (i.e., to verify PSP is a legal RAM address).",
+        "**Terminology used accurately** - All references to \"MSP\", \"PSP\", \"stack allocation\", and \"offset\" are correct and consistent with the lab context (no contradictory or misleading usage).",
+        "**Answer completeness (covers all rubric points)** - The response addresses both required elements: (a) how PSP_val is derived from MSP_init_val and (b) why the initial MSP location is required."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T01:24:29.788395",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**PSP computation identified** - The response explicitly states that the new PSP value is obtained by applying a numeric offset to MSP_init_val (e.g., \"PSP_val = MSP_init_val  offset\").",
+        "**Correct offset magnitude mentioned** - The response includes the exact offset value used in the lab (e.g., \"offset = 0x200 bytes\") or correctly describes it as the size of the reserved threadstack region.",
+        "**Need for initial MSP location explained** - The response explains that knowing the initial MSP address is necessary to guarantee that the computed PSP address lies within a valid stack region (i.e., to verify PSP is a legal RAM address).",
+        "**Terminology used accurately** - All references to \"MSP\", \"PSP\", \"stack allocation\", and \"offset\" are correct and consistent with the lab context (no contradictory or misleading usage).",
+        "**Answer completeness (covers all rubric points)** - The response addresses both required elements: (a) how PSP_val is derived from MSP_init_val and (b) why the initial MSP location is required."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0\nDimension 2: 0\nDimension 3: 0\nDimension 4: 0\nDimension 5: 0\nOverall: 0",
+      "timestamp": "2025-11-11T01:24:42.715195",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**PSP computation identified** - The response explicitly states that the new PSP value is obtained by applying a numeric offset to MSP_init_val (e.g., \"PSP_val = MSP_init_val  offset\").",
+        "**Correct offset magnitude mentioned** - The response includes the exact offset value used in the lab (e.g., \"offset = 0x200 bytes\") or correctly describes it as the size of the reserved threadstack region.",
+        "**Need for initial MSP location explained** - The response explains that knowing the initial MSP address is necessary to guarantee that the computed PSP address lies within a valid stack region (i.e., to verify PSP is a legal RAM address).",
+        "**Terminology used accurately** - All references to \"MSP\", \"PSP\", \"stack allocation\", and \"offset\" are correct and consistent with the lab context (no contradictory or misleading usage).",
+        "**Answer completeness (covers all rubric points)** - The response addresses both required elements: (a) how PSP_val is derived from MSP_init_val and (b) why the initial MSP location is required."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T01:25:00.612740",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**PSP computation identified** - The response explicitly states that the new PSP value is obtained by applying a numeric offset to MSP_init_val (e.g., \"PSP_val = MSP_init_val  offset\").",
+        "**Correct offset magnitude mentioned** - The response includes the exact offset value used in the lab (e.g., \"offset = 0x200 bytes\") or correctly describes it as the size of the reserved threadstack region.",
+        "**Need for initial MSP location explained** - The response explains that knowing the initial MSP address is necessary to guarantee that the computed PSP address lies within a valid stack region (i.e., to verify PSP is a legal RAM address).",
+        "**Terminology used accurately** - All references to \"MSP\", \"PSP\", \"stack allocation\", and \"offset\" are correct and consistent with the lab context (no contradictory or misleading usage).",
+        "**Answer completeness (covers all rubric points)** - The response addresses both required elements: (a) how PSP_val is derived from MSP_init_val and (b) why the initial MSP location is required."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T01:25:20.616549",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**PSP computation identified** - The response explicitly states that the new PSP value is obtained by applying a numeric offset to MSP_init_val (e.g., \"PSP_val = MSP_init_val  offset\").",
+        "**Correct offset magnitude mentioned** - The response includes the exact offset value used in the lab (e.g., \"offset = 0x200 bytes\") or correctly describes it as the size of the reserved threadstack region.",
+        "**Need for initial MSP location explained** - The response explains that knowing the initial MSP address is necessary to guarantee that the computed PSP address lies within a valid stack region (i.e., to verify PSP is a legal RAM address).",
+        "**Terminology used accurately** - All references to \"MSP\", \"PSP\", \"stack allocation\", and \"offset\" are correct and consistent with the lab context (no contradictory or misleading usage).",
+        "**Answer completeness (covers all rubric points)** - The response addresses both required elements: (a) how PSP_val is derived from MSP_init_val and (b) why the initial MSP location is required."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T01:25:34.137023",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**PSP computation identified** - The response explicitly states that the new PSP value is obtained by applying a numeric offset to MSP_init_val (e.g., \"PSP_val = MSP_init_val  offset\").",
+        "**Correct offset magnitude mentioned** - The response includes the exact offset value used in the lab (e.g., \"offset = 0x200 bytes\") or correctly describes it as the size of the reserved threadstack region.",
+        "**Need for initial MSP location explained** - The response explains that knowing the initial MSP address is necessary to guarantee that the computed PSP address lies within a valid stack region (i.e., to verify PSP is a legal RAM address).",
+        "**Terminology used accurately** - All references to \"MSP\", \"PSP\", \"stack allocation\", and \"offset\" are correct and consistent with the lab context (no contradictory or misleading usage).",
+        "**Answer completeness (covers all rubric points)** - The response addresses both required elements: (a) how PSP_val is derived from MSP_init_val and (b) why the initial MSP location is required."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T01:25:50.059856",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**PSP computation identified** - The response explicitly states that the new PSP value is obtained by applying a numeric offset to MSP_init_val (e.g., \"PSP_val = MSP_init_val  offset\").",
+        "**Correct offset magnitude mentioned** - The response includes the exact offset value used in the lab (e.g., \"offset = 0x200 bytes\") or correctly describes it as the size of the reserved threadstack region.",
+        "**Need for initial MSP location explained** - The response explains that knowing the initial MSP address is necessary to guarantee that the computed PSP address lies within a valid stack region (i.e., to verify PSP is a legal RAM address).",
+        "**Terminology used accurately** - All references to \"MSP\", \"PSP\", \"stack allocation\", and \"offset\" are correct and consistent with the lab context (no contradictory or misleading usage).",
+        "**Answer completeness (covers all rubric points)** - The response addresses both required elements: (a) how PSP_val is derived from MSP_init_val and (b) why the initial MSP location is required."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0\nDimension 2: 0\nDimension 3: 0\nDimension 4: 0\nDimension 5: 0\nOverall: 0",
+      "timestamp": "2025-11-11T01:26:28.305621",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**PSP computation identified** - The response explicitly states that the new PSP value is obtained by applying a numeric offset to MSP_init_val (e.g., \"PSP_val = MSP_init_val  offset\").",
+        "**Correct offset magnitude mentioned** - The response includes the exact offset value used in the lab (e.g., \"offset = 0x200 bytes\") or correctly describes it as the size of the reserved threadstack region.",
+        "**Need for initial MSP location explained** - The response explains that knowing the initial MSP address is necessary to guarantee that the computed PSP address lies within a valid stack region (i.e., to verify PSP is a legal RAM address).",
+        "**Terminology used accurately** - All references to \"MSP\", \"PSP\", \"stack allocation\", and \"offset\" are correct and consistent with the lab context (no contradictory or misleading usage).",
+        "**Answer completeness (covers all rubric points)** - The response addresses both required elements: (a) how PSP_val is derived from MSP_init_val and (b) why the initial MSP location is required."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T01:27:03.187597",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**PSP computation identified** - The response explicitly states that the new PSP value is obtained by applying a numeric offset to MSP_init_val (e.g., \"PSP_val = MSP_init_val  offset\").",
+        "**Correct offset magnitude mentioned** - The response includes the exact offset value used in the lab (e.g., \"offset = 0x200 bytes\") or correctly describes it as the size of the reserved threadstack region.",
+        "**Need for initial MSP location explained** - The response explains that knowing the initial MSP address is necessary to guarantee that the computed PSP address lies within a valid stack region (i.e., to verify PSP is a legal RAM address).",
+        "**Terminology used accurately** - All references to \"MSP\", \"PSP\", \"stack allocation\", and \"offset\" are correct and consistent with the lab context (no contradictory or misleading usage).",
+        "**Answer completeness (covers all rubric points)** - The response addresses both required elements: (a) how PSP_val is derived from MSP_init_val and (b) why the initial MSP location is required."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0\nDimension 2: 0\nDimension 3: 0\nDimension 4: 0\nDimension 5: 0\nOverall: 0",
+      "timestamp": "2025-11-11T01:27:17.242451",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**PSP computation identified** - The response explicitly states that the new PSP value is obtained by applying a numeric offset to MSP_init_val (e.g., \"PSP_val = MSP_init_val  offset\").",
+        "**Correct offset magnitude mentioned** - The response includes the exact offset value used in the lab (e.g., \"offset = 0x200 bytes\") or correctly describes it as the size of the reserved threadstack region.",
+        "**Need for initial MSP location explained** - The response explains that knowing the initial MSP address is necessary to guarantee that the computed PSP address lies within a valid stack region (i.e., to verify PSP is a legal RAM address).",
+        "**Terminology used accurately** - All references to \"MSP\", \"PSP\", \"stack allocation\", and \"offset\" are correct and consistent with the lab context (no contradictory or misleading usage).",
+        "**Answer completeness (covers all rubric points)** - The response addresses both required elements: (a) how PSP_val is derived from MSP_init_val and (b) why the initial MSP location is required."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T01:27:29.224957",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**PSP computation identified** - The response explicitly states that the new PSP value is obtained by applying a numeric offset to MSP_init_val (e.g., \"PSP_val = MSP_init_val  offset\").",
+        "**Correct offset magnitude mentioned** - The response includes the exact offset value used in the lab (e.g., \"offset = 0x200 bytes\") or correctly describes it as the size of the reserved threadstack region.",
+        "**Need for initial MSP location explained** - The response explains that knowing the initial MSP address is necessary to guarantee that the computed PSP address lies within a valid stack region (i.e., to verify PSP is a legal RAM address).",
+        "**Terminology used accurately** - All references to \"MSP\", \"PSP\", \"stack allocation\", and \"offset\" are correct and consistent with the lab context (no contradictory or misleading usage).",
+        "**Answer completeness (covers all rubric points)** - The response addresses both required elements: (a) how PSP_val is derived from MSP_init_val and (b) why the initial MSP location is required."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0\nDimension 2: 0\nDimension 3: 0\nDimension 4: 0\nDimension 5: 0\nOverall: 0",
+      "timestamp": "2025-11-11T01:27:40.687776",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**PSP computation identified** - The response explicitly states that the new PSP value is obtained by applying a numeric offset to MSP_init_val (e.g., \"PSP_val = MSP_init_val  offset\").",
+        "**Correct offset magnitude mentioned** - The response includes the exact offset value used in the lab (e.g., \"offset = 0x200 bytes\") or correctly describes it as the size of the reserved threadstack region.",
+        "**Need for initial MSP location explained** - The response explains that knowing the initial MSP address is necessary to guarantee that the computed PSP address lies within a valid stack region (i.e., to verify PSP is a legal RAM address).",
+        "**Terminology used accurately** - All references to \"MSP\", \"PSP\", \"stack allocation\", and \"offset\" are correct and consistent with the lab context (no contradictory or misleading usage).",
+        "**Answer completeness (covers all rubric points)** - The response addresses both required elements: (a) how PSP_val is derived from MSP_init_val and (b) why the initial MSP location is required."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T01:27:50.379476",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**PSP computation identified** - The response explicitly states that the new PSP value is obtained by applying a numeric offset to MSP_init_val (e.g., \"PSP_val = MSP_init_val  offset\").",
+        "**Correct offset magnitude mentioned** - The response includes the exact offset value used in the lab (e.g., \"offset = 0x200 bytes\") or correctly describes it as the size of the reserved threadstack region.",
+        "**Need for initial MSP location explained** - The response explains that knowing the initial MSP address is necessary to guarantee that the computed PSP address lies within a valid stack region (i.e., to verify PSP is a legal RAM address).",
+        "**Terminology used accurately** - All references to \"MSP\", \"PSP\", \"stack allocation\", and \"offset\" are correct and consistent with the lab context (no contradictory or misleading usage).",
+        "**Answer completeness (covers all rubric points)** - The response addresses both required elements: (a) how PSP_val is derived from MSP_init_val and (b) why the initial MSP location is required."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T01:28:09.219589",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**PSP computation identified** - The response explicitly states that the new PSP value is obtained by applying a numeric offset to MSP_init_val (e.g., \"PSP_val = MSP_init_val  offset\").",
+        "**Correct offset magnitude mentioned** - The response includes the exact offset value used in the lab (e.g., \"offset = 0x200 bytes\") or correctly describes it as the size of the reserved threadstack region.",
+        "**Need for initial MSP location explained** - The response explains that knowing the initial MSP address is necessary to guarantee that the computed PSP address lies within a valid stack region (i.e., to verify PSP is a legal RAM address).",
+        "**Terminology used accurately** - All references to \"MSP\", \"PSP\", \"stack allocation\", and \"offset\" are correct and consistent with the lab context (no contradictory or misleading usage).",
+        "**Answer completeness (covers all rubric points)** - The response addresses both required elements: (a) how PSP_val is derived from MSP_init_val and (b) why the initial MSP location is required."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0\nDimension 2: 0\nDimension 3: 0\nDimension 4: 0\nDimension 5: 0\nOverall: 0",
+      "timestamp": "2025-11-11T01:28:20.313602",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**PSP computation identified** - The response explicitly states that the new PSP value is obtained by applying a numeric offset to MSP_init_val (e.g., \"PSP_val = MSP_init_val  offset\").",
+        "**Correct offset magnitude mentioned** - The response includes the exact offset value used in the lab (e.g., \"offset = 0x200 bytes\") or correctly describes it as the size of the reserved threadstack region.",
+        "**Need for initial MSP location explained** - The response explains that knowing the initial MSP address is necessary to guarantee that the computed PSP address lies within a valid stack region (i.e., to verify PSP is a legal RAM address).",
+        "**Terminology used accurately** - All references to \"MSP\", \"PSP\", \"stack allocation\", and \"offset\" are correct and consistent with the lab context (no contradictory or misleading usage).",
+        "**Answer completeness (covers all rubric points)** - The response addresses both required elements: (a) how PSP_val is derived from MSP_init_val and (b) why the initial MSP location is required."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T01:28:41.595145",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**PSP computation identified** - The response explicitly states that the new PSP value is obtained by applying a numeric offset to MSP_init_val (e.g., \"PSP_val = MSP_init_val  offset\").",
+        "**Correct offset magnitude mentioned** - The response includes the exact offset value used in the lab (e.g., \"offset = 0x200 bytes\") or correctly describes it as the size of the reserved threadstack region.",
+        "**Need for initial MSP location explained** - The response explains that knowing the initial MSP address is necessary to guarantee that the computed PSP address lies within a valid stack region (i.e., to verify PSP is a legal RAM address).",
+        "**Terminology used accurately** - All references to \"MSP\", \"PSP\", \"stack allocation\", and \"offset\" are correct and consistent with the lab context (no contradictory or misleading usage).",
+        "**Answer completeness (covers all rubric points)** - The response addresses both required elements: (a) how PSP_val is derived from MSP_init_val and (b) why the initial MSP location is required."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0\nDimension 2: 0\nDimension 3: 0\nDimension 4: 0\nDimension 5: 0\nOverall: 0",
+      "timestamp": "2025-11-11T01:28:53.627124",
+      "method": "qd"
+    }
+  ],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 60.0,
+    "flip_rate": 40.0,
+    "majority": 0,
+    "sample_size": 20,
+    "pass_count": 8,
+    "fail_count": 12
+  },
+  "version_progression": [
+    {
+      "version": "baseline",
+      "version_label": "Baseline (Rubric)",
+      "metrics": {
+        "consensus": 60.0,
+        "flip_rate": 40.0,
+        "majority": 0,
+        "sample_size": 20,
+        "pass_count": 8,
+        "fail_count": 12
+      },
+      "flip_rate_change_vs_baseline": 0.0,
+      "timestamp": "2025-11-11T01:22:37.286156"
+    },
+    {
+      "version": "v1",
+      "version_label": "QD v1 (Initial)",
+      "metrics": {
+        "consensus": 100.0,
+        "flip_rate": 0.0,
+        "majority": 0,
+        "sample_size": 20,
+        "pass_count": 0,
+        "fail_count": 20
+      },
+      "flip_rate_change_vs_baseline": 40.0,
+      "timestamp": "2025-11-11T01:28:54.356541"
+    }
+  ],
+  "qd_initial_version": "v1",
+  "qd_version_selected": "v1",
+  "qd_initial_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 0,
+    "sample_size": 20,
+    "pass_count": 0,
+    "fail_count": 20
+  },
+  "qd_result": "improved_or_maintained",
+  "flip_rate_change_vs_baseline": 40.0
+}

@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q4",
+  "response_id": "R9",
+  "response_text": "Threads run in the thread stack (PSP), which must be at a different location in memory than the default stack (MSP) because MSP is reserved for kernel operations. We need to define where PSP is in memory in order to assign a thread to run in it. We do this using the \u201c__set_PSP\u201d function to assign our thread stack to start at a specific memory address indicated by the stack pointer, which in our case is pointing to the desired location for PSP that we calculated earlier. Since we are only running a single thread, this address will also be the address for our thread. If we didn\u2019t set the PSP address before calling the function that runs our first thread, the thread would attempt to run at a memory address that is likely invalid, which would subsequently cause a hard fault crash.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:43:15.759351",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:43:24.701750",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:43:33.390619",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:43:41.513744",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:43:50.610900",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:43:59.912671",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:44:08.998113",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:44:16.264665",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:44:24.568342",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:44:34.058409",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

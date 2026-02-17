@@ -1,0 +1,77 @@
+{
+  "question_id": "L3Q3",
+  "response_id": "R9",
+  "response_text": "From the user's perspective, setting up and starting a thread involves calling specific functions provided by the kernel. First, the user calls osKernelInitialize() to initialize the kernel, which sets up internal data structures and stores the starting point of the main stack for future use. Next, the user calls osCreateThread() and passes in the function the thread should run; during this step, a stack is allocated for the thread and initialized with values like xPSR and PC so the thread appears \"ready to run.\" Then, the user calls osKernelStart(), which triggers a software interrupt (SVC) that sets the Process Stack Pointer (PSP) and jumps into the thread function. From that point on, the thread runs in its own context using the memory that was allocated for it.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:09:18.991438",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:09:30.836620",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:09:39.871748",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:09:48.412506",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:10:05.972557",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:10:26.385360",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:10:37.304035",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:10:45.152048",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:10:53.570379",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:11:01.781521",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 90.0,
+    "flip_rate": 10.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 9,
+    "fail_count": 1
+  }
+}

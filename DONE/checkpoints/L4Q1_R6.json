@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q1",
+  "response_id": "R6",
+  "response_text": "The TCBs are currently stored using an array. If a queue was used instead, then the current thread would first be dequeued from the front. When it yields, it is queued to the back of the queue. This results in a circularly alternating schedule, or a \u201cround-robin\u201d schedule. The next thread to run is then dequeued from the front of the queue. This method requires more memory than a simple array, but the logic for scheduling would be simpler. Instead of having to track an index, the data structure itself handles the order of the threads. The program only needs to remove from the front and add to the back, with no index required.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:04:43.019735",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:04:51.571211",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:05:07.085833",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:05:19.067538",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:05:30.265369",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:05:51.719096",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:05:57.983752",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:06:05.555587",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:06:27.064513",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:06:37.312814",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 70.0,
+    "flip_rate": 30.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 7,
+    "fail_count": 3
+  }
+}

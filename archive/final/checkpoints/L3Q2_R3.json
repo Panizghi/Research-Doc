@@ -1,0 +1,369 @@
+{
+  "question_id": "L3Q2",
+  "response_id": "R3",
+  "response_text": "Including a .c file using #include essentially copies and pastes its contents into your file before compilation. This bypasses the proper compilation process. Instead, .c files should be compiled separately and their interfaces should be declared in corresponding .h files. This separation ensures clean compilation and prevents unintended interactions between files.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-10T00:25:14.277116",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T00:25:20.729327",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T00:25:27.447118",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T00:25:33.609129",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-10T00:25:40.164877",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T00:25:46.428958",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T00:25:52.143618",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T00:25:59.702699",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T00:26:04.044680",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T00:26:10.370844",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T00:26:17.597700",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T00:26:24.707712",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T00:26:31.629926",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T00:26:36.687207",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T00:26:44.164469",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T00:26:50.512055",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-10T00:26:59.870444",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T00:27:04.747204",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T00:27:12.825932",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T00:27:21.232662",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T00:27:33.930531",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T00:27:44.843633",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T00:27:56.079395",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T00:28:06.050338",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T00:28:17.215402",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T00:28:28.926071",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T00:28:40.185355",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T00:28:54.009263",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T00:29:03.497784",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T00:29:12.950748",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T00:29:22.757012",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T00:29:33.124135",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T00:29:44.900749",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T00:29:57.597719",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T00:30:07.838068",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T00:30:23.054447",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T00:30:34.361071",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T00:30:45.630404",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T00:30:57.376269",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T00:31:09.687925",
+      "method": "qd"
+    }
+  ]
+}

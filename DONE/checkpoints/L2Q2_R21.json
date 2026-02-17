@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q2",
+  "response_id": "R21",
+  "response_text": "System calls are a kind of function which give userspace programs the ability to ask the kernel to do something. Other functions don\u2019t have the ability to do this. However, the kernel might refuse depending on what the system call is. A system call is a function that is usually accessed by an interrupt but the function does not get compiled into the user\u2019s program code. It is fixed in memory.\\nWhen a system call is triggered, the system call handler is called in to provide a kernel service. The system call handler is always at the same place in memory hence the mechanism by which we trigger a system call just needs to know the memory location and then call the function pointer stored there. Since user code can\u2019t run protected/privileged instructions directly, every sensitive operation must be handled through a system call.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:43:24.930657",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:43:33.536019",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:43:42.330966",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:43:52.238142",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:43:58.364274",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:44:08.666053",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:44:16.769125",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:44:27.449155",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:44:37.265386",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:44:45.906819",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

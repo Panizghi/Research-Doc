@@ -1,0 +1,74 @@
+{
+  "dimensions": [
+    "**Explicit arithmetic expression** - The answer must contain a clear formula that shows how PSP_val is derived from MSP_init_val, e.g., \"PSP_val = MSP_init_val - 0x200\" or \"PSP = MSP_init_val + offset\". Any answer that merely says \"we offset the MSP\" without an explicit expression fails this dimension.",
+    "**Exact offset specification** - The constant used in the formula must be the exact value required by the lab (0x200 bytes, i.e., 512 bytes) or be described equivalently as \"the size of the reserved threadstack region (512 bytes)\". Vague references such as \"a small offset\" or any numeric value other than 0x200 cause failure.",
+    "**Justification for needing MSP_init_val** - The response must explain why the initial MSP address is required, specifically that it allows us to compute a PSP address that lies within a valid RAM/stack region and therefore is a legal stack pointer. Statements like \"we need the MSP to verify the PSP is a valid stack address\" satisfy this requirement.",
+    "**Terminology consistency** - All mentions of the pointers must be factually correct and consistent: MSP = Main Stack Pointer, PSP = Process (or Private) Stack Pointer. The answer must not refer to PSP as the \"main stack\" or MSP as the \"process stack\". Any contradictory usage results in failure of this dimension.",
+    "**Coverage of both rubric elements** - The answer must address (a) how PSP_val is obtained from MSP_init_val (using the explicit formula and correct offset) **and** (b) why knowing the initial MSP location is necessary (the justification). Omission of either element leads to a failing evaluation."
+  ],
+  "raw_response": "1. **Explicit arithmetic expression** - The answer must contain a clear formula that shows how PSP_val is derived from MSP_init_val, e.g., \"PSP_val = MSP_init_val - 0x200\" or \"PSP = MSP_init_val + offset\". Any answer that merely says \"we offset the MSP\" without an explicit expression fails this dimension.  \n\n2. **Exact offset specification** - The constant used in the formula must be the exact value required by the lab (0x200 bytes, i.e., 512 bytes) or be described equivalently as \"the size of the reserved threadstack region (512 bytes)\". Vague references such as \"a small offset\" or any numeric value other than 0x200 cause failure.  \n\n3. **Justification for needing MSP_init_val** - The response must explain why the initial MSP address is required, specifically that it allows us to compute a PSP address that lies within a valid RAM/stack region and therefore is a legal stack pointer. Statements like \"we need the MSP to verify the PSP is a valid stack address\" satisfy this requirement.  \n\n4. **Terminology consistency** - All mentions of the pointers must be factually correct and consistent: MSP = Main Stack Pointer, PSP = Process (or Private) Stack Pointer. The answer must not refer to PSP as the \"main stack\" or MSP as the \"process stack\". Any contradictory usage results in failure of this dimension.  \n\n5. **Coverage of both rubric elements** - The answer must address (a) how PSP_val is obtained from MSP_init_val (using the explicit formula and correct offset) **and** (b) why knowing the initial MSP location is necessary (the justification). Omission of either element leads to a failing evaluation.",
+  "timestamp": "2025-11-16T13:06:59.014574",
+  "version": "v3",
+  "operation": "add_drop",
+  "operation_details": {
+    "dimension_mapping": [
+      {
+        "old_index": 0,
+        "old_text": "**Explicit PSP formula** - The answer must contain a clear arithmetic expression that shows how PSP_val is derived from MSP_init_val (e.g., \"PSP_val = MSP_init_val - 0x200\" or \"PSP_val = MSP_init_val + offset\"). Stating only that \"we offset the MSP\" without an explicit formula is insufficient.",
+        "new_index": 0,
+        "new_text": "**Explicit arithmetic expression** - The answer must contain a clear formula that shows how PSP_val is derived from MSP_init_val, e.g., \"PSP_val = MSP_init_val - 0x200\" or \"PSP = MSP_init_val + offset\". Any answer that merely says \"we offset the MSP\" without an explicit expression fails this dimension.",
+        "similarity": 0.7269681742043551,
+        "operation": "refine"
+      },
+      {
+        "old_index": 1,
+        "old_text": "**Exact offset value or equivalent description** - The response must either give the precise numeric offset used in the lab (0x200 bytes) or correctly describe it as \"the size of the reserved threadstack region\" that matches the lab specification. Vague references such as \"a small offset\" do not satisfy this criterion.",
+        "new_index": 1,
+        "new_text": "**Exact offset specification** - The constant used in the formula must be the exact value required by the lab (0x200 bytes, i.e., 512 bytes) or be described equivalently as \"the size of the reserved threadstack region (512 bytes)\". Vague references such as \"a small offset\" or any numeric value other than 0x200 cause failure.",
+        "similarity": 0.34055727554179566,
+        "operation": "refine"
+      },
+      {
+        "old_index": 4,
+        "old_text": "**Coverage of both rubric criteria** - The response must address both required elements: (a) how PSP_val is obtained from MSP_init_val and (b) why the initial MSP location is required. Omission of either element leads to a failing evaluation.",
+        "new_index": 4,
+        "new_text": "**Coverage of both rubric elements** - The answer must address (a) how PSP_val is obtained from MSP_init_val (using the explicit formula and correct offset) **and** (b) why knowing the initial MSP location is necessary (the justification). Omission of either element leads to a failing evaluation.",
+        "similarity": 0.5565862708719852,
+        "operation": "refine"
+      }
+    ],
+    "added": [
+      {
+        "index": 2,
+        "text": "**Justification for needing MSP_init_val** - The response must explain why the initial MSP address is required, specifically that it allows us to compute a PSP address that lies within a valid RAM/stack region and therefore is a legal stack pointer. Statements like \"we need the MSP to verify the PSP is a valid stack address\" satisfy this requirement."
+      },
+      {
+        "index": 3,
+        "text": "**Terminology consistency** - All mentions of the pointers must be factually correct and consistent: MSP = Main Stack Pointer, PSP = Process (or Private) Stack Pointer. The answer must not refer to PSP as the \"main stack\" or MSP as the \"process stack\". Any contradictory usage results in failure of this dimension."
+      }
+    ],
+    "dropped": [
+      {
+        "index": 2,
+        "text": "**Justification for needing MSP_init_val** - The answer must explain why knowing the initial MSP address is necessary, specifically that it allows us to verify that the computed PSP address falls within a valid RAM/stack region and is therefore a legal stack pointer."
+      },
+      {
+        "index": 3,
+        "text": "**Terminology consistency** - All mentions of MSP, PSP, stack allocation, and offset must be factually correct and used consistently throughout the response. Any contradictory or misleading usage (e.g., calling PSP the \"main stack\") results in failure of this dimension."
+      }
+    ],
+    "splits": [],
+    "merges": [],
+    "old_count": 5,
+    "new_count": 5
+  },
+  "parent_version": "v2",
+  "previous_dimensions": [
+    "**Explicit PSP formula** - The answer must contain a clear arithmetic expression that shows how PSP_val is derived from MSP_init_val (e.g., \"PSP_val = MSP_init_val - 0x200\" or \"PSP_val = MSP_init_val + offset\"). Stating only that \"we offset the MSP\" without an explicit formula is insufficient.",
+    "**Exact offset value or equivalent description** - The response must either give the precise numeric offset used in the lab (0x200 bytes) or correctly describe it as \"the size of the reserved threadstack region\" that matches the lab specification. Vague references such as \"a small offset\" do not satisfy this criterion.",
+    "**Justification for needing MSP_init_val** - The answer must explain why knowing the initial MSP address is necessary, specifically that it allows us to verify that the computed PSP address falls within a valid RAM/stack region and is therefore a legal stack pointer.",
+    "**Terminology consistency** - All mentions of MSP, PSP, stack allocation, and offset must be factually correct and used consistently throughout the response. Any contradictory or misleading usage (e.g., calling PSP the \"main stack\") results in failure of this dimension.",
+    "**Coverage of both rubric criteria** - The response must address both required elements: (a) how PSP_val is obtained from MSP_init_val and (b) why the initial MSP location is required. Omission of either element leads to a failing evaluation."
+  ],
+  "problematic_count": 3
+}

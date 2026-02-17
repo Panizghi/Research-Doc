@@ -1,0 +1,77 @@
+{
+  "question_id": "L3Q3",
+  "response_id": "R5",
+  "response_text": "How to Set Up and Start a Thread (User Perspective):\\nDefine the Thread Function: First, write the function that contains the code you want the thread to execute. This function is the entry point for the thread and must match the expected format (e.g., it should take no arguments and not return a value). Initialize the Kernel: Before creating any threads, the kernel must be initialized using a function like kernel_init(). This sets up the scheduler and other internal data structures required for thread management. Create the Thread: Use a function like thread_create() to register your thread with the kernel. This function typically requires you to provide the thread function, a priority level, and possibly a stack size. Internally, this step allocates memory from the stack pool, sets up the initial stack frame with the correct register values (xPSR, PC, LR, etc.), and creates a Thread Control Block (TCB) for the thread. Register the Thread with the Kernel Scheduler: During thread_create(), the new thread is added to the kernel\u2019s list of runnable threads. This allows the scheduler to consider it during context switches. Start the Scheduler: Once all desired threads are created, call kernel_start() (or a similar function) to start the scheduler. The kernel will begin selecting threads to run based on priority and state, and will perform context switching using each thread\u2019s stack.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:04:03.954215",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:04:08.957781",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:04:18.295716",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:04:22.960217",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:04:28.227601",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:04:33.798728",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:04:38.711726",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:04:45.077706",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:04:49.932553",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:04:57.050281",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

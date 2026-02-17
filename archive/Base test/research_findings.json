@@ -1,0 +1,87 @@
+{
+  "experiment_metadata": {
+    "timestamp": "2025-11-03T03:48:38.693851",
+    "total_questions": 4,
+    "total_answers": 86
+  },
+  "overall_performance": {
+    "avg_baseline_flip_rate": 18.253968253968253,
+    "avg_qd_flip_rate": 11.21031746031746,
+    "avg_improvement": 7.0436507936507935,
+    "relative_improvement_percent": 38.58695652173913,
+    "improved_questions": 3,
+    "total_questions": 4
+  },
+  "question_level_results": [
+    {
+      "question_id": "L1Q1",
+      "num_answers": 5,
+      "baseline_flip_rate": 0.0,
+      "qd_flip_rate": 0.0,
+      "improvement": 0.0,
+      "relative_improvement": 0.0,
+      "num_qds_initial": 0,
+      "qd_overlap_score": 0.0
+    },
+    {
+      "question_id": "L1Q2",
+      "num_answers": 14,
+      "baseline_flip_rate": 35.714285714285715,
+      "qd_flip_rate": 35.714285714285715,
+      "improvement": 0.0,
+      "relative_improvement": 0.0,
+      "num_qds_initial": 3,
+      "qd_overlap_score": 0.17778839517969955
+    },
+    {
+      "question_id": "L1Q3",
+      "num_answers": 18,
+      "baseline_flip_rate": 11.11111111111111,
+      "qd_flip_rate": 5.555555555555555,
+      "improvement": 5.555555555555555,
+      "relative_improvement": 50.0,
+      "num_qds_initial": 3,
+      "qd_overlap_score": 0.09873949579831932
+    },
+    {
+      "question_id": "L1Q4",
+      "num_answers": 28,
+      "baseline_flip_rate": 21.428571428571427,
+      "qd_flip_rate": 3.571428571428571,
+      "improvement": 17.857142857142854,
+      "relative_improvement": 83.33333333333333,
+      "num_qds_initial": 3,
+      "qd_overlap_score": 0.21281464530892447
+    },
+    {
+      "question_id": "L1Q5",
+      "num_answers": 21,
+      "baseline_flip_rate": 4.761904761904762,
+      "qd_flip_rate": 0.0,
+      "improvement": 4.761904761904762,
+      "relative_improvement": 100.0,
+      "num_qds_initial": 4,
+      "qd_overlap_score": 0.09723515735009987
+    }
+  ],
+  "key_findings": {
+    "best_performer": "L1Q4",
+    "worst_performer": "L1Q1",
+    "questions_with_improvement": 3,
+    "questions_without_improvement": 2
+  },
+  "statistical_correlations": {
+    "baseline_vs_improvement": {
+      "r": 0.1333214209678621,
+      "p": 0.8307541174119452
+    },
+    "qd_count_vs_improvement": {
+      "r": 0.3616009260171668,
+      "p": 0.5498353955336295
+    },
+    "qd_overlap_vs_improvement": {
+      "r": 0.6239208927608473,
+      "p": 0.2606703398332415
+    }
+  }
+}

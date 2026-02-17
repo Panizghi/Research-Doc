@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q4",
+  "response_id": "R13",
+  "response_text": "If the PSP was not set before running the thread, the processor would not know where the thread\u2019s stack is located. Then, if the thread tries to execute the program and use the PSP for pushing/popping registers, etc, it would try to access some invalid and uninitialized location in memory. This leads to a hard fault, which is the processor\u2019s way of catching a fatal error such as accessing uninitialized memory.\\nOn the Cortex-M4, the Main Stack Pointer (MSP) is used by default and automatically during certain cases: reset (startup), interrupts and exceptions, privileged execution, etc. Meanwhile, threads or tasks are typically run in unprivileged mode and use the Process Stack Pointer (PSP). This separation is by design to isolate application (thread) code from system-level operations.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:49:14.454156",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:49:21.988519",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:49:30.816140",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:49:36.082044",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:49:44.118942",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:49:51.260172",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:49:57.532777",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:50:05.314367",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:50:10.540792",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:50:18.784953",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

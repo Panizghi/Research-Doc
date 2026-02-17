@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q3",
+  "response_id": "R1",
+  "response_text": "Using the modified scheduler explicitly prevents fairness (i.e. allowing for all threads to run) as its logic runs threads based on an integer priority value, preventing critical tasks from running if they are low priority. This is a bad idea, as selecting the task with the highest priority while disregarding waiting low-priority threads to run often leads those threads to starvation (lower-priority tasks may never run if a higher-priority task is always ready). This breaks the qualities of fairness and can cause critical but lower-priority threads (e.g., system maintenance or background logging) to be permanently ignored. It can be possible that the scheduler can essentially get stuck on the highest-priority tasks and no others can get a chance to run due to the overarching behaviour of the scheduler favoring priority rather than providing equal CPU usage across all threads (to enable fairness).\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:50:51.466941",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:50:57.115818",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:51:03.121630",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:51:10.627038",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:51:15.698837",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:51:23.839084",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:51:29.764714",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:51:37.783752",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:51:44.672283",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:51:53.052647",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

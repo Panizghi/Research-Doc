@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q4",
+  "response_id": "R4",
+  "response_text": "It is much easier to read and write in C rather than having to write everything in assembly, C is a higher-level language and closer to human language. Calling the C functions makes the code more readable since assembly language does not need to be understood every time, only a simple function is called. This also aids in debugging since only the function will need to be debugged if an error exists rather than having to the go through the entire program in assembly.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:20:15.118568",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T08:20:23.076091",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T08:20:29.271900",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T08:20:34.768028",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T08:20:48.042825",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:21:01.578125",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:21:07.616339",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T08:21:25.029083",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T08:21:37.944357",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T08:21:45.608858",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 60.0,
+    "flip_rate": 40.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 4,
+    "fail_count": 6
+  }
+}

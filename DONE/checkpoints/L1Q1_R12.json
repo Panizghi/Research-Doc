@@ -1,0 +1,77 @@
+{
+  "question_id": "L1Q1",
+  "response_id": "R12",
+  "response_text": "The hardware abstraction layer provides a standardized way for programs to interact with hardware devices without having to know details about the device. This allows the programmer to write code that does not depend on the device being used. It works by abstracting the low-level details of the device being used. It is useful because it saves time as the programmer does not have to know the details of the device being interfaced. It also makes the code more portable since it can be used for other hardware devices with minimal changes.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T00:52:21.610598",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T00:52:27.785030",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T00:52:33.901512",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T00:52:39.429549",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T00:52:45.894450",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T00:53:11.133214",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2025-11-12T01:35:36.225428",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x10f65dc70>: Failed to resolve 'ece-nebula16.eng.uwaterloo.ca' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "timestamp": "2025-11-12T01:35:37.234513",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x10b7f3980>, 'Connection to ece-nebula16.eng.uwaterloo.ca timed out. (connect timeout=60)'))",
+      "timestamp": "2025-11-12T01:51:10.112161",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x10b7f2b40>, 'Connection to ece-nebula16.eng.uwaterloo.ca timed out. (connect timeout=60)'))",
+      "timestamp": "2025-11-12T02:25:38.449543",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 90.0,
+    "flip_rate": 10.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 9,
+    "fail_count": 1
+  }
+}

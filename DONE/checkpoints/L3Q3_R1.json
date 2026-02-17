@@ -1,0 +1,77 @@
+{
+  "question_id": "L3Q3",
+  "response_id": "R1",
+  "response_text": "To start a thread from the user\u2019s perspective, the first and most important step is to initialize the kernel environment. This typically involves calling a setup or initialization function that prepares internal kernel data structures and ensures the system is ready to manage threads. After this setup, the user defines a thread function, which contains the code the thread should run. This definition is necessary, so the kernel knows what instructions to execute when the thread begins. The user then interacts with the kernel (through a system call or a kernel API) to register the thread, providing both the thread function and a stack. The kernel uses this information to initialize the thread\u2019s context, such as setting the program counter (PC) and loading default register values onto the stack. Once the thread is registered, the user can start thread execution, often by invoking a system call like SVC. This clear separation of responsibilities allows the user to focus on application logic while the kernel handles low-level tasks like context switching and stack management.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:58:49.322142",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:58:55.833089",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:59:02.769561",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:59:16.046162",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:59:22.447508",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:59:28.631463",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:59:39.533909",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:59:48.326587",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:59:53.631279",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:00:01.238955",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 90.0,
+    "flip_rate": 10.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 9,
+    "fail_count": 1
+  }
+}

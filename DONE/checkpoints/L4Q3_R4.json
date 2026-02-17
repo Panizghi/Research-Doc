@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q3",
+  "response_id": "R4",
+  "response_text": "There are multiple reasons why changing the OS in this way would cause several issues later down the road. By only prioritizing higher integers for higher priority, tasks with lower priority may become outdated or worse, may never be addressed as higher priority tasks continue to be addressed. This also means that any higher priority tasks that are dependent on simple fixes from lower priority tasks filed long ago will cause failures.\\nMoreover, If the scheduler has to constantly search for the highest priority task, there will be an increased overhead time contributed to this search. In comparison, using round-robin with a queue for example is much quicker because the scheduler always knows to simply run the first in queue.\\nFinally, relying solely on static priority values reduces system flexibility and adaptability, making it difficult to handle dynamic workloads or to implement features like priority aging, which helps prevent starvation by gradually increasing the priority of waiting tasks over time.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:54:07.313823",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:54:13.561073",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:54:19.598632",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:54:28.833217",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:54:34.929974",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:54:41.656592",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:54:50.398959",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:55:00.838674",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:55:07.268497",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:55:14.591049",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

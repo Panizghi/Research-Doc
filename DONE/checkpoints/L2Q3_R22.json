@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q3",
+  "response_id": "R22",
+  "response_text": "Setting up a stack for a thread means building the stack frame in memory that the hardware expects to see when it returns into that thread. We dedicated memory for the thread\u2019s stack and use PSP to point to the top of the stack\u2019s region. This is done by referring to MSP\u2019s location. During a context switch, the kernel saves R4-R11 for the outgoing thread on its stack then restores them back for the incoming thread. This lets the CPU continue exactly from where it left off.\\nWe need to populate the registers 0 through R12, LR, PC, and XPSR in that order because it is a stack. We need to set up the registers as though the thread had been running the whole time, and the chip will proceed to run the thread. In this way, we trick the chip into believing that it is already running the thread before we actually run it. We need to store register values on the stack because during a context switch the kernel must later pop the data into the real registers so that the CPU continues the thread with the same state it would have if it was running all along.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:24:36.933368",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:24:47.983240",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:25:01.010927",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:25:12.248526",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:25:25.112940",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:25:35.286201",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:25:44.432755",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:25:54.811263",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:26:06.747968",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:26:15.981990",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

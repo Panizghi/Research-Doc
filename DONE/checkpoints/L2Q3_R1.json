@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q3",
+  "response_id": "R1",
+  "response_text": "The thread\u2019s stack was setup by beginning at the current program stack pointer and writing register values such as the program counter, necessary values in the program status register, and other arbitrary, but required register values. PSP is set to the end of the newly created stack to allow for future stacks to be created. Then, to start the thread, a call is made to copy the thread stack\u2019s register values into the actual CortexM4\u2019s registers. This will \u201cstart\u201d the thread and run whatever instructions we placed into the program register (the thread\u2019s task). The reason we need to store register values on the stack is to prepare register values before we copy them and also to keep the thread\u2019s \u201ccontext\u201d separate from other threads\u2019 \u201ccontexts\u201d.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T03:46:57.993197",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T03:47:09.497003",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T03:47:24.801163",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T03:47:36.194819",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T03:47:46.338232",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T03:47:56.332614",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T03:48:08.757337",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T03:48:20.928864",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T03:48:32.015210",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T03:48:43.348765",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 0,
+    "fail_count": 10
+  }
+}

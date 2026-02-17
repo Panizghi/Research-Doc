@@ -1,0 +1,691 @@
+{
+  "question_id": "L3Q1",
+  "response_id": "R3",
+  "response_text": "The overall process of compiling multiple *.c files into a single executable is turning them into a single object file. However, this process can be further broken down into three steps: pre-processing, compilation and linker.\\nThe first step is preprocessing. Here, the preprocessor expands each directive within each file. This refers to any references made to external files or libraries that are defined somewhere else and require information outside of the file to properly understand the code and logic. This could include #include directives, macros and references to libraires. Essentially, these lines and commands must be preprocessed as context to references made in the file to define any undefined behaviour in the file. When this is being done, the preproessor will replace those lines by expanding the instructions and inputting them into the file.\\nThe next step in the process is the compiler step. In this step, the code will be translated into machine code, which is a set of binary instructions for the processor, outputting object files.\\nIn the Linker stage, it takes the outputted object files and libraries and creates an executable file. It will reference symbols and assign. final addresses to procedures. It also links external files that are referenced in the source file.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:24:40.607222",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:24:48.464627",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:24:54.268624",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:24:59.967552",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:25:06.882733",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:25:14.755176",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:25:25.995909",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:25:32.212550",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:25:40.310958",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:25:48.947027",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:25:54.466370",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:26:01.284772",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:26:05.625505",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:26:11.575750",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:26:17.630233",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:26:24.157760",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:26:33.573975",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:26:40.169030",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:26:45.521007",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-09T23:26:54.804224",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T23:27:11.233921",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T23:27:25.802602",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T23:27:40.923022",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T23:27:55.003789",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T23:28:08.119618",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T23:28:29.987721",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-09T23:28:41.620376",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-09T23:28:53.306744",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T23:29:03.274532",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T23:29:21.205613",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T23:29:36.995921",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-09T23:29:46.877200",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T23:30:02.441003",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T23:30:18.932561",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-09T23:30:58.194243",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-09T23:31:07.371590",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-09T23:31:18.559111",
+      "method": "qd"
+    },
+    {
+      "grade": -1,
+      "dimension_scores": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Read timed out. (read timeout=60)",
+      "timestamp": "2025-11-09T23:33:40.812997",
+      "method": "qd"
+    },
+    {
+      "grade": -1,
+      "dimension_scores": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x153bc9a00>: Failed to resolve 'ece-nebula16.eng.uwaterloo.ca' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "timestamp": "2025-11-09T23:33:41.915288",
+      "method": "qd"
+    },
+    {
+      "grade": -1,
+      "dimension_scores": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw_response": "ERROR_HTTPConnectionPool(host='ece-nebula16.eng.uwaterloo.ca', port=11434): Max retries exceeded with url: /api/generate (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x153bd2960>: Failed to resolve 'ece-nebula16.eng.uwaterloo.ca' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "timestamp": "2025-11-09T23:33:42.958117",
+      "method": "qd"
+    }
+  ],
+  "qd_refined_iterations": [
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nDimension 6: 1  \nDimension 7: 1  \nDimension 8: 0  \nOverall: 0",
+      "timestamp": "2025-11-10T01:39:27.517719",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nDimension 6: 1  \nDimension 7: 1  \nDimension 8: 0  \n\nOverall: 0",
+      "timestamp": "2025-11-10T01:40:05.342240",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 0  \nDimension 6: 0  \nDimension 7: 1  \nDimension 8: 0  \nOverall: 0",
+      "timestamp": "2025-11-10T01:40:35.468795",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nDimension 6: 0  \nDimension 7: 1  \nDimension 8: 0  \nOverall: 0",
+      "timestamp": "2025-11-10T01:41:12.312928",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 0  \nDimension 6: 1  \nDimension 7: 1  \nDimension 8: 0  \nOverall: 0",
+      "timestamp": "2025-11-10T01:41:46.373459",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 0  \nDimension 6: 1  \nDimension 7: 1  \nDimension 8: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T01:42:27.066820",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 0  \nDimension 6: 1  \nDimension 7: 1  \nDimension 8: 0  \nOverall: 0",
+      "timestamp": "2025-11-10T01:42:58.100055",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 0  \nDimension 6: 0  \nDimension 7: 1  \nDimension 8: 0  \n\nOverall: 0",
+      "timestamp": "2025-11-10T01:43:30.861120",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 0  \nDimension 6: 1  \nDimension 7: 1  \nDimension 8: 0  \nOverall: 0",
+      "timestamp": "2025-11-10T01:44:10.492963",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 0  \nDimension 6: 1  \nDimension 7: 1  \nDimension 8: 1  \n\nOverall: 0",
+      "timestamp": "2025-11-10T01:44:50.555833",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 0  \nDimension 6: 1  \nDimension 7: 1  \nDimension 8: 1  \n\nOverall: 0",
+      "timestamp": "2025-11-10T01:45:34.205326",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nDimension 6: 0  \nDimension 7: 1  \nDimension 8: 0  \nOverall: 0",
+      "timestamp": "2025-11-10T01:46:09.825625",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nDimension 6: 1  \nDimension 7: 1  \nDimension 8: 0  \n\nOverall: 0",
+      "timestamp": "2025-11-10T01:46:49.932470",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 0  \nDimension 6: 1  \nDimension 7: 1  \nDimension 8: 0  \nOverall: 0",
+      "timestamp": "2025-11-10T01:47:28.975290",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nDimension 6: 1  \nDimension 7: 1  \nDimension 8: 0  \n\nOverall: 0",
+      "timestamp": "2025-11-10T01:47:57.004765",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 0  \nDimension 6: 1  \nDimension 7: 1  \nDimension 8: 0  \n\nOverall: 0",
+      "timestamp": "2025-11-10T01:48:27.827181",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 0  \nDimension 6: 1  \nDimension 7: 1  \nDimension 8: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T01:49:09.504297",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 0  \nDimension 6: 1  \nDimension 7: 1  \nDimension 8: 0  \n\nOverall: 0",
+      "timestamp": "2025-11-10T01:49:45.447547",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 1  \nDimension 5: 0  \nDimension 6: 1  \nDimension 7: 1  \nDimension 8: 0  \nOverall: 0",
+      "timestamp": "2025-11-10T01:50:18.006941",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nDimension 6: 1  \nDimension 7: 1  \nDimension 8: 0  \n\nOverall: 0",
+      "timestamp": "2025-11-10T01:50:41.892651",
+      "method": "qd"
+    }
+  ]
+}

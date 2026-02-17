@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q5",
+  "response_id": "R10",
+  "response_text": "If the thread simply returned instead of looping continuously, the CPU would try and pop the return address from the stack to continue executing the instructions, however, since the thread isn\u2019t meant to be returned and does not have a correct return address, the CPU will likely jump to an invalid memory space causing the program to crash or creating a hard fault. To avoid hard faults and crashes, thread functions should either be in an infinite loop or call a termination routine..\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:30:14.522065",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:30:22.646917",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:30:31.572483",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:30:43.169836",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:30:51.689069",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:31:03.139597",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:31:11.219341",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:31:19.730358",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:31:32.529075",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:31:41.625936",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 50.0,
+    "flip_rate": 50.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 5,
+    "fail_count": 5
+  }
+}

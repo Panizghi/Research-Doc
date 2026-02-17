@@ -1,0 +1,49 @@
+2025-11-02 13:00:53,562 - exp_2d3c84f2 - INFO - Initialized experiment 2d3c84f2
+2025-11-02 13:00:53,563 - exp_2d3c84f2 - INFO - 
+############################################################
+2025-11-02 13:00:53,563 - exp_2d3c84f2 - INFO - STARTING EXPERIMENT 2d3c84f2
+2025-11-02 13:00:53,564 - exp_2d3c84f2 - INFO - Questions: 1
+2025-11-02 13:00:53,565 - exp_2d3c84f2 - INFO - Trials: 1
+2025-11-02 13:00:53,568 - exp_2d3c84f2 - INFO - Max refinements: 1
+2025-11-02 13:00:53,568 - exp_2d3c84f2 - INFO - ############################################################
+2025-11-02 13:00:53,734 - exp_2d3c84f2.data - INFO - Loaded 8344 responses from database
+2025-11-02 13:00:53,736 - exp_2d3c84f2.data - INFO - Loaded 25 rubrics from database
+2025-11-02 13:00:53,741 - exp_2d3c84f2.data - INFO - L1Q1: 2 train, 1 test
+2025-11-02 13:00:53,743 - exp_2d3c84f2.data - INFO - L1Q2: 2 train, 1 test
+2025-11-02 13:00:53,744 - exp_2d3c84f2.data - INFO - L1Q3: 2 train, 1 test
+2025-11-02 13:00:53,745 - exp_2d3c84f2.data - INFO - L1Q4: 2 train, 1 test
+2025-11-02 13:00:53,747 - exp_2d3c84f2.data - INFO - L1Q5: 2 train, 1 test
+2025-11-02 13:00:53,749 - exp_2d3c84f2.data - INFO - L2Q1: 2 train, 1 test
+2025-11-02 13:00:53,751 - exp_2d3c84f2.data - INFO - L2Q2: 2 train, 1 test
+2025-11-02 13:00:53,752 - exp_2d3c84f2.data - INFO - L2Q3: 2 train, 1 test
+2025-11-02 13:00:53,754 - exp_2d3c84f2.data - INFO - L2Q4: 2 train, 1 test
+2025-11-02 13:00:53,755 - exp_2d3c84f2.data - INFO - L2Q5: 2 train, 1 test
+2025-11-02 13:00:53,757 - exp_2d3c84f2.data - INFO - L3Q1: 2 train, 1 test
+2025-11-02 13:00:53,758 - exp_2d3c84f2.data - INFO - L3Q2: 2 train, 1 test
+2025-11-02 13:00:53,763 - exp_2d3c84f2.data - INFO - L3Q3: 2 train, 1 test
+2025-11-02 13:00:53,765 - exp_2d3c84f2.data - INFO - L3Q4: 2 train, 1 test
+2025-11-02 13:00:53,767 - exp_2d3c84f2.data - INFO - L3Q5: 2 train, 1 test
+2025-11-02 13:00:53,768 - exp_2d3c84f2.data - INFO - L4Q1: 2 train, 1 test
+2025-11-02 13:00:53,770 - exp_2d3c84f2.data - INFO - L4Q2: 2 train, 1 test
+2025-11-02 13:00:53,771 - exp_2d3c84f2.data - INFO - L4Q3: 2 train, 1 test
+2025-11-02 13:00:53,772 - exp_2d3c84f2.data - INFO - L4Q4: 2 train, 1 test
+2025-11-02 13:00:53,774 - exp_2d3c84f2.data - INFO - L4Q5: 2 train, 1 test
+2025-11-02 13:00:53,777 - exp_2d3c84f2.data - INFO - L5Q1: 2 train, 1 test
+2025-11-02 13:00:53,778 - exp_2d3c84f2.data - INFO - L5Q2: 2 train, 1 test
+2025-11-02 13:00:53,779 - exp_2d3c84f2.data - INFO - L5Q3: 2 train, 1 test
+2025-11-02 13:00:53,781 - exp_2d3c84f2.data - INFO - L5Q4: 2 train, 1 test
+2025-11-02 13:00:53,782 - exp_2d3c84f2.data - INFO - L5Q5: 2 train, 1 test
+2025-11-02 13:00:53,788 - exp_2d3c84f2 - INFO - 
+============================================================
+2025-11-02 13:00:53,788 - exp_2d3c84f2 - INFO - Starting Lab 2, Question 4
+2025-11-02 13:00:53,789 - exp_2d3c84f2 - INFO - Running baseline grading with rubric...
+2025-11-02 13:01:44,888 - exp_2d3c84f2 - INFO - L2Q4 Iter-1: flip_rate_baseline=0.00
+2025-11-02 13:01:44,888 - exp_2d3c84f2 - INFO - Baseline flip rate: 0.0%
+2025-11-02 13:01:44,889 - exp_2d3c84f2 - INFO - Extracting quality dimensions...
+2025-11-02 13:02:06,334 - exp_2d3c84f2 - INFO - 
+Iteration 0: Testing QDs...
+2025-11-02 13:03:02,474 - exp_2d3c84f2 - INFO - L2Q4 Iter0: flip_rate=0.00
+2025-11-02 13:03:02,474 - exp_2d3c84f2 - INFO - L2Q4 Iter0: borderline_rate=50.00
+2025-11-02 13:03:02,475 - exp_2d3c84f2 - INFO - L2Q4 Iter0: avg_mutual_info=0.00
+2025-11-02 13:03:02,475 - exp_2d3c84f2 - INFO - L2Q4 Iter0: avg_correlation=nan
+2025-11-02 13:03:02,476 - exp_2d3c84f2 - INFO - L2Q4 Iter0: avg_co_occurrence=0.33

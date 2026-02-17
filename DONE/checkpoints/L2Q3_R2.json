@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q3",
+  "response_id": "R2",
+  "response_text": "First, the thread stack must be defined by allocating a chunk of memory after the main stack. A thread stack pointer initially points to the start of this thread stack. The thread stack pointer decrements through the thread stack and pushes the initial values of the thread stack registers (this is known as the context). These values in the stack are then popped into the actual hardware registers through system calls. The reason why we need to store the register values on the stack is because we need to trick the OS into thinking the thread stack is already running. By storing the register values on the stack, we can push them onto the registers and the OS can \u201cresume\u201d the thread operation even though it hadn\u2019t been started before.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T03:48:56.462256",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T03:49:06.305014",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T03:49:19.410127",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T03:49:30.857427",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T03:49:42.776352",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:49:51.804222",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T03:50:02.539741",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T03:50:12.490812",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T03:50:21.902679",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T03:50:36.724300",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 90.0,
+    "flip_rate": 10.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 1,
+    "fail_count": 9
+  }
+}

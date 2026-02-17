@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q3",
+  "response_id": "R24",
+  "response_text": "Setting up a thread\u2019s stack means preparing the memory and register values so the CPU can begin executing the thread if it had already been running. We manually pushed values onto a new stack including program status register(xPSR), program counter (PC), dummy values for register R0-R12. This stack was then assigned to the PSP, and when the thread was started the CPU popped these values into the actual register to begin execution. Storing register values on the stack is important because it allows the system to save and restore a thread state during context switching.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:28:20.547466",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:28:33.593404",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:28:48.501110",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:28:59.737810",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:29:16.368413",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:29:29.409750",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:29:44.620779",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:30:00.255824",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:30:09.654997",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:30:24.678422",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 50.0,
+    "flip_rate": 50.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 5,
+    "fail_count": 5
+  }
+}

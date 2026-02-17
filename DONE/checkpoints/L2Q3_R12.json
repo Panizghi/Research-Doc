@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q3",
+  "response_id": "R12",
+  "response_text": "Setting up a thread\u2019s stack means reserving a part of the RAM and its memory for that thread and pre-filling the top of that part with initial register values that the CPU expects to find when it resumes execution. We pushed a valid xPSR, the thread\u2019s entry address as the would-be PC, a dummy LR (or cleanup handler), and any initial R0\u2013R3 arguments, then pointed the process-stack pointer (PSP) just below this block. When the scheduler later loads that PSP, the core pops the frame and starts running the thread as if it had always been active. Saving these register values on the stack is crucial because registers are reused by every thread; without stashing them, each context switch would destroy the suspended thread\u2019s state.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:06:46.486911",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:06:56.375533",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:07:10.260850",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:07:23.697595",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:07:39.750249",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:07:58.371338",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:08:07.280885",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:08:17.034268",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:08:30.357137",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:08:39.949839",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

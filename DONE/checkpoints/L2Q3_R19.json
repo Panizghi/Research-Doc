@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q3",
+  "response_id": "R19",
+  "response_text": "Firstly, space for this stack was allocated in memory by the operating system or the program. Then, this thread\u2019s stack was set up by creating a new pointer to point at PSP, then immediately setting the values of xPSR and PC. Following this, the remaining registers in the stack were recorded as 0xA; the stack itself was traversed by decrementing the index so that the stack can be popped immediately after the interrupt is completed. A thread\u2019s stack grows downwards, which is why the index must be decremented. Storing these registers allows the thread to have all the necessary data to execute when loaded, facilitating context switching between threads without losing the execution state of any thread.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:18:39.419825",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:18:50.815402",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:19:06.187038",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:19:20.263274",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:19:28.708556",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:19:43.192210",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:19:56.722425",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:20:11.669661",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:20:22.617513",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:20:32.348332",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 60.0,
+    "flip_rate": 40.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 4,
+    "fail_count": 6
+  }
+}

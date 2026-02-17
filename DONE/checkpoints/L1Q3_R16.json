@@ -1,0 +1,560 @@
+{
+  "question_id": "L1Q3",
+  "response_id": "R16",
+  "response_text": "We used the debugger to observe the Cortex-M4\u2019s live memory while the program was running. In this lab, it allowed us to examine the actual contents of the stack at each step of code execution. This level of visibility is crucial because functions like printf are complex and can significantly alter the stack by the time they execute. As a result, relying on printf to inspect the stack could lead to misleading or overwritten data. By setting breakpoints, we were able to pause execution at precise moments and inspect the immediate memory state.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T10:15:56.219247",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T10:16:07.462404",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T10:16:16.522319",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T10:16:24.578707",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T10:16:33.140237",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T10:16:43.467971",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T10:16:54.123589",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T10:17:02.178483",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T10:17:12.797170",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T10:17:19.287287",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T10:17:29.781423",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T10:17:40.034353",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T10:17:50.662577",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T10:17:56.499959",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T10:18:08.356439",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T10:18:16.294000",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T10:18:26.180089",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T10:18:37.167789",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T10:18:46.027903",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T10:18:56.285116",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Identifies the need to examine register values** - The response explicitly states that the debugger is required to view the contents of CPU registers (e.g., \"to inspect register values\" or equivalent phrasing).",
+        "**States that printf cannot be used to view register contents** - The response clearly indicates that printf is not suitable for observing register values (e.g., \"printf cannot show register contents\" or equivalent).",
+        "**Provides a technically correct reason why printf is unsuitable** - The response includes at least one of the following objective reasons:",
+        "**Addresses both parts of the question** - The response contains a statement about why the debugger was needed **and** a statement about why printf was not sufficient, covering both prompts."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T10:19:32.338244",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Identifies the need to examine register values** - The response explicitly states that the debugger is required to view the contents of CPU registers (e.g., \"to inspect register values\" or equivalent phrasing).",
+        "**States that printf cannot be used to view register contents** - The response clearly indicates that printf is not suitable for observing register values (e.g., \"printf cannot show register contents\" or equivalent).",
+        "**Provides a technically correct reason why printf is unsuitable** - The response includes at least one of the following objective reasons:",
+        "**Addresses both parts of the question** - The response contains a statement about why the debugger was needed **and** a statement about why printf was not sufficient, covering both prompts."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T10:19:45.030614",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Identifies the need to examine register values** - The response explicitly states that the debugger is required to view the contents of CPU registers (e.g., \"to inspect register values\" or equivalent phrasing).",
+        "**States that printf cannot be used to view register contents** - The response clearly indicates that printf is not suitable for observing register values (e.g., \"printf cannot show register contents\" or equivalent).",
+        "**Provides a technically correct reason why printf is unsuitable** - The response includes at least one of the following objective reasons:",
+        "**Addresses both parts of the question** - The response contains a statement about why the debugger was needed **and** a statement about why printf was not sufficient, covering both prompts."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T10:19:55.505042",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Identifies the need to examine register values** - The response explicitly states that the debugger is required to view the contents of CPU registers (e.g., \"to inspect register values\" or equivalent phrasing).",
+        "**States that printf cannot be used to view register contents** - The response clearly indicates that printf is not suitable for observing register values (e.g., \"printf cannot show register contents\" or equivalent).",
+        "**Provides a technically correct reason why printf is unsuitable** - The response includes at least one of the following objective reasons:",
+        "**Addresses both parts of the question** - The response contains a statement about why the debugger was needed **and** a statement about why printf was not sufficient, covering both prompts."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T10:20:06.437739",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Identifies the need to examine register values** - The response explicitly states that the debugger is required to view the contents of CPU registers (e.g., \"to inspect register values\" or equivalent phrasing).",
+        "**States that printf cannot be used to view register contents** - The response clearly indicates that printf is not suitable for observing register values (e.g., \"printf cannot show register contents\" or equivalent).",
+        "**Provides a technically correct reason why printf is unsuitable** - The response includes at least one of the following objective reasons:",
+        "**Addresses both parts of the question** - The response contains a statement about why the debugger was needed **and** a statement about why printf was not sufficient, covering both prompts."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T10:20:16.673867",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Identifies the need to examine register values** - The response explicitly states that the debugger is required to view the contents of CPU registers (e.g., \"to inspect register values\" or equivalent phrasing).",
+        "**States that printf cannot be used to view register contents** - The response clearly indicates that printf is not suitable for observing register values (e.g., \"printf cannot show register contents\" or equivalent).",
+        "**Provides a technically correct reason why printf is unsuitable** - The response includes at least one of the following objective reasons:",
+        "**Addresses both parts of the question** - The response contains a statement about why the debugger was needed **and** a statement about why printf was not sufficient, covering both prompts."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T10:20:31.201898",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Identifies the need to examine register values** - The response explicitly states that the debugger is required to view the contents of CPU registers (e.g., \"to inspect register values\" or equivalent phrasing).",
+        "**States that printf cannot be used to view register contents** - The response clearly indicates that printf is not suitable for observing register values (e.g., \"printf cannot show register contents\" or equivalent).",
+        "**Provides a technically correct reason why printf is unsuitable** - The response includes at least one of the following objective reasons:",
+        "**Addresses both parts of the question** - The response contains a statement about why the debugger was needed **and** a statement about why printf was not sufficient, covering both prompts."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T10:20:48.755922",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Identifies the need to examine register values** - The response explicitly states that the debugger is required to view the contents of CPU registers (e.g., \"to inspect register values\" or equivalent phrasing).",
+        "**States that printf cannot be used to view register contents** - The response clearly indicates that printf is not suitable for observing register values (e.g., \"printf cannot show register contents\" or equivalent).",
+        "**Provides a technically correct reason why printf is unsuitable** - The response includes at least one of the following objective reasons:",
+        "**Addresses both parts of the question** - The response contains a statement about why the debugger was needed **and** a statement about why printf was not sufficient, covering both prompts."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T10:21:01.437235",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Identifies the need to examine register values** - The response explicitly states that the debugger is required to view the contents of CPU registers (e.g., \"to inspect register values\" or equivalent phrasing).",
+        "**States that printf cannot be used to view register contents** - The response clearly indicates that printf is not suitable for observing register values (e.g., \"printf cannot show register contents\" or equivalent).",
+        "**Provides a technically correct reason why printf is unsuitable** - The response includes at least one of the following objective reasons:",
+        "**Addresses both parts of the question** - The response contains a statement about why the debugger was needed **and** a statement about why printf was not sufficient, covering both prompts."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T10:21:15.097617",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Identifies the need to examine register values** - The response explicitly states that the debugger is required to view the contents of CPU registers (e.g., \"to inspect register values\" or equivalent phrasing).",
+        "**States that printf cannot be used to view register contents** - The response clearly indicates that printf is not suitable for observing register values (e.g., \"printf cannot show register contents\" or equivalent).",
+        "**Provides a technically correct reason why printf is unsuitable** - The response includes at least one of the following objective reasons:",
+        "**Addresses both parts of the question** - The response contains a statement about why the debugger was needed **and** a statement about why printf was not sufficient, covering both prompts."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T10:21:28.477360",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Identifies the need to examine register values** - The response explicitly states that the debugger is required to view the contents of CPU registers (e.g., \"to inspect register values\" or equivalent phrasing).",
+        "**States that printf cannot be used to view register contents** - The response clearly indicates that printf is not suitable for observing register values (e.g., \"printf cannot show register contents\" or equivalent).",
+        "**Provides a technically correct reason why printf is unsuitable** - The response includes at least one of the following objective reasons:",
+        "**Addresses both parts of the question** - The response contains a statement about why the debugger was needed **and** a statement about why printf was not sufficient, covering both prompts."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T10:21:43.347270",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Identifies the need to examine register values** - The response explicitly states that the debugger is required to view the contents of CPU registers (e.g., \"to inspect register values\" or equivalent phrasing).",
+        "**States that printf cannot be used to view register contents** - The response clearly indicates that printf is not suitable for observing register values (e.g., \"printf cannot show register contents\" or equivalent).",
+        "**Provides a technically correct reason why printf is unsuitable** - The response includes at least one of the following objective reasons:",
+        "**Addresses both parts of the question** - The response contains a statement about why the debugger was needed **and** a statement about why printf was not sufficient, covering both prompts."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T10:21:54.532421",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Identifies the need to examine register values** - The response explicitly states that the debugger is required to view the contents of CPU registers (e.g., \"to inspect register values\" or equivalent phrasing).",
+        "**States that printf cannot be used to view register contents** - The response clearly indicates that printf is not suitable for observing register values (e.g., \"printf cannot show register contents\" or equivalent).",
+        "**Provides a technically correct reason why printf is unsuitable** - The response includes at least one of the following objective reasons:",
+        "**Addresses both parts of the question** - The response contains a statement about why the debugger was needed **and** a statement about why printf was not sufficient, covering both prompts."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T10:22:09.063910",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Identifies the need to examine register values** - The response explicitly states that the debugger is required to view the contents of CPU registers (e.g., \"to inspect register values\" or equivalent phrasing).",
+        "**States that printf cannot be used to view register contents** - The response clearly indicates that printf is not suitable for observing register values (e.g., \"printf cannot show register contents\" or equivalent).",
+        "**Provides a technically correct reason why printf is unsuitable** - The response includes at least one of the following objective reasons:",
+        "**Addresses both parts of the question** - The response contains a statement about why the debugger was needed **and** a statement about why printf was not sufficient, covering both prompts."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T10:22:23.757159",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Identifies the need to examine register values** - The response explicitly states that the debugger is required to view the contents of CPU registers (e.g., \"to inspect register values\" or equivalent phrasing).",
+        "**States that printf cannot be used to view register contents** - The response clearly indicates that printf is not suitable for observing register values (e.g., \"printf cannot show register contents\" or equivalent).",
+        "**Provides a technically correct reason why printf is unsuitable** - The response includes at least one of the following objective reasons:",
+        "**Addresses both parts of the question** - The response contains a statement about why the debugger was needed **and** a statement about why printf was not sufficient, covering both prompts."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T10:22:37.048650",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Identifies the need to examine register values** - The response explicitly states that the debugger is required to view the contents of CPU registers (e.g., \"to inspect register values\" or equivalent phrasing).",
+        "**States that printf cannot be used to view register contents** - The response clearly indicates that printf is not suitable for observing register values (e.g., \"printf cannot show register contents\" or equivalent).",
+        "**Provides a technically correct reason why printf is unsuitable** - The response includes at least one of the following objective reasons:",
+        "**Addresses both parts of the question** - The response contains a statement about why the debugger was needed **and** a statement about why printf was not sufficient, covering both prompts."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T10:22:50.399400",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Identifies the need to examine register values** - The response explicitly states that the debugger is required to view the contents of CPU registers (e.g., \"to inspect register values\" or equivalent phrasing).",
+        "**States that printf cannot be used to view register contents** - The response clearly indicates that printf is not suitable for observing register values (e.g., \"printf cannot show register contents\" or equivalent).",
+        "**Provides a technically correct reason why printf is unsuitable** - The response includes at least one of the following objective reasons:",
+        "**Addresses both parts of the question** - The response contains a statement about why the debugger was needed **and** a statement about why printf was not sufficient, covering both prompts."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T10:23:26.124330",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Identifies the need to examine register values** - The response explicitly states that the debugger is required to view the contents of CPU registers (e.g., \"to inspect register values\" or equivalent phrasing).",
+        "**States that printf cannot be used to view register contents** - The response clearly indicates that printf is not suitable for observing register values (e.g., \"printf cannot show register contents\" or equivalent).",
+        "**Provides a technically correct reason why printf is unsuitable** - The response includes at least one of the following objective reasons:",
+        "**Addresses both parts of the question** - The response contains a statement about why the debugger was needed **and** a statement about why printf was not sufficient, covering both prompts."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T10:24:00.857288",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Identifies the need to examine register values** - The response explicitly states that the debugger is required to view the contents of CPU registers (e.g., \"to inspect register values\" or equivalent phrasing).",
+        "**States that printf cannot be used to view register contents** - The response clearly indicates that printf is not suitable for observing register values (e.g., \"printf cannot show register contents\" or equivalent).",
+        "**Provides a technically correct reason why printf is unsuitable** - The response includes at least one of the following objective reasons:",
+        "**Addresses both parts of the question** - The response contains a statement about why the debugger was needed **and** a statement about why printf was not sufficient, covering both prompts."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T10:24:14.976697",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Identifies the need to examine register values** - The response explicitly states that the debugger is required to view the contents of CPU registers (e.g., \"to inspect register values\" or equivalent phrasing).",
+        "**States that printf cannot be used to view register contents** - The response clearly indicates that printf is not suitable for observing register values (e.g., \"printf cannot show register contents\" or equivalent).",
+        "**Provides a technically correct reason why printf is unsuitable** - The response includes at least one of the following objective reasons:",
+        "**Addresses both parts of the question** - The response contains a statement about why the debugger was needed **and** a statement about why printf was not sufficient, covering both prompts."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T10:24:50.268117",
+      "method": "qd"
+    }
+  ],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 60.0,
+    "flip_rate": 40.0,
+    "majority": 0,
+    "sample_size": 20,
+    "pass_count": 8,
+    "fail_count": 12
+  },
+  "version_progression": [
+    {
+      "version": "baseline",
+      "version_label": "Baseline (Rubric)",
+      "metrics": {
+        "consensus": 60.0,
+        "flip_rate": 40.0,
+        "majority": 0,
+        "sample_size": 20,
+        "pass_count": 8,
+        "fail_count": 12
+      },
+      "flip_rate_change_vs_baseline": 0.0,
+      "timestamp": "2025-11-11T10:18:56.892955"
+    },
+    {
+      "version": "v1",
+      "version_label": "QD v1 (Initial)",
+      "metrics": {
+        "consensus": 100.0,
+        "flip_rate": 0.0,
+        "majority": 0,
+        "sample_size": 20,
+        "pass_count": 0,
+        "fail_count": 20
+      },
+      "flip_rate_change_vs_baseline": 40.0,
+      "timestamp": "2025-11-11T10:24:52.407689"
+    }
+  ],
+  "qd_initial_version": "v1",
+  "qd_version_selected": "v1",
+  "qd_initial_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 0,
+    "sample_size": 20,
+    "pass_count": 0,
+    "fail_count": 20
+  },
+  "qd_result": "improved_or_maintained",
+  "flip_rate_change_vs_baseline": 40.0
+}

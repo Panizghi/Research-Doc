@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q3",
+  "response_id": "R23",
+  "response_text": "Setting up a thread\u2019s stack means preloading its memory with fake register values, so the CPU can \u201crestore\u201d them as if the thread had already been running. We manually pushed values like xPSR, PC, LR, and general-purpose registers (R0\u2013R12) onto the stack in a specific order. This is necessary because when the CPU switches context, it expects to pop these values from the stack. By preloading them, we trick the processor into starting the thread as if it were resuming from a pause.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:26:29.890030",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:26:41.600333",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:26:49.825788",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:27:02.099717",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:27:09.470503",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:27:19.887275",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:27:31.062827",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:27:42.777656",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:27:55.046623",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:28:05.545977",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 60.0,
+    "flip_rate": 40.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 6,
+    "fail_count": 4
+  }
+}

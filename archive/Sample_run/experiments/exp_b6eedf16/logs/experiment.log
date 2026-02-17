@@ -1,0 +1,220 @@
+2025-11-02 14:04:23,832 - exp_b6eedf16 - INFO - Initialized experiment b6eedf16
+2025-11-02 14:04:23,832 - exp_b6eedf16 - INFO - 
+############################################################
+2025-11-02 14:04:23,832 - exp_b6eedf16 - INFO - STARTING EXPERIMENT b6eedf16
+2025-11-02 14:04:23,832 - exp_b6eedf16 - INFO - Questions: 3
+2025-11-02 14:04:23,832 - exp_b6eedf16 - INFO - Trials: 5
+2025-11-02 14:04:23,833 - exp_b6eedf16 - INFO - Max refinements: 2
+2025-11-02 14:04:23,833 - exp_b6eedf16 - INFO - ############################################################
+2025-11-02 14:04:23,944 - exp_b6eedf16.data - INFO - Loaded 8344 responses from database
+2025-11-02 14:04:23,946 - exp_b6eedf16.data - INFO - Loaded 25 rubrics from database
+2025-11-02 14:04:23,948 - exp_b6eedf16.data - INFO - DEBUG L1Q1: Total rows in group: 356
+2025-11-02 14:04:23,948 - exp_b6eedf16.data - INFO - DEBUG L1Q1: Sampling down from 356 to 10
+2025-11-02 14:04:23,949 - exp_b6eedf16.data - INFO - DEBUG L1Q1: After limiting/padding: 10
+2025-11-02 14:04:23,950 - exp_b6eedf16.data - INFO - DEBUG L1Q1: Split with stratification: train=6, test=4
+2025-11-02 14:04:23,951 - exp_b6eedf16.data - INFO - L1Q1: 6 train, 4 test
+2025-11-02 14:04:23,951 - exp_b6eedf16.data - INFO - DEBUG L1Q2: Total rows in group: 351
+2025-11-02 14:04:23,951 - exp_b6eedf16.data - INFO - DEBUG L1Q2: Sampling down from 351 to 10
+2025-11-02 14:04:23,952 - exp_b6eedf16.data - INFO - DEBUG L1Q2: After limiting/padding: 10
+2025-11-02 14:04:23,952 - exp_b6eedf16.data - INFO - DEBUG L1Q2: Split with stratification: train=6, test=4
+2025-11-02 14:04:23,953 - exp_b6eedf16.data - INFO - L1Q2: 6 train, 4 test
+2025-11-02 14:04:23,953 - exp_b6eedf16.data - INFO - DEBUG L1Q3: Total rows in group: 351
+2025-11-02 14:04:23,953 - exp_b6eedf16.data - INFO - DEBUG L1Q3: Sampling down from 351 to 10
+2025-11-02 14:04:23,954 - exp_b6eedf16.data - INFO - DEBUG L1Q3: After limiting/padding: 10
+2025-11-02 14:04:23,954 - exp_b6eedf16.data - INFO - DEBUG L1Q3: Split with stratification: train=6, test=4
+2025-11-02 14:04:23,954 - exp_b6eedf16.data - INFO - L1Q3: 6 train, 4 test
+2025-11-02 14:04:23,955 - exp_b6eedf16.data - INFO - DEBUG L1Q4: Total rows in group: 351
+2025-11-02 14:04:23,955 - exp_b6eedf16.data - INFO - DEBUG L1Q4: Sampling down from 351 to 10
+2025-11-02 14:04:23,955 - exp_b6eedf16.data - INFO - DEBUG L1Q4: After limiting/padding: 10
+2025-11-02 14:04:23,956 - exp_b6eedf16.data - INFO - DEBUG L1Q4: Split with stratification: train=6, test=4
+2025-11-02 14:04:23,956 - exp_b6eedf16.data - INFO - L1Q4: 6 train, 4 test
+2025-11-02 14:04:23,956 - exp_b6eedf16.data - INFO - DEBUG L1Q5: Total rows in group: 337
+2025-11-02 14:04:23,956 - exp_b6eedf16.data - INFO - DEBUG L1Q5: Sampling down from 337 to 10
+2025-11-02 14:04:23,957 - exp_b6eedf16.data - INFO - DEBUG L1Q5: After limiting/padding: 10
+2025-11-02 14:04:23,958 - exp_b6eedf16.data - INFO - DEBUG L1Q5: Split with stratification: train=6, test=4
+2025-11-02 14:04:23,958 - exp_b6eedf16.data - INFO - L1Q5: 6 train, 4 test
+2025-11-02 14:04:23,958 - exp_b6eedf16.data - INFO - DEBUG L2Q1: Total rows in group: 396
+2025-11-02 14:04:23,958 - exp_b6eedf16.data - INFO - DEBUG L2Q1: Sampling down from 396 to 10
+2025-11-02 14:04:23,959 - exp_b6eedf16.data - INFO - DEBUG L2Q1: After limiting/padding: 10
+2025-11-02 14:04:23,960 - exp_b6eedf16.data - INFO - DEBUG L2Q1: Split with stratification: train=6, test=4
+2025-11-02 14:04:23,960 - exp_b6eedf16.data - INFO - L2Q1: 6 train, 4 test
+2025-11-02 14:04:23,960 - exp_b6eedf16.data - INFO - DEBUG L2Q2: Total rows in group: 395
+2025-11-02 14:04:23,960 - exp_b6eedf16.data - INFO - DEBUG L2Q2: Sampling down from 395 to 10
+2025-11-02 14:04:23,961 - exp_b6eedf16.data - INFO - DEBUG L2Q2: After limiting/padding: 10
+2025-11-02 14:04:23,962 - exp_b6eedf16.data - INFO - DEBUG L2Q2: Split with stratification: train=6, test=4
+2025-11-02 14:04:23,962 - exp_b6eedf16.data - INFO - L2Q2: 6 train, 4 test
+2025-11-02 14:04:23,963 - exp_b6eedf16.data - INFO - DEBUG L2Q3: Total rows in group: 392
+2025-11-02 14:04:23,963 - exp_b6eedf16.data - INFO - DEBUG L2Q3: Sampling down from 392 to 10
+2025-11-02 14:04:23,963 - exp_b6eedf16.data - INFO - DEBUG L2Q3: After limiting/padding: 10
+2025-11-02 14:04:23,967 - exp_b6eedf16.data - INFO - DEBUG L2Q3: Split with stratification: train=6, test=4
+2025-11-02 14:04:23,967 - exp_b6eedf16.data - INFO - L2Q3: 6 train, 4 test
+2025-11-02 14:04:23,968 - exp_b6eedf16.data - INFO - DEBUG L2Q4: Total rows in group: 386
+2025-11-02 14:04:23,968 - exp_b6eedf16.data - INFO - DEBUG L2Q4: Sampling down from 386 to 10
+2025-11-02 14:04:23,969 - exp_b6eedf16.data - INFO - DEBUG L2Q4: After limiting/padding: 10
+2025-11-02 14:04:23,970 - exp_b6eedf16.data - INFO - DEBUG L2Q4: Split with stratification: train=6, test=4
+2025-11-02 14:04:23,970 - exp_b6eedf16.data - INFO - L2Q4: 6 train, 4 test
+2025-11-02 14:04:23,970 - exp_b6eedf16.data - INFO - DEBUG L2Q5: Total rows in group: 378
+2025-11-02 14:04:23,970 - exp_b6eedf16.data - INFO - DEBUG L2Q5: Sampling down from 378 to 10
+2025-11-02 14:04:23,971 - exp_b6eedf16.data - INFO - DEBUG L2Q5: After limiting/padding: 10
+2025-11-02 14:04:23,971 - exp_b6eedf16.data - INFO - DEBUG L2Q5: Split with stratification: train=6, test=4
+2025-11-02 14:04:23,974 - exp_b6eedf16.data - INFO - L2Q5: 6 train, 4 test
+2025-11-02 14:04:23,974 - exp_b6eedf16.data - INFO - DEBUG L3Q1: Total rows in group: 325
+2025-11-02 14:04:23,975 - exp_b6eedf16.data - INFO - DEBUG L3Q1: Sampling down from 325 to 10
+2025-11-02 14:04:23,975 - exp_b6eedf16.data - INFO - DEBUG L3Q1: After limiting/padding: 10
+2025-11-02 14:04:23,976 - exp_b6eedf16.data - INFO - DEBUG L3Q1: Split with stratification: train=6, test=4
+2025-11-02 14:04:23,976 - exp_b6eedf16.data - INFO - L3Q1: 6 train, 4 test
+2025-11-02 14:04:23,976 - exp_b6eedf16.data - INFO - DEBUG L3Q2: Total rows in group: 325
+2025-11-02 14:04:23,976 - exp_b6eedf16.data - INFO - DEBUG L3Q2: Sampling down from 325 to 10
+2025-11-02 14:04:23,977 - exp_b6eedf16.data - INFO - DEBUG L3Q2: After limiting/padding: 10
+2025-11-02 14:04:23,977 - exp_b6eedf16.data - INFO - DEBUG L3Q2: Split with stratification: train=6, test=4
+2025-11-02 14:04:23,977 - exp_b6eedf16.data - INFO - L3Q2: 6 train, 4 test
+2025-11-02 14:04:23,978 - exp_b6eedf16.data - INFO - DEBUG L3Q3: Total rows in group: 325
+2025-11-02 14:04:23,978 - exp_b6eedf16.data - INFO - DEBUG L3Q3: Sampling down from 325 to 10
+2025-11-02 14:04:23,978 - exp_b6eedf16.data - INFO - DEBUG L3Q3: After limiting/padding: 10
+2025-11-02 14:04:23,979 - exp_b6eedf16.data - INFO - DEBUG L3Q3: Split with stratification: train=6, test=4
+2025-11-02 14:04:23,979 - exp_b6eedf16.data - INFO - L3Q3: 6 train, 4 test
+2025-11-02 14:04:23,980 - exp_b6eedf16.data - INFO - DEBUG L3Q4: Total rows in group: 325
+2025-11-02 14:04:23,980 - exp_b6eedf16.data - INFO - DEBUG L3Q4: Sampling down from 325 to 10
+2025-11-02 14:04:23,980 - exp_b6eedf16.data - INFO - DEBUG L3Q4: After limiting/padding: 10
+2025-11-02 14:04:23,981 - exp_b6eedf16.data - INFO - DEBUG L3Q4: Split without stratification: train=6, test=4
+2025-11-02 14:04:23,981 - exp_b6eedf16.data - INFO - L3Q4: 6 train, 4 test
+2025-11-02 14:04:23,981 - exp_b6eedf16.data - INFO - DEBUG L3Q5: Total rows in group: 316
+2025-11-02 14:04:23,982 - exp_b6eedf16.data - INFO - DEBUG L3Q5: Sampling down from 316 to 10
+2025-11-02 14:04:23,982 - exp_b6eedf16.data - INFO - DEBUG L3Q5: After limiting/padding: 10
+2025-11-02 14:04:23,983 - exp_b6eedf16.data - INFO - DEBUG L3Q5: Split with stratification: train=6, test=4
+2025-11-02 14:04:23,983 - exp_b6eedf16.data - INFO - L3Q5: 6 train, 4 test
+2025-11-02 14:04:23,983 - exp_b6eedf16.data - INFO - DEBUG L4Q1: Total rows in group: 344
+2025-11-02 14:04:23,983 - exp_b6eedf16.data - INFO - DEBUG L4Q1: Sampling down from 344 to 10
+2025-11-02 14:04:23,984 - exp_b6eedf16.data - INFO - DEBUG L4Q1: After limiting/padding: 10
+2025-11-02 14:04:23,984 - exp_b6eedf16.data - INFO - DEBUG L4Q1: Split without stratification: train=6, test=4
+2025-11-02 14:04:23,984 - exp_b6eedf16.data - INFO - L4Q1: 6 train, 4 test
+2025-11-02 14:04:23,985 - exp_b6eedf16.data - INFO - DEBUG L4Q2: Total rows in group: 344
+2025-11-02 14:04:23,985 - exp_b6eedf16.data - INFO - DEBUG L4Q2: Sampling down from 344 to 10
+2025-11-02 14:04:23,985 - exp_b6eedf16.data - INFO - DEBUG L4Q2: After limiting/padding: 10
+2025-11-02 14:04:23,988 - exp_b6eedf16.data - INFO - DEBUG L4Q2: Split with stratification: train=6, test=4
+2025-11-02 14:04:23,988 - exp_b6eedf16.data - INFO - L4Q2: 6 train, 4 test
+2025-11-02 14:04:23,988 - exp_b6eedf16.data - INFO - DEBUG L4Q3: Total rows in group: 344
+2025-11-02 14:04:23,988 - exp_b6eedf16.data - INFO - DEBUG L4Q3: Sampling down from 344 to 10
+2025-11-02 14:04:23,989 - exp_b6eedf16.data - INFO - DEBUG L4Q3: After limiting/padding: 10
+2025-11-02 14:04:23,990 - exp_b6eedf16.data - INFO - DEBUG L4Q3: Split with stratification: train=6, test=4
+2025-11-02 14:04:23,990 - exp_b6eedf16.data - INFO - L4Q3: 6 train, 4 test
+2025-11-02 14:04:23,990 - exp_b6eedf16.data - INFO - DEBUG L4Q4: Total rows in group: 344
+2025-11-02 14:04:23,990 - exp_b6eedf16.data - INFO - DEBUG L4Q4: Sampling down from 344 to 10
+2025-11-02 14:04:23,991 - exp_b6eedf16.data - INFO - DEBUG L4Q4: After limiting/padding: 10
+2025-11-02 14:04:23,992 - exp_b6eedf16.data - INFO - DEBUG L4Q4: Split with stratification: train=6, test=4
+2025-11-02 14:04:23,992 - exp_b6eedf16.data - INFO - L4Q4: 6 train, 4 test
+2025-11-02 14:04:23,992 - exp_b6eedf16.data - INFO - DEBUG L4Q5: Total rows in group: 343
+2025-11-02 14:04:23,992 - exp_b6eedf16.data - INFO - DEBUG L4Q5: Sampling down from 343 to 10
+2025-11-02 14:04:23,993 - exp_b6eedf16.data - INFO - DEBUG L4Q5: After limiting/padding: 10
+2025-11-02 14:04:23,994 - exp_b6eedf16.data - INFO - DEBUG L4Q5: Split with stratification: train=6, test=4
+2025-11-02 14:04:23,994 - exp_b6eedf16.data - INFO - L4Q5: 6 train, 4 test
+2025-11-02 14:04:23,994 - exp_b6eedf16.data - INFO - DEBUG L5Q1: Total rows in group: 264
+2025-11-02 14:04:23,994 - exp_b6eedf16.data - INFO - DEBUG L5Q1: Sampling down from 264 to 10
+2025-11-02 14:04:23,995 - exp_b6eedf16.data - INFO - DEBUG L5Q1: After limiting/padding: 10
+2025-11-02 14:04:23,995 - exp_b6eedf16.data - INFO - DEBUG L5Q1: Split without stratification: train=6, test=4
+2025-11-02 14:04:23,995 - exp_b6eedf16.data - INFO - L5Q1: 6 train, 4 test
+2025-11-02 14:04:23,996 - exp_b6eedf16.data - INFO - DEBUG L5Q2: Total rows in group: 264
+2025-11-02 14:04:23,996 - exp_b6eedf16.data - INFO - DEBUG L5Q2: Sampling down from 264 to 10
+2025-11-02 14:04:23,996 - exp_b6eedf16.data - INFO - DEBUG L5Q2: After limiting/padding: 10
+2025-11-02 14:04:23,997 - exp_b6eedf16.data - INFO - DEBUG L5Q2: Split with stratification: train=6, test=4
+2025-11-02 14:04:23,997 - exp_b6eedf16.data - INFO - L5Q2: 6 train, 4 test
+2025-11-02 14:04:23,998 - exp_b6eedf16.data - INFO - DEBUG L5Q3: Total rows in group: 264
+2025-11-02 14:04:23,998 - exp_b6eedf16.data - INFO - DEBUG L5Q3: Sampling down from 264 to 10
+2025-11-02 14:04:23,998 - exp_b6eedf16.data - INFO - DEBUG L5Q3: After limiting/padding: 10
+2025-11-02 14:04:24,002 - exp_b6eedf16.data - INFO - DEBUG L5Q3: Split without stratification: train=6, test=4
+2025-11-02 14:04:24,002 - exp_b6eedf16.data - INFO - L5Q3: 6 train, 4 test
+2025-11-02 14:04:24,003 - exp_b6eedf16.data - INFO - DEBUG L5Q4: Total rows in group: 264
+2025-11-02 14:04:24,003 - exp_b6eedf16.data - INFO - DEBUG L5Q4: Sampling down from 264 to 10
+2025-11-02 14:04:24,003 - exp_b6eedf16.data - INFO - DEBUG L5Q4: After limiting/padding: 10
+2025-11-02 14:04:24,004 - exp_b6eedf16.data - INFO - DEBUG L5Q4: Split without stratification: train=6, test=4
+2025-11-02 14:04:24,005 - exp_b6eedf16.data - INFO - L5Q4: 6 train, 4 test
+2025-11-02 14:04:24,005 - exp_b6eedf16.data - INFO - DEBUG L5Q5: Total rows in group: 260
+2025-11-02 14:04:24,005 - exp_b6eedf16.data - INFO - DEBUG L5Q5: Sampling down from 260 to 10
+2025-11-02 14:04:24,006 - exp_b6eedf16.data - INFO - DEBUG L5Q5: After limiting/padding: 10
+2025-11-02 14:04:24,006 - exp_b6eedf16.data - INFO - DEBUG L5Q5: Split with stratification: train=6, test=4
+2025-11-02 14:04:24,008 - exp_b6eedf16.data - INFO - L5Q5: 6 train, 4 test
+2025-11-02 14:04:24,009 - exp_b6eedf16.data - INFO - DEBUG: Total train size: 150, Total test size: 100
+2025-11-02 14:04:24,012 - exp_b6eedf16 - INFO - 
+============================================================
+2025-11-02 14:04:24,012 - exp_b6eedf16 - INFO - Starting Lab 2, Question 4
+2025-11-02 14:04:24,013 - exp_b6eedf16 - INFO - Running baseline grading with rubric...
+2025-11-02 14:12:54,699 - exp_b6eedf16 - INFO - L2Q4 Iter-1: flip_rate_baseline=20.00
+2025-11-02 14:12:54,700 - exp_b6eedf16 - INFO - Baseline flip rate: 20.0%
+2025-11-02 14:12:54,700 - exp_b6eedf16 - INFO - Extracting quality dimensions...
+2025-11-02 14:13:17,146 - exp_b6eedf16 - INFO - 
+Iteration 0: Testing QDs...
+2025-11-02 14:23:01,561 - exp_b6eedf16 - INFO - L2Q4 Iter0: flip_rate=80.00
+2025-11-02 14:23:01,562 - exp_b6eedf16 - INFO - L2Q4 Iter0: borderline_rate=80.00
+2025-11-02 14:23:01,563 - exp_b6eedf16 - INFO - L2Q4 Iter0: avg_mutual_info=0.07
+2025-11-02 14:23:01,563 - exp_b6eedf16 - INFO - L2Q4 Iter0: avg_correlation=0.36
+2025-11-02 14:23:01,564 - exp_b6eedf16 - INFO - L2Q4 Iter0: avg_co_occurrence=0.44
+2025-11-02 14:23:01,564 - exp_b6eedf16 - INFO - L2Q4 Iter0: num_coupled_pairs=1.00
+2025-11-02 14:23:01,564 - exp_b6eedf16 - INFO - Flip rate: 80.0%
+2025-11-02 14:23:01,565 - exp_b6eedf16 - INFO - Coupled pairs: 1
+2025-11-02 14:23:01,565 - exp_b6eedf16 - INFO - NEW BEST: 80.0%
+2025-11-02 14:23:01,565 - exp_b6eedf16 - INFO - Refining QDs...
+2025-11-02 14:23:26,666 - exp_b6eedf16 - INFO - L2Q4: Applied MERGE - Flip=80.0%, Confidence=0.90, Consistency=0.86
+2025-11-02 14:23:26,668 - exp_b6eedf16 - INFO - Applied operation: MERGE
+2025-11-02 14:23:26,670 - exp_b6eedf16 - INFO - 
+Iteration 1: Testing QDs...
+2025-11-02 14:32:58,968 - exp_b6eedf16 - INFO - L2Q4 Iter1: flip_rate=0.00
+2025-11-02 14:32:58,970 - exp_b6eedf16 - INFO - L2Q4 Iter1: borderline_rate=80.00
+2025-11-02 14:32:58,971 - exp_b6eedf16 - INFO - L2Q4 Iter1: avg_mutual_info=0.07
+2025-11-02 14:32:58,972 - exp_b6eedf16 - INFO - L2Q4 Iter1: avg_correlation=0.32
+2025-11-02 14:32:58,972 - exp_b6eedf16 - INFO - L2Q4 Iter1: avg_co_occurrence=0.31
+2025-11-02 14:32:58,973 - exp_b6eedf16 - INFO - L2Q4 Iter1: num_coupled_pairs=0.00
+2025-11-02 14:32:58,973 - exp_b6eedf16 - INFO - Flip rate: 0.0%
+2025-11-02 14:32:58,974 - exp_b6eedf16 - INFO - Coupled pairs: 0
+2025-11-02 14:32:58,974 - exp_b6eedf16 - INFO - NEW BEST: 0.0%
+2025-11-02 14:32:58,975 - exp_b6eedf16 - INFO - Early stopping: reached 0.0%
+2025-11-02 14:32:58,975 - exp_b6eedf16 - INFO - 
+Validating on test set...
+2025-11-02 14:39:59,710 - exp_b6eedf16 - INFO - 
+FINAL RESULTS L2Q4:
+2025-11-02 14:39:59,712 - exp_b6eedf16 - INFO - Train - Baseline: 20.0%, Best QD: 0.0%
+2025-11-02 14:39:59,712 - exp_b6eedf16 - INFO - Test - Baseline: 0.0%, QD: 25.0%
+2025-11-02 14:39:59,713 - exp_b6eedf16 - INFO - Improvement: -25.0 pp
+2025-11-02 14:39:59,717 - exp_b6eedf16 - INFO - 
+============================================================
+2025-11-02 14:39:59,718 - exp_b6eedf16 - INFO - Starting Lab 4, Question 2
+2025-11-02 14:39:59,724 - exp_b6eedf16 - INFO - Running baseline grading with rubric...
+2025-11-02 14:49:48,205 - exp_b6eedf16 - INFO - L4Q2 Iter-1: flip_rate_baseline=50.00
+2025-11-02 14:49:48,206 - exp_b6eedf16 - INFO - Baseline flip rate: 50.0%
+2025-11-02 14:49:48,206 - exp_b6eedf16 - INFO - Extracting quality dimensions...
+2025-11-02 14:50:31,866 - exp_b6eedf16 - INFO - 
+Iteration 0: Testing QDs...
+2025-11-02 15:01:54,527 - exp_b6eedf16 - INFO - L4Q2 Iter0: flip_rate=33.33
+2025-11-02 15:01:54,528 - exp_b6eedf16 - INFO - L4Q2 Iter0: borderline_rate=16.67
+2025-11-02 15:01:54,529 - exp_b6eedf16 - INFO - L4Q2 Iter0: avg_mutual_info=0.08
+2025-11-02 15:01:54,529 - exp_b6eedf16 - INFO - L4Q2 Iter0: avg_correlation=nan
+2025-11-02 15:01:54,530 - exp_b6eedf16 - INFO - L4Q2 Iter0: avg_co_occurrence=0.86
+2025-11-02 15:01:54,530 - exp_b6eedf16 - INFO - L4Q2 Iter0: num_coupled_pairs=2.00
+2025-11-02 15:01:54,531 - exp_b6eedf16 - INFO - Flip rate: 33.3%
+2025-11-02 15:01:54,531 - exp_b6eedf16 - INFO - Coupled pairs: 2
+2025-11-02 15:01:54,532 - exp_b6eedf16 - INFO - NEW BEST: 33.3%
+2025-11-02 15:01:54,532 - exp_b6eedf16 - INFO - Refining QDs...
+2025-11-02 15:02:16,522 - exp_b6eedf16 - INFO - L4Q2: Applied SPLIT - Flip=33.3%, Confidence=0.93, Consistency=0.93
+2025-11-02 15:02:16,523 - exp_b6eedf16 - INFO - Applied operation: SPLIT
+2025-11-02 15:02:16,523 - exp_b6eedf16 - INFO - 
+Iteration 1: Testing QDs...
+2025-11-02 15:15:17,421 - exp_b6eedf16 - INFO - L4Q2 Iter1: flip_rate=0.00
+2025-11-02 15:15:17,421 - exp_b6eedf16 - INFO - L4Q2 Iter1: borderline_rate=0.00
+2025-11-02 15:15:17,422 - exp_b6eedf16 - INFO - L4Q2 Iter1: avg_mutual_info=0.08
+2025-11-02 15:15:17,422 - exp_b6eedf16 - INFO - L4Q2 Iter1: avg_correlation=nan
+2025-11-02 15:15:17,423 - exp_b6eedf16 - INFO - L4Q2 Iter1: avg_co_occurrence=0.81
+2025-11-02 15:15:17,423 - exp_b6eedf16 - INFO - L4Q2 Iter1: num_coupled_pairs=1.00
+2025-11-02 15:15:17,423 - exp_b6eedf16 - INFO - Flip rate: 0.0%
+2025-11-02 15:15:17,424 - exp_b6eedf16 - INFO - Coupled pairs: 1
+2025-11-02 15:15:17,424 - exp_b6eedf16 - INFO - NEW BEST: 0.0%
+2025-11-02 15:15:17,424 - exp_b6eedf16 - INFO - Early stopping: reached 0.0%
+2025-11-02 15:15:17,424 - exp_b6eedf16 - INFO - 
+Validating on test set...
+2025-11-02 15:22:57,244 - exp_b6eedf16 - INFO - 
+FINAL RESULTS L4Q2:
+2025-11-02 15:22:57,245 - exp_b6eedf16 - INFO - Train - Baseline: 50.0%, Best QD: 0.0%
+2025-11-02 15:22:57,245 - exp_b6eedf16 - INFO - Test - Baseline: 0.0%, QD: 0.0%
+2025-11-02 15:22:57,246 - exp_b6eedf16 - INFO - Improvement: 0.0 pp
+2025-11-02 15:22:57,251 - exp_b6eedf16 - INFO - 
+============================================================
+2025-11-02 15:22:57,252 - exp_b6eedf16 - INFO - Starting Lab 1, Question 1
+2025-11-02 15:22:57,258 - exp_b6eedf16 - INFO - Running baseline grading with rubric...

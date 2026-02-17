@@ -1,0 +1,1520 @@
+{
+  "question_id": "L1Q1",
+  "response_id": "R4",
+  "response_text": "The HAL is a software layer that provides general libraries and functions that allows you to directly work with hardware, so we don\u2019t need to deal with hardware settings and low-level code for registers. For example, if you want to work GPIO or timers, you can call a high-level HAL function instead of figuring out individual register values.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-10T23:16:53.346176",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T23:16:58.464632",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T23:17:04.847284",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T23:17:13.961406",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T23:17:22.839399",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T23:17:27.785133",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T23:17:33.579634",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T23:17:37.927781",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T23:17:46.788707",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-10T23:17:56.765295",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-10T23:18:07.964014",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T23:18:16.819199",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T23:18:21.588493",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T23:18:28.420689",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T23:18:35.010783",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T23:18:39.841282",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T23:18:47.395336",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-10T23:18:58.573409",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T23:19:03.612594",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-10T23:19:10.529542",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct expansion of the acronym** - The response explicitly expands \"HAL\" as **Hardware Abstraction Layer** (the exact phrase appears or the acronym is correctly defined).",
+        "**Accurate description of the abstraction function** - The response states that the HAL **hides lowlevel hardware details** (e.g., registerlevel access, peripheral configuration) and provides **higherlevel APIs** that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response mentions **one or more of the following correct reasons** for using a HAL:",
+        "Improves code portability across different CortexM4 (or other) devices",
+        "Enables code reuse and faster development",
+        "Reduces the likelihood of hardwarespecific bugs",
+        "Simplifies maintenance and readability of the code",
+        "**Absence of factual errors about the HAL** - The response contains **no statements that contradict the definition or purpose** of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 8: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T23:19:31.448000",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct expansion of the acronym** - The response explicitly expands \"HAL\" as **Hardware Abstraction Layer** (the exact phrase appears or the acronym is correctly defined).",
+        "**Accurate description of the abstraction function** - The response states that the HAL **hides lowlevel hardware details** (e.g., registerlevel access, peripheral configuration) and provides **higherlevel APIs** that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response mentions **one or more of the following correct reasons** for using a HAL:",
+        "Improves code portability across different CortexM4 (or other) devices",
+        "Enables code reuse and faster development",
+        "Reduces the likelihood of hardwarespecific bugs",
+        "Simplifies maintenance and readability of the code",
+        "**Absence of factual errors about the HAL** - The response contains **no statements that contradict the definition or purpose** of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 0  \nDimension 5: 0  \nDimension 6: 1  \nDimension 7: 1  \nDimension 8: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T23:20:00.617743",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "quality_dimensions": [
+        "**Correct expansion of the acronym** - The response explicitly expands \"HAL\" as **Hardware Abstraction Layer** (the exact phrase appears or the acronym is correctly defined).",
+        "**Accurate description of the abstraction function** - The response states that the HAL **hides lowlevel hardware details** (e.g., registerlevel access, peripheral configuration) and provides **higherlevel APIs** that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response mentions **one or more of the following correct reasons** for using a HAL:",
+        "Improves code portability across different CortexM4 (or other) devices",
+        "Enables code reuse and faster development",
+        "Reduces the likelihood of hardwarespecific bugs",
+        "Simplifies maintenance and readability of the code",
+        "**Absence of factual errors about the HAL** - The response contains **no statements that contradict the definition or purpose** of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T23:20:13.031446",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct expansion of the acronym** - The response explicitly expands \"HAL\" as **Hardware Abstraction Layer** (the exact phrase appears or the acronym is correctly defined).",
+        "**Accurate description of the abstraction function** - The response states that the HAL **hides lowlevel hardware details** (e.g., registerlevel access, peripheral configuration) and provides **higherlevel APIs** that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response mentions **one or more of the following correct reasons** for using a HAL:",
+        "Improves code portability across different CortexM4 (or other) devices",
+        "Enables code reuse and faster development",
+        "Reduces the likelihood of hardwarespecific bugs",
+        "Simplifies maintenance and readability of the code",
+        "**Absence of factual errors about the HAL** - The response contains **no statements that contradict the definition or purpose** of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 0  \nDimension 5: 0  \nDimension 6: 0  \nDimension 7: 0  \nDimension 8: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T23:20:38.633677",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "quality_dimensions": [
+        "**Correct expansion of the acronym** - The response explicitly expands \"HAL\" as **Hardware Abstraction Layer** (the exact phrase appears or the acronym is correctly defined).",
+        "**Accurate description of the abstraction function** - The response states that the HAL **hides lowlevel hardware details** (e.g., registerlevel access, peripheral configuration) and provides **higherlevel APIs** that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response mentions **one or more of the following correct reasons** for using a HAL:",
+        "Improves code portability across different CortexM4 (or other) devices",
+        "Enables code reuse and faster development",
+        "Reduces the likelihood of hardwarespecific bugs",
+        "Simplifies maintenance and readability of the code",
+        "**Absence of factual errors about the HAL** - The response contains **no statements that contradict the definition or purpose** of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T23:21:17.749255",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct expansion of the acronym** - The response explicitly expands \"HAL\" as **Hardware Abstraction Layer** (the exact phrase appears or the acronym is correctly defined).",
+        "**Accurate description of the abstraction function** - The response states that the HAL **hides lowlevel hardware details** (e.g., registerlevel access, peripheral configuration) and provides **higherlevel APIs** that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response mentions **one or more of the following correct reasons** for using a HAL:",
+        "Improves code portability across different CortexM4 (or other) devices",
+        "Enables code reuse and faster development",
+        "Reduces the likelihood of hardwarespecific bugs",
+        "Simplifies maintenance and readability of the code",
+        "**Absence of factual errors about the HAL** - The response contains **no statements that contradict the definition or purpose** of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 0  \nDimension 5: 0  \nDimension 6: 0  \nDimension 7: 0  \nDimension 8: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T23:22:00.844480",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct expansion of the acronym** - The response explicitly expands \"HAL\" as **Hardware Abstraction Layer** (the exact phrase appears or the acronym is correctly defined).",
+        "**Accurate description of the abstraction function** - The response states that the HAL **hides lowlevel hardware details** (e.g., registerlevel access, peripheral configuration) and provides **higherlevel APIs** that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response mentions **one or more of the following correct reasons** for using a HAL:",
+        "Improves code portability across different CortexM4 (or other) devices",
+        "Enables code reuse and faster development",
+        "Reduces the likelihood of hardwarespecific bugs",
+        "Simplifies maintenance and readability of the code",
+        "**Absence of factual errors about the HAL** - The response contains **no statements that contradict the definition or purpose** of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 0  \nDimension 5: 1  \nDimension 6: 0  \nDimension 7: 0  \nDimension 8: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T23:22:50.328112",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct expansion of the acronym** - The response explicitly expands \"HAL\" as **Hardware Abstraction Layer** (the exact phrase appears or the acronym is correctly defined).",
+        "**Accurate description of the abstraction function** - The response states that the HAL **hides lowlevel hardware details** (e.g., registerlevel access, peripheral configuration) and provides **higherlevel APIs** that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response mentions **one or more of the following correct reasons** for using a HAL:",
+        "Improves code portability across different CortexM4 (or other) devices",
+        "Enables code reuse and faster development",
+        "Reduces the likelihood of hardwarespecific bugs",
+        "Simplifies maintenance and readability of the code",
+        "**Absence of factual errors about the HAL** - The response contains **no statements that contradict the definition or purpose** of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 0  \nDimension 5: 0  \nDimension 6: 0  \nDimension 7: 0  \nDimension 8: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T23:23:43.172231",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "quality_dimensions": [
+        "**Correct expansion of the acronym** - The response explicitly expands \"HAL\" as **Hardware Abstraction Layer** (the exact phrase appears or the acronym is correctly defined).",
+        "**Accurate description of the abstraction function** - The response states that the HAL **hides lowlevel hardware details** (e.g., registerlevel access, peripheral configuration) and provides **higherlevel APIs** that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response mentions **one or more of the following correct reasons** for using a HAL:",
+        "Improves code portability across different CortexM4 (or other) devices",
+        "Enables code reuse and faster development",
+        "Reduces the likelihood of hardwarespecific bugs",
+        "Simplifies maintenance and readability of the code",
+        "**Absence of factual errors about the HAL** - The response contains **no statements that contradict the definition or purpose** of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T23:24:19.033745",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "quality_dimensions": [
+        "**Correct expansion of the acronym** - The response explicitly expands \"HAL\" as **Hardware Abstraction Layer** (the exact phrase appears or the acronym is correctly defined).",
+        "**Accurate description of the abstraction function** - The response states that the HAL **hides lowlevel hardware details** (e.g., registerlevel access, peripheral configuration) and provides **higherlevel APIs** that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response mentions **one or more of the following correct reasons** for using a HAL:",
+        "Improves code portability across different CortexM4 (or other) devices",
+        "Enables code reuse and faster development",
+        "Reduces the likelihood of hardwarespecific bugs",
+        "Simplifies maintenance and readability of the code",
+        "**Absence of factual errors about the HAL** - The response contains **no statements that contradict the definition or purpose** of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T23:24:30.210386",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct expansion of the acronym** - The response explicitly expands \"HAL\" as **Hardware Abstraction Layer** (the exact phrase appears or the acronym is correctly defined).",
+        "**Accurate description of the abstraction function** - The response states that the HAL **hides lowlevel hardware details** (e.g., registerlevel access, peripheral configuration) and provides **higherlevel APIs** that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response mentions **one or more of the following correct reasons** for using a HAL:",
+        "Improves code portability across different CortexM4 (or other) devices",
+        "Enables code reuse and faster development",
+        "Reduces the likelihood of hardwarespecific bugs",
+        "Simplifies maintenance and readability of the code",
+        "**Absence of factual errors about the HAL** - The response contains **no statements that contradict the definition or purpose** of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 0  \nDimension 5: 0  \nDimension 6: 0  \nDimension 7: 0  \nDimension 8: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T23:25:00.452630",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "quality_dimensions": [
+        "**Correct expansion of the acronym** - The response explicitly expands \"HAL\" as **Hardware Abstraction Layer** (the exact phrase appears or the acronym is correctly defined).",
+        "**Accurate description of the abstraction function** - The response states that the HAL **hides lowlevel hardware details** (e.g., registerlevel access, peripheral configuration) and provides **higherlevel APIs** that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response mentions **one or more of the following correct reasons** for using a HAL:",
+        "Improves code portability across different CortexM4 (or other) devices",
+        "Enables code reuse and faster development",
+        "Reduces the likelihood of hardwarespecific bugs",
+        "Simplifies maintenance and readability of the code",
+        "**Absence of factual errors about the HAL** - The response contains **no statements that contradict the definition or purpose** of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T23:25:42.397260",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "quality_dimensions": [
+        "**Correct expansion of the acronym** - The response explicitly expands \"HAL\" as **Hardware Abstraction Layer** (the exact phrase appears or the acronym is correctly defined).",
+        "**Accurate description of the abstraction function** - The response states that the HAL **hides lowlevel hardware details** (e.g., registerlevel access, peripheral configuration) and provides **higherlevel APIs** that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response mentions **one or more of the following correct reasons** for using a HAL:",
+        "Improves code portability across different CortexM4 (or other) devices",
+        "Enables code reuse and faster development",
+        "Reduces the likelihood of hardwarespecific bugs",
+        "Simplifies maintenance and readability of the code",
+        "**Absence of factual errors about the HAL** - The response contains **no statements that contradict the definition or purpose** of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T23:26:19.013330",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "quality_dimensions": [
+        "**Correct expansion of the acronym** - The response explicitly expands \"HAL\" as **Hardware Abstraction Layer** (the exact phrase appears or the acronym is correctly defined).",
+        "**Accurate description of the abstraction function** - The response states that the HAL **hides lowlevel hardware details** (e.g., registerlevel access, peripheral configuration) and provides **higherlevel APIs** that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response mentions **one or more of the following correct reasons** for using a HAL:",
+        "Improves code portability across different CortexM4 (or other) devices",
+        "Enables code reuse and faster development",
+        "Reduces the likelihood of hardwarespecific bugs",
+        "Simplifies maintenance and readability of the code",
+        "**Absence of factual errors about the HAL** - The response contains **no statements that contradict the definition or purpose** of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T23:26:53.704577",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "quality_dimensions": [
+        "**Correct expansion of the acronym** - The response explicitly expands \"HAL\" as **Hardware Abstraction Layer** (the exact phrase appears or the acronym is correctly defined).",
+        "**Accurate description of the abstraction function** - The response states that the HAL **hides lowlevel hardware details** (e.g., registerlevel access, peripheral configuration) and provides **higherlevel APIs** that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response mentions **one or more of the following correct reasons** for using a HAL:",
+        "Improves code portability across different CortexM4 (or other) devices",
+        "Enables code reuse and faster development",
+        "Reduces the likelihood of hardwarespecific bugs",
+        "Simplifies maintenance and readability of the code",
+        "**Absence of factual errors about the HAL** - The response contains **no statements that contradict the definition or purpose** of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T23:27:09.395241",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "quality_dimensions": [
+        "**Correct expansion of the acronym** - The response explicitly expands \"HAL\" as **Hardware Abstraction Layer** (the exact phrase appears or the acronym is correctly defined).",
+        "**Accurate description of the abstraction function** - The response states that the HAL **hides lowlevel hardware details** (e.g., registerlevel access, peripheral configuration) and provides **higherlevel APIs** that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response mentions **one or more of the following correct reasons** for using a HAL:",
+        "Improves code portability across different CortexM4 (or other) devices",
+        "Enables code reuse and faster development",
+        "Reduces the likelihood of hardwarespecific bugs",
+        "Simplifies maintenance and readability of the code",
+        "**Absence of factual errors about the HAL** - The response contains **no statements that contradict the definition or purpose** of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T23:27:23.241585",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "quality_dimensions": [
+        "**Correct expansion of the acronym** - The response explicitly expands \"HAL\" as **Hardware Abstraction Layer** (the exact phrase appears or the acronym is correctly defined).",
+        "**Accurate description of the abstraction function** - The response states that the HAL **hides lowlevel hardware details** (e.g., registerlevel access, peripheral configuration) and provides **higherlevel APIs** that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response mentions **one or more of the following correct reasons** for using a HAL:",
+        "Improves code portability across different CortexM4 (or other) devices",
+        "Enables code reuse and faster development",
+        "Reduces the likelihood of hardwarespecific bugs",
+        "Simplifies maintenance and readability of the code",
+        "**Absence of factual errors about the HAL** - The response contains **no statements that contradict the definition or purpose** of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T23:27:59.573307",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "quality_dimensions": [
+        "**Correct expansion of the acronym** - The response explicitly expands \"HAL\" as **Hardware Abstraction Layer** (the exact phrase appears or the acronym is correctly defined).",
+        "**Accurate description of the abstraction function** - The response states that the HAL **hides lowlevel hardware details** (e.g., registerlevel access, peripheral configuration) and provides **higherlevel APIs** that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response mentions **one or more of the following correct reasons** for using a HAL:",
+        "Improves code portability across different CortexM4 (or other) devices",
+        "Enables code reuse and faster development",
+        "Reduces the likelihood of hardwarespecific bugs",
+        "Simplifies maintenance and readability of the code",
+        "**Absence of factual errors about the HAL** - The response contains **no statements that contradict the definition or purpose** of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T23:28:18.586361",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "quality_dimensions": [
+        "**Correct expansion of the acronym** - The response explicitly expands \"HAL\" as **Hardware Abstraction Layer** (the exact phrase appears or the acronym is correctly defined).",
+        "**Accurate description of the abstraction function** - The response states that the HAL **hides lowlevel hardware details** (e.g., registerlevel access, peripheral configuration) and provides **higherlevel APIs** that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response mentions **one or more of the following correct reasons** for using a HAL:",
+        "Improves code portability across different CortexM4 (or other) devices",
+        "Enables code reuse and faster development",
+        "Reduces the likelihood of hardwarespecific bugs",
+        "Simplifies maintenance and readability of the code",
+        "**Absence of factual errors about the HAL** - The response contains **no statements that contradict the definition or purpose** of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 0",
+      "timestamp": "2025-11-10T23:28:38.690723",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "quality_dimensions": [
+        "**Correct expansion of the acronym** - The response explicitly expands \"HAL\" as **Hardware Abstraction Layer** (the exact phrase appears or the acronym is correctly defined).",
+        "**Accurate description of the abstraction function** - The response states that the HAL **hides lowlevel hardware details** (e.g., registerlevel access, peripheral configuration) and provides **higherlevel APIs** that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response mentions **one or more of the following correct reasons** for using a HAL:",
+        "Improves code portability across different CortexM4 (or other) devices",
+        "Enables code reuse and faster development",
+        "Reduces the likelihood of hardwarespecific bugs",
+        "Simplifies maintenance and readability of the code",
+        "**Absence of factual errors about the HAL** - The response contains **no statements that contradict the definition or purpose** of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 0",
+      "timestamp": "2025-11-10T23:28:49.747115",
+      "method": "qd"
+    }
+  ],
+  "qd_refined_iterations": [
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 1",
+      "timestamp": "2025-11-10T23:29:22.925562",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T23:29:35.680218",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 1",
+      "timestamp": "2025-11-10T23:29:45.965111",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T23:29:57.766276",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T23:30:07.779870",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 1",
+      "timestamp": "2025-11-10T23:30:16.191719",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T23:30:27.564595",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T23:30:36.813772",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 1",
+      "timestamp": "2025-11-10T23:30:45.669161",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 1",
+      "timestamp": "2025-11-10T23:30:55.114194",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 1",
+      "timestamp": "2025-11-10T23:31:05.125249",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 1",
+      "timestamp": "2025-11-10T23:31:14.954170",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T23:31:23.812394",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 1",
+      "timestamp": "2025-11-10T23:31:35.881730",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T23:31:48.029656",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T23:31:57.801984",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T23:32:08.666324",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T23:32:18.567938",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T23:32:33.332956",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T23:32:42.609492",
+      "method": "qd"
+    }
+  ],
+  "baseline_metrics": {
+    "consensus": 80.0,
+    "flip_rate": 20.0,
+    "majority": 1,
+    "sample_size": 20,
+    "pass_count": 16,
+    "fail_count": 4
+  },
+  "version_progression": [
+    {
+      "version": "baseline",
+      "version_label": "Baseline (Rubric)",
+      "metrics": {
+        "consensus": 80.0,
+        "flip_rate": 20.0,
+        "majority": 1,
+        "sample_size": 20,
+        "pass_count": 16,
+        "fail_count": 4
+      },
+      "flip_rate_change_vs_baseline": 0.0,
+      "timestamp": "2025-11-10T23:19:10.530762"
+    },
+    {
+      "version": "v1",
+      "version_label": "QD v1 (Initial)",
+      "metrics": {
+        "consensus": 100.0,
+        "flip_rate": 0.0,
+        "majority": 0,
+        "sample_size": 20,
+        "pass_count": 0,
+        "fail_count": 20
+      },
+      "flip_rate_change_vs_baseline": 20.0,
+      "timestamp": "2025-11-10T23:28:49.751017"
+    },
+    {
+      "version": "v2",
+      "version_label": "QD v2 (Refined)",
+      "metrics": {
+        "consensus": 100.0,
+        "flip_rate": 0.0,
+        "majority": 1,
+        "sample_size": 20,
+        "pass_count": 20,
+        "fail_count": 0
+      },
+      "flip_rate_change_vs_baseline": 20.0,
+      "refinement_result": "",
+      "timestamp": "2025-11-10T23:32:42.616905"
+    }
+  ],
+  "qd_initial_version": "v1",
+  "qd_version_selected": "v1",
+  "qd_initial_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 0,
+    "sample_size": 20,
+    "pass_count": 0,
+    "fail_count": 20
+  },
+  "qd_result": "improved_or_maintained",
+  "refinement_reason": "majority_changed",
+  "baseline_majority": 1,
+  "qd_majority": 0,
+  "flip_rate_change_vs_baseline": 20.0,
+  "qd_refined_iterations_v2": [
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 1",
+      "timestamp": "2025-11-10T23:29:22.925562",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T23:29:35.680218",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 1",
+      "timestamp": "2025-11-10T23:29:45.965111",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T23:29:57.766276",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T23:30:07.779870",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 1",
+      "timestamp": "2025-11-10T23:30:16.191719",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T23:30:27.564595",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T23:30:36.813772",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 1",
+      "timestamp": "2025-11-10T23:30:45.669161",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 1",
+      "timestamp": "2025-11-10T23:30:55.114194",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 1",
+      "timestamp": "2025-11-10T23:31:05.125249",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 1",
+      "timestamp": "2025-11-10T23:31:14.954170",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T23:31:23.812394",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1\nDimension 2: 1\nDimension 3: 1\nDimension 4: 1\nOverall: 1",
+      "timestamp": "2025-11-10T23:31:35.881730",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T23:31:48.029656",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T23:31:57.801984",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T23:32:08.666324",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T23:32:18.567938",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T23:32:33.332956",
+      "method": "qd"
+    },
+    {
+      "grade": 1,
+      "dimension_scores": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quality_dimensions": [
+        "**Correct identification of the HAL** - The response must clearly indicate that the HAL is a *hardware abstraction layer* (either by explicitly expanding the acronym or by describing it as a software layer that abstracts the hardware). Implicit identification that \"the HAL abstracts the hardware\" is sufficient.",
+        "**Accurate description of the abstraction role** - The answer must state that the HAL *hides lowlevel hardware details* (e.g., registerlevel access, peripheral configuration) and provides *higherlevel APIs* that simplify interaction with the MCU.",
+        "**Inclusion of at least one valid benefit** - The response must mention one or more of the following correct reasons for using a HAL:",
+        "**Absence of factual errors about the HAL** - The answer must not contain statements that contradict the definition or purpose of a HAL (e.g., claiming it replaces a compiler, acts as an operating system, or provides unrelated functionality)."
+      ],
+      "qd_version": "v2",
+      "raw_response": "Dimension 1: 1  \nDimension 2: 1  \nDimension 3: 1  \nDimension 4: 1  \nOverall: 1",
+      "timestamp": "2025-11-10T23:32:42.609492",
+      "method": "qd"
+    }
+  ],
+  "qd_refined_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 20,
+    "pass_count": 20,
+    "fail_count": 0
+  },
+  "qd_refined_metrics_v2": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 20,
+    "pass_count": 20,
+    "fail_count": 0
+  },
+  "qd_refined_version": "v2",
+  "refinement_result": "success",
+  "refinement_attempt_count": 0
+}

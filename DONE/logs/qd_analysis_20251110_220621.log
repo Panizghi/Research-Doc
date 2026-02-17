@@ -1,0 +1,8 @@
+2025-11-10 22:06:21 - qd_operation_analysis - INFO - [qd_operation_analysis.py:54] - Logging to file: logs/qd_analysis_20251110_220621.log
+2025-11-10 22:07:44 - qd_operation_analysis - INFO - [qd_operation_analysis.py:68] - Loading QD lineage for L1Q4 from qd_history
+2025-11-10 22:07:44 - qd_operation_analysis - INFO - [qd_operation_analysis.py:83] - Loaded 6 QD versions for L1Q4
+2025-11-10 22:07:44 - qd_operation_analysis - INFO - [qd_operation_analysis.py:91] - Printing QD operation details for version v2, operation: add_drop
+2025-11-10 22:07:44 - qd_operation_analysis - INFO - [qd_operation_analysis.py:91] - Printing QD operation details for version v3, operation: add_drop
+2025-11-10 22:07:44 - qd_operation_analysis - INFO - [qd_operation_analysis.py:91] - Printing QD operation details for version v4, operation: add_drop
+2025-11-10 22:07:44 - qd_operation_analysis - INFO - [qd_operation_analysis.py:91] - Printing QD operation details for version v5, operation: add_drop
+2025-11-10 22:07:44 - qd_operation_analysis - INFO - [qd_operation_analysis.py:91] - Printing QD operation details for version v6, operation: refine

@@ -1,0 +1,77 @@
+{
+  "question_id": "L3Q3",
+  "response_id": "R14",
+  "response_text": "Decide the purpose of the thread\\nThis means deciding what set of instructions the thread is carrying out, this is to be a very specific goal where it can be run independently\\nCreate a function for the thread\\nThis function entails the purpose of the thread. This is the function that will carry out the task. The function is called and use during the runtime/usage of the thread.\\nInitialize the Kernel\\nThe kernel needs to be initialized if it has not been set up prior\\nSet up the thread\\nCreate a thread object and assign the function that the thread will use. Can also initialize input arguments depending on the purpose of the function\\nStart the thread\\nCall a method to start the thread! This will tell the system to start running the thread while running other programs in the background\\nStart the kernel\\nThis begins thread execution and then hands over control to the operating system, so the thread continues to run\\nLet the thread run\\nThe thread will run in the background independently\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:16:31.539452",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:16:38.203826",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:16:46.604427",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:16:53.873046",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:17:00.831948",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:17:07.390031",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:17:14.247407",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:17:19.442392",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:17:26.151951",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:17:31.938149",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

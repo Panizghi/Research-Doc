@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q1",
+  "response_id": "R14",
+  "response_text": "Round-robin scheduling gives each thread a fixed time slice to run before switching to the next, and a queue supports this behavior well through its first-in, first-out (FIFO) structure. When a thread\u2019s time slice ends, its TCB is dequeued from the front and re-enqueued at the back, cycling execution in a fair and predictable manner. The current array-based scheduler mimics this behavior by incrementing an index and wrapping around\u2014functionally similar to a circular queue. However, arrays require manual index tracking and make dynamic thread addition or removal more cumbersome.\\nUsing an actual queue introduces some overhead, such as additional memory usage for dynamic data structures or more CPU cycles spent on enqueue/dequeue operations. On resource-constrained systems like the Cortex-M4, these trade-offs must be considered carefully. However, the benefits, like clearer logic, easier management of dynamic threads, and encapsulated FIFO behavior, may outweigh the overhead in more complex or modular RTOS designs. Overall, while both approaches support round-robin scheduling, queues offer greater flexibility and maintainability, especially when thread lifetimes vary or grow during runtime.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:17:17.550308",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:17:22.629329",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:17:28.227513",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:17:33.484741",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:17:39.131797",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:17:44.135594",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:17:48.947931",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:17:53.903500",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:18:02.875495",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:18:09.428683",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

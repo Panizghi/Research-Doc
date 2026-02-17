@@ -1,0 +1,224 @@
+[
+  {
+    "lab": 2,
+    "question": 4,
+    "username": "rruan",
+    "trial": 0,
+    "method": "rubric",
+    "iteration": 0,
+    "grade": 1,
+    "is_borderline": false,
+    "confidence": 0.94,
+    "feedback": "Your answer correctly explains why setting the PSP is required before running the thread. You identified that without calling __set_PSP the PSP would contain an invalid value (often zero), leading the exception return to pop registers from an invalid address and trigger a HardFault. You also noted that setting PSP to the thread\u2019s stack (with a valid dummy exception frame) allows the CPU to restore a valid context. This demonstrates an understanding that the thread uses a separate stack (the PSP) distinct from the default stack pointer, and that the PSP must be initialized to the thread\u2019s stack pointer address. To fully meet the rubric, you could explicitly mention that the CPU\u2019s default stack pointer (MSP) is used for exceptions and that the thread\u2019s stack resides at a different memory location, requiring the switch to PSP.",
+    "missing_elements": [
+      "Explicit statement that the CPU\u2019s default stack pointer (MSP) is different from the thread\u2019s PSP stack pointer"
+    ],
+    "strengths": [
+      "Clear description of the consequences of an uninitialized PSP",
+      "Accurate explanation of the HardFault mechanism",
+      "Correctly identifies the role of __set_PSP in setting up the thread\u2019s stack"
+    ],
+    "timestamp": "2025-11-02T13:14:20.758163",
+    "experiment_id": "10387f5c"
+  },
+  {
+    "lab": 2,
+    "question": 4,
+    "username": "kbsavla",
+    "trial": 0,
+    "method": "rubric",
+    "iteration": 0,
+    "grade": 0,
+    "is_borderline": true,
+    "confidence": 0.85,
+    "feedback": "Your answer demonstrates a basic understanding that the Cortex\u2011M4 has two stack pointers (MSP and PSP) and that the PSP is used for thread execution. You correctly note that the CPU defaults to the MSP and that failing to switch to the PSP can cause a hard fault. However, the rubric expects you to explicitly state that the thread\u2019s stack resides at a different address than the current stack pointer and that the __set_PSP call must load the PSP with the thread\u2019s stack\u2011pointer value (i.e., the address of the thread\u2019s stack). Your answer hints at this but does not clearly explain that PSP must be set to the exact thread stack address, nor does it directly connect the mismatch to the hard fault. To meet expectations, you should clearly articulate that the thread\u2019s stack pointer is distinct from the MSP, that __set_PSP loads the PSP with the thread\u2019s stack base address, and that without this the CPU would fetch return addresses and local variables from an invalid location, leading to a hard fault.",
+    "missing_elements": [
+      "Explicit statement that the thread's stack is at a different address than the CPU's current stack pointer",
+      "Clear explanation that __set_PSP must load the PSP with the thread's stack pointer address",
+      "Direct link between mismatched PSP value and the cause of the hard fault"
+    ],
+    "strengths": [
+      "Identifies the two stack pointers (MSP and PSP)",
+      "Recognizes that PSP is used for user threads",
+      "Notes that using the wrong stack can cause a hard fault"
+    ],
+    "timestamp": "2025-11-02T13:14:41.531271",
+    "experiment_id": "10387f5c"
+  },
+  {
+    "lab": 2,
+    "question": 4,
+    "username": "rruan",
+    "trial": 0,
+    "method": "qd",
+    "iteration": 0,
+    "grade": 1,
+    "is_borderline": false,
+    "confidence": 0.93,
+    "feedback": "The answer clearly explains that the PSP must be set to the thread's own stack before execution, identifies PSP as the stack pointer used for thread context, states that without setting it the CPU would be using an invalid stack (different from the thread's stack), and describes the resulting HardFault. All four quality dimensions are satisfied.",
+    "qd_scores": {
+      "SeparateThreadStack": 1,
+      "PSPUsedForThreads": 1,
+      "SetPSPToThreadStack": 1,
+      "ConsequenceOfNotSettingPSP": 1
+    },
+    "qds_met": "4 out of 4",
+    "threshold_used": "all",
+    "timestamp": "2025-11-02T13:15:28.490513",
+    "experiment_id": "10387f5c"
+  },
+  {
+    "lab": 2,
+    "question": 4,
+    "username": "kbsavla",
+    "trial": 0,
+    "method": "qd",
+    "iteration": 0,
+    "grade": 1,
+    "is_borderline": false,
+    "confidence": 0.86,
+    "feedback": "The answer correctly identifies that threads use a separate stack (PSP) distinct from the default MSP, and it explains that the PSP is the stack pointer used for user threads. It also notes that __set_PSP must be used so the CPU knows where the thread's stack begins before the thread runs. However, it does not explicitly state the typical consequence of failing to set the PSP (e.g., a hard fault or system crash), only mentioning possible data overwriting. Including that explicit consequence would satisfy the final quality dimension.",
+    "qd_scores": {
+      "SeparateThreadStack": 1,
+      "PSPUsedForThreads": 1,
+      "SetPSPToThreadStack": 1,
+      "ConsequenceOfNotSettingPSP": 0
+    },
+    "qds_met": "3 out of 4",
+    "threshold_used": "majority",
+    "timestamp": "2025-11-02T13:15:51.216341",
+    "experiment_id": "10387f5c"
+  },
+  {
+    "lab": 2,
+    "question": 4,
+    "username": "a2parapa",
+    "trial": 0,
+    "method": "rubric",
+    "iteration": 0,
+    "grade": 1,
+    "is_borderline": false,
+    "confidence": 0.93,
+    "feedback": "The answer correctly explains that the PSP must be set to point to the thread's stack before the thread runs. It describes that without setting PSP the CPU would attempt to pop registers from an invalid location, leading to a hard fault. This demonstrates understanding that the thread\u2019s stack is separate from the default CPU stack and that PSP is used for thread context. The explanation is clear and directly addresses why the missing __set_PSP call causes a crash. A minor omission is an explicit statement that the default stack pointer (MSP) differs from the PSP, but the core concept is fully covered, meeting the rubric expectations.",
+    "missing_elements": [
+      "Explicit mention that the CPU\u2019s default stack pointer (MSP) is different from the PSP used for threads"
+    ],
+    "strengths": [
+      "Clear description of the role of __set_PSP",
+      "Correctly links an incorrect PSP value to a hard fault",
+      "Explains the importance of having a valid stack frame for context restoration"
+    ],
+    "timestamp": "2025-11-02T13:16:11.390754",
+    "experiment_id": "10387f5c"
+  },
+  {
+    "lab": 2,
+    "question": 4,
+    "username": "a2parapa",
+    "trial": 0,
+    "method": "qd",
+    "iteration": 999,
+    "grade": 1,
+    "is_borderline": true,
+    "confidence": 0.95,
+    "feedback": "The answer correctly identifies that PSP is used for thread stacks, explains that __set_PSP must load the thread's stack address before execution, and describes the hard fault consequence of not setting PSP. It does not explicitly state that the thread's stack is separate from the CPU's current stack pointer, so one dimension is missing. With three out of four dimensions satisfied, it meets the majority requirement, but is exactly at the threshold, making it borderline.",
+    "qd_scores": {
+      "SeparateThreadStack": 0,
+      "PSPUsedForThreads": 1,
+      "SetPSPToThreadStack": 1,
+      "ConsequenceOfNotSettingPSP": 1
+    },
+    "qds_met": "3 out of 4",
+    "threshold_used": "majority",
+    "timestamp": "2025-11-02T13:16:36.440761",
+    "experiment_id": "10387f5c"
+  },
+  {
+    "lab": 2,
+    "question": 4,
+    "username": "a2parapa",
+    "trial": 1,
+    "method": "rubric",
+    "iteration": 0,
+    "grade": 1,
+    "is_borderline": false,
+    "confidence": 0.88,
+    "feedback": "Your answer correctly explains that the PSP must be set to point to the thread's stack before the thread can run, and that failing to do so results in the CPU trying to pop registers from an invalid location, causing a hard fault. This demonstrates an understanding of why switching to the PSP is necessary for thread execution. The answer could be strengthened by explicitly stating that the thread's stack (accessed via PSP) is different from the processor's default stack pointer (MSP), but the core reasoning meets the rubric expectations.",
+    "missing_elements": [
+      "Explicit statement that the thread's stack (PSP) is separate from the CPU's default stack pointer (MSP)"
+    ],
+    "strengths": [
+      "Clear description of the role of __set_PSP",
+      "Accurate explanation of the consequences of not setting PSP",
+      "Correct linkage to hard fault behavior"
+    ],
+    "timestamp": "2025-11-02T13:16:56.032769",
+    "experiment_id": "10387f5c"
+  },
+  {
+    "lab": 2,
+    "question": 4,
+    "username": "a2parapa",
+    "trial": 1,
+    "method": "qd",
+    "iteration": 999,
+    "grade": 1,
+    "is_borderline": false,
+    "confidence": 0.95,
+    "feedback": "The answer clearly states that each thread has its own stack (different from the current stack), identifies the PSP as the stack pointer used for threads, correctly explains that __set_PSP must load the PSP with the thread's stack address before execution, and describes the hard fault that occurs if PSP is not set. All required quality dimensions are addressed.",
+    "qd_scores": {
+      "SeparateThreadStack": 1,
+      "PSPUsedForThreads": 1,
+      "SetPSPToThreadStack": 1,
+      "ConsequenceOfNotSettingPSP": 1
+    },
+    "qds_met": "4 out of 4",
+    "threshold_used": "majority",
+    "timestamp": "2025-11-02T13:17:21.838898",
+    "experiment_id": "10387f5c"
+  },
+  {
+    "lab": 2,
+    "question": 4,
+    "username": "a2parapa",
+    "trial": 2,
+    "method": "rubric",
+    "iteration": 0,
+    "grade": 1,
+    "is_borderline": false,
+    "confidence": 0.95,
+    "feedback": "Your answer correctly explains that the thread\u2019s stack is separate from the CPU\u2019s default stack pointer and that the PSP must be set to the thread\u2019s stack address before the thread runs. You describe how failing to set the PSP causes the CPU to pop registers from an invalid location, leading to a hard fault. This demonstrates a clear understanding of why __set_PSP is required. While you did not explicitly name the Main Stack Pointer (MSP), the essential concepts required by the rubric are present, so the answer meets expectations.",
+    "missing_elements": [
+      "Explicit mention of the Main Stack Pointer (MSP) as the CPU\u2019s default stack pointer"
+    ],
+    "strengths": [
+      "Clear explanation of the role of __set_PSP",
+      "Correct description of the consequences of not setting PSP (hard fault)",
+      "Understanding that the thread\u2019s stack must be pointed to by PSP for context restoration"
+    ],
+    "timestamp": "2025-11-02T13:17:42.483187",
+    "experiment_id": "10387f5c"
+  },
+  {
+    "lab": 2,
+    "question": 4,
+    "username": "a2parapa",
+    "trial": 2,
+    "method": "qd",
+    "iteration": 999,
+    "grade": 1,
+    "is_borderline": true,
+    "confidence": 0.92,
+    "feedback": "The answer correctly identifies the PSP as the stack pointer used for threads, explains that __set_PSP must load the PSP with the thread's stack address before execution, and describes the hard fault that occurs if PSP is not set. It does not explicitly state that the thread's stack is separate from the CPU's current stack pointer, so one dimension is missing. Overall, it meets the majority of the required dimensions.",
+    "qd_scores": {
+      "SeparateThreadStack": 0,
+      "PSPUsedForThreads": 1,
+      "SetPSPToThreadStack": 1,
+      "ConsequenceOfNotSettingPSP": 1
+    },
+    "qds_met": "3 out of 4",
+    "threshold_used": "majority",
+    "timestamp": "2025-11-02T13:18:04.338205",
+    "experiment_id": "10387f5c"
+  }
+]

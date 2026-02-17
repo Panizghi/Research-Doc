@@ -1,0 +1,16 @@
+2025-11-10 21:38:53 - qd_operation_analysis - INFO - [qd_operation_analysis.py:54] - Logging to file: logs/qd_analysis_20251110_213853.log
+2025-11-10 21:38:53 - qd_operation_analysis - INFO - [qd_operation_analysis.py:382] - Printing dimension comparison for L1Q4_R11
+2025-11-10 21:38:53 - qd_operation_analysis - INFO - [qd_operation_analysis.py:340] - Comparing dimension stability across versions for L1Q4_R11
+2025-11-10 21:38:53 - qd_operation_analysis - INFO - [qd_operation_analysis.py:265] - Analyzing dimension score stability for L1Q4_R11 with QD version v1
+2025-11-10 21:38:53 - qd_operation_analysis - INFO - [qd_operation_analysis.py:324] - Dimension stability analysis: 4 dimensions, avg flip_rate=17.50%
+2025-11-10 21:38:53 - qd_operation_analysis - INFO - [qd_operation_analysis.py:361] - Added v1 analysis: 4 dimensions
+2025-11-10 21:38:53 - qd_operation_analysis - INFO - [qd_operation_analysis.py:265] - Analyzing dimension score stability for L1Q4_R11 with QD version v5
+2025-11-10 21:38:53 - qd_operation_analysis - INFO - [qd_operation_analysis.py:324] - Dimension stability analysis: 4 dimensions, avg flip_rate=5.00%
+2025-11-10 21:38:53 - qd_operation_analysis - INFO - [qd_operation_analysis.py:370] - Added v5 analysis: 4 dimensions
+2025-11-10 21:38:53 - qd_operation_analysis - INFO - [qd_operation_analysis.py:372] - Comparison complete: 2 versions analyzed
+2025-11-10 21:38:53 - qd_operation_analysis - INFO - [qd_operation_analysis.py:68] - Loading QD lineage for L1Q4 from qd_history
+2025-11-10 21:38:53 - qd_operation_analysis - INFO - [qd_operation_analysis.py:83] - Loaded 5 QD versions for L1Q4
+2025-11-10 21:38:53 - qd_operation_analysis - INFO - [qd_operation_analysis.py:91] - Printing QD operation details for version v2, operation: add_drop
+2025-11-10 21:38:53 - qd_operation_analysis - INFO - [qd_operation_analysis.py:91] - Printing QD operation details for version v3, operation: add_drop
+2025-11-10 21:38:53 - qd_operation_analysis - INFO - [qd_operation_analysis.py:91] - Printing QD operation details for version v4, operation: add_drop
+2025-11-10 21:38:53 - qd_operation_analysis - INFO - [qd_operation_analysis.py:91] - Printing QD operation details for version v5, operation: add_drop

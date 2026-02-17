@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q3",
+  "response_id": "R15",
+  "response_text": "Before setting up a thread\u2019s stack, we first allocate a valid memory region to serve as the stack \u2014 in this lab, we used an array for that purpose. With a safe location ready, we then pushed values onto it that represent what the CPU expects when resuming execution: xPSR, PC (the function to run), LR, and general-purpose registers like R0\u2013R12. This process prepares a fake CPU state so the processor can \u201cresume\u201d the thread as if it had been running. Storing registers on the stack is essential for preserving the thread\u2019s context, and having a valid memory location ensures we aren\u2019t writing to or reading from unsafe or undefined memory, which could lead to crashes or hard faults.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:11:41.254244",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:11:47.073353",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:11:57.066723",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:12:08.179803",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:12:18.655964",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:12:31.283428",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:12:35.612578",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:12:48.020151",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:13:02.704872",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:13:16.721137",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

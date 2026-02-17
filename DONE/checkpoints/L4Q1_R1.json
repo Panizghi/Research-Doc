@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q1",
+  "response_id": "R1",
+  "response_text": "Round-robin maps naturally to a FIFO ready queue of TCB pointers. The kernel always runs the TCB at the\u00a0front\u00a0of the ready queue. When that thread calls\u00a0yield\u00a0(cooperative lab) the kernel saves its context,\u00a0dequeues\u00a0its TCB from the front, and if it is still READY enqueues\u00a0it at the\u00a0back. The new front element becomes the next running thread. If a thread\u00a0blocks\u00a0(e.g., on I/O/semaphore), its TCB is removed from the ready queue entirely; when it\u00a0unblocks, the TCB is pushed to the\u00a0back\u00a0to preserve fairness. Compared with a plain array plus a modulo index, a ready queue (implemented as a fixed-size\u00a0ring buffer\u00a0of TCB pointers) keeps operations strictly\u00a0O(1)\u00a0and avoids \u201choles,\u201d validity flags, or scans after threads block/exit. It also expresses the policy directly (\u201cfront runs \u2192 goes to back\u201d), which simplifies edge cases and makes extensions straightforward: per-priority\u00a0multiple ready queues\u00a0(one FIFO per priority), and clean\u00a0sleep/wake\u00a0by moving TCBs between lists. Arrays are fine for very small systems, but a queue yields clearer invariants and fewer bookkeeping bugs without sacrificing determinism.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:55:32.304298",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:55:51.089505",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:55:57.281581",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:56:03.238762",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:56:09.455669",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:56:22.902466",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:56:39.347915",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:56:47.489173",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:56:53.942754",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:57:02.311587",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 80.0,
+    "flip_rate": 20.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 8,
+    "fail_count": 2
+  }
+}

@@ -1,0 +1,4 @@
+2025-11-10 23:39:11 - qd_operation_analysis - INFO - [qd_operation_analysis.py:54] - Logging to file: logs/qd_analysis_20251110_233911.log
+2025-11-10 23:43:35 - qd_operation_analysis - INFO - [qd_operation_analysis.py:68] - Loading QD lineage for L1Q1 from qd_history
+2025-11-10 23:43:35 - qd_operation_analysis - INFO - [qd_operation_analysis.py:83] - Loaded 2 QD versions for L1Q1
+2025-11-10 23:43:35 - qd_operation_analysis - INFO - [qd_operation_analysis.py:91] - Printing QD operation details for version v2, operation: add_drop

@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q2",
+  "response_id": "R9",
+  "response_text": "PendSv_Handler is the special interrupt routine the ARM core runs whenever the kernel wants to hand the CPU from one thread to another. When it fires, the processor has already pushed a basic register set (r0 to r3, r12, lr, pc, xPSR) onto the current thread\u2019s stack, which is addressed through the Process Stack Pointer (PSP). The handler\u2019s first job is to save the rest of the callee-saved registers, r4 through r11, by pushing them onto the same stack. It then writes the resulting PSP value into the current thread\u2019s control block so the kernel can later restore that exact point of execution. Next, PendSV_Handler calls the C routine osSched, which selects the next runnable thread and returns that thread\u2019s saved PSP. The handler loads this new PSP into the hardware, pops r4 through r11 from the new thread\u2019s stack to rebuild its register state, and then executes the return instruction that tells the core to pop the automatically-saved registers and resume execution in thread mode. Because PendSV is configured at the lowest interrupt priority, no higher-priority interrupt can interrupt this sequence, ensuring the old thread is fully saved and the new thread is fully restored without interference.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:47:06.417464",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:47:16.801623",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:47:26.746126",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:47:38.523141",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:47:46.107746",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:48:00.728664",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:48:13.416465",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:48:22.123368",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:48:34.115126",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:48:47.064303",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

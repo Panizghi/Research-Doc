@@ -1,0 +1,183 @@
+{
+  "lab": 1,
+  "question": 1,
+  "baseline_flip_rate": 0.0,
+  "qd_flip_rate": 0.0,
+  "improvement": 0.0,
+  "num_answers": 5,
+  "operations": [],
+  "final_qds": [],
+  "iteration_qds": [],
+  "per_answer_results": [
+    {
+      "answer_index": 0,
+      "question_text": "The Hardware Abstraction Layer (HAL) is a software interface that standardizes interaction between application code and hardware peripherals. Rather than requiring low-level register manipulation, HAL functions allow configuration and control of features such as timers, digital I/O, and communication protocols. This abstraction simplifies firmware development, enhances portability across different microcontroller platforms, and improves code maintainability by isolating hardware-specific details.\\n",
+      "usernames": [
+        "m2dang"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 1,
+      "question_text": "The HAL (Hardware Abstraction Layer) is a black box of setup code that lets users go directly to programming on the MCU. It provides a set of APIs to interact with components like the libraries and stacks, which are generic and allow a wide range of uses, letting the user skip having to code this base layer.\\n",
+      "usernames": [
+        "j3hou"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 2,
+      "question_text": "The HAL is an acronym for hardware abstraction layer and it is a base layer of functionality and functions that we can use to develop and implement functionality onto hardware. The HAL operate as a medium between which the OS and the hardware. The HAL helps us communicate with our STM32 and setup our code so that we can create a general embedded project in a timely manner.\\n",
+      "usernames": [
+        "ktcollin"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 3,
+      "question_text": "HAL stands for Hardware Abstraction Layer. It consists of pre-written setup code provided by the IDE vendor to simplify development with microcontrollers, which can otherwise be complex and low-level.\\n",
+      "usernames": [
+        "c6shao"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 4,
+      "question_text": "The HAL stands for hardware abstraction layer. It sits underneath the operating system, and it provides the interface needed for the operating system to interact with directly with the hardware resources. The layer is \u201cabstract\u201d as it leaves out complex hardware details. This abstraction makes the HAL useful with working with embedded systems, as it generalizes the OS to hardware interface so that the software is not specific to any hardware resources.\\n",
+      "usernames": [
+        "m6riley"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    }
+  ]
+}

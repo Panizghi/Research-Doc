@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q4",
+  "response_id": "R12",
+  "response_text": "When we exit the SVC handler with the magic return code\u00a00xFFFFFFFD, the CPU expects the Process Stack Pointer (PSP) to already reference a correctly aligned, eight-word \u201cexception frame\u201d (xPSR, PC, LR, R12, R3\u2013R0) for the thread we\u2019re about to resume. If we skip\u00a0__set_PSP, that register still holds zero or stale data, so on the way out of Handler mode the core tries to pop those eight words from an invalid or mis-aligned address. The attempt triggers a MemManage or BusFault that escalates into a HardFault, and the program dies before the thread ever executes. Properly seeding PSP ensures the unstacking hardware reads valid memory and the thread starts cleanly.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:48:02.367164",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:48:08.659553",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:48:14.750339",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:48:22.815727",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:48:29.152080",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:48:35.130541",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:48:42.940062",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:48:50.820403",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:48:57.929444",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:49:07.021893",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

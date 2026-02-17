@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q2",
+  "response_id": "R8",
+  "response_text": "A system call is a method that allows the user to pass specific instructions from the program to the OS to either perform certain function or access hardware. In this lab, this is achieved using the SVC instruction to create a system call framework. Using assembly, the line __asm(\u201cSVC\u201d # xx\u201d) triggers this system call, which is like telling the OS to do a certain action. It will pass this into the SVC_Handler function which prepares the stack and calls the C function SVC_Handler. This function controls the actual system call and performs the task based on the number xx passed by the assembly line. A system call is important for the security of hardware access as it provides protection against Untrustworthy or faulty user code. If a user code were to directly be able to access hardware, it would lead to crashes, corruption of hardware components, and/or unwanted access to protected memory; this is why processors today have 2 distinct modes: a user mode (unprivileged access to hardware) and kernel mode (privileged access) for the purpose of mediating access to hardware. User codes run in user mode, which means it does not get access to hardware directly, instead it must utilize a system call to call the OS to perform a requested instruction. The mode bit is then set to kernel mode for the OS to either validate or deny the request. System calls can be seen as a sort of entryway for the user program to safely access the hardware by requesting the OS to validate a task for the user program.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:26:43.065367",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:26:47.140205",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:27:00.199626",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:27:04.675563",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:27:12.243216",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:27:18.133980",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:27:23.092104",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:27:31.056449",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:27:35.924692",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:27:40.172551",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

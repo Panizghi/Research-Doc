@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q2",
+  "response_id": "R14",
+  "response_text": "A system call is a form of a function call but accesses privileged operations instead of general user mode functions. A system call accesses the Kernel of the computer through switching to supervision mode. System calls are necessary to utilise interrupts and access hardware. Interrupts are useful for scheduling tasks so that a specific request is completed first. A resulting issue could be the computer being stuck running a program that will continuously overwrite memory and cause harm to the OS. In general, system calls allow the CPU to manage resources effectively to enforce security. An example of a system call increasing security is through the system call only using trusted code to perform critical operations. System call functions includes a parameter that allows for the associated set of instructions to be executed. From there, an interrupt is set forth to trigger a pause in normal execution of code to then opt for a different operation, in this case, system-level operation. For instance, when \u201cSVC #3\u201d, Case 3 will allow for the printing of a statement. Since it is a system call, the system pauses the other requests being processed to put its priority to print the statement.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:33:59.014683",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:34:04.912882",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:34:11.419114",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:34:21.709487",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:34:32.725273",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:34:44.447051",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:34:51.086326",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:34:57.624874",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:35:05.444374",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:35:14.589574",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

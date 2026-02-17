@@ -1,0 +1,3 @@
+2025-11-10 22:40:59 - qd_operation_analysis - INFO - [qd_operation_analysis.py:54] - Logging to file: logs/qd_analysis_20251110_224059.log
+2025-11-10 22:40:59 - qd_operation_analysis - INFO - [qd_operation_analysis.py:68] - Loading QD lineage for L5Q5 from qd_history
+2025-11-10 22:40:59 - qd_operation_analysis - INFO - [qd_operation_analysis.py:83] - Loaded 1 QD versions for L5Q5

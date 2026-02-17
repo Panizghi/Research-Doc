@@ -1,0 +1,22 @@
+[
+  {
+    "name": "SeparateThreadStack",
+    "definition": "States the thread's stack is different from the CPU's current stack pointer.",
+    "rationale": "The rubric requires recognizing that the thread does not share the CPU's stack; this is the core premise of the explanation."
+  },
+  {
+    "name": "PSPSetToThreadSP",
+    "definition": "Specifies that PSP must be loaded with the thread's stack pointer address.",
+    "rationale": "Passing answers must indicate the needed action (setting PSP) to align PSP with the thread's stack, directly matching the rubric."
+  },
+  {
+    "name": "PSPUsedForThreads",
+    "definition": "Identifies PSP as the stack pointer used for user threads (as opposed to MSP).",
+    "rationale": "Distinguishing PSP from MSP shows understanding of why PSP is relevant, fulfilling the rubric's focus on PSP usage."
+  },
+  {
+    "name": "ConsequenceOfNotSettingPSP",
+    "definition": "Mentions that not setting PSP leads to a hard fault or program crash.",
+    "rationale": "The rubric expects students to explain the failure mode; this criterion captures that required consequence."
+  }
+]

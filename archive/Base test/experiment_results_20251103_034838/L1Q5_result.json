@@ -1,0 +1,3874 @@
+{
+  "lab": 1,
+  "question": 5,
+  "baseline_flip_rate": 4.761904761904762,
+  "qd_flip_rate": 0.0,
+  "improvement": 4.761904761904762,
+  "num_answers": 21,
+  "operations": [
+    {
+      "iteration": 1,
+      "input_qds": [
+        {
+          "name": "offset_from_known_stack",
+          "definition": "The answer explicitly states that new stack addresses are obtained by offsetting from a known, valid stack location."
+        },
+        {
+          "name": "maintain_valid_stack_address",
+          "definition": "The answer mentions that each new stack address must remain a valid stack address (e.g., stay within the stack region and respect alignment requirements)."
+        },
+        {
+          "name": "consistent_method_for_multiple_stacks",
+          "definition": "The answer indicates that the same basic offsetting method is used for all additional stacks."
+        },
+        {
+          "name": "explicit_offset_calculation",
+          "definition": "The answer provides an explicit offset calculation or formula (e.g., new_stack = base_stack \u2013 N\u202f\u00d7\u202fstack_size) showing how the new address is derived."
+        }
+      ],
+      "sample_answers": [
+        "To allocate multiple stacks, subtract a larger block of memory from MSP_init_val and divide it into equal parts. Then, calculate each stack pointer using fixed offsets. The code needs to define the number of stacks and stack size, and loop to assign each stack its own pointer.\\n",
+        "To allocate new stacks, we need to ensure that we avoid the main stack or heap memory region. We can do this by taking the MSP and subtracting the main stack size. From now on, we\u2019re assuming we\u2019ve already offset the address to avoid the main stack\u2019s memory space. Since we know how many stacks we want, we\u2019ll call it N, we can calculate the offset needed in memory to access a stack by multiplying the stack\u2019s index by the set stack size. As for assigning these stacks to threads, we can hand each thread an index number from 0 to N during creation and all it has to do is perform the calculation above to access its stack.\\n",
+        "Since we defined the thread stack size to be 0x400 bytes, we can subtract 0x400 bytes from the current PSP which is located at the start of the first thread to find the start of the second thread. We would then set PSP to this new value. If we wanted to find the start location of another thread, continue subtracting 0x400 bytes until you reach that thread starting location.\\n",
+        "To allocate multiple stacks using the same method, we would need to define a separate memory region for each thread\u2019s stack. Starting from MSP_init_val, we would subtract fixed-size chunks of memory \u2014 one per thread \u2014 to determine each new stack\u2019s base address. In the code, we could create an array to store the stack pointer values, where each entry is calculated as:\\nPSP_base[i] = MSP_init_val - (i + 1) * STACK_SIZE;\\nThis ensures each stack starts at a unique, non-overlapping memory location determined at compile time.\\n",
+        "To find where each stack starts in the memory, we would need to obtain the size of memory occupied by previous stacks by multiplying the stack size by the number of stacks that came before the current stack. We could then subtract that value from the initial location of MSP to find the start of the stack.\\n",
+        "To assign multiple stacks to threads using the same approach, start with MSP_init_val and divide it into equal parts based on the number of threads and stack size. For each thread, we can determine its start address by subtracting (thread_index + 1) times the stack size from MSP_init_val. Store these addresses in an array or separate variables, ensuring each thread has its own non-overlapping stack space.\\n",
+        "You would simply start the same way as before by subtracting from MSP_init_val to find the PSP value, then from the PSP value you would subtract the amount of memory needed for the next stack and put a PSP for the next stack there. This is repeated as many times as is necessary throughout memory until all stacks have been initialized. Note that in order for this to work that the memory has to be large enough to allow for all of the memory to be allocated in this way. You also need to ensure that each stack starts at a proper value, which is a multiple of 8 bytes.\\n",
+        "The stack is treated as a continuous array, and thus you must start counting from the MSP initial value. From the MSP initial value, we can move downwards in our stack to the first thread by subtracting the main stack size (0x400). This is because stack memory on the Cortex-M4 grows downwards. Then to get to the second thread PSP, we subtract the thread stack size. From this point, we continue to subtract the thread stack size to get to the next thread PSP. It is important to note that the stack (MSP and PSP) must be aligned to 8 bytes, thus the starting address must be in multiples of 8. Here, a stack size of 0x400 meets that requirement. If the stack size is not a multiple of the alignment, it could result in a hard fault.\\nThis can be summarized with the equation:\\nADDR_STACK_j = MSP_INIT_VAL - MAIN_STACK_SIZE - (j-1)THREAD_STACK_SIZE\\nWhere j is the stack that you want to address. Using j = 1 would give ADDR_Stack_1 = MSP_INIT_VAL - MAIN_STACK_SIZE, which means adding the main stack size to the initial MSP value. This makes sense. Using j = 0 is an edge case that could result in errors if MAIN_STACK_SIZE does not equal THREAD_STACK_SIZE.\\n",
+        "To support multiple stacks, we would first ensure the total memory used by all stacks does not exceed the 0x4000 byte limit by dividing the space equally among threads. Each stack's starting address would be calculated by offsetting from the original stack location using a fixed spacing. We could store these addresses in an array to track them. This guarantees valid stack locations since each offset is pre-calculated to stay within bounds, and the array provides easy access to each stack's starting position. The key points are using fixed offsets from a known base and verifying the total allocation stays within limits.\\n",
+        "To assign multiple stacks for multiple threads, you would need some key information first. Where the MSP_INIT_VAL is, the main stack size, the desired thread stack size, and how many additional stacks being added. Then, the address of each stack becomes the subtraction of MSP_INIT_VAL \u2013 MAIN_STACK \u2013 N (stack number) * thread size. This will reserve space for main stack, and then add additional space for new stacks following that.\\n",
+        "To allocate a number of new stacks for use in multiple threads, the starting memory address for each stack needs to be calculated. This will be based on the downward growing stack allocation method discussed in ",
+        "To allocate new stacks for use in multiple threads, a known, valid stack location in the memory is required to properly store said stacks. This can be done simply by referencing address of MSP_INIT_VAL in our code, since it is known to be a valid stack address. Since the number of stacks is known at compile time, it means that the program does not have to be given or calculated by the user, which saves the need to dynamically allocate the stack and compute stack addresses during runtime. A straightforward way to initialize multiple stacks now that the first stack created using the valid address of MSP_INIT_VAL is to create a reference pointing to the bottom of the existing stack, which should be repeated for each stack created as it grows downward. This can be done by subtracting the address of the top of MSP_INIT_VAL by the nth stack * the stack size. On the Cortex M4, since the stack memory space is predefined, it is important to determine if the number of stacks is valid to be created in said limited memory space. If the pointer is trying to reference an address at the bottom of the allocated memory address, it means that there is not enough space for all the stacks to fit.\\n",
+        "Let N be the number of stacks you want to create. For the Cortex M4, there is a file called \u201cSTM32F401RETX_RAM.ld\u201d that sets the minimum stack and heap sizes. Here you can get and set the stack size. Call the main stack size MSS and the process stack size PSS.\\nFirst you need to find the beginning of the main stack by dereferencing the double pointer at 0x0 (call this MSP_INIT_VAL). As each process thread takes the same amount of memory PSS, you can find the pointer to the i-th process stack (ith_PSP) using this equation:\\nith_PSP = MSP_INIT_VAL \u2013 MSS \u2013 i * PSS\\nTo ensure that a process stack address is valid, at compile time, compute all of your N stack pointer addresses and store them in an array. Then you can check if the current stack pointer i is valid by comparing it with the ith and (i+1)th bounds in the array \u2013 since the stack grows downwards, a valid address would be between the start of your array and the start of the next one.\\n",
+        "If you wanted the same stack allocation method to make new stacks, you would do the same process as you would to find the first PSP stack. Given the number of stacks, you would create new variables (PSP_val2, PSP_val3.. and so on), and you would offset them by the same amount in the memory. In a practical sense, you would subtract the size of the stack from the first memory address to get the starting address of the second stack, and so on. After storing these variables, you have the starting value of the entire stack with the MSP and PSP stacks.\\n",
+        "To use the same stack allocation method to make a number, n, new stacks, we would do the following. After defining our main stack size using MSP_init_val \u2013 MAIN_STACK_SIZE, the address of STACK_N would be defined as STACK_N = MSP_init_val - MAIN_STACK_SIZE \u2013 (n-1) * THREAD_STACK_SIZE if all threads were the same size. If the threads were not all the same size, the address of STACK_N would be defined as STACK_N = STACK_(N-1) \u2013 STACK_SIZE(N-1) where stack 0 is the main stack.\\n",
+        "If we know the initial location of the main stack, we can create new thread stacks and know exactly where they start in memory. Since stacks are arranged as an array in memory, we can repeatedly subtract 0x400 from the initial MSP value to obtain the memory location for each of the new stacks. To reserve memory for each stack and ensure that they don\u2019t overlap, we must store pointers to these memory locations in an array. Doing so requires that the number of stacks needed is known at compile time.\\n",
+        "Say that the number of threads we know we want to create is equal to N.\\nBefore any memory is allocated to these stacks, we should ensure that the requested memory does not exceed the MAX_STACK_SIZE determined by the programmer or the system.\\nWe should then declare compile-time constants that determine the size of each type of stack (i.e. MAIN_STACK_SIZE, PROCESS_STACK_SIZE).\\nIt would also be good to keep track of the sizes of all of the stacks in a list of size N (e.g. thread_stack_sizes[]). This is so that we don\u2019t index to the bottom of a non-empty stack when switching between threads.\\nAssuming we have found the initial MSP via dereferencing the double pointer at 0x00 (uint32_t* MSP_INIT_VAL = *(uint32_t**)0x0;) we can find calculate the pointer for the top of the i-th thread\u2019s stack with the equation:\\nith_thread_ptr = MSP_INIT_VAL \u2013 MAIN_STACK_SIZE \u2013 (i*PROCESS_STACK_SIZE) \u2013 thread_size[i]\\nHere we are indexing the threads starting from zero. Also note that we are subtracting the value from the main stack\u2019s address, so that it can more effectively share the memory space with the heap, which grows upwards.\\n",
+        "To allocate multiple new stacks two items are required to be known before, the number of stacks to be created, and the size of a single stack (THREAD_STACK_SIZE). Then, then formula\\nSTACK_j = MSP_INIT_VAL - MAIN_STACK_SIZE - (j-1)THREAD_STACK_SIZE, where j is the stack index.\\ncan be used to calculate the address in memory of each stack.  Then, a loop could be used to create each new stack using the formula above, and in addition each memory address could be stored in an array or linked list, which allows for the memory address to be easily accessible for future use.\\n",
+        "We would need to subtract a fixed size (like 0x400) for each new stack from the initial MSP value.\\nWe would start with the initial MSP value and create each new stack by moving down in memory by a fixed amount for each one. Since we know how many stacks we need, we can decide the start of each stack at compile-time by repeatedly subtracting the same amount of space. This way, each stack has its own space in memory.\\n",
+        "The main stack will still have the highest address. For each thread stack, keep subtracting the size of the stack using the same method until all stacks are done. Since each thread has separate PSP and MSP, setControl can be modified to switch between the two. While doing so, all of the stack pointers must be 8-bit aligned and the stack address must be within a valid RAM address without overlapping other sections, such as peripherals or other system stacks. It would also be preferable to have enough space for \u2018guard\u2019 space, which is used to detect overflow, in addition to the total amount of memory required for the stacks.\\n",
+        "We can use ADDR_STACK_j = MSP_INIT_VAL + MAIN_STACK_SIZE + (j-1)THREAD_STACK_SIZE to compute the new stack address and ensure that each thread's stack is directly below the main stack without overlap.\\n"
+      ],
+      "qd_results_before_refinement": {
+        "0": {
+          "grades": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 10,
+            "count_1": 0,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 1.0
+          }
+        },
+        "1": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "2": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "3": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "4": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "5": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "6": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "7": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "8": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "9": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "10": {
+          "grades": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 10,
+            "count_1": 0,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 1.0
+          }
+        },
+        "11": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "12": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "13": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 1,
+            "count_1": 9,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.9
+          }
+        },
+        "14": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "15": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "16": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "17": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "18": {
+          "grades": [
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 1,
+            "count_1": 9,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.9
+          }
+        },
+        "19": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "20": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        }
+      },
+      "comparison_baseline": "original baseline",
+      "comparison_results": {
+        "0": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "1": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "2": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "3": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "4": {
+          "grades": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 1,
+            "count_1": 9,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.9
+          }
+        },
+        "5": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "6": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "7": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "8": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "9": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "10": {
+          "grades": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "stats": {
+            "count_0": 10,
+            "count_1": 0,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 1.0
+          }
+        },
+        "11": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "12": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "13": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "14": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "15": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "16": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "17": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "18": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "19": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "20": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        }
+      },
+      "operations": [
+        {
+          "qd_name": "offsetting_method",
+          "operator": "MERGE",
+          "from_qd": "offset_from_known_stack, consistent_method_for_multiple_stacks",
+          "explanation": "Merges two overlapping criteria into a single, unambiguous requirement. Graders no longer need to decide whether the description of offsetting and the claim that the method is reused are separate; a single statement satisfying both earns the point, eliminating the split decisions that produced 0/1 variance."
+        },
+        {
+          "qd_name": "validity_mention",
+          "operator": "KEEP",
+          "from_qd": "maintain_valid_stack_address",
+          "explanation": "Refines the original wording to accept common phrasing such as \u201cwithin the stack memory\u201d or \u201cstill a stack address\u201d while still demanding an explicit mention. This reduces inconsistency where some graders treated implicit references as sufficient and others did not."
+        },
+        {
+          "qd_name": "offset_amount_specified",
+          "operator": "SPLIT",
+          "from_qd": "explicit_offset_calculation",
+          "explanation": "Splits the original demand for a full numeric formula into a binary check for any stated offset rule. Answers that describe the offset qualitatively now receive consistent credit, preventing graders from penalizing them for lacking a precise arithmetic expression."
+        }
+      ],
+      "output_qds": [
+        {
+          "name": "offsetting_method",
+          "definition": "The answer states that new stack addresses are obtained by offsetting from a known, valid stack location and that the same offsetting approach is applied to each additional stack."
+        },
+        {
+          "name": "validity_mention",
+          "definition": "The answer explicitly notes that each new stack address must remain a valid stack address (e.g., stay inside the stack region, respect alignment or size limits)."
+        },
+        {
+          "name": "offset_amount_specified",
+          "definition": "The answer provides an offset amount or rule (qualitative or quantitative) that shows how far to move from the base stack (e.g., \u201csubtract the stack size\u201d, \u201cmove down by 0x400 each time\u201d)."
+        }
+      ]
+    }
+  ],
+  "final_qds": [
+    {
+      "name": "offsetting_method",
+      "definition": "The answer states that new stack addresses are obtained by offsetting from a known, valid stack location and that the same offsetting approach is applied to each additional stack.",
+      "operator": "MERGE",
+      "from_qd": "offset_from_known_stack, consistent_method_for_multiple_stacks",
+      "explanation": "Merges two overlapping criteria into a single, unambiguous requirement. Graders no longer need to decide whether the description of offsetting and the claim that the method is reused are separate; a single statement satisfying both earns the point, eliminating the split decisions that produced 0/1 variance."
+    },
+    {
+      "name": "validity_mention",
+      "definition": "The answer explicitly notes that each new stack address must remain a valid stack address (e.g., stay inside the stack region, respect alignment or size limits).",
+      "operator": "KEEP",
+      "from_qd": "maintain_valid_stack_address",
+      "explanation": "Refines the original wording to accept common phrasing such as \u201cwithin the stack memory\u201d or \u201cstill a stack address\u201d while still demanding an explicit mention. This reduces inconsistency where some graders treated implicit references as sufficient and others did not."
+    },
+    {
+      "name": "offset_amount_specified",
+      "definition": "The answer provides an offset amount or rule (qualitative or quantitative) that shows how far to move from the base stack (e.g., \u201csubtract the stack size\u201d, \u201cmove down by 0x400 each time\u201d).",
+      "operator": "SPLIT",
+      "from_qd": "explicit_offset_calculation",
+      "explanation": "Splits the original demand for a full numeric formula into a binary check for any stated offset rule. Answers that describe the offset qualitatively now receive consistent credit, preventing graders from penalizing them for lacking a precise arithmetic expression."
+    }
+  ],
+  "iteration_qds": [
+    {
+      "iteration": 0,
+      "qds": [
+        {
+          "name": "offset_from_known_stack",
+          "definition": "The answer explicitly states that new stack addresses are obtained by offsetting from a known, valid stack location."
+        },
+        {
+          "name": "maintain_valid_stack_address",
+          "definition": "The answer mentions that each new stack address must remain a valid stack address (e.g., stay within the stack region and respect alignment requirements)."
+        },
+        {
+          "name": "consistent_method_for_multiple_stacks",
+          "definition": "The answer indicates that the same basic offsetting method is used for all additional stacks."
+        },
+        {
+          "name": "explicit_offset_calculation",
+          "definition": "The answer provides an explicit offset calculation or formula (e.g., new_stack = base_stack \u2013 N\u202f\u00d7\u202fstack_size) showing how the new address is derived."
+        }
+      ],
+      "flip_rate": 9.523809523809524,
+      "majority_violations": 1,
+      "is_best": true,
+      "sample_answers": [
+        "To allocate multiple stacks, subtract a larger block of memory from MSP_init_val and divide it into equal parts. Then, calculate each stack pointer using fixed offsets. The code needs to define the number of stacks and stack size, and loop to assign each stack its own pointer.\\n",
+        "To allocate new stacks, we need to ensure that we avoid the main stack or heap memory region. We can do this by taking the MSP and subtracting the main stack size. From now on, we\u2019re assuming we\u2019ve already offset the address to avoid the main stack\u2019s memory space. Since we know how many stacks we want, we\u2019ll call it N, we can calculate the offset needed in memory to access a stack by multiplying the stack\u2019s index by the set stack size. As for assigning these stacks to threads, we can hand each thread an index number from 0 to N during creation and all it has to do is perform the calculation above to access its stack.\\n",
+        "Since we defined the thread stack size to be 0x400 bytes, we can subtract 0x400 bytes from the current PSP which is located at the start of the first thread to find the start of the second thread. We would then set PSP to this new value. If we wanted to find the start location of another thread, continue subtracting 0x400 bytes until you reach that thread starting location.\\n",
+        "To allocate multiple stacks using the same method, we would need to define a separate memory region for each thread\u2019s stack. Starting from MSP_init_val, we would subtract fixed-size chunks of memory \u2014 one per thread \u2014 to determine each new stack\u2019s base address. In the code, we could create an array to store the stack pointer values, where each entry is calculated as:\\nPSP_base[i] = MSP_init_val - (i + 1) * STACK_SIZE;\\nThis ensures each stack starts at a unique, non-overlapping memory location determined at compile time.\\n",
+        "To find where each stack starts in the memory, we would need to obtain the size of memory occupied by previous stacks by multiplying the stack size by the number of stacks that came before the current stack. We could then subtract that value from the initial location of MSP to find the start of the stack.\\n",
+        "To assign multiple stacks to threads using the same approach, start with MSP_init_val and divide it into equal parts based on the number of threads and stack size. For each thread, we can determine its start address by subtracting (thread_index + 1) times the stack size from MSP_init_val. Store these addresses in an array or separate variables, ensuring each thread has its own non-overlapping stack space.\\n",
+        "You would simply start the same way as before by subtracting from MSP_init_val to find the PSP value, then from the PSP value you would subtract the amount of memory needed for the next stack and put a PSP for the next stack there. This is repeated as many times as is necessary throughout memory until all stacks have been initialized. Note that in order for this to work that the memory has to be large enough to allow for all of the memory to be allocated in this way. You also need to ensure that each stack starts at a proper value, which is a multiple of 8 bytes.\\n",
+        "The stack is treated as a continuous array, and thus you must start counting from the MSP initial value. From the MSP initial value, we can move downwards in our stack to the first thread by subtracting the main stack size (0x400). This is because stack memory on the Cortex-M4 grows downwards. Then to get to the second thread PSP, we subtract the thread stack size. From this point, we continue to subtract the thread stack size to get to the next thread PSP. It is important to note that the stack (MSP and PSP) must be aligned to 8 bytes, thus the starting address must be in multiples of 8. Here, a stack size of 0x400 meets that requirement. If the stack size is not a multiple of the alignment, it could result in a hard fault.\\nThis can be summarized with the equation:\\nADDR_STACK_j = MSP_INIT_VAL - MAIN_STACK_SIZE - (j-1)THREAD_STACK_SIZE\\nWhere j is the stack that you want to address. Using j = 1 would give ADDR_Stack_1 = MSP_INIT_VAL - MAIN_STACK_SIZE, which means adding the main stack size to the initial MSP value. This makes sense. Using j = 0 is an edge case that could result in errors if MAIN_STACK_SIZE does not equal THREAD_STACK_SIZE.\\n",
+        "To support multiple stacks, we would first ensure the total memory used by all stacks does not exceed the 0x4000 byte limit by dividing the space equally among threads. Each stack's starting address would be calculated by offsetting from the original stack location using a fixed spacing. We could store these addresses in an array to track them. This guarantees valid stack locations since each offset is pre-calculated to stay within bounds, and the array provides easy access to each stack's starting position. The key points are using fixed offsets from a known base and verifying the total allocation stays within limits.\\n",
+        "To assign multiple stacks for multiple threads, you would need some key information first. Where the MSP_INIT_VAL is, the main stack size, the desired thread stack size, and how many additional stacks being added. Then, the address of each stack becomes the subtraction of MSP_INIT_VAL \u2013 MAIN_STACK \u2013 N (stack number) * thread size. This will reserve space for main stack, and then add additional space for new stacks following that.\\n",
+        "To allocate a number of new stacks for use in multiple threads, the starting memory address for each stack needs to be calculated. This will be based on the downward growing stack allocation method discussed in ",
+        "To allocate new stacks for use in multiple threads, a known, valid stack location in the memory is required to properly store said stacks. This can be done simply by referencing address of MSP_INIT_VAL in our code, since it is known to be a valid stack address. Since the number of stacks is known at compile time, it means that the program does not have to be given or calculated by the user, which saves the need to dynamically allocate the stack and compute stack addresses during runtime. A straightforward way to initialize multiple stacks now that the first stack created using the valid address of MSP_INIT_VAL is to create a reference pointing to the bottom of the existing stack, which should be repeated for each stack created as it grows downward. This can be done by subtracting the address of the top of MSP_INIT_VAL by the nth stack * the stack size. On the Cortex M4, since the stack memory space is predefined, it is important to determine if the number of stacks is valid to be created in said limited memory space. If the pointer is trying to reference an address at the bottom of the allocated memory address, it means that there is not enough space for all the stacks to fit.\\n",
+        "Let N be the number of stacks you want to create. For the Cortex M4, there is a file called \u201cSTM32F401RETX_RAM.ld\u201d that sets the minimum stack and heap sizes. Here you can get and set the stack size. Call the main stack size MSS and the process stack size PSS.\\nFirst you need to find the beginning of the main stack by dereferencing the double pointer at 0x0 (call this MSP_INIT_VAL). As each process thread takes the same amount of memory PSS, you can find the pointer to the i-th process stack (ith_PSP) using this equation:\\nith_PSP = MSP_INIT_VAL \u2013 MSS \u2013 i * PSS\\nTo ensure that a process stack address is valid, at compile time, compute all of your N stack pointer addresses and store them in an array. Then you can check if the current stack pointer i is valid by comparing it with the ith and (i+1)th bounds in the array \u2013 since the stack grows downwards, a valid address would be between the start of your array and the start of the next one.\\n",
+        "If you wanted the same stack allocation method to make new stacks, you would do the same process as you would to find the first PSP stack. Given the number of stacks, you would create new variables (PSP_val2, PSP_val3.. and so on), and you would offset them by the same amount in the memory. In a practical sense, you would subtract the size of the stack from the first memory address to get the starting address of the second stack, and so on. After storing these variables, you have the starting value of the entire stack with the MSP and PSP stacks.\\n",
+        "To use the same stack allocation method to make a number, n, new stacks, we would do the following. After defining our main stack size using MSP_init_val \u2013 MAIN_STACK_SIZE, the address of STACK_N would be defined as STACK_N = MSP_init_val - MAIN_STACK_SIZE \u2013 (n-1) * THREAD_STACK_SIZE if all threads were the same size. If the threads were not all the same size, the address of STACK_N would be defined as STACK_N = STACK_(N-1) \u2013 STACK_SIZE(N-1) where stack 0 is the main stack.\\n",
+        "If we know the initial location of the main stack, we can create new thread stacks and know exactly where they start in memory. Since stacks are arranged as an array in memory, we can repeatedly subtract 0x400 from the initial MSP value to obtain the memory location for each of the new stacks. To reserve memory for each stack and ensure that they don\u2019t overlap, we must store pointers to these memory locations in an array. Doing so requires that the number of stacks needed is known at compile time.\\n",
+        "Say that the number of threads we know we want to create is equal to N.\\nBefore any memory is allocated to these stacks, we should ensure that the requested memory does not exceed the MAX_STACK_SIZE determined by the programmer or the system.\\nWe should then declare compile-time constants that determine the size of each type of stack (i.e. MAIN_STACK_SIZE, PROCESS_STACK_SIZE).\\nIt would also be good to keep track of the sizes of all of the stacks in a list of size N (e.g. thread_stack_sizes[]). This is so that we don\u2019t index to the bottom of a non-empty stack when switching between threads.\\nAssuming we have found the initial MSP via dereferencing the double pointer at 0x00 (uint32_t* MSP_INIT_VAL = *(uint32_t**)0x0;) we can find calculate the pointer for the top of the i-th thread\u2019s stack with the equation:\\nith_thread_ptr = MSP_INIT_VAL \u2013 MAIN_STACK_SIZE \u2013 (i*PROCESS_STACK_SIZE) \u2013 thread_size[i]\\nHere we are indexing the threads starting from zero. Also note that we are subtracting the value from the main stack\u2019s address, so that it can more effectively share the memory space with the heap, which grows upwards.\\n",
+        "To allocate multiple new stacks two items are required to be known before, the number of stacks to be created, and the size of a single stack (THREAD_STACK_SIZE). Then, then formula\\nSTACK_j = MSP_INIT_VAL - MAIN_STACK_SIZE - (j-1)THREAD_STACK_SIZE, where j is the stack index.\\ncan be used to calculate the address in memory of each stack.  Then, a loop could be used to create each new stack using the formula above, and in addition each memory address could be stored in an array or linked list, which allows for the memory address to be easily accessible for future use.\\n",
+        "We would need to subtract a fixed size (like 0x400) for each new stack from the initial MSP value.\\nWe would start with the initial MSP value and create each new stack by moving down in memory by a fixed amount for each one. Since we know how many stacks we need, we can decide the start of each stack at compile-time by repeatedly subtracting the same amount of space. This way, each stack has its own space in memory.\\n",
+        "The main stack will still have the highest address. For each thread stack, keep subtracting the size of the stack using the same method until all stacks are done. Since each thread has separate PSP and MSP, setControl can be modified to switch between the two. While doing so, all of the stack pointers must be 8-bit aligned and the stack address must be within a valid RAM address without overlapping other sections, such as peripherals or other system stacks. It would also be preferable to have enough space for \u2018guard\u2019 space, which is used to detect overflow, in addition to the total amount of memory required for the stacks.\\n",
+        "We can use ADDR_STACK_j = MSP_INIT_VAL + MAIN_STACK_SIZE + (j-1)THREAD_STACK_SIZE to compute the new stack address and ensure that each thread's stack is directly below the main stack without overlap.\\n"
+      ],
+      "qd_results": {
+        "0": {
+          "grades": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 10,
+            "count_1": 0,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 1.0
+          }
+        },
+        "1": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "2": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "3": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "4": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "5": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "6": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "7": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "8": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "9": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "10": {
+          "grades": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 10,
+            "count_1": 0,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 1.0
+          }
+        },
+        "11": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "12": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "13": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 1,
+            "count_1": 9,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.9
+          }
+        },
+        "14": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "15": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "16": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "17": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "18": {
+          "grades": [
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 1,
+            "count_1": 9,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.9
+          }
+        },
+        "19": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "20": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        }
+      },
+      "comparison_baseline": "original baseline",
+      "comparison_results": {
+        "0": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "1": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "2": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "3": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "4": {
+          "grades": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 1,
+            "count_1": 9,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.9
+          }
+        },
+        "5": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "6": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "7": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "8": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "9": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "10": {
+          "grades": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "stats": {
+            "count_0": 10,
+            "count_1": 0,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 1.0
+          }
+        },
+        "11": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "12": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "13": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "14": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "15": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "16": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "17": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "18": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "19": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "20": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        }
+      }
+    },
+    {
+      "iteration": 1,
+      "qds": [
+        {
+          "name": "offsetting_method",
+          "definition": "The answer states that new stack addresses are obtained by offsetting from a known, valid stack location and that the same offsetting approach is applied to each additional stack."
+        },
+        {
+          "name": "validity_mention",
+          "definition": "The answer explicitly notes that each new stack address must remain a valid stack address (e.g., stay inside the stack region, respect alignment or size limits)."
+        },
+        {
+          "name": "offset_amount_specified",
+          "definition": "The answer provides an offset amount or rule (qualitative or quantitative) that shows how far to move from the base stack (e.g., \u201csubtract the stack size\u201d, \u201cmove down by 0x400 each time\u201d)."
+        }
+      ],
+      "flip_rate": 0.0,
+      "majority_violations": 0,
+      "is_best": false,
+      "sample_answers": [
+        "To allocate multiple stacks, subtract a larger block of memory from MSP_init_val and divide it into equal parts. Then, calculate each stack pointer using fixed offsets. The code needs to define the number of stacks and stack size, and loop to assign each stack its own pointer.\\n",
+        "To allocate new stacks, we need to ensure that we avoid the main stack or heap memory region. We can do this by taking the MSP and subtracting the main stack size. From now on, we\u2019re assuming we\u2019ve already offset the address to avoid the main stack\u2019s memory space. Since we know how many stacks we want, we\u2019ll call it N, we can calculate the offset needed in memory to access a stack by multiplying the stack\u2019s index by the set stack size. As for assigning these stacks to threads, we can hand each thread an index number from 0 to N during creation and all it has to do is perform the calculation above to access its stack.\\n",
+        "Since we defined the thread stack size to be 0x400 bytes, we can subtract 0x400 bytes from the current PSP which is located at the start of the first thread to find the start of the second thread. We would then set PSP to this new value. If we wanted to find the start location of another thread, continue subtracting 0x400 bytes until you reach that thread starting location.\\n",
+        "To allocate multiple stacks using the same method, we would need to define a separate memory region for each thread\u2019s stack. Starting from MSP_init_val, we would subtract fixed-size chunks of memory \u2014 one per thread \u2014 to determine each new stack\u2019s base address. In the code, we could create an array to store the stack pointer values, where each entry is calculated as:\\nPSP_base[i] = MSP_init_val - (i + 1) * STACK_SIZE;\\nThis ensures each stack starts at a unique, non-overlapping memory location determined at compile time.\\n",
+        "To find where each stack starts in the memory, we would need to obtain the size of memory occupied by previous stacks by multiplying the stack size by the number of stacks that came before the current stack. We could then subtract that value from the initial location of MSP to find the start of the stack.\\n",
+        "To assign multiple stacks to threads using the same approach, start with MSP_init_val and divide it into equal parts based on the number of threads and stack size. For each thread, we can determine its start address by subtracting (thread_index + 1) times the stack size from MSP_init_val. Store these addresses in an array or separate variables, ensuring each thread has its own non-overlapping stack space.\\n",
+        "You would simply start the same way as before by subtracting from MSP_init_val to find the PSP value, then from the PSP value you would subtract the amount of memory needed for the next stack and put a PSP for the next stack there. This is repeated as many times as is necessary throughout memory until all stacks have been initialized. Note that in order for this to work that the memory has to be large enough to allow for all of the memory to be allocated in this way. You also need to ensure that each stack starts at a proper value, which is a multiple of 8 bytes.\\n",
+        "The stack is treated as a continuous array, and thus you must start counting from the MSP initial value. From the MSP initial value, we can move downwards in our stack to the first thread by subtracting the main stack size (0x400). This is because stack memory on the Cortex-M4 grows downwards. Then to get to the second thread PSP, we subtract the thread stack size. From this point, we continue to subtract the thread stack size to get to the next thread PSP. It is important to note that the stack (MSP and PSP) must be aligned to 8 bytes, thus the starting address must be in multiples of 8. Here, a stack size of 0x400 meets that requirement. If the stack size is not a multiple of the alignment, it could result in a hard fault.\\nThis can be summarized with the equation:\\nADDR_STACK_j = MSP_INIT_VAL - MAIN_STACK_SIZE - (j-1)THREAD_STACK_SIZE\\nWhere j is the stack that you want to address. Using j = 1 would give ADDR_Stack_1 = MSP_INIT_VAL - MAIN_STACK_SIZE, which means adding the main stack size to the initial MSP value. This makes sense. Using j = 0 is an edge case that could result in errors if MAIN_STACK_SIZE does not equal THREAD_STACK_SIZE.\\n",
+        "To support multiple stacks, we would first ensure the total memory used by all stacks does not exceed the 0x4000 byte limit by dividing the space equally among threads. Each stack's starting address would be calculated by offsetting from the original stack location using a fixed spacing. We could store these addresses in an array to track them. This guarantees valid stack locations since each offset is pre-calculated to stay within bounds, and the array provides easy access to each stack's starting position. The key points are using fixed offsets from a known base and verifying the total allocation stays within limits.\\n",
+        "To assign multiple stacks for multiple threads, you would need some key information first. Where the MSP_INIT_VAL is, the main stack size, the desired thread stack size, and how many additional stacks being added. Then, the address of each stack becomes the subtraction of MSP_INIT_VAL \u2013 MAIN_STACK \u2013 N (stack number) * thread size. This will reserve space for main stack, and then add additional space for new stacks following that.\\n",
+        "To allocate a number of new stacks for use in multiple threads, the starting memory address for each stack needs to be calculated. This will be based on the downward growing stack allocation method discussed in ",
+        "To allocate new stacks for use in multiple threads, a known, valid stack location in the memory is required to properly store said stacks. This can be done simply by referencing address of MSP_INIT_VAL in our code, since it is known to be a valid stack address. Since the number of stacks is known at compile time, it means that the program does not have to be given or calculated by the user, which saves the need to dynamically allocate the stack and compute stack addresses during runtime. A straightforward way to initialize multiple stacks now that the first stack created using the valid address of MSP_INIT_VAL is to create a reference pointing to the bottom of the existing stack, which should be repeated for each stack created as it grows downward. This can be done by subtracting the address of the top of MSP_INIT_VAL by the nth stack * the stack size. On the Cortex M4, since the stack memory space is predefined, it is important to determine if the number of stacks is valid to be created in said limited memory space. If the pointer is trying to reference an address at the bottom of the allocated memory address, it means that there is not enough space for all the stacks to fit.\\n",
+        "Let N be the number of stacks you want to create. For the Cortex M4, there is a file called \u201cSTM32F401RETX_RAM.ld\u201d that sets the minimum stack and heap sizes. Here you can get and set the stack size. Call the main stack size MSS and the process stack size PSS.\\nFirst you need to find the beginning of the main stack by dereferencing the double pointer at 0x0 (call this MSP_INIT_VAL). As each process thread takes the same amount of memory PSS, you can find the pointer to the i-th process stack (ith_PSP) using this equation:\\nith_PSP = MSP_INIT_VAL \u2013 MSS \u2013 i * PSS\\nTo ensure that a process stack address is valid, at compile time, compute all of your N stack pointer addresses and store them in an array. Then you can check if the current stack pointer i is valid by comparing it with the ith and (i+1)th bounds in the array \u2013 since the stack grows downwards, a valid address would be between the start of your array and the start of the next one.\\n",
+        "If you wanted the same stack allocation method to make new stacks, you would do the same process as you would to find the first PSP stack. Given the number of stacks, you would create new variables (PSP_val2, PSP_val3.. and so on), and you would offset them by the same amount in the memory. In a practical sense, you would subtract the size of the stack from the first memory address to get the starting address of the second stack, and so on. After storing these variables, you have the starting value of the entire stack with the MSP and PSP stacks.\\n",
+        "To use the same stack allocation method to make a number, n, new stacks, we would do the following. After defining our main stack size using MSP_init_val \u2013 MAIN_STACK_SIZE, the address of STACK_N would be defined as STACK_N = MSP_init_val - MAIN_STACK_SIZE \u2013 (n-1) * THREAD_STACK_SIZE if all threads were the same size. If the threads were not all the same size, the address of STACK_N would be defined as STACK_N = STACK_(N-1) \u2013 STACK_SIZE(N-1) where stack 0 is the main stack.\\n",
+        "If we know the initial location of the main stack, we can create new thread stacks and know exactly where they start in memory. Since stacks are arranged as an array in memory, we can repeatedly subtract 0x400 from the initial MSP value to obtain the memory location for each of the new stacks. To reserve memory for each stack and ensure that they don\u2019t overlap, we must store pointers to these memory locations in an array. Doing so requires that the number of stacks needed is known at compile time.\\n",
+        "Say that the number of threads we know we want to create is equal to N.\\nBefore any memory is allocated to these stacks, we should ensure that the requested memory does not exceed the MAX_STACK_SIZE determined by the programmer or the system.\\nWe should then declare compile-time constants that determine the size of each type of stack (i.e. MAIN_STACK_SIZE, PROCESS_STACK_SIZE).\\nIt would also be good to keep track of the sizes of all of the stacks in a list of size N (e.g. thread_stack_sizes[]). This is so that we don\u2019t index to the bottom of a non-empty stack when switching between threads.\\nAssuming we have found the initial MSP via dereferencing the double pointer at 0x00 (uint32_t* MSP_INIT_VAL = *(uint32_t**)0x0;) we can find calculate the pointer for the top of the i-th thread\u2019s stack with the equation:\\nith_thread_ptr = MSP_INIT_VAL \u2013 MAIN_STACK_SIZE \u2013 (i*PROCESS_STACK_SIZE) \u2013 thread_size[i]\\nHere we are indexing the threads starting from zero. Also note that we are subtracting the value from the main stack\u2019s address, so that it can more effectively share the memory space with the heap, which grows upwards.\\n",
+        "To allocate multiple new stacks two items are required to be known before, the number of stacks to be created, and the size of a single stack (THREAD_STACK_SIZE). Then, then formula\\nSTACK_j = MSP_INIT_VAL - MAIN_STACK_SIZE - (j-1)THREAD_STACK_SIZE, where j is the stack index.\\ncan be used to calculate the address in memory of each stack.  Then, a loop could be used to create each new stack using the formula above, and in addition each memory address could be stored in an array or linked list, which allows for the memory address to be easily accessible for future use.\\n",
+        "We would need to subtract a fixed size (like 0x400) for each new stack from the initial MSP value.\\nWe would start with the initial MSP value and create each new stack by moving down in memory by a fixed amount for each one. Since we know how many stacks we need, we can decide the start of each stack at compile-time by repeatedly subtracting the same amount of space. This way, each stack has its own space in memory.\\n",
+        "The main stack will still have the highest address. For each thread stack, keep subtracting the size of the stack using the same method until all stacks are done. Since each thread has separate PSP and MSP, setControl can be modified to switch between the two. While doing so, all of the stack pointers must be 8-bit aligned and the stack address must be within a valid RAM address without overlapping other sections, such as peripherals or other system stacks. It would also be preferable to have enough space for \u2018guard\u2019 space, which is used to detect overflow, in addition to the total amount of memory required for the stacks.\\n",
+        "We can use ADDR_STACK_j = MSP_INIT_VAL + MAIN_STACK_SIZE + (j-1)THREAD_STACK_SIZE to compute the new stack address and ensure that each thread's stack is directly below the main stack without overlap.\\n"
+      ],
+      "qd_results": {
+        "0": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "1": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "2": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "3": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "4": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "5": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "6": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "7": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "8": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "9": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "10": {
+          "grades": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 10,
+            "count_1": 0,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 1.0
+          }
+        },
+        "11": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "12": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "13": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "14": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "15": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "16": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "17": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "18": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "19": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "20": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        }
+      },
+      "comparison_baseline": "original baseline",
+      "comparison_results": {
+        "0": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "1": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "2": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "3": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "4": {
+          "grades": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 1,
+            "count_1": 9,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.9
+          }
+        },
+        "5": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "6": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "7": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "8": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "9": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "10": {
+          "grades": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "stats": {
+            "count_0": 10,
+            "count_1": 0,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 1.0
+          }
+        },
+        "11": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "12": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "13": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "14": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "15": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "16": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "17": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "18": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "19": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "20": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        }
+      }
+    }
+  ],
+  "per_answer_results": [
+    {
+      "answer_index": 0,
+      "question_text": "To allocate multiple stacks, subtract a larger block of memory from MSP_init_val and divide it into equal parts. Then, calculate each stack pointer using fixed offsets. The code needs to define the number of stacks and stack size, and loop to assign each stack its own pointer.\\n",
+      "usernames": [
+        "a2parapa"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 1,
+      "question_text": "To allocate new stacks, we need to ensure that we avoid the main stack or heap memory region. We can do this by taking the MSP and subtracting the main stack size. From now on, we\u2019re assuming we\u2019ve already offset the address to avoid the main stack\u2019s memory space. Since we know how many stacks we want, we\u2019ll call it N, we can calculate the offset needed in memory to access a stack by multiplying the stack\u2019s index by the set stack size. As for assigning these stacks to threads, we can hand each thread an index number from 0 to N during creation and all it has to do is perform the calculation above to access its stack.\\n",
+      "usernames": [
+        "a329liu"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 2,
+      "question_text": "Since we defined the thread stack size to be 0x400 bytes, we can subtract 0x400 bytes from the current PSP which is located at the start of the first thread to find the start of the second thread. We would then set PSP to this new value. If we wanted to find the start location of another thread, continue subtracting 0x400 bytes until you reach that thread starting location.\\n",
+      "usernames": [
+        "a52cao"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 3,
+      "question_text": "To allocate multiple stacks using the same method, we would need to define a separate memory region for each thread\u2019s stack. Starting from MSP_init_val, we would subtract fixed-size chunks of memory \u2014 one per thread \u2014 to determine each new stack\u2019s base address. In the code, we could create an array to store the stack pointer values, where each entry is calculated as:\\nPSP_base[i] = MSP_init_val - (i + 1) * STACK_SIZE;\\nThis ensures each stack starts at a unique, non-overlapping memory location determined at compile time.\\n",
+      "usernames": [
+        "a6lakhan"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 4,
+      "question_text": "To find where each stack starts in the memory, we would need to obtain the size of memory occupied by previous stacks by multiplying the stack size by the number of stacks that came before the current stack. We could then subtract that value from the initial location of MSP to find the start of the stack.\\n",
+      "usernames": [
+        "aelwasil"
+      ],
+      "baseline_scores": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": true,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 5,
+      "question_text": "To assign multiple stacks to threads using the same approach, start with MSP_init_val and divide it into equal parts based on the number of threads and stack size. For each thread, we can determine its start address by subtracting (thread_index + 1) times the stack size from MSP_init_val. Store these addresses in an array or separate variables, ensuring each thread has its own non-overlapping stack space.\\n",
+      "usernames": [
+        "asarker"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 6,
+      "question_text": "You would simply start the same way as before by subtracting from MSP_init_val to find the PSP value, then from the PSP value you would subtract the amount of memory needed for the next stack and put a PSP for the next stack there. This is repeated as many times as is necessary throughout memory until all stacks have been initialized. Note that in order for this to work that the memory has to be large enough to allow for all of the memory to be allocated in this way. You also need to ensure that each stack starts at a proper value, which is a multiple of 8 bytes.\\n",
+      "usernames": [
+        "b2lovegr"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 7,
+      "question_text": "The stack is treated as a continuous array, and thus you must start counting from the MSP initial value. From the MSP initial value, we can move downwards in our stack to the first thread by subtracting the main stack size (0x400). This is because stack memory on the Cortex-M4 grows downwards. Then to get to the second thread PSP, we subtract the thread stack size. From this point, we continue to subtract the thread stack size to get to the next thread PSP. It is important to note that the stack (MSP and PSP) must be aligned to 8 bytes, thus the starting address must be in multiples of 8. Here, a stack size of 0x400 meets that requirement. If the stack size is not a multiple of the alignment, it could result in a hard fault.\\nThis can be summarized with the equation:\\nADDR_STACK_j = MSP_INIT_VAL - MAIN_STACK_SIZE - (j-1)THREAD_STACK_SIZE\\nWhere j is the stack that you want to address. Using j = 1 would give ADDR_Stack_1 = MSP_INIT_VAL - MAIN_STACK_SIZE, which means adding the main stack size to the initial MSP value. This makes sense. Using j = 0 is an edge case that could result in errors if MAIN_STACK_SIZE does not equal THREAD_STACK_SIZE.\\n",
+      "usernames": [
+        "b75zhang"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 8,
+      "question_text": "To support multiple stacks, we would first ensure the total memory used by all stacks does not exceed the 0x4000 byte limit by dividing the space equally among threads. Each stack's starting address would be calculated by offsetting from the original stack location using a fixed spacing. We could store these addresses in an array to track them. This guarantees valid stack locations since each offset is pre-calculated to stay within bounds, and the array provides easy access to each stack's starting position. The key points are using fixed offsets from a known base and verifying the total allocation stays within limits.\\n",
+      "usernames": [
+        "c6shao"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 9,
+      "question_text": "To assign multiple stacks for multiple threads, you would need some key information first. Where the MSP_INIT_VAL is, the main stack size, the desired thread stack size, and how many additional stacks being added. Then, the address of each stack becomes the subtraction of MSP_INIT_VAL \u2013 MAIN_STACK \u2013 N (stack number) * thread size. This will reserve space for main stack, and then add additional space for new stacks following that.\\n",
+      "usernames": [
+        "ebougani"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 10,
+      "question_text": "To allocate a number of new stacks for use in multiple threads, the starting memory address for each stack needs to be calculated. This will be based on the downward growing stack allocation method discussed in ",
+      "usernames": [
+        "ebougani"
+      ],
+      "baseline_scores": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "qd_scores": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 11,
+      "question_text": "To allocate new stacks for use in multiple threads, a known, valid stack location in the memory is required to properly store said stacks. This can be done simply by referencing address of MSP_INIT_VAL in our code, since it is known to be a valid stack address. Since the number of stacks is known at compile time, it means that the program does not have to be given or calculated by the user, which saves the need to dynamically allocate the stack and compute stack addresses during runtime. A straightforward way to initialize multiple stacks now that the first stack created using the valid address of MSP_INIT_VAL is to create a reference pointing to the bottom of the existing stack, which should be repeated for each stack created as it grows downward. This can be done by subtracting the address of the top of MSP_INIT_VAL by the nth stack * the stack size. On the Cortex M4, since the stack memory space is predefined, it is important to determine if the number of stacks is valid to be created in said limited memory space. If the pointer is trying to reference an address at the bottom of the allocated memory address, it means that there is not enough space for all the stacks to fit.\\n",
+      "usernames": [
+        "j254kim"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 12,
+      "question_text": "Let N be the number of stacks you want to create. For the Cortex M4, there is a file called \u201cSTM32F401RETX_RAM.ld\u201d that sets the minimum stack and heap sizes. Here you can get and set the stack size. Call the main stack size MSS and the process stack size PSS.\\nFirst you need to find the beginning of the main stack by dereferencing the double pointer at 0x0 (call this MSP_INIT_VAL). As each process thread takes the same amount of memory PSS, you can find the pointer to the i-th process stack (ith_PSP) using this equation:\\nith_PSP = MSP_INIT_VAL \u2013 MSS \u2013 i * PSS\\nTo ensure that a process stack address is valid, at compile time, compute all of your N stack pointer addresses and store them in an array. Then you can check if the current stack pointer i is valid by comparing it with the ith and (i+1)th bounds in the array \u2013 since the stack grows downwards, a valid address would be between the start of your array and the start of the next one.\\n",
+      "usernames": [
+        "j3hou"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 13,
+      "question_text": "If you wanted the same stack allocation method to make new stacks, you would do the same process as you would to find the first PSP stack. Given the number of stacks, you would create new variables (PSP_val2, PSP_val3.. and so on), and you would offset them by the same amount in the memory. In a practical sense, you would subtract the size of the stack from the first memory address to get the starting address of the second stack, and so on. After storing these variables, you have the starting value of the entire stack with the MSP and PSP stacks.\\n",
+      "usernames": [
+        "j3zhuang"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 14,
+      "question_text": "To use the same stack allocation method to make a number, n, new stacks, we would do the following. After defining our main stack size using MSP_init_val \u2013 MAIN_STACK_SIZE, the address of STACK_N would be defined as STACK_N = MSP_init_val - MAIN_STACK_SIZE \u2013 (n-1) * THREAD_STACK_SIZE if all threads were the same size. If the threads were not all the same size, the address of STACK_N would be defined as STACK_N = STACK_(N-1) \u2013 STACK_SIZE(N-1) where stack 0 is the main stack.\\n",
+      "usernames": [
+        "ktcollin"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 15,
+      "question_text": "If we know the initial location of the main stack, we can create new thread stacks and know exactly where they start in memory. Since stacks are arranged as an array in memory, we can repeatedly subtract 0x400 from the initial MSP value to obtain the memory location for each of the new stacks. To reserve memory for each stack and ensure that they don\u2019t overlap, we must store pointers to these memory locations in an array. Doing so requires that the number of stacks needed is known at compile time.\\n",
+      "usernames": [
+        "m6riley"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 16,
+      "question_text": "Say that the number of threads we know we want to create is equal to N.\\nBefore any memory is allocated to these stacks, we should ensure that the requested memory does not exceed the MAX_STACK_SIZE determined by the programmer or the system.\\nWe should then declare compile-time constants that determine the size of each type of stack (i.e. MAIN_STACK_SIZE, PROCESS_STACK_SIZE).\\nIt would also be good to keep track of the sizes of all of the stacks in a list of size N (e.g. thread_stack_sizes[]). This is so that we don\u2019t index to the bottom of a non-empty stack when switching between threads.\\nAssuming we have found the initial MSP via dereferencing the double pointer at 0x00 (uint32_t* MSP_INIT_VAL = *(uint32_t**)0x0;) we can find calculate the pointer for the top of the i-th thread\u2019s stack with the equation:\\nith_thread_ptr = MSP_INIT_VAL \u2013 MAIN_STACK_SIZE \u2013 (i*PROCESS_STACK_SIZE) \u2013 thread_size[i]\\nHere we are indexing the threads starting from zero. Also note that we are subtracting the value from the main stack\u2019s address, so that it can more effectively share the memory space with the heap, which grows upwards.\\n",
+      "usernames": [
+        "memilne"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 17,
+      "question_text": "To allocate multiple new stacks two items are required to be known before, the number of stacks to be created, and the size of a single stack (THREAD_STACK_SIZE). Then, then formula\\nSTACK_j = MSP_INIT_VAL - MAIN_STACK_SIZE - (j-1)THREAD_STACK_SIZE, where j is the stack index.\\ncan be used to calculate the address in memory of each stack.  Then, a loop could be used to create each new stack using the formula above, and in addition each memory address could be stored in an array or linked list, which allows for the memory address to be easily accessible for future use.\\n",
+      "usernames": [
+        "nruprai"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 18,
+      "question_text": "We would need to subtract a fixed size (like 0x400) for each new stack from the initial MSP value.\\nWe would start with the initial MSP value and create each new stack by moving down in memory by a fixed amount for each one. Since we know how many stacks we need, we can decide the start of each stack at compile-time by repeatedly subtracting the same amount of space. This way, each stack has its own space in memory.\\n",
+      "usernames": [
+        "r242huan"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 19,
+      "question_text": "The main stack will still have the highest address. For each thread stack, keep subtracting the size of the stack using the same method until all stacks are done. Since each thread has separate PSP and MSP, setControl can be modified to switch between the two. While doing so, all of the stack pointers must be 8-bit aligned and the stack address must be within a valid RAM address without overlapping other sections, such as peripherals or other system stacks. It would also be preferable to have enough space for \u2018guard\u2019 space, which is used to detect overflow, in addition to the total amount of memory required for the stacks.\\n",
+      "usernames": [
+        "r42liu"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 20,
+      "question_text": "We can use ADDR_STACK_j = MSP_INIT_VAL + MAIN_STACK_SIZE + (j-1)THREAD_STACK_SIZE to compute the new stack address and ensure that each thread's stack is directly below the main stack without overlap.\\n",
+      "usernames": [
+        "rfudge"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q1",
+  "response_id": "R16",
+  "response_text": "After changing PC to hold the function pointer to the print continuously function, the output was actually the same as just calling the print continuously function directly. However, there\u2019s more to it than meets the surface. The function jumpAssembly takes the input argument of the address of the print continuously function. The jumpAssembly then takes this address, stores it in a local variable and then moves it into the PC, which then provides the continuous output. In retrospect to directly changing the instructions to hold the PC address, allows the processor to immediately carry out this instruction, instead of having waiting time in between to allow for the process of fetching the information, storing and moving. In this specific case, the time difference between both methods, are insignificant, but with larger codes/processors, the time difference may be a significant element to be considered.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:14:01.137610",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:14:05.926309",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:14:11.830518",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:14:17.189007",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:14:23.621741",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:14:32.345606",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:14:39.530559",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:14:45.228038",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:14:53.461042",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:15:00.132811",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

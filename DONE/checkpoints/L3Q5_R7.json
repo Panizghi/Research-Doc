@@ -1,0 +1,77 @@
+{
+  "question_id": "L3Q5",
+  "response_id": "R7",
+  "response_text": "The kernel contains the core operating system code. This includes low-level components such as thread management, context switching, interrupt handling, and privileged operations. Kernel code is placed in kernel.c and runs in privileged (kernel) mode, meaning it has full access to the hardware and system resources.\\nThe user code contains the application logic or threads that the developer writes to perform specific tasks. This code goes into main.c and runs in unprivileged (user) mode, which restricts access to critical system features and hardware.\\nThis provides safety for the user, simplifies programming and supports multithreading.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:49:37.908153",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:49:48.375470",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:49:56.761349",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:50:07.979059",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:50:15.746705",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:50:27.686784",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:50:38.418160",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:50:51.174909",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T06:51:00.182542",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T06:51:11.348731",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 70.0,
+    "flip_rate": 30.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 3,
+    "fail_count": 7
+  }
+}

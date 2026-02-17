@@ -1,0 +1,12 @@
+{
+  "dimensions": [
+    "**Identifies that `osYield` initiates a system\u2011call (SVC) interrupt** \u2013 the response explicitly states that calling `osYield` generates another interrupt (an SVC request).",
+    "**Recognizes that the call occurs while already inside an interrupt handler** \u2013 the answer notes that `PendSV_Handler`, `SVC_Handler` (or its `*_Main`), and `SysTick_Handler` are interrupt contexts, so `osYield` would be invoked from within an interrupt.",
+    "**Explains the stack\u2011corruption risk of nesting another interrupt without proper handling** \u2013 the response describes how entering a second interrupt while the first\u2019s stack frame is still active can corrupt the stack (e.g., overlapping stack pointers, lost return address).",
+    "**Describes the resulting failure mode (hard\u2011fault/crash)** \u2013 the answer states that the stack corruption leads to a hard\u2011fault (or system crash) on the Cortex\u2011M4.",
+    "**Justifies why this behavior is unacceptable** \u2013 the response explains why the hard\u2011fault is \u201cbad\u201d (e.g., it halts the system, loses data, defeats deterministic real\u2011time behavior)."
+  ],
+  "raw_response": "1. **Identifies that `osYield` initiates a system\u2011call (SVC) interrupt** \u2013 the response explicitly states that calling `osYield` generates another interrupt (an SVC request).  \n\n2. **Recognizes that the call occurs while already inside an interrupt handler** \u2013 the answer notes that `PendSV_Handler`, `SVC_Handler` (or its `*_Main`), and `SysTick_Handler` are interrupt contexts, so `osYield` would be invoked from within an interrupt.  \n\n3. **Explains the stack\u2011corruption risk of nesting another interrupt without proper handling** \u2013 the response describes how entering a second interrupt while the first\u2019s stack frame is still active can corrupt the stack (e.g., overlapping stack pointers, lost return address).  \n\n4. **Describes the resulting failure mode (hard\u2011fault/crash)** \u2013 the answer states that the stack corruption leads to a hard\u2011fault (or system crash) on the Cortex\u2011M4.  \n\n5. **Justifies why this behavior is unacceptable** \u2013 the response explains why the hard\u2011fault is \u201cbad\u201d (e.g., it halts the system, loses data, defeats deterministic real\u2011time behavior).  ",
+  "timestamp": "2025-11-09T18:45:39.899994",
+  "version": "initial"
+}

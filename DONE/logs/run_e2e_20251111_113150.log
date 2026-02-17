@@ -1,0 +1,237 @@
+2025-11-11 11:31:50 - run_single_question_e2e - INFO - [run_single_question_e2e.py:80] - Logging to file: logs/run_e2e_20251111_113150.log
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:609] - Running script with JSON path: /var/folders/tq/51lzs6fs387bwv1r_7v0yn9w0000gn/T/tmpzp0i4f_o.json and num_iterations: 20
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:157] - ================================================================================
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:158] - Starting end-to-end pipeline
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:159] - ================================================================================
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:160] - JSON path: /var/folders/tq/51lzs6fs387bwv1r_7v0yn9w0000gn/T/tmpzp0i4f_o.json
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:161] - Num iterations: 20
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:170] - Loading question data from JSON
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:182] - Successfully loaded JSON file: /var/folders/tq/51lzs6fs387bwv1r_7v0yn9w0000gn/T/tmpzp0i4f_o.json
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:209] - Processing question: L1Q5
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:210] - Question text: You are a helpful teaching assistant giving detailed, actionable feedback to students on their lab r...
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:211] - Number of responses: 21
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:212] - Iterations per response: 20
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:222] - Initializing checkpoints for all responses
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q5_R1
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q5_R2
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q5_R3
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q5_R4
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q5_R5
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q5_R6
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q5_R7
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q5_R8
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q5_R9
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q5_R10
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q5_R11
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q5_R12
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q5_R13
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q5_R14
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q5_R15
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q5_R16
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q5_R17
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q5_R18
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q5_R19
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q5_R20
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q5_R21
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:238] - Ensuring QDs exist
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:111] - Checking QDs for L1Q5
+2025-11-11 11:31:51 - run_single_question_e2e - INFO - [run_single_question_e2e.py:114] - Generating initial QDs for L1Q5
+2025-11-11 11:32:17 - run_single_question_e2e - INFO - [run_single_question_e2e.py:119] - Generated 5 QDs for L1Q5 (version v1)
+2025-11-11 11:32:17 - run_single_question_e2e - INFO - [run_single_question_e2e.py:252] - Starting grading phase
+2025-11-11 11:32:17 - run_single_question_e2e - INFO - [run_single_question_e2e.py:259] - Grading response 1/21: R1
+2025-11-11 11:38:40 - run_single_question_e2e - INFO - [run_single_question_e2e.py:262] - Completed grading for R1
+2025-11-11 11:38:40 - run_single_question_e2e - INFO - [run_single_question_e2e.py:259] - Grading response 2/21: R2
+2025-11-11 11:55:22 - run_single_question_e2e - INFO - [run_single_question_e2e.py:262] - Completed grading for R2
+2025-11-11 11:55:22 - run_single_question_e2e - INFO - [run_single_question_e2e.py:259] - Grading response 3/21: R3
+2025-11-11 12:11:58 - run_single_question_e2e - INFO - [run_single_question_e2e.py:262] - Completed grading for R3
+2025-11-11 12:11:58 - run_single_question_e2e - INFO - [run_single_question_e2e.py:259] - Grading response 4/21: R4
+2025-11-11 12:28:39 - run_single_question_e2e - INFO - [run_single_question_e2e.py:262] - Completed grading for R4
+2025-11-11 12:28:39 - run_single_question_e2e - INFO - [run_single_question_e2e.py:259] - Grading response 5/21: R5
+2025-11-11 12:45:22 - run_single_question_e2e - INFO - [run_single_question_e2e.py:262] - Completed grading for R5
+2025-11-11 12:45:22 - run_single_question_e2e - INFO - [run_single_question_e2e.py:259] - Grading response 6/21: R6
+2025-11-11 13:01:32 - run_single_question_e2e - INFO - [run_single_question_e2e.py:262] - Completed grading for R6
+2025-11-11 13:01:32 - run_single_question_e2e - INFO - [run_single_question_e2e.py:259] - Grading response 7/21: R7
+2025-11-11 13:14:28 - run_single_question_e2e - ERROR - [run_single_question_e2e.py:264] - Error grading R7: [Errno 60] Operation timed out: 'checkpoints/L1Q5_R7.json'
+Traceback (most recent call last):
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/run_single_question_e2e.py", line 261, in run_single_question_e2e
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 978, in grade_response
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 918, in save_checkpoint
+  File "/Users/paniz/anaconda3/lib/python3.11/pathlib.py", line 1078, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/paniz/anaconda3/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: [Errno 60] Operation timed out: 'checkpoints/L1Q5_R7.json'
+2025-11-11 13:14:28 - run_single_question_e2e - INFO - [run_single_question_e2e.py:259] - Grading response 8/21: R8
+2025-11-11 13:14:28 - run_single_question_e2e - ERROR - [run_single_question_e2e.py:264] - Error grading R8: [Errno 60] Operation timed out
+Traceback (most recent call last):
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/run_single_question_e2e.py", line 261, in run_single_question_e2e
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 957, in grade_response
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 925, in load_checkpoint
+  File "/Users/paniz/anaconda3/lib/python3.11/pathlib.py", line 1059, in read_text
+    return f.read()
+           ^^^^^^^^
+TimeoutError: [Errno 60] Operation timed out
+2025-11-11 13:14:28 - run_single_question_e2e - INFO - [run_single_question_e2e.py:259] - Grading response 9/21: R9
+2025-11-11 13:14:28 - run_single_question_e2e - ERROR - [run_single_question_e2e.py:264] - Error grading R9: [Errno 60] Operation timed out
+Traceback (most recent call last):
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/run_single_question_e2e.py", line 261, in run_single_question_e2e
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 957, in grade_response
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 925, in load_checkpoint
+  File "/Users/paniz/anaconda3/lib/python3.11/pathlib.py", line 1059, in read_text
+    return f.read()
+           ^^^^^^^^
+TimeoutError: [Errno 60] Operation timed out
+2025-11-11 13:14:29 - run_single_question_e2e - INFO - [run_single_question_e2e.py:259] - Grading response 10/21: R10
+2025-11-11 13:14:29 - run_single_question_e2e - ERROR - [run_single_question_e2e.py:264] - Error grading R10: [Errno 60] Operation timed out
+Traceback (most recent call last):
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/run_single_question_e2e.py", line 261, in run_single_question_e2e
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 957, in grade_response
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 925, in load_checkpoint
+  File "/Users/paniz/anaconda3/lib/python3.11/pathlib.py", line 1059, in read_text
+    return f.read()
+           ^^^^^^^^
+TimeoutError: [Errno 60] Operation timed out
+2025-11-11 13:14:29 - run_single_question_e2e - INFO - [run_single_question_e2e.py:259] - Grading response 11/21: R11
+2025-11-11 13:14:29 - run_single_question_e2e - ERROR - [run_single_question_e2e.py:264] - Error grading R11: [Errno 60] Operation timed out
+Traceback (most recent call last):
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/run_single_question_e2e.py", line 261, in run_single_question_e2e
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 957, in grade_response
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 925, in load_checkpoint
+  File "/Users/paniz/anaconda3/lib/python3.11/pathlib.py", line 1059, in read_text
+    return f.read()
+           ^^^^^^^^
+TimeoutError: [Errno 60] Operation timed out
+2025-11-11 13:14:29 - run_single_question_e2e - INFO - [run_single_question_e2e.py:259] - Grading response 12/21: R12
+2025-11-11 13:14:29 - run_single_question_e2e - ERROR - [run_single_question_e2e.py:264] - Error grading R12: [Errno 60] Operation timed out
+Traceback (most recent call last):
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/run_single_question_e2e.py", line 261, in run_single_question_e2e
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 957, in grade_response
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 925, in load_checkpoint
+  File "/Users/paniz/anaconda3/lib/python3.11/pathlib.py", line 1059, in read_text
+    return f.read()
+           ^^^^^^^^
+TimeoutError: [Errno 60] Operation timed out
+2025-11-11 13:14:29 - run_single_question_e2e - INFO - [run_single_question_e2e.py:259] - Grading response 13/21: R13
+2025-11-11 13:14:29 - run_single_question_e2e - ERROR - [run_single_question_e2e.py:264] - Error grading R13: [Errno 60] Operation timed out
+Traceback (most recent call last):
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/run_single_question_e2e.py", line 261, in run_single_question_e2e
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 957, in grade_response
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 925, in load_checkpoint
+  File "/Users/paniz/anaconda3/lib/python3.11/pathlib.py", line 1059, in read_text
+    return f.read()
+           ^^^^^^^^
+TimeoutError: [Errno 60] Operation timed out
+2025-11-11 13:14:29 - run_single_question_e2e - INFO - [run_single_question_e2e.py:259] - Grading response 14/21: R14
+2025-11-11 13:14:29 - run_single_question_e2e - ERROR - [run_single_question_e2e.py:264] - Error grading R14: [Errno 60] Operation timed out
+Traceback (most recent call last):
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/run_single_question_e2e.py", line 261, in run_single_question_e2e
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 957, in grade_response
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 925, in load_checkpoint
+  File "/Users/paniz/anaconda3/lib/python3.11/pathlib.py", line 1059, in read_text
+    return f.read()
+           ^^^^^^^^
+TimeoutError: [Errno 60] Operation timed out
+2025-11-11 13:14:29 - run_single_question_e2e - INFO - [run_single_question_e2e.py:259] - Grading response 15/21: R15
+2025-11-11 13:14:30 - run_single_question_e2e - ERROR - [run_single_question_e2e.py:264] - Error grading R15: [Errno 60] Operation timed out
+Traceback (most recent call last):
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/run_single_question_e2e.py", line 261, in run_single_question_e2e
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 957, in grade_response
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 925, in load_checkpoint
+  File "/Users/paniz/anaconda3/lib/python3.11/pathlib.py", line 1059, in read_text
+    return f.read()
+           ^^^^^^^^
+TimeoutError: [Errno 60] Operation timed out
+2025-11-11 13:14:30 - run_single_question_e2e - INFO - [run_single_question_e2e.py:259] - Grading response 16/21: R16
+2025-11-11 13:14:30 - run_single_question_e2e - ERROR - [run_single_question_e2e.py:264] - Error grading R16: [Errno 60] Operation timed out
+Traceback (most recent call last):
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/run_single_question_e2e.py", line 261, in run_single_question_e2e
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 957, in grade_response
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 925, in load_checkpoint
+  File "/Users/paniz/anaconda3/lib/python3.11/pathlib.py", line 1059, in read_text
+    return f.read()
+           ^^^^^^^^
+TimeoutError: [Errno 60] Operation timed out
+2025-11-11 13:14:30 - run_single_question_e2e - INFO - [run_single_question_e2e.py:259] - Grading response 17/21: R17
+2025-11-11 13:14:30 - run_single_question_e2e - ERROR - [run_single_question_e2e.py:264] - Error grading R17: [Errno 60] Operation timed out
+Traceback (most recent call last):
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/run_single_question_e2e.py", line 261, in run_single_question_e2e
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 957, in grade_response
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 925, in load_checkpoint
+  File "/Users/paniz/anaconda3/lib/python3.11/pathlib.py", line 1059, in read_text
+    return f.read()
+           ^^^^^^^^
+TimeoutError: [Errno 60] Operation timed out
+2025-11-11 13:14:30 - run_single_question_e2e - INFO - [run_single_question_e2e.py:259] - Grading response 18/21: R18
+2025-11-11 13:14:30 - run_single_question_e2e - ERROR - [run_single_question_e2e.py:264] - Error grading R18: [Errno 60] Operation timed out
+Traceback (most recent call last):
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/run_single_question_e2e.py", line 261, in run_single_question_e2e
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 957, in grade_response
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 925, in load_checkpoint
+  File "/Users/paniz/anaconda3/lib/python3.11/pathlib.py", line 1059, in read_text
+    return f.read()
+           ^^^^^^^^
+TimeoutError: [Errno 60] Operation timed out
+2025-11-11 13:14:30 - run_single_question_e2e - INFO - [run_single_question_e2e.py:259] - Grading response 19/21: R19
+2025-11-11 13:14:30 - run_single_question_e2e - ERROR - [run_single_question_e2e.py:264] - Error grading R19: [Errno 60] Operation timed out
+Traceback (most recent call last):
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/run_single_question_e2e.py", line 261, in run_single_question_e2e
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 957, in grade_response
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 925, in load_checkpoint
+  File "/Users/paniz/anaconda3/lib/python3.11/pathlib.py", line 1059, in read_text
+    return f.read()
+           ^^^^^^^^
+TimeoutError: [Errno 60] Operation timed out
+2025-11-11 13:14:30 - run_single_question_e2e - INFO - [run_single_question_e2e.py:259] - Grading response 20/21: R20
+2025-11-11 13:14:31 - run_single_question_e2e - ERROR - [run_single_question_e2e.py:264] - Error grading R20: [Errno 60] Operation timed out
+Traceback (most recent call last):
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/run_single_question_e2e.py", line 261, in run_single_question_e2e
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 957, in grade_response
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 925, in load_checkpoint
+  File "/Users/paniz/anaconda3/lib/python3.11/pathlib.py", line 1059, in read_text
+    return f.read()
+           ^^^^^^^^
+TimeoutError: [Errno 60] Operation timed out
+2025-11-11 13:14:31 - run_single_question_e2e - INFO - [run_single_question_e2e.py:259] - Grading response 21/21: R21
+2025-11-11 13:14:31 - run_single_question_e2e - ERROR - [run_single_question_e2e.py:264] - Error grading R21: [Errno 60] Operation timed out
+Traceback (most recent call last):
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/run_single_question_e2e.py", line 261, in run_single_question_e2e
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 957, in grade_response
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 925, in load_checkpoint
+  File "/Users/paniz/anaconda3/lib/python3.11/pathlib.py", line 1059, in read_text
+    return f.read()
+           ^^^^^^^^
+TimeoutError: [Errno 60] Operation timed out
+2025-11-11 13:14:31 - run_single_question_e2e - INFO - [run_single_question_e2e.py:271] - Starting refinement phase
+2025-11-11 13:14:31 - run_single_question_e2e - ERROR - [run_single_question_e2e.py:279] - Error during refinement: [Errno 60] Operation timed out
+Traceback (most recent call last):
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/run_single_question_e2e.py", line 276, in run_single_question_e2e
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 1179, in refine_problematic_qds
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 925, in load_checkpoint
+  File "/Users/paniz/anaconda3/lib/python3.11/pathlib.py", line 1059, in read_text
+    return f.read()
+           ^^^^^^^^
+TimeoutError: [Errno 60] Operation timed out
+2025-11-11 13:14:31 - run_single_question_e2e - INFO - [run_single_question_e2e.py:286] - Starting analysis phase
+2025-11-11 13:14:31 - run_single_question_e2e - ERROR - [run_single_question_e2e.py:293] - Error during analysis: [Errno 60] Operation timed out
+Traceback (most recent call last):
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/run_single_question_e2e.py", line 289, in run_single_question_e2e
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 1603, in analyze_results
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1073, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1131, in get_data
+TimeoutError: [Errno 60] Operation timed out
+2025-11-11 13:14:31 - run_single_question_e2e - INFO - [run_single_question_e2e.py:300] - Generating per-response details
+2025-11-11 13:14:32 - run_single_question_e2e - CRITICAL - [run_single_question_e2e.py:633] - Fatal error: [Errno 60] Operation timed out
+Traceback (most recent call last):
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/run_single_question_e2e.py", line 610, in <module>
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/run_single_question_e2e.py", line 304, in run_single_question_e2e
+  File "/Users/paniz/Documents/GitHub/Research-Doc/DONE/refined_grading_pipeline.py", line 925, in load_checkpoint
+  File "/Users/paniz/anaconda3/lib/python3.11/pathlib.py", line 1059, in read_text
+    return f.read()
+           ^^^^^^^^
+TimeoutError: [Errno 60] Operation timed out

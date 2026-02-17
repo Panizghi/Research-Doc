@@ -1,0 +1,117 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage[hidelinks]{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{LLM Grading Consistency in Engineering Education: Reducing Stochasticity through Iterative Quality Dimension Refinement}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Abstract}
+
+\subsection*{Background}
+Large Language Models can evaluate short-answer responses, but they show significant inconsistency in their judgments due to sampling variability. When identical responses are graded repeatedly, different pass-fail outcomes result in about one in five evaluations~\cite{zhang2024}. This measurement error reduces the reliability of automated grading systems~\cite{grevisse2024}. We tackle this issue by proposing a systematic method based on measurement theory that uses Quality Dimensions (QDs)---clear, binary criteria derived from rubrics---along with iterative improvement. Unlike previous methods that assume a fixed rubric, our approach views grading inconsistencies as signals. When the LLM assigns conflicting grades across repeated runs, we identify unclear criteria and rephrase them using natural language. This iterative process continues until grading stabilizes. Our method recognizes that student understanding is a latent variable inferred from visible textual responses; therefore, objective assessment is impossible, but consistent subjectivity can be achieved.
+
+\subsection*{Method and Evaluation}
+We define three performance dimensions: (1) \textit{Consistency}---the rate of grade changes across twenty evaluations; (2) \textit{Correctness}---alignment with instructor pass-fail judgments; (3) \textit{Stability}---whether the method maintains existing stable responses. Instructors scored responses on ten-point Likert scales: scores $< 5$ indicate failure, $> 5$ indicate passing, $= 5$ indicates uncertainty. An automated process iteratively refines QDs based on identified inconsistencies until the rate of grade changes stabilizes. We tested this framework on $N=136$ unique engineering responses across seven lab questions at one institution.
+
+\subsection*{Results}
+Initial analysis revealed that 19 responses (14\%) had baseline grading instability with mean flip rate 22\%. For responses where QD refinement improved both consistency and correctness ($n=8$), flip rate decreased 84\% ($p=0.005$, $d=1.26$). Among all responses showing improvement ($n=14$), effect reached 84\% relative reduction ($d=1.39$, $p<0.001$). Sensitivity analysis excluding boundary cases ($n=17$ clear responses, Likert $\neq 5$) yielded 86\% reduction ($d=1.39$, $p<0.001$). Critically, 117 of 136 responses (86\%) were already consistent at baseline; QD refinement did not change these, indicating selective intervention on problematic cases only.
+
+\subsection*{Conclusion}
+Consistency and correctness are separate properties. Some responses achieved zero flip rate yet incorrect grades; others became consistent but remained graded incorrectly. Reliability does not guarantee valid assessment. The method targets unstable cases without compromising reliable assessments. This research provides early evidence that structured Quality Dimensions reduce LLM grading variability in engineering education while remaining aligned with instructor judgments, offering a validated framework for enhancing automated assessment reliability.
+
+\newpage
+
+\section*{Supplementary Figures}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.95\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{4a_response_types_count.png}
+  \caption{Overall breakdown: count version showing absolute number of responses in each outcome category ($N=136$ total unique responses).}
+  \label{fig:4a}
+\end{subfigure}
+\vspace{0.3cm}
+
+\begin{subfigure}{0.95\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{4b_response_types_percent.png}
+  \caption{Overall breakdown: percentage version showing relative frequency of each outcome category.}
+  \label{fig:4b}
+\end{subfigure}
+\caption{QD Refinement Impact on Response Outcomes: Overall Distribution}
+\label{fig:response_types_overall}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.95\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{4c_response_types_by_question_count.png}
+  \caption{Response category distribution by question: count version (stacked bars represent total responses per question).}
+  \label{fig:4c}
+\end{subfigure}
+\vspace{0.3cm}
+
+\begin{subfigure}{0.95\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{4d_response_types_by_question_percent.png}
+  \caption{Response category distribution by question: percentage version (normalized within each question to 100\%).}
+  \label{fig:4d}
+\end{subfigure}
+\caption{QD Refinement Impact: Distribution Across Seven Lab Questions}
+\label{fig:response_types_by_question}
+\end{figure}
+
+\newpage
+
+\section*{Key Findings Summary}
+
+\begin{table}[H]
+\centering
+\caption{Response Outcome Categories and Effect Sizes}
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Outcome Category} & \textbf{Count} & \textbf{\%} & \textbf{Effect Size} & \textbf{Notes} \\
+\midrule
+Already Stable (skipped) & 106 & 77.9\% & --- & No intervention required \\
+Improved Consistency & 14 & 10.3\% & $d=1.39^{***}$ & Primary outcome measure \\
+Already Stable (verified) & 11 & 8.1\% & --- & Tested; remained stable \\
+Unclear Cases & 2 & 1.5\% & --- & Requires human review \\
+No Significant Change & 2 & 1.5\% & $d<0.2$ & Flip rate $\pm 5$ pp \\
+Fixed Correctness & 1 & 0.7\% & --- & Consistent but wrong \\
+\midrule
+\multicolumn{5}{l}{\small $^{***}p < 0.001$; $pp$ = percentage points} \\
+\bottomrule
+\end{tabular}
+\label{tab:outcomes}
+\end{table}
+
+\begin{thebibliography}{9}
+
+\bibitem{zhang2024}
+D. W. Zhang, M. Boey, Y. Y. Tan, and A. S. Lan, ``Evaluating large language models for criterion-based grading from agreement to consistency,'' \textit{npj Science of Learning}, vol. 9, no. 79, Dec. 2024, doi: 10.1038/s41539-024-00291-1.
+
+\bibitem{grevisse2024}
+C. Grévisse, ``LLM-based automatic short answer grading in undergraduate medical education,'' \textit{BMC Medical Education}, vol. 24, no. 1060, Sept. 2024, doi: 10.1186/s12909-024-06026-5.
+
+\bibitem{schroeder2024}
+K. Schroeder and Z. Wood-Doughty, ``Can you trust LLM judgments? Reliability of LLM-as-a-judge,'' arXiv, Dec. 2024, arXiv:2412.12509.
+
+\bibitem{seo2025}
+H. Seo et al., ``Large language models as evaluators in education: Verification of feedback consistency and accuracy,'' \textit{Applied Sciences}, vol. 15, no. 2, p. 671, 2025.
+
+\end{thebibliography}
+
+\end{document}

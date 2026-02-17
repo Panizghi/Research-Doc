@@ -1,0 +1,140 @@
+2025-11-02 13:53:15,163 - exp_ef7fead1 - INFO - Initialized experiment ef7fead1
+2025-11-02 13:53:15,163 - exp_ef7fead1 - INFO - 
+############################################################
+2025-11-02 13:53:15,163 - exp_ef7fead1 - INFO - STARTING EXPERIMENT ef7fead1
+2025-11-02 13:53:15,163 - exp_ef7fead1 - INFO - Questions: 5
+2025-11-02 13:53:15,164 - exp_ef7fead1 - INFO - Trials: 10
+2025-11-02 13:53:15,164 - exp_ef7fead1 - INFO - Max refinements: 4
+2025-11-02 13:53:15,164 - exp_ef7fead1 - INFO - ############################################################
+2025-11-02 13:53:15,280 - exp_ef7fead1.data - INFO - Loaded 8344 responses from database
+2025-11-02 13:53:15,282 - exp_ef7fead1.data - INFO - Loaded 25 rubrics from database
+2025-11-02 13:53:15,284 - exp_ef7fead1.data - INFO - DEBUG L1Q1: Total rows in group: 356
+2025-11-02 13:53:15,284 - exp_ef7fead1.data - INFO - DEBUG L1Q1: Sampling down from 356 to 100
+2025-11-02 13:53:15,284 - exp_ef7fead1.data - INFO - DEBUG L1Q1: After limiting/padding: 100
+2025-11-02 13:53:15,285 - exp_ef7fead1.data - INFO - DEBUG L1Q1: Split with stratification: train=69, test=31
+2025-11-02 13:53:15,286 - exp_ef7fead1.data - INFO - L1Q1: 69 train, 31 test
+2025-11-02 13:53:15,286 - exp_ef7fead1.data - INFO - DEBUG L1Q2: Total rows in group: 351
+2025-11-02 13:53:15,286 - exp_ef7fead1.data - INFO - DEBUG L1Q2: Sampling down from 351 to 100
+2025-11-02 13:53:15,287 - exp_ef7fead1.data - INFO - DEBUG L1Q2: After limiting/padding: 100
+2025-11-02 13:53:15,287 - exp_ef7fead1.data - INFO - DEBUG L1Q2: Split with stratification: train=69, test=31
+2025-11-02 13:53:15,288 - exp_ef7fead1.data - INFO - L1Q2: 69 train, 31 test
+2025-11-02 13:53:15,288 - exp_ef7fead1.data - INFO - DEBUG L1Q3: Total rows in group: 351
+2025-11-02 13:53:15,288 - exp_ef7fead1.data - INFO - DEBUG L1Q3: Sampling down from 351 to 100
+2025-11-02 13:53:15,288 - exp_ef7fead1.data - INFO - DEBUG L1Q3: After limiting/padding: 100
+2025-11-02 13:53:15,289 - exp_ef7fead1.data - INFO - DEBUG L1Q3: Split with stratification: train=69, test=31
+2025-11-02 13:53:15,289 - exp_ef7fead1.data - INFO - L1Q3: 69 train, 31 test
+2025-11-02 13:53:15,289 - exp_ef7fead1.data - INFO - DEBUG L1Q4: Total rows in group: 351
+2025-11-02 13:53:15,289 - exp_ef7fead1.data - INFO - DEBUG L1Q4: Sampling down from 351 to 100
+2025-11-02 13:53:15,290 - exp_ef7fead1.data - INFO - DEBUG L1Q4: After limiting/padding: 100
+2025-11-02 13:53:15,290 - exp_ef7fead1.data - INFO - DEBUG L1Q4: Split with stratification: train=69, test=31
+2025-11-02 13:53:15,291 - exp_ef7fead1.data - INFO - L1Q4: 69 train, 31 test
+2025-11-02 13:53:15,291 - exp_ef7fead1.data - INFO - DEBUG L1Q5: Total rows in group: 337
+2025-11-02 13:53:15,291 - exp_ef7fead1.data - INFO - DEBUG L1Q5: Sampling down from 337 to 100
+2025-11-02 13:53:15,291 - exp_ef7fead1.data - INFO - DEBUG L1Q5: After limiting/padding: 100
+2025-11-02 13:53:15,292 - exp_ef7fead1.data - INFO - DEBUG L1Q5: Split with stratification: train=69, test=31
+2025-11-02 13:53:15,292 - exp_ef7fead1.data - INFO - L1Q5: 69 train, 31 test
+2025-11-02 13:53:15,292 - exp_ef7fead1.data - INFO - DEBUG L2Q1: Total rows in group: 396
+2025-11-02 13:53:15,293 - exp_ef7fead1.data - INFO - DEBUG L2Q1: Sampling down from 396 to 100
+2025-11-02 13:53:15,293 - exp_ef7fead1.data - INFO - DEBUG L2Q1: After limiting/padding: 100
+2025-11-02 13:53:15,294 - exp_ef7fead1.data - INFO - DEBUG L2Q1: Split with stratification: train=69, test=31
+2025-11-02 13:53:15,294 - exp_ef7fead1.data - INFO - L2Q1: 69 train, 31 test
+2025-11-02 13:53:15,294 - exp_ef7fead1.data - INFO - DEBUG L2Q2: Total rows in group: 395
+2025-11-02 13:53:15,295 - exp_ef7fead1.data - INFO - DEBUG L2Q2: Sampling down from 395 to 100
+2025-11-02 13:53:15,295 - exp_ef7fead1.data - INFO - DEBUG L2Q2: After limiting/padding: 100
+2025-11-02 13:53:15,296 - exp_ef7fead1.data - INFO - DEBUG L2Q2: Split with stratification: train=69, test=31
+2025-11-02 13:53:15,296 - exp_ef7fead1.data - INFO - L2Q2: 69 train, 31 test
+2025-11-02 13:53:15,296 - exp_ef7fead1.data - INFO - DEBUG L2Q3: Total rows in group: 392
+2025-11-02 13:53:15,297 - exp_ef7fead1.data - INFO - DEBUG L2Q3: Sampling down from 392 to 100
+2025-11-02 13:53:15,297 - exp_ef7fead1.data - INFO - DEBUG L2Q3: After limiting/padding: 100
+2025-11-02 13:53:15,298 - exp_ef7fead1.data - INFO - DEBUG L2Q3: Split with stratification: train=69, test=31
+2025-11-02 13:53:15,298 - exp_ef7fead1.data - INFO - L2Q3: 69 train, 31 test
+2025-11-02 13:53:15,299 - exp_ef7fead1.data - INFO - DEBUG L2Q4: Total rows in group: 386
+2025-11-02 13:53:15,299 - exp_ef7fead1.data - INFO - DEBUG L2Q4: Sampling down from 386 to 100
+2025-11-02 13:53:15,299 - exp_ef7fead1.data - INFO - DEBUG L2Q4: After limiting/padding: 100
+2025-11-02 13:53:15,300 - exp_ef7fead1.data - INFO - DEBUG L2Q4: Split with stratification: train=69, test=31
+2025-11-02 13:53:15,300 - exp_ef7fead1.data - INFO - L2Q4: 69 train, 31 test
+2025-11-02 13:53:15,300 - exp_ef7fead1.data - INFO - DEBUG L2Q5: Total rows in group: 378
+2025-11-02 13:53:15,300 - exp_ef7fead1.data - INFO - DEBUG L2Q5: Sampling down from 378 to 100
+2025-11-02 13:53:15,301 - exp_ef7fead1.data - INFO - DEBUG L2Q5: After limiting/padding: 100
+2025-11-02 13:53:15,304 - exp_ef7fead1.data - INFO - DEBUG L2Q5: Split with stratification: train=69, test=31
+2025-11-02 13:53:15,304 - exp_ef7fead1.data - INFO - L2Q5: 69 train, 31 test
+2025-11-02 13:53:15,304 - exp_ef7fead1.data - INFO - DEBUG L3Q1: Total rows in group: 325
+2025-11-02 13:53:15,304 - exp_ef7fead1.data - INFO - DEBUG L3Q1: Sampling down from 325 to 100
+2025-11-02 13:53:15,304 - exp_ef7fead1.data - INFO - DEBUG L3Q1: After limiting/padding: 100
+2025-11-02 13:53:15,306 - exp_ef7fead1.data - INFO - DEBUG L3Q1: Split with stratification: train=69, test=31
+2025-11-02 13:53:15,306 - exp_ef7fead1.data - INFO - L3Q1: 69 train, 31 test
+2025-11-02 13:53:15,307 - exp_ef7fead1.data - INFO - DEBUG L3Q2: Total rows in group: 325
+2025-11-02 13:53:15,307 - exp_ef7fead1.data - INFO - DEBUG L3Q2: Sampling down from 325 to 100
+2025-11-02 13:53:15,307 - exp_ef7fead1.data - INFO - DEBUG L3Q2: After limiting/padding: 100
+2025-11-02 13:53:15,308 - exp_ef7fead1.data - INFO - DEBUG L3Q2: Split with stratification: train=69, test=31
+2025-11-02 13:53:15,308 - exp_ef7fead1.data - INFO - L3Q2: 69 train, 31 test
+2025-11-02 13:53:15,309 - exp_ef7fead1.data - INFO - DEBUG L3Q3: Total rows in group: 325
+2025-11-02 13:53:15,309 - exp_ef7fead1.data - INFO - DEBUG L3Q3: Sampling down from 325 to 100
+2025-11-02 13:53:15,310 - exp_ef7fead1.data - INFO - DEBUG L3Q3: After limiting/padding: 100
+2025-11-02 13:53:15,310 - exp_ef7fead1.data - INFO - DEBUG L3Q3: Split with stratification: train=69, test=31
+2025-11-02 13:53:15,311 - exp_ef7fead1.data - INFO - L3Q3: 69 train, 31 test
+2025-11-02 13:53:15,311 - exp_ef7fead1.data - INFO - DEBUG L3Q4: Total rows in group: 325
+2025-11-02 13:53:15,311 - exp_ef7fead1.data - INFO - DEBUG L3Q4: Sampling down from 325 to 100
+2025-11-02 13:53:15,311 - exp_ef7fead1.data - INFO - DEBUG L3Q4: After limiting/padding: 100
+2025-11-02 13:53:15,312 - exp_ef7fead1.data - INFO - DEBUG L3Q4: Split with stratification: train=69, test=31
+2025-11-02 13:53:15,312 - exp_ef7fead1.data - INFO - L3Q4: 69 train, 31 test
+2025-11-02 13:53:15,312 - exp_ef7fead1.data - INFO - DEBUG L3Q5: Total rows in group: 316
+2025-11-02 13:53:15,313 - exp_ef7fead1.data - INFO - DEBUG L3Q5: Sampling down from 316 to 100
+2025-11-02 13:53:15,313 - exp_ef7fead1.data - INFO - DEBUG L3Q5: After limiting/padding: 100
+2025-11-02 13:53:15,314 - exp_ef7fead1.data - INFO - DEBUG L3Q5: Split with stratification: train=69, test=31
+2025-11-02 13:53:15,314 - exp_ef7fead1.data - INFO - L3Q5: 69 train, 31 test
+2025-11-02 13:53:15,314 - exp_ef7fead1.data - INFO - DEBUG L4Q1: Total rows in group: 344
+2025-11-02 13:53:15,314 - exp_ef7fead1.data - INFO - DEBUG L4Q1: Sampling down from 344 to 100
+2025-11-02 13:53:15,315 - exp_ef7fead1.data - INFO - DEBUG L4Q1: After limiting/padding: 100
+2025-11-02 13:53:15,316 - exp_ef7fead1.data - INFO - DEBUG L4Q1: Split with stratification: train=69, test=31
+2025-11-02 13:53:15,319 - exp_ef7fead1.data - INFO - L4Q1: 69 train, 31 test
+2025-11-02 13:53:15,319 - exp_ef7fead1.data - INFO - DEBUG L4Q2: Total rows in group: 344
+2025-11-02 13:53:15,320 - exp_ef7fead1.data - INFO - DEBUG L4Q2: Sampling down from 344 to 100
+2025-11-02 13:53:15,321 - exp_ef7fead1.data - INFO - DEBUG L4Q2: After limiting/padding: 100
+2025-11-02 13:53:15,321 - exp_ef7fead1.data - INFO - DEBUG L4Q2: Split with stratification: train=69, test=31
+2025-11-02 13:53:15,321 - exp_ef7fead1.data - INFO - L4Q2: 69 train, 31 test
+2025-11-02 13:53:15,322 - exp_ef7fead1.data - INFO - DEBUG L4Q3: Total rows in group: 344
+2025-11-02 13:53:15,322 - exp_ef7fead1.data - INFO - DEBUG L4Q3: Sampling down from 344 to 100
+2025-11-02 13:53:15,322 - exp_ef7fead1.data - INFO - DEBUG L4Q3: After limiting/padding: 100
+2025-11-02 13:53:15,323 - exp_ef7fead1.data - INFO - DEBUG L4Q3: Split with stratification: train=69, test=31
+2025-11-02 13:53:15,323 - exp_ef7fead1.data - INFO - L4Q3: 69 train, 31 test
+2025-11-02 13:53:15,323 - exp_ef7fead1.data - INFO - DEBUG L4Q4: Total rows in group: 344
+2025-11-02 13:53:15,324 - exp_ef7fead1.data - INFO - DEBUG L4Q4: Sampling down from 344 to 100
+2025-11-02 13:53:15,324 - exp_ef7fead1.data - INFO - DEBUG L4Q4: After limiting/padding: 100
+2025-11-02 13:53:15,324 - exp_ef7fead1.data - INFO - DEBUG L4Q4: Split with stratification: train=69, test=31
+2025-11-02 13:53:15,325 - exp_ef7fead1.data - INFO - L4Q4: 69 train, 31 test
+2025-11-02 13:53:15,325 - exp_ef7fead1.data - INFO - DEBUG L4Q5: Total rows in group: 343
+2025-11-02 13:53:15,325 - exp_ef7fead1.data - INFO - DEBUG L4Q5: Sampling down from 343 to 100
+2025-11-02 13:53:15,325 - exp_ef7fead1.data - INFO - DEBUG L4Q5: After limiting/padding: 100
+2025-11-02 13:53:15,326 - exp_ef7fead1.data - INFO - DEBUG L4Q5: Split with stratification: train=69, test=31
+2025-11-02 13:53:15,329 - exp_ef7fead1.data - INFO - L4Q5: 69 train, 31 test
+2025-11-02 13:53:15,329 - exp_ef7fead1.data - INFO - DEBUG L5Q1: Total rows in group: 264
+2025-11-02 13:53:15,329 - exp_ef7fead1.data - INFO - DEBUG L5Q1: Sampling down from 264 to 100
+2025-11-02 13:53:15,330 - exp_ef7fead1.data - INFO - DEBUG L5Q1: After limiting/padding: 100
+2025-11-02 13:53:15,331 - exp_ef7fead1.data - INFO - DEBUG L5Q1: Split with stratification: train=69, test=31
+2025-11-02 13:53:15,331 - exp_ef7fead1.data - INFO - L5Q1: 69 train, 31 test
+2025-11-02 13:53:15,331 - exp_ef7fead1.data - INFO - DEBUG L5Q2: Total rows in group: 264
+2025-11-02 13:53:15,331 - exp_ef7fead1.data - INFO - DEBUG L5Q2: Sampling down from 264 to 100
+2025-11-02 13:53:15,331 - exp_ef7fead1.data - INFO - DEBUG L5Q2: After limiting/padding: 100
+2025-11-02 13:53:15,332 - exp_ef7fead1.data - INFO - DEBUG L5Q2: Split with stratification: train=69, test=31
+2025-11-02 13:53:15,332 - exp_ef7fead1.data - INFO - L5Q2: 69 train, 31 test
+2025-11-02 13:53:15,333 - exp_ef7fead1.data - INFO - DEBUG L5Q3: Total rows in group: 264
+2025-11-02 13:53:15,333 - exp_ef7fead1.data - INFO - DEBUG L5Q3: Sampling down from 264 to 100
+2025-11-02 13:53:15,333 - exp_ef7fead1.data - INFO - DEBUG L5Q3: After limiting/padding: 100
+2025-11-02 13:53:15,334 - exp_ef7fead1.data - INFO - DEBUG L5Q3: Split with stratification: train=69, test=31
+2025-11-02 13:53:15,334 - exp_ef7fead1.data - INFO - L5Q3: 69 train, 31 test
+2025-11-02 13:53:15,334 - exp_ef7fead1.data - INFO - DEBUG L5Q4: Total rows in group: 264
+2025-11-02 13:53:15,334 - exp_ef7fead1.data - INFO - DEBUG L5Q4: Sampling down from 264 to 100
+2025-11-02 13:53:15,334 - exp_ef7fead1.data - INFO - DEBUG L5Q4: After limiting/padding: 100
+2025-11-02 13:53:15,335 - exp_ef7fead1.data - INFO - DEBUG L5Q4: Split with stratification: train=69, test=31
+2025-11-02 13:53:15,335 - exp_ef7fead1.data - INFO - L5Q4: 69 train, 31 test
+2025-11-02 13:53:15,335 - exp_ef7fead1.data - INFO - DEBUG L5Q5: Total rows in group: 260
+2025-11-02 13:53:15,336 - exp_ef7fead1.data - INFO - DEBUG L5Q5: Sampling down from 260 to 100
+2025-11-02 13:53:15,337 - exp_ef7fead1.data - INFO - DEBUG L5Q5: After limiting/padding: 100
+2025-11-02 13:53:15,338 - exp_ef7fead1.data - INFO - DEBUG L5Q5: Split with stratification: train=69, test=31
+2025-11-02 13:53:15,338 - exp_ef7fead1.data - INFO - L5Q5: 69 train, 31 test
+2025-11-02 13:53:15,339 - exp_ef7fead1.data - INFO - DEBUG: Total train size: 1725, Total test size: 775
+2025-11-02 13:53:15,342 - exp_ef7fead1 - INFO - 
+============================================================
+2025-11-02 13:53:15,342 - exp_ef7fead1 - INFO - Starting Lab 2, Question 4
+2025-11-02 13:53:15,346 - exp_ef7fead1 - INFO - Running baseline grading with rubric...

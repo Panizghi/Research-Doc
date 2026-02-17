@@ -1,0 +1,333 @@
+{
+  "lab": 2,
+  "question": 4,
+  "num_train": 6,
+  "num_test": 4,
+  "iterations": [
+    {
+      "iteration": 0,
+      "qds": [
+        {
+          "name": "Identifies PSP usage for thread stack",
+          "definition": "Answer states that the Process Stack Pointer (PSP) is used for thread execution.",
+          "rationale": "The rubric requires students to recognize that PSP, not the default stack pointer, holds the thread\u2019s stack."
+        },
+        {
+          "name": "Distinguishes PSP from MSP",
+          "definition": "Answer notes that the thread\u2019s stack location differs from the CPU\u2019s main stack pointer (MSP).",
+          "rationale": "Students must explain the separation between the thread stack and the CPU\u2019s current stack pointer."
+        },
+        {
+          "name": "Specifies __set_PSP sets PSP to thread stack address",
+          "definition": "Answer mentions that __set_PSP assigns PSP the thread\u2019s stack pointer value.",
+          "rationale": "The core action required by the code is to load the thread\u2019s stack address into PSP."
+        },
+        {
+          "name": "Links missing PSP set to hard fault/crash",
+          "definition": "Answer explains that not setting PSP would cause a hard fault or crash.",
+          "rationale": "The rubric expects students to connect the omission of the PSP setup with the resulting fault."
+        }
+      ],
+      "metrics": {
+        "flip_rate": 80.0,
+        "flips": 4,
+        "total_answers": 5,
+        "borderline_rate": 80.0,
+        "borderline_count": 4,
+        "avg_confidence": 0.897,
+        "std_confidence": 0.13535508856337838,
+        "avg_consistency": 0.86,
+        "overall_pass_rate": 0.86
+      },
+      "orthogonality": {
+        "qd_names": [
+          "Identifies PSP usage for thread stack",
+          "Distinguishes PSP from MSP",
+          "Specifies __set_PSP sets PSP to thread stack address",
+          "Links missing PSP set to hard fault/crash"
+        ],
+        "orthogonality_score": 0.7334812673781482,
+        "mutual_info_matrix": [
+          [
+            0.0,
+            0.024986089849804036,
+            0.015371133347520619,
+            0.15841057013179077
+          ],
+          [
+            0.024986089849804036,
+            0.0,
+            0.15184100846701348,
+            0.024986089849804036
+          ],
+          [
+            0.015371133347520619,
+            0.15184100846701348,
+            0.0,
+            0.015371133347520619
+          ],
+          [
+            0.15841057013179077,
+            0.024986089849804036,
+            0.015371133347520619,
+            0.0
+          ]
+        ],
+        "correlation_matrix": [
+          [
+            1.0,
+            0.18898223650461363,
+            0.13867504905630745,
+            1.0
+          ],
+          [
+            0.18898223650461363,
+            0.9999999999999998,
+            -0.5241424183609592,
+            0.18898223650461363
+          ],
+          [
+            0.13867504905630745,
+            -0.5241424183609592,
+            1.0,
+            0.13867504905630745
+          ],
+          [
+            1.0,
+            0.18898223650461363,
+            0.13867504905630745,
+            1.0
+          ]
+        ],
+        "co_occurrence_matrix": [
+          [
+            0.9629629629629629,
+            0.48148148148148145,
+            0.3333333333333333,
+            0.9629629629629629
+          ],
+          [
+            0.48148148148148145,
+            0.48148148148148145,
+            0.037037037037037035,
+            0.48148148148148145
+          ],
+          [
+            0.3333333333333333,
+            0.037037037037037035,
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          [
+            0.9629629629629629,
+            0.48148148148148145,
+            0.3333333333333333,
+            0.9629629629629629
+          ]
+        ],
+        "avg_mutual_info": 0.06516100416557559,
+        "avg_correlation": 0.36324283158046683,
+        "avg_co_occurrence": 0.4382716049382716,
+        "avg_coupling": 0.2665187326218518,
+        "diagnostic_pairs": [
+          {
+            "qd1": "Identifies PSP usage for thread stack",
+            "qd2": "Links missing PSP set to hard fault/crash",
+            "mi": 0.15841057013179077,
+            "corr": 1.0,
+            "co": 0.9629629629629629,
+            "coupling_score": 0.6522531169416051
+          },
+          {
+            "qd1": "Distinguishes PSP from MSP",
+            "qd2": "Specifies __set_PSP sets PSP to thread stack address",
+            "mi": 0.15184100846701348,
+            "corr": -0.5241424183609592,
+            "co": 0.037037037037037035,
+            "coupling_score": 0.22909024000620423
+          },
+          {
+            "qd1": "Identifies PSP usage for thread stack",
+            "qd2": "Distinguishes PSP from MSP",
+            "mi": 0.024986089849804036,
+            "corr": 0.18898223650461363,
+            "co": 0.48148148148148145,
+            "coupling_score": 0.21113355133575012
+          },
+          {
+            "qd1": "Distinguishes PSP from MSP",
+            "qd2": "Links missing PSP set to hard fault/crash",
+            "mi": 0.024986089849804036,
+            "corr": 0.18898223650461363,
+            "co": 0.48148148148148145,
+            "coupling_score": 0.21113355133575012
+          },
+          {
+            "qd1": "Identifies PSP usage for thread stack",
+            "qd2": "Specifies __set_PSP sets PSP to thread stack address",
+            "mi": 0.015371133347520619,
+            "corr": 0.13867504905630745,
+            "co": 0.3333333333333333,
+            "coupling_score": 0.1477509680559005
+          }
+        ],
+        "num_coupled_pairs": 1
+      }
+    },
+    {
+      "iteration": 1,
+      "qds": [
+        {
+          "name": "Identifies PSP usage and distinguishes it from MSP",
+          "definition": "Answer states that the Process Stack Pointer (PSP) is used for the thread\u2019s stack and explicitly notes that this differs from the Main Stack Pointer (MSP) used by the CPU."
+        },
+        {
+          "name": "Specifies __set_PSP sets PSP to thread stack address",
+          "definition": "Answer mentions that the __set_PSP function loads the thread\u2019s stack pointer value into PSP."
+        },
+        {
+          "name": "Links missing PSP set to hard fault/crash",
+          "definition": "Answer explains that failing to set PSP before running the thread would cause a hard fault or crash."
+        }
+      ],
+      "metrics": {
+        "flip_rate": 0.0,
+        "flips": 0,
+        "total_answers": 5,
+        "borderline_rate": 80.0,
+        "borderline_count": 4,
+        "avg_confidence": 0.9273333333333332,
+        "std_confidence": 0.040573664145874495,
+        "avg_consistency": 1.0,
+        "overall_pass_rate": 1.0
+      },
+      "orthogonality": {
+        "qd_names": [
+          "Identifies PSP usage and distinguishes it from MSP",
+          "Specifies __set_PSP sets PSP to thread stack address",
+          "Links missing PSP set to hard fault/crash"
+        ],
+        "orthogonality_score": 0.7826508786714891,
+        "mutual_info_matrix": [
+          [
+            0.0,
+            0.1302843878668581,
+            0.039677377751214216
+          ],
+          [
+            0.1302843878668581,
+            0.0,
+            0.039677377751214216
+          ],
+          [
+            0.039677377751214216,
+            0.039677377751214216,
+            0.0
+          ]
+        ],
+        "correlation_matrix": [
+          [
+            1.0,
+            -0.49321266968325794,
+            0.23371317622140128
+          ],
+          [
+            -0.49321266968325794,
+            1.0,
+            0.23371317622140134
+          ],
+          [
+            0.23371317622140128,
+            0.23371317622140134,
+            0.9999999999999998
+          ]
+        ],
+        "co_occurrence_matrix": [
+          [
+            0.43333333333333335,
+            0.06666666666666667,
+            0.43333333333333335
+          ],
+          [
+            0.06666666666666667,
+            0.43333333333333335,
+            0.43333333333333335
+          ],
+          [
+            0.43333333333333335,
+            0.43333333333333335,
+            0.9333333333333333
+          ]
+        ],
+        "avg_mutual_info": 0.06987971445642883,
+        "avg_correlation": 0.3202130073753535,
+        "avg_co_occurrence": 0.3111111111111111,
+        "avg_coupling": 0.21734912132851092,
+        "diagnostic_pairs": [
+          {
+            "qd1": "Identifies PSP usage and distinguishes it from MSP",
+            "qd2": "Specifies __set_PSP sets PSP to thread stack address",
+            "mi": 0.1302843878668581,
+            "corr": -0.49321266968325794,
+            "co": 0.06666666666666667,
+            "coupling_score": 0.2200775560517206
+          },
+          {
+            "qd1": "Specifies __set_PSP sets PSP to thread stack address",
+            "qd2": "Links missing PSP set to hard fault/crash",
+            "mi": 0.039677377751214216,
+            "corr": 0.23371317622140134,
+            "co": 0.43333333333333335,
+            "coupling_score": 0.2159849039669061
+          },
+          {
+            "qd1": "Identifies PSP usage and distinguishes it from MSP",
+            "qd2": "Links missing PSP set to hard fault/crash",
+            "mi": 0.039677377751214216,
+            "corr": 0.23371317622140128,
+            "co": 0.43333333333333335,
+            "coupling_score": 0.21598490396690606
+          }
+        ],
+        "num_coupled_pairs": 0
+      }
+    }
+  ],
+  "baseline": {
+    "flip_rate": 20.0,
+    "flips": 1,
+    "total_answers": 5,
+    "borderline_rate": 20.0,
+    "borderline_count": 1,
+    "avg_confidence": 0.9459999999999998,
+    "std_confidence": 0.03517574922206111,
+    "avg_consistency": 0.96,
+    "overall_pass_rate": 0.96
+  },
+  "test_validation": {
+    "baseline": {
+      "flip_rate": 0.0,
+      "flips": 0,
+      "total_answers": 4,
+      "borderline_rate": 0.0,
+      "borderline_count": 0,
+      "avg_confidence": 0.9258333333333333,
+      "std_confidence": 0.0460901893634161,
+      "avg_consistency": 1.0,
+      "overall_pass_rate": 0.75
+    },
+    "qd": {
+      "flip_rate": 25.0,
+      "flips": 1,
+      "total_answers": 4,
+      "borderline_rate": 0.0,
+      "borderline_count": 0,
+      "avg_confidence": 0.9233333333333335,
+      "std_confidence": 0.1278888406216725,
+      "avg_consistency": 0.9166666666666666,
+      "overall_pass_rate": 0.41666666666666663
+    },
+    "improvement": -25.0,
+    "best_iteration": 1
+  }
+}

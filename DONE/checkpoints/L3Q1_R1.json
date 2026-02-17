@@ -1,0 +1,77 @@
+{
+  "question_id": "L3Q1",
+  "response_id": "R1",
+  "response_text": "First, each file is preprocessed by the compiler. This involves steps such as parsing preprocessor directives (marked with a # in front of each, such as #includes, #define, and etcetra). In addition, the files are optimized to remove unnecessary instructions or branches, such as if a conditional statement\u2019s condition is never true. Then, each .c file is compiled by itself into its own .obj file by the compiler. Then, the linker combines all of these separate object files \u2013 the code sections (.text), data (.data), uninitialized data (.bss), and symbols, and resolves cross-references (such as function calls in main of functions described elsewhere). In addition, the linker script specifies the format and output of the final executable, as well as the memory layout.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:48:07.065392",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:48:13.703699",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:48:21.121037",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:48:27.035760",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:48:39.808299",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:48:47.413911",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:48:55.302923",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:49:01.702772",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:49:07.023680",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:49:11.861827",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 90.0,
+    "flip_rate": 10.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 9,
+    "fail_count": 1
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q2",
+  "response_id": "R3",
+  "response_text": "The PendSV_Handler function performs a context switch by saving the state of the currently running thread and restoring the state of the next thread to run. When a thread calls osYield() (or another event triggers a context switch), it sets the PendSV interrupt. Once PendSV_Handler runs:\\nSave current thread state: The CPU automatically pushes some registers (like R0\u2013R3, R12, LR, PC, xPSR) onto the thread's stack when the exception occurs. PendSV_Handler then manually saves the rest \u2014 the callee-saved registers R4\u2013R11 \u2014 onto the same stack. This snapshot lets the thread resume later from the exact same point.\\nUpdate its stack pointer: The handler stores the current thread\u2019s updated stack pointer (PSP) in its thread control block (threadArray[current_thread].sp).\\nSelect next thread: It calls a scheduler function (e.g. osSched()), which updates current_thread to point to the next thread in the round-robin queue.\\nRestore next thread state: The handler loads the new thread\u2019s saved stack pointer from threadArray[current_thread].sp into the PSP. It then pops R4\u2013R11 from that stack \u2014 manually \u2014 and when the handler exits, the CPU automatically restores the rest of the registers (R0\u2013R3, etc.) from the stack as well.\\nThis effectively swaps out one thread\u2019s context for another\u2019s, allowing them to take turns on the CPU as if they were running \"in parallel.\" PendSV_Handler is also lower priority than SVC, ensuring that variables do not end up stuck in the stack by allowing SVC to finish. This means that the context switch is only performed when no other handlers are running, ensuring the stack is back to normal before switching to prevent the stack from growing without bounds until the memory is all filled with stuck variables.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:36:39.451766",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:36:49.754863",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:37:03.837114",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:37:13.282104",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:37:24.430925",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:37:36.187308",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:37:45.185858",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:37:58.758557",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:38:12.961615",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:38:23.487378",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 0,
+    "fail_count": 10
+  }
+}

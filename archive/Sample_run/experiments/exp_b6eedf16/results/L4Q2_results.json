@@ -1,0 +1,502 @@
+{
+  "lab": 4,
+  "question": 2,
+  "num_train": 6,
+  "num_test": 4,
+  "iterations": [
+    {
+      "iteration": 0,
+      "qds": [
+        {
+          "name": "ReadsPSP",
+          "definition": "Mentions reading PSP to locate the current thread's stack.",
+          "rationale": "The first required step in the rubric; confirms the student identifies how the current stack is found."
+        },
+        {
+          "name": "PushesRegisters",
+          "definition": "Mentions pushing registers R4\u2011R11 onto the stack.",
+          "rationale": "Second required step; shows the student knows which registers are saved during the switch."
+        },
+        {
+          "name": "CallsScheduler",
+          "definition": "Mentions calling osSched (or equivalent) to select a new thread.",
+          "rationale": "Third required step; verifies the student includes the scheduling function that chooses the next task."
+        },
+        {
+          "name": "RestoresNewThread",
+          "definition": "Mentions locating new thread's stack and popping registers R4\u2011R11.",
+          "rationale": "Final required actions; confirms the student describes both stack location for the new thread and register restoration."
+        },
+        {
+          "name": "CorrectOrder",
+          "definition": "Lists the required steps in the correct sequential order.",
+          "rationale": "The rubric explicitly demands the steps be presented in order; this binary check distinguishes ordered from unordered responses."
+        }
+      ],
+      "metrics": {
+        "flip_rate": 33.33333333333333,
+        "flips": 2,
+        "total_answers": 6,
+        "borderline_rate": 16.666666666666664,
+        "borderline_count": 1,
+        "avg_confidence": 0.9293333333333333,
+        "std_confidence": 0.11727271161224545,
+        "avg_consistency": 0.9333333333333332,
+        "overall_pass_rate": 0.8333333333333334
+      },
+      "orthogonality": {
+        "qd_names": [
+          "ReadsPSP",
+          "PushesRegisters",
+          "CallsScheduler",
+          "RestoresNewThread",
+          "CorrectOrder"
+        ],
+        "orthogonality_score": NaN,
+        "mutual_info_matrix": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.26016618638289746,
+            0.22031912364821682
+          ],
+          [
+            0.0,
+            0.0,
+            0.26016618638289746,
+            0.0,
+            0.32075874265658993
+          ],
+          [
+            0.0,
+            0.0,
+            0.22031912364821682,
+            0.32075874265658993,
+            0.0
+          ]
+        ],
+        "correlation_matrix": [
+          [
+            NaN,
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ],
+          [
+            NaN,
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ],
+          [
+            NaN,
+            NaN,
+            0.9999999999999998,
+            0.8485281374238578,
+            0.7429670248402692
+          ],
+          [
+            NaN,
+            NaN,
+            0.8485281374238578,
+            1.0,
+            0.875595035770914
+          ],
+          [
+            NaN,
+            NaN,
+            0.7429670248402692,
+            0.875595035770914,
+            1.0
+          ]
+        ],
+        "co_occurrence_matrix": [
+          [
+            1.0,
+            1.0,
+            0.8928571428571429,
+            0.8571428571428571,
+            0.8214285714285714
+          ],
+          [
+            1.0,
+            1.0,
+            0.8928571428571429,
+            0.8571428571428571,
+            0.8214285714285714
+          ],
+          [
+            0.8928571428571429,
+            0.8928571428571429,
+            0.8928571428571429,
+            0.8571428571428571,
+            0.8214285714285714
+          ],
+          [
+            0.8571428571428571,
+            0.8571428571428571,
+            0.8571428571428571,
+            0.8571428571428571,
+            0.8214285714285714
+          ],
+          [
+            0.8214285714285714,
+            0.8214285714285714,
+            0.8214285714285714,
+            0.8214285714285714,
+            0.8214285714285714
+          ]
+        ],
+        "avg_mutual_info": 0.08012440526877043,
+        "avg_correlation": NaN,
+        "avg_co_occurrence": 0.8642857142857142,
+        "avg_coupling": NaN,
+        "diagnostic_pairs": [
+          {
+            "qd1": "ReadsPSP",
+            "qd2": "PushesRegisters",
+            "mi": 0.0,
+            "corr": NaN,
+            "co": 1.0,
+            "coupling_score": NaN
+          },
+          {
+            "qd1": "ReadsPSP",
+            "qd2": "CallsScheduler",
+            "mi": 0.0,
+            "corr": NaN,
+            "co": 0.8928571428571429,
+            "coupling_score": NaN
+          },
+          {
+            "qd1": "ReadsPSP",
+            "qd2": "RestoresNewThread",
+            "mi": 0.0,
+            "corr": NaN,
+            "co": 0.8571428571428571,
+            "coupling_score": NaN
+          },
+          {
+            "qd1": "ReadsPSP",
+            "qd2": "CorrectOrder",
+            "mi": 0.0,
+            "corr": NaN,
+            "co": 0.8214285714285714,
+            "coupling_score": NaN
+          },
+          {
+            "qd1": "PushesRegisters",
+            "qd2": "CallsScheduler",
+            "mi": 0.0,
+            "corr": NaN,
+            "co": 0.8928571428571429,
+            "coupling_score": NaN
+          }
+        ],
+        "num_coupled_pairs": 2
+      }
+    },
+    {
+      "iteration": 1,
+      "qds": [
+        {
+          "name": "ReadsPSP",
+          "definition": "Mentions reading the PSP to locate the current thread's stack."
+        },
+        {
+          "name": "PushesRegisters",
+          "definition": "Mentions pushing registers R4\u2011R11 onto the stack."
+        },
+        {
+          "name": "CallsScheduler",
+          "definition": "Mentions calling osSched (or equivalent) to select a new thread."
+        },
+        {
+          "name": "LocateNewThreadStack",
+          "definition": "Mentions locating the new thread's stack (e.g., reading its PSP value)."
+        },
+        {
+          "name": "PopsRegisters",
+          "definition": "Mentions popping registers R4\u2011R11 from the new thread's stack."
+        },
+        {
+          "name": "CorrectOrder",
+          "definition": "Lists the required steps in the correct sequential order."
+        }
+      ],
+      "metrics": {
+        "flip_rate": 0.0,
+        "flips": 0,
+        "total_answers": 6,
+        "borderline_rate": 0.0,
+        "borderline_count": 0,
+        "avg_confidence": 0.9426666666666665,
+        "std_confidence": 0.0417878238512395,
+        "avg_consistency": 1.0,
+        "overall_pass_rate": 0.8333333333333334
+      },
+      "orthogonality": {
+        "qd_names": [
+          "ReadsPSP",
+          "PushesRegisters",
+          "CallsScheduler",
+          "LocateNewThreadStack",
+          "PopsRegisters",
+          "CorrectOrder"
+        ],
+        "orthogonality_score": NaN,
+        "mutual_info_matrix": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.09497398822962042,
+            0.13276141562642615,
+            0.11762719313567291
+          ],
+          [
+            0.0,
+            0.0,
+            0.09497398822962042,
+            0.0,
+            0.2741443453575099,
+            0.1883868006396906
+          ],
+          [
+            0.0,
+            0.0,
+            0.13276141562642615,
+            0.2741443453575099,
+            0.0,
+            0.36044896709304397
+          ],
+          [
+            0.0,
+            0.0,
+            0.11762719313567291,
+            0.1883868006396906,
+            0.36044896709304397,
+            0.0
+          ]
+        ],
+        "correlation_matrix": [
+          [
+            NaN,
+            NaN,
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ],
+          [
+            NaN,
+            NaN,
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ],
+          [
+            NaN,
+            NaN,
+            1.0,
+            0.443202630213958,
+            0.5976143046671966,
+            0.5345224838248495
+          ],
+          [
+            NaN,
+            NaN,
+            0.443202630213958,
+            0.9999999999999999,
+            0.7416198487095654,
+            0.640711607227747
+          ],
+          [
+            NaN,
+            NaN,
+            0.5976143046671966,
+            0.7416198487095655,
+            1.0,
+            0.8944271909999153
+          ],
+          [
+            NaN,
+            NaN,
+            0.5345224838248495,
+            0.640711607227747,
+            0.8944271909999152,
+            1.0
+          ]
+        ],
+        "co_occurrence_matrix": [
+          [
+            1.0,
+            1.0,
+            0.9333333333333333,
+            0.7333333333333333,
+            0.8333333333333334,
+            0.8
+          ],
+          [
+            1.0,
+            1.0,
+            0.9333333333333333,
+            0.7333333333333333,
+            0.8333333333333334,
+            0.8
+          ],
+          [
+            0.9333333333333333,
+            0.9333333333333333,
+            0.9333333333333333,
+            0.7333333333333333,
+            0.8333333333333334,
+            0.8
+          ],
+          [
+            0.7333333333333333,
+            0.7333333333333333,
+            0.7333333333333333,
+            0.7333333333333333,
+            0.7333333333333333,
+            0.7
+          ],
+          [
+            0.8333333333333334,
+            0.8333333333333334,
+            0.8333333333333334,
+            0.7333333333333333,
+            0.8333333333333334,
+            0.8
+          ],
+          [
+            0.8,
+            0.8,
+            0.8,
+            0.7,
+            0.8,
+            0.8
+          ]
+        ],
+        "avg_mutual_info": 0.07788951400546426,
+        "avg_correlation": NaN,
+        "avg_co_occurrence": 0.8133333333333332,
+        "avg_coupling": NaN,
+        "diagnostic_pairs": [
+          {
+            "qd1": "ReadsPSP",
+            "qd2": "PushesRegisters",
+            "mi": 0.0,
+            "corr": NaN,
+            "co": 1.0,
+            "coupling_score": NaN
+          },
+          {
+            "qd1": "ReadsPSP",
+            "qd2": "CallsScheduler",
+            "mi": 0.0,
+            "corr": NaN,
+            "co": 0.9333333333333333,
+            "coupling_score": NaN
+          },
+          {
+            "qd1": "ReadsPSP",
+            "qd2": "LocateNewThreadStack",
+            "mi": 0.0,
+            "corr": NaN,
+            "co": 0.7333333333333333,
+            "coupling_score": NaN
+          },
+          {
+            "qd1": "ReadsPSP",
+            "qd2": "PopsRegisters",
+            "mi": 0.0,
+            "corr": NaN,
+            "co": 0.8333333333333334,
+            "coupling_score": NaN
+          },
+          {
+            "qd1": "ReadsPSP",
+            "qd2": "CorrectOrder",
+            "mi": 0.0,
+            "corr": NaN,
+            "co": 0.8,
+            "coupling_score": NaN
+          }
+        ],
+        "num_coupled_pairs": 1
+      }
+    }
+  ],
+  "baseline": {
+    "flip_rate": 50.0,
+    "flips": 3,
+    "total_answers": 6,
+    "borderline_rate": 33.33333333333333,
+    "borderline_count": 2,
+    "avg_confidence": 0.9243333333333335,
+    "std_confidence": 0.09393910557140489,
+    "avg_consistency": 0.8999999999999999,
+    "overall_pass_rate": 0.7999999999999999
+  },
+  "test_validation": {
+    "baseline": {
+      "flip_rate": 0.0,
+      "flips": 0,
+      "total_answers": 4,
+      "borderline_rate": 0.0,
+      "borderline_count": 0,
+      "avg_confidence": 0.9700000000000002,
+      "std_confidence": 0.009128709291752777,
+      "avg_consistency": 1.0,
+      "overall_pass_rate": 0.75
+    },
+    "qd": {
+      "flip_rate": 0.0,
+      "flips": 0,
+      "total_answers": 4,
+      "borderline_rate": 0.0,
+      "borderline_count": 0,
+      "avg_confidence": 0.9491666666666667,
+      "std_confidence": 0.034990077958695014,
+      "avg_consistency": 1.0,
+      "overall_pass_rate": 0.5
+    },
+    "improvement": 0.0,
+    "best_iteration": 1
+  }
+}

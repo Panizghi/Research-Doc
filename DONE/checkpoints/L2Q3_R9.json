@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q3",
+  "response_id": "R9",
+  "response_text": "Before a thread begins execution, its stack must be carefully prepared with a designated memory area that it will use to hold temporary data such as local variables and register contents. This setup process involves placing specific values onto the stack, including the address where the thread should start executing and the initial state of key registers. This is done to ensure the processor can jump into the thread and run it properly. Unlike a context switch, which happens during multitasking and focuses on saving and restoring a thread\u2019s progress, stack setup happens only once and is about creating the right environment for a new thread to start cleanly. The sequence and accuracy of what gets written to the stack during this phase are essential, since errors here can prevent the thread from launching or functioning correctly. While both processes interact with the stack and registers, thread initialization builds a fresh execution context, whereas context switching keeps track of what a thread was doing so it can pick up where it left off.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:01:20.892007",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:01:26.577463",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:01:35.323706",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:01:42.433358",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:01:55.330751",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:02:05.343883",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:02:17.481032",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:02:29.415033",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:02:37.451406",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:02:43.937655",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

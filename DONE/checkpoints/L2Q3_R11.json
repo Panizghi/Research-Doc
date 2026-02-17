@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q3",
+  "response_id": "R11",
+  "response_text": "A thread runs using registers and a predefined area of the stack to read and write data in memory. To prepare a thread for running, we need to imitate what this environment would look like as if the thread had already been running, so that it has a foundation to continue running once loaded. This means we need to push register values to the stack in the order that they will be popped when the thread is loaded for the first time, values that will enable the thread to execute properly. We will do this by first manually pushing the desired current and next states of the program\u2014what will later be popped to (xPSR) and program counter (PC) registers respectively. In our case, the current state is set to a 32-bit value, and our next state is our print Following this, we also choose to push 14 more arbitrary known values to the stack continuously function, which will fill the rest of the registers. We do this so that we can view them in the debugger to ensure the thread is working. If we don\u2019t push these preferred register values to the stack in this order, then they will not be popped into the correct registers, causing the thread to fail.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:04:42.840811",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:04:56.397172",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:05:08.772671",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:05:20.641642",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:05:33.133298",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:05:47.345313",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:06:02.053040",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:06:13.342126",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:06:26.051275",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:06:36.119273",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 50.0,
+    "flip_rate": 50.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 5,
+    "fail_count": 5
+  }
+}

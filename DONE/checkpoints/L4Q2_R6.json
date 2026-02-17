@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q2",
+  "response_id": "R6",
+  "response_text": "PendSV_Handler performs a context switch in two phases. First, when the PendSV exception fires, the Cortex-M hardware has already automatically pushed registers R0\u2013R3, R12, LR, PC, and xPSR onto the Process Stack Pointer (PSP) of the currently running thread. The assembly stub in asmDump.s then explicitly pushes the callee-saved registers R4\u2013R11 onto that same PSP, giving a full 16-register snapshot. Next, the C function osSched is invoked. It calls __get_PSP() to read the current PSP, subtracts 8\u00d74 bytes to account for the R4\u2013R11 space, and stores the result in threadArray[currentThread].stackPointer. It then advances currentThread in round-robin fashion, modulo numThreadsRunning, and loads the PSP of the next thread using __set_PSP(). When the handler returns, the processor automatically pops R4\u2013R11, then R0\u2013xPSR, restoring the new thread\u2019s context and resuming execution exactly where it left off.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:41:46.980854",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:42:00.681122",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:42:15.266096",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:42:32.597936",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:42:49.150209",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:43:04.144168",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:43:16.067565",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:43:29.571796",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:43:41.843249",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:43:55.480947",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 0,
+    "fail_count": 10
+  }
+}

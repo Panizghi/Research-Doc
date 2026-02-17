@@ -1,0 +1,600 @@
+{
+  "question_id": "L1Q5",
+  "response_id": "R11",
+  "response_text": "To allocate a number of new stacks for use in multiple threads, the starting memory address for each stack needs to be calculated. This will be based on the downward growing stack allocation method discussed in ",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T19:55:15.796113",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T19:55:26.673685",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-11T19:55:37.829209",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T19:55:47.032012",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T19:55:51.973585",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T19:55:58.511200",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T19:56:04.227607",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T19:56:10.585152",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T19:56:19.017437",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T19:56:24.010275",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T19:56:30.586665",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T19:56:36.545344",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T19:56:43.087711",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T19:56:51.352521",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T19:56:57.277430",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T19:57:03.073529",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T19:57:10.690186",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T19:57:15.928199",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T19:57:24.904049",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-11T19:57:31.422951",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "quality_dimensions": [
+        "**Recognition of offsetbased allocation** - The response explicitly states that multiple stacks must be obtained by offsetting from a known, valid stack base address (e.g., \"use the same offsetting method as before\").",
+        "**Correct offset formula** - The response provides a concrete formula or description showing that each new stack address is calculated as `base_address + N * stack_size` (or equivalent), where `N` is the thread index.",
+        "**Validity of the resulting addresses** - The response asserts that the computed addresses remain within the allowable stack region (e.g., stay inside RAM, respect required alignment, and do not overlap).",
+        "**Compiletime determination** - The response notes that because the number of stacks is known at compile time, the offsets (and any related constants) can be defined as compiletime constants (e.g., `#define NUM_STACKS 4`).",
+        "**Absence of contradictory or erroneous statements** - The response contains no statements that contradict the offset method or introduce invalid assumptions (e.g., claiming dynamic allocation or unrelated mechanisms)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T19:57:44.223803",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "quality_dimensions": [
+        "**Recognition of offsetbased allocation** - The response explicitly states that multiple stacks must be obtained by offsetting from a known, valid stack base address (e.g., \"use the same offsetting method as before\").",
+        "**Correct offset formula** - The response provides a concrete formula or description showing that each new stack address is calculated as `base_address + N * stack_size` (or equivalent), where `N` is the thread index.",
+        "**Validity of the resulting addresses** - The response asserts that the computed addresses remain within the allowable stack region (e.g., stay inside RAM, respect required alignment, and do not overlap).",
+        "**Compiletime determination** - The response notes that because the number of stacks is known at compile time, the offsets (and any related constants) can be defined as compiletime constants (e.g., `#define NUM_STACKS 4`).",
+        "**Absence of contradictory or erroneous statements** - The response contains no statements that contradict the offset method or introduce invalid assumptions (e.g., claiming dynamic allocation or unrelated mechanisms)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T19:57:56.187812",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "quality_dimensions": [
+        "**Recognition of offsetbased allocation** - The response explicitly states that multiple stacks must be obtained by offsetting from a known, valid stack base address (e.g., \"use the same offsetting method as before\").",
+        "**Correct offset formula** - The response provides a concrete formula or description showing that each new stack address is calculated as `base_address + N * stack_size` (or equivalent), where `N` is the thread index.",
+        "**Validity of the resulting addresses** - The response asserts that the computed addresses remain within the allowable stack region (e.g., stay inside RAM, respect required alignment, and do not overlap).",
+        "**Compiletime determination** - The response notes that because the number of stacks is known at compile time, the offsets (and any related constants) can be defined as compiletime constants (e.g., `#define NUM_STACKS 4`).",
+        "**Absence of contradictory or erroneous statements** - The response contains no statements that contradict the offset method or introduce invalid assumptions (e.g., claiming dynamic allocation or unrelated mechanisms)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T19:58:09.871680",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "quality_dimensions": [
+        "**Recognition of offsetbased allocation** - The response explicitly states that multiple stacks must be obtained by offsetting from a known, valid stack base address (e.g., \"use the same offsetting method as before\").",
+        "**Correct offset formula** - The response provides a concrete formula or description showing that each new stack address is calculated as `base_address + N * stack_size` (or equivalent), where `N` is the thread index.",
+        "**Validity of the resulting addresses** - The response asserts that the computed addresses remain within the allowable stack region (e.g., stay inside RAM, respect required alignment, and do not overlap).",
+        "**Compiletime determination** - The response notes that because the number of stacks is known at compile time, the offsets (and any related constants) can be defined as compiletime constants (e.g., `#define NUM_STACKS 4`).",
+        "**Absence of contradictory or erroneous statements** - The response contains no statements that contradict the offset method or introduce invalid assumptions (e.g., claiming dynamic allocation or unrelated mechanisms)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T19:58:19.963844",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**Recognition of offsetbased allocation** - The response explicitly states that multiple stacks must be obtained by offsetting from a known, valid stack base address (e.g., \"use the same offsetting method as before\").",
+        "**Correct offset formula** - The response provides a concrete formula or description showing that each new stack address is calculated as `base_address + N * stack_size` (or equivalent), where `N` is the thread index.",
+        "**Validity of the resulting addresses** - The response asserts that the computed addresses remain within the allowable stack region (e.g., stay inside RAM, respect required alignment, and do not overlap).",
+        "**Compiletime determination** - The response notes that because the number of stacks is known at compile time, the offsets (and any related constants) can be defined as compiletime constants (e.g., `#define NUM_STACKS 4`).",
+        "**Absence of contradictory or erroneous statements** - The response contains no statements that contradict the offset method or introduce invalid assumptions (e.g., claiming dynamic allocation or unrelated mechanisms)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T19:58:25.677580",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "quality_dimensions": [
+        "**Recognition of offsetbased allocation** - The response explicitly states that multiple stacks must be obtained by offsetting from a known, valid stack base address (e.g., \"use the same offsetting method as before\").",
+        "**Correct offset formula** - The response provides a concrete formula or description showing that each new stack address is calculated as `base_address + N * stack_size` (or equivalent), where `N` is the thread index.",
+        "**Validity of the resulting addresses** - The response asserts that the computed addresses remain within the allowable stack region (e.g., stay inside RAM, respect required alignment, and do not overlap).",
+        "**Compiletime determination** - The response notes that because the number of stacks is known at compile time, the offsets (and any related constants) can be defined as compiletime constants (e.g., `#define NUM_STACKS 4`).",
+        "**Absence of contradictory or erroneous statements** - The response contains no statements that contradict the offset method or introduce invalid assumptions (e.g., claiming dynamic allocation or unrelated mechanisms)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T19:58:38.229465",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "quality_dimensions": [
+        "**Recognition of offsetbased allocation** - The response explicitly states that multiple stacks must be obtained by offsetting from a known, valid stack base address (e.g., \"use the same offsetting method as before\").",
+        "**Correct offset formula** - The response provides a concrete formula or description showing that each new stack address is calculated as `base_address + N * stack_size` (or equivalent), where `N` is the thread index.",
+        "**Validity of the resulting addresses** - The response asserts that the computed addresses remain within the allowable stack region (e.g., stay inside RAM, respect required alignment, and do not overlap).",
+        "**Compiletime determination** - The response notes that because the number of stacks is known at compile time, the offsets (and any related constants) can be defined as compiletime constants (e.g., `#define NUM_STACKS 4`).",
+        "**Absence of contradictory or erroneous statements** - The response contains no statements that contradict the offset method or introduce invalid assumptions (e.g., claiming dynamic allocation or unrelated mechanisms)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T19:58:49.735390",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "quality_dimensions": [
+        "**Recognition of offsetbased allocation** - The response explicitly states that multiple stacks must be obtained by offsetting from a known, valid stack base address (e.g., \"use the same offsetting method as before\").",
+        "**Correct offset formula** - The response provides a concrete formula or description showing that each new stack address is calculated as `base_address + N * stack_size` (or equivalent), where `N` is the thread index.",
+        "**Validity of the resulting addresses** - The response asserts that the computed addresses remain within the allowable stack region (e.g., stay inside RAM, respect required alignment, and do not overlap).",
+        "**Compiletime determination** - The response notes that because the number of stacks is known at compile time, the offsets (and any related constants) can be defined as compiletime constants (e.g., `#define NUM_STACKS 4`).",
+        "**Absence of contradictory or erroneous statements** - The response contains no statements that contradict the offset method or introduce invalid assumptions (e.g., claiming dynamic allocation or unrelated mechanisms)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T19:58:59.749465",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "quality_dimensions": [
+        "**Recognition of offsetbased allocation** - The response explicitly states that multiple stacks must be obtained by offsetting from a known, valid stack base address (e.g., \"use the same offsetting method as before\").",
+        "**Correct offset formula** - The response provides a concrete formula or description showing that each new stack address is calculated as `base_address + N * stack_size` (or equivalent), where `N` is the thread index.",
+        "**Validity of the resulting addresses** - The response asserts that the computed addresses remain within the allowable stack region (e.g., stay inside RAM, respect required alignment, and do not overlap).",
+        "**Compiletime determination** - The response notes that because the number of stacks is known at compile time, the offsets (and any related constants) can be defined as compiletime constants (e.g., `#define NUM_STACKS 4`).",
+        "**Absence of contradictory or erroneous statements** - The response contains no statements that contradict the offset method or introduce invalid assumptions (e.g., claiming dynamic allocation or unrelated mechanisms)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T19:59:11.045166",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "quality_dimensions": [
+        "**Recognition of offsetbased allocation** - The response explicitly states that multiple stacks must be obtained by offsetting from a known, valid stack base address (e.g., \"use the same offsetting method as before\").",
+        "**Correct offset formula** - The response provides a concrete formula or description showing that each new stack address is calculated as `base_address + N * stack_size` (or equivalent), where `N` is the thread index.",
+        "**Validity of the resulting addresses** - The response asserts that the computed addresses remain within the allowable stack region (e.g., stay inside RAM, respect required alignment, and do not overlap).",
+        "**Compiletime determination** - The response notes that because the number of stacks is known at compile time, the offsets (and any related constants) can be defined as compiletime constants (e.g., `#define NUM_STACKS 4`).",
+        "**Absence of contradictory or erroneous statements** - The response contains no statements that contradict the offset method or introduce invalid assumptions (e.g., claiming dynamic allocation or unrelated mechanisms)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T19:59:22.122257",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**Recognition of offsetbased allocation** - The response explicitly states that multiple stacks must be obtained by offsetting from a known, valid stack base address (e.g., \"use the same offsetting method as before\").",
+        "**Correct offset formula** - The response provides a concrete formula or description showing that each new stack address is calculated as `base_address + N * stack_size` (or equivalent), where `N` is the thread index.",
+        "**Validity of the resulting addresses** - The response asserts that the computed addresses remain within the allowable stack region (e.g., stay inside RAM, respect required alignment, and do not overlap).",
+        "**Compiletime determination** - The response notes that because the number of stacks is known at compile time, the offsets (and any related constants) can be defined as compiletime constants (e.g., `#define NUM_STACKS 4`).",
+        "**Absence of contradictory or erroneous statements** - The response contains no statements that contradict the offset method or introduce invalid assumptions (e.g., claiming dynamic allocation or unrelated mechanisms)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0\nDimension 2: 0\nDimension 3: 0\nDimension 4: 0\nDimension 5: 0\nOverall: 0",
+      "timestamp": "2025-11-11T19:59:28.389625",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**Recognition of offsetbased allocation** - The response explicitly states that multiple stacks must be obtained by offsetting from a known, valid stack base address (e.g., \"use the same offsetting method as before\").",
+        "**Correct offset formula** - The response provides a concrete formula or description showing that each new stack address is calculated as `base_address + N * stack_size` (or equivalent), where `N` is the thread index.",
+        "**Validity of the resulting addresses** - The response asserts that the computed addresses remain within the allowable stack region (e.g., stay inside RAM, respect required alignment, and do not overlap).",
+        "**Compiletime determination** - The response notes that because the number of stacks is known at compile time, the offsets (and any related constants) can be defined as compiletime constants (e.g., `#define NUM_STACKS 4`).",
+        "**Absence of contradictory or erroneous statements** - The response contains no statements that contradict the offset method or introduce invalid assumptions (e.g., claiming dynamic allocation or unrelated mechanisms)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T19:59:34.202931",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "quality_dimensions": [
+        "**Recognition of offsetbased allocation** - The response explicitly states that multiple stacks must be obtained by offsetting from a known, valid stack base address (e.g., \"use the same offsetting method as before\").",
+        "**Correct offset formula** - The response provides a concrete formula or description showing that each new stack address is calculated as `base_address + N * stack_size` (or equivalent), where `N` is the thread index.",
+        "**Validity of the resulting addresses** - The response asserts that the computed addresses remain within the allowable stack region (e.g., stay inside RAM, respect required alignment, and do not overlap).",
+        "**Compiletime determination** - The response notes that because the number of stacks is known at compile time, the offsets (and any related constants) can be defined as compiletime constants (e.g., `#define NUM_STACKS 4`).",
+        "**Absence of contradictory or erroneous statements** - The response contains no statements that contradict the offset method or introduce invalid assumptions (e.g., claiming dynamic allocation or unrelated mechanisms)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T19:59:45.249931",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**Recognition of offsetbased allocation** - The response explicitly states that multiple stacks must be obtained by offsetting from a known, valid stack base address (e.g., \"use the same offsetting method as before\").",
+        "**Correct offset formula** - The response provides a concrete formula or description showing that each new stack address is calculated as `base_address + N * stack_size` (or equivalent), where `N` is the thread index.",
+        "**Validity of the resulting addresses** - The response asserts that the computed addresses remain within the allowable stack region (e.g., stay inside RAM, respect required alignment, and do not overlap).",
+        "**Compiletime determination** - The response notes that because the number of stacks is known at compile time, the offsets (and any related constants) can be defined as compiletime constants (e.g., `#define NUM_STACKS 4`).",
+        "**Absence of contradictory or erroneous statements** - The response contains no statements that contradict the offset method or introduce invalid assumptions (e.g., claiming dynamic allocation or unrelated mechanisms)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T19:59:50.238998",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "quality_dimensions": [
+        "**Recognition of offsetbased allocation** - The response explicitly states that multiple stacks must be obtained by offsetting from a known, valid stack base address (e.g., \"use the same offsetting method as before\").",
+        "**Correct offset formula** - The response provides a concrete formula or description showing that each new stack address is calculated as `base_address + N * stack_size` (or equivalent), where `N` is the thread index.",
+        "**Validity of the resulting addresses** - The response asserts that the computed addresses remain within the allowable stack region (e.g., stay inside RAM, respect required alignment, and do not overlap).",
+        "**Compiletime determination** - The response notes that because the number of stacks is known at compile time, the offsets (and any related constants) can be defined as compiletime constants (e.g., `#define NUM_STACKS 4`).",
+        "**Absence of contradictory or erroneous statements** - The response contains no statements that contradict the offset method or introduce invalid assumptions (e.g., claiming dynamic allocation or unrelated mechanisms)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T20:00:00.071085",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "quality_dimensions": [
+        "**Recognition of offsetbased allocation** - The response explicitly states that multiple stacks must be obtained by offsetting from a known, valid stack base address (e.g., \"use the same offsetting method as before\").",
+        "**Correct offset formula** - The response provides a concrete formula or description showing that each new stack address is calculated as `base_address + N * stack_size` (or equivalent), where `N` is the thread index.",
+        "**Validity of the resulting addresses** - The response asserts that the computed addresses remain within the allowable stack region (e.g., stay inside RAM, respect required alignment, and do not overlap).",
+        "**Compiletime determination** - The response notes that because the number of stacks is known at compile time, the offsets (and any related constants) can be defined as compiletime constants (e.g., `#define NUM_STACKS 4`).",
+        "**Absence of contradictory or erroneous statements** - The response contains no statements that contradict the offset method or introduce invalid assumptions (e.g., claiming dynamic allocation or unrelated mechanisms)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T20:00:10.809943",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "quality_dimensions": [
+        "**Recognition of offsetbased allocation** - The response explicitly states that multiple stacks must be obtained by offsetting from a known, valid stack base address (e.g., \"use the same offsetting method as before\").",
+        "**Correct offset formula** - The response provides a concrete formula or description showing that each new stack address is calculated as `base_address + N * stack_size` (or equivalent), where `N` is the thread index.",
+        "**Validity of the resulting addresses** - The response asserts that the computed addresses remain within the allowable stack region (e.g., stay inside RAM, respect required alignment, and do not overlap).",
+        "**Compiletime determination** - The response notes that because the number of stacks is known at compile time, the offsets (and any related constants) can be defined as compiletime constants (e.g., `#define NUM_STACKS 4`).",
+        "**Absence of contradictory or erroneous statements** - The response contains no statements that contradict the offset method or introduce invalid assumptions (e.g., claiming dynamic allocation or unrelated mechanisms)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 1  \nOverall: 0",
+      "timestamp": "2025-11-11T20:00:20.637260",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**Recognition of offsetbased allocation** - The response explicitly states that multiple stacks must be obtained by offsetting from a known, valid stack base address (e.g., \"use the same offsetting method as before\").",
+        "**Correct offset formula** - The response provides a concrete formula or description showing that each new stack address is calculated as `base_address + N * stack_size` (or equivalent), where `N` is the thread index.",
+        "**Validity of the resulting addresses** - The response asserts that the computed addresses remain within the allowable stack region (e.g., stay inside RAM, respect required alignment, and do not overlap).",
+        "**Compiletime determination** - The response notes that because the number of stacks is known at compile time, the offsets (and any related constants) can be defined as compiletime constants (e.g., `#define NUM_STACKS 4`).",
+        "**Absence of contradictory or erroneous statements** - The response contains no statements that contradict the offset method or introduce invalid assumptions (e.g., claiming dynamic allocation or unrelated mechanisms)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T20:00:25.719027",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**Recognition of offsetbased allocation** - The response explicitly states that multiple stacks must be obtained by offsetting from a known, valid stack base address (e.g., \"use the same offsetting method as before\").",
+        "**Correct offset formula** - The response provides a concrete formula or description showing that each new stack address is calculated as `base_address + N * stack_size` (or equivalent), where `N` is the thread index.",
+        "**Validity of the resulting addresses** - The response asserts that the computed addresses remain within the allowable stack region (e.g., stay inside RAM, respect required alignment, and do not overlap).",
+        "**Compiletime determination** - The response notes that because the number of stacks is known at compile time, the offsets (and any related constants) can be defined as compiletime constants (e.g., `#define NUM_STACKS 4`).",
+        "**Absence of contradictory or erroneous statements** - The response contains no statements that contradict the offset method or introduce invalid assumptions (e.g., claiming dynamic allocation or unrelated mechanisms)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T20:00:31.872749",
+      "method": "qd"
+    },
+    {
+      "grade": 0,
+      "dimension_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quality_dimensions": [
+        "**Recognition of offsetbased allocation** - The response explicitly states that multiple stacks must be obtained by offsetting from a known, valid stack base address (e.g., \"use the same offsetting method as before\").",
+        "**Correct offset formula** - The response provides a concrete formula or description showing that each new stack address is calculated as `base_address + N * stack_size` (or equivalent), where `N` is the thread index.",
+        "**Validity of the resulting addresses** - The response asserts that the computed addresses remain within the allowable stack region (e.g., stay inside RAM, respect required alignment, and do not overlap).",
+        "**Compiletime determination** - The response notes that because the number of stacks is known at compile time, the offsets (and any related constants) can be defined as compiletime constants (e.g., `#define NUM_STACKS 4`).",
+        "**Absence of contradictory or erroneous statements** - The response contains no statements that contradict the offset method or introduce invalid assumptions (e.g., claiming dynamic allocation or unrelated mechanisms)."
+      ],
+      "qd_version": "v1",
+      "raw_response": "Dimension 1: 0  \nDimension 2: 0  \nDimension 3: 0  \nDimension 4: 0  \nDimension 5: 0  \nOverall: 0",
+      "timestamp": "2025-11-11T20:00:36.709169",
+      "method": "qd"
+    }
+  ],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 90.0,
+    "flip_rate": 10.0,
+    "majority": 0,
+    "sample_size": 20,
+    "pass_count": 2,
+    "fail_count": 18
+  },
+  "version_progression": [
+    {
+      "version": "baseline",
+      "version_label": "Baseline (Rubric)",
+      "metrics": {
+        "consensus": 90.0,
+        "flip_rate": 10.0,
+        "majority": 0,
+        "sample_size": 20,
+        "pass_count": 2,
+        "fail_count": 18
+      },
+      "flip_rate_change_vs_baseline": 0.0,
+      "timestamp": "2025-11-11T19:57:31.425705"
+    },
+    {
+      "version": "v1",
+      "version_label": "QD v1 (Initial)",
+      "metrics": {
+        "consensus": 100.0,
+        "flip_rate": 0.0,
+        "majority": 0,
+        "sample_size": 20,
+        "pass_count": 0,
+        "fail_count": 20
+      },
+      "flip_rate_change_vs_baseline": 10.0,
+      "timestamp": "2025-11-11T20:00:36.712314"
+    }
+  ],
+  "qd_initial_version": "v1",
+  "qd_version_selected": "v1",
+  "qd_initial_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 0,
+    "sample_size": 20,
+    "pass_count": 0,
+    "fail_count": 20
+  },
+  "qd_result": "improved_or_maintained",
+  "flip_rate_change_vs_baseline": 10.0
+}

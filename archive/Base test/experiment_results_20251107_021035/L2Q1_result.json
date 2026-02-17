@@ -1,0 +1,3692 @@
+{
+  "lab": 2,
+  "question": 1,
+  "baseline_flip_rate": 10.0,
+  "qd_flip_rate": 10.0,
+  "improvement": 0.0,
+  "num_answers": 20,
+  "operations": [
+    {
+      "iteration": 1,
+      "input_qds": [
+        {
+          "name": "pc_as_function_call",
+          "definition": "The answer explicitly states that loading the program counter (PC) with a function pointer is equivalent to calling that function."
+        },
+        {
+          "name": "immediate_execution_after_pc_load",
+          "definition": "The answer explains that once the PC is loaded with an instruction address, execution begins at that address immediately."
+        },
+        {
+          "name": "pc_holds_instruction_address",
+          "definition": "The answer mentions that the PC contains the address of the next instruction to be executed."
+        },
+        {
+          "name": "pc_change_triggers_control_flow",
+          "definition": "The answer describes the cause\u2011effect relationship that changing the PC causes a jump in control flow to the new address."
+        }
+      ],
+      "sample_answers": [
+        "When we changed the PC register to hold the function pointer to our print continuously function, we are telling the CortexM4 to execute the instructions at our function\u2019s address immediately. This differs from a normal function call because it does not jump back to the line right after the function call.\\n",
+        "When we changed the program counter register to hold the function pointer to the print continuously function, it is changing where the next instruction the CPU executes is located. In this case, it was the print continuously function. This is analogous to a function call as a normal function call is almost identical to just changing PC to contain the function pointer.\\n",
+        "When the PC was changed to hold the function pointer to the print continuously function, this told the CPU that the next instruction to run would be the first instruction of the print continuously function, and to proceed from there. This is similar to what happens when a function is called the normal way, but without the initialization of stack variables.\\n",
+        "When I changed the PC to hold the function pointer to my print continuously function, the processor directly jumped to that function\u2019s address. This is because of the assembly, which takes an argument, stores it in r0, and moves it to the PC register. This then causes the immediate execution of the print_continuously function, outputting messages in the Cortex-M4. By doing this, we have bypassed many steps just by manipulating the PC.\\n",
+        "The PC has the instruction that the computer will need to execute. The CPU goes to the PC address, if the PC contains an address for a function then it goes to that address and executes the function, in this case constantly printed out Hello PC!. This is essentially calling a function in code but having the CPU execute it directly instead.\\n",
+        "The jumpAssembly function is responsible for moving the R0 value into the PC (program counter). When the print continuously function is used as a pointer to this move function, it moved the function\u2019s address from R0 to PC. This causes the CPU to \u201cmanually\u201d run the print continuously function since PC determines program run flow. This change outwardly worked the same as the normal function call before, however this time, it is a direct manipulation of the registers to trigger the function.\\n",
+        "When I changed the Program Counter to hold the address of print_continuously, it caused the CPU to jump to that function and start executing it. It\u2019s as if the function was already running, because we manually placed its address into the stack like it had been interrupted. Once the system call restored the context from the stack, the CPU resumed execution starting from that address so it began running the thread function we pointed to\\n",
+        "Looking at the output of our code, the code still outputs \u201cHello, PC!\u201d continuously, regardless of if the function was called in main or by manipulation of the PC register. However, these outcomes are vastly different when considered how the function was executed. The PC register is one that holds the address of the next instruction that needs to be executed, and so the print_continuously function wouldn\u2019t initially held inside the PC before runtime. Instead, the CPU would call the print_continuously function in the main program, pushing a return address into the stack before jumping (Setting the address into the PC). This provides a way for the program to return to the main program if print_continously function hypothetically had a way to finish its instruction. Conversely, using a no return function called jumpAssembly, taking the address of our print_continuously function (and consequently being stored into r0), and moving it from the r0 register to the PC register does not provide a way to go back to the main program because it wasn\u2019t manually coded in. This causes the program to permanently execute the print_continously function, without a way to go back to the main program.\\n",
+        "The data stored in the program counter (PC) determines the next instruction that the computer will execute. By assigning a function pointer to PC that points to the print continuously function (an infinite loop), the operating system (OS) immediately goes to the address of the pointer in the next step of the program and executes the function. This creates an environment in which the program runs indefinitely.\\n",
+        "When changing the PC to hold the function pointer, R0 moves into the PC. Register 0, R0, is the input argument of the function call. Once this occurs, the PC stores function location. Since the PC is the register that contains the location of the next program instruction, the next instruction becomes the print continuously function as it is in the R0 position This causes the function to be ran and produce the output of \u201cHello PC!\u201d in an infinite loop, as defined in the function.\\n",
+        "In the call to the assembly function, we input a pointer to our print continuously function. This is placed into R0, which is the typical register for function parameters. The assembly code then moves the function pointer from R0 to PC. PC is the program counter, and it holds the address of what will run next in the program. Since the print continuously function is placed in the PC, it will be run and \u201cHello World!\u201d is continuously printed.\\n",
+        "In this lab, we implemented the jump assembly function to move the memory address of the print continuously function from the R0 register to the program counter (PC) register. Once this switch is made, the CPU will move to the memory address defined in the PC register, which in this case if the print continuously function, and begin execution.\\n",
+        "Changing the program counter as was done in the lab essentially tells the OS directly where it will be reading instructions. As a result, the PC jumps directly to where the machine code for the print_continuously function in memory.\\nThis leads to the print_continously function being immediately executed without the , since the PC registers dictates what instruction in the code the CPU is executing.\\nThink of it like reaching a superscript footnote when reading a book. Even though there are words after the footnote marker, many readers will instead jump to the text of the footnote immediately.\\n",
+        "When I changed PC to hold the pointer to print_continuously, the CPU began executing this function. It contains an infinite loop that prints \u201cHello, PC!\u201d repeatedly, so that is what was done.\\n",
+        "When PC held the print continuously function, the function still operated as expected without a direct call to the print continuously function. A function seeks to separate chunks of logic where a function call will execute logic or in some cases can output values. PC is set to hold the address of what was inside R0 to then executing the print continuously function provided without a return path available. This is beneficial for testing a certain amount of logic within a program promptly as the function is then run immediately from the PC register instead of calling the function directly. In comparison, a function call will take more time, but there is a return path. The \u201cMOV\u201d aspect changed the register of which the value is stored from R0 to PC through copying the data over. A call frame is not produced for the function and no additional memory is created, the PC just accesses the instructions already stored. Nevertheless, the concept of using PC to hold the function pointer is equivalent to a function call as they both seek to retrieve information from a function and execute the given logic. Thus, leading to the same output of the infinite loop from the print continuously function.\\n",
+        "After changing PC to hold the function pointer to the print continuously function, the output was actually the same as just calling the print continuously function directly. However, there\u2019s more to it than meets the surface. The function jumpAssembly takes the input argument of the address of the print continuously function. The jumpAssembly then takes this address, stores it in a local variable and then moves it into the PC, which then provides the continuous output. In retrospect to directly changing the instructions to hold the PC address, allows the processor to immediately carry out this instruction, instead of having waiting time in between to allow for the process of fetching the information, storing and moving. In this specific case, the time difference between both methods, are insignificant, but with larger codes/processors, the time difference may be a significant element to be considered.\\n",
+        "When I changed PC to hold the function point to my print continuously function, I was providing an input. From what we\u2019ve learned in class, this argument goes into R0. The assembly code then moved the value stored in R0 into PC. As soon as that happened, PC stored the location of this function and proceeded to output \"Hello PC!\" in an infinite loop as expected.\\n",
+        "The PC register is used by the processor to determine which instruction to run next. When the PC is changed to hold the function pointer, it stores the address of the print continuously function. Consequently, the processor assumes that the next instruction to run is at the address of the print function and executes it, resulting in \u201cHello, PC!\u201d being printed continuously.\\n",
+        "When I set the program counter register to point to the print continuously function, the CPU began executing the function like it was the next instruction. PC determines what code is going to be executed, and changing the code execution location to our thread function made the processor jump into that code first. This allowed our thread to begin running from the start of the print continuously function.\\n",
+        "When I changed the program counter to hold the function pointer to print_continously, I passed the address of Print_continously into R0. The jump assembly function directly moves the value in r0 into the pc register. Since pc determines what instruction to execute next, the CPU immediately started executing the instructions at the address print continuously. As a result, the program began running print continuously which is an infinite loop.\\n"
+      ],
+      "qd_results_before_refinement": {
+        "0": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "1": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "2": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "3": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "4": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 2,
+            "count_1": 8,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.8
+          }
+        },
+        "5": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 1,
+            "count_1": 9,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.9
+          }
+        },
+        "6": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "7": {
+          "grades": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 9,
+            "count_1": 1,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 0.9
+          }
+        },
+        "8": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "9": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "10": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "11": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "12": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 2,
+            "count_1": 8,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.8
+          }
+        },
+        "13": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "14": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "15": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "16": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "17": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "18": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "19": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        }
+      },
+      "comparison_baseline": "original baseline",
+      "comparison_results": {
+        "0": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "1": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "2": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "3": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "4": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "5": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "6": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "7": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "8": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "9": {
+          "grades": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ],
+          "stats": {
+            "count_0": 4,
+            "count_1": 6,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.6
+          }
+        },
+        "10": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "11": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "12": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "13": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "14": {
+          "grades": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "stats": {
+            "count_0": 7,
+            "count_1": 3,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 0.7
+          }
+        },
+        "15": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "16": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "17": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "18": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "19": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        }
+      },
+      "operations": [
+        {
+          "qd_name": "pc_load_equivalent_to_call",
+          "operator": "KEEP",
+          "from_qd": "pc_as_function_call",
+          "explanation": "Clarifies that the equivalence must be explicitly expressed, removing ambiguity that caused some graders to miss the criterion in answers like Example\u202f1 and Example\u202f4."
+        },
+        {
+          "qd_name": "pc_load_immediate_execution",
+          "operator": "KEEP",
+          "from_qd": "immediate_execution_after_pc_load",
+          "explanation": "Specifies the required wording about \u201cimmediate\u201d execution, preventing inconsistent grading where the idea was implied but not directly stated."
+        },
+        {
+          "qd_name": "pc_holds_target_address",
+          "operator": "ADD",
+          "from_qd": "new",
+          "explanation": "Captures a missing but essential detail that differentiates partial answers; it supports consistent grading for responses that correctly identify the PC\u2019s role but omit the explicit equivalence or immediacy statements."
+        }
+      ],
+      "output_qds": [
+        {
+          "name": "pc_load_equivalent_to_call",
+          "definition": "The response explicitly states that loading the program counter with a function\u2019s address causes the same effect as invoking that function (e.g., it \u201cacts like\u201d or \u201cis equivalent to\u201d a function call)."
+        },
+        {
+          "name": "pc_load_immediate_execution",
+          "definition": "The response explicitly says that once the PC is loaded with an address, the CPU begins executing instructions at that address immediately, without any additional operation."
+        },
+        {
+          "name": "pc_holds_target_address",
+          "definition": "The response mentions that the program counter contains the address of the next instruction or function to be executed."
+        }
+      ]
+    }
+  ],
+  "final_qds": [
+    {
+      "name": "pc_as_function_call",
+      "definition": "The answer explicitly states that loading the program counter (PC) with a function pointer is equivalent to calling that function."
+    },
+    {
+      "name": "immediate_execution_after_pc_load",
+      "definition": "The answer explains that once the PC is loaded with an instruction address, execution begins at that address immediately."
+    },
+    {
+      "name": "pc_holds_instruction_address",
+      "definition": "The answer mentions that the PC contains the address of the next instruction to be executed."
+    },
+    {
+      "name": "pc_change_triggers_control_flow",
+      "definition": "The answer describes the cause\u2011effect relationship that changing the PC causes a jump in control flow to the new address."
+    }
+  ],
+  "iteration_qds": [
+    {
+      "iteration": 0,
+      "qds": [
+        {
+          "name": "pc_as_function_call",
+          "definition": "The answer explicitly states that loading the program counter (PC) with a function pointer is equivalent to calling that function."
+        },
+        {
+          "name": "immediate_execution_after_pc_load",
+          "definition": "The answer explains that once the PC is loaded with an instruction address, execution begins at that address immediately."
+        },
+        {
+          "name": "pc_holds_instruction_address",
+          "definition": "The answer mentions that the PC contains the address of the next instruction to be executed."
+        },
+        {
+          "name": "pc_change_triggers_control_flow",
+          "definition": "The answer describes the cause\u2011effect relationship that changing the PC causes a jump in control flow to the new address."
+        }
+      ],
+      "flip_rate": 20.0,
+      "majority_violations": 2,
+      "is_best": true,
+      "sample_answers": [
+        "When we changed the PC register to hold the function pointer to our print continuously function, we are telling the CortexM4 to execute the instructions at our function\u2019s address immediately. This differs from a normal function call because it does not jump back to the line right after the function call.\\n",
+        "When we changed the program counter register to hold the function pointer to the print continuously function, it is changing where the next instruction the CPU executes is located. In this case, it was the print continuously function. This is analogous to a function call as a normal function call is almost identical to just changing PC to contain the function pointer.\\n",
+        "When the PC was changed to hold the function pointer to the print continuously function, this told the CPU that the next instruction to run would be the first instruction of the print continuously function, and to proceed from there. This is similar to what happens when a function is called the normal way, but without the initialization of stack variables.\\n",
+        "When I changed the PC to hold the function pointer to my print continuously function, the processor directly jumped to that function\u2019s address. This is because of the assembly, which takes an argument, stores it in r0, and moves it to the PC register. This then causes the immediate execution of the print_continuously function, outputting messages in the Cortex-M4. By doing this, we have bypassed many steps just by manipulating the PC.\\n",
+        "The PC has the instruction that the computer will need to execute. The CPU goes to the PC address, if the PC contains an address for a function then it goes to that address and executes the function, in this case constantly printed out Hello PC!. This is essentially calling a function in code but having the CPU execute it directly instead.\\n",
+        "The jumpAssembly function is responsible for moving the R0 value into the PC (program counter). When the print continuously function is used as a pointer to this move function, it moved the function\u2019s address from R0 to PC. This causes the CPU to \u201cmanually\u201d run the print continuously function since PC determines program run flow. This change outwardly worked the same as the normal function call before, however this time, it is a direct manipulation of the registers to trigger the function.\\n",
+        "When I changed the Program Counter to hold the address of print_continuously, it caused the CPU to jump to that function and start executing it. It\u2019s as if the function was already running, because we manually placed its address into the stack like it had been interrupted. Once the system call restored the context from the stack, the CPU resumed execution starting from that address so it began running the thread function we pointed to\\n",
+        "Looking at the output of our code, the code still outputs \u201cHello, PC!\u201d continuously, regardless of if the function was called in main or by manipulation of the PC register. However, these outcomes are vastly different when considered how the function was executed. The PC register is one that holds the address of the next instruction that needs to be executed, and so the print_continuously function wouldn\u2019t initially held inside the PC before runtime. Instead, the CPU would call the print_continuously function in the main program, pushing a return address into the stack before jumping (Setting the address into the PC). This provides a way for the program to return to the main program if print_continously function hypothetically had a way to finish its instruction. Conversely, using a no return function called jumpAssembly, taking the address of our print_continuously function (and consequently being stored into r0), and moving it from the r0 register to the PC register does not provide a way to go back to the main program because it wasn\u2019t manually coded in. This causes the program to permanently execute the print_continously function, without a way to go back to the main program.\\n",
+        "The data stored in the program counter (PC) determines the next instruction that the computer will execute. By assigning a function pointer to PC that points to the print continuously function (an infinite loop), the operating system (OS) immediately goes to the address of the pointer in the next step of the program and executes the function. This creates an environment in which the program runs indefinitely.\\n",
+        "When changing the PC to hold the function pointer, R0 moves into the PC. Register 0, R0, is the input argument of the function call. Once this occurs, the PC stores function location. Since the PC is the register that contains the location of the next program instruction, the next instruction becomes the print continuously function as it is in the R0 position This causes the function to be ran and produce the output of \u201cHello PC!\u201d in an infinite loop, as defined in the function.\\n",
+        "In the call to the assembly function, we input a pointer to our print continuously function. This is placed into R0, which is the typical register for function parameters. The assembly code then moves the function pointer from R0 to PC. PC is the program counter, and it holds the address of what will run next in the program. Since the print continuously function is placed in the PC, it will be run and \u201cHello World!\u201d is continuously printed.\\n",
+        "In this lab, we implemented the jump assembly function to move the memory address of the print continuously function from the R0 register to the program counter (PC) register. Once this switch is made, the CPU will move to the memory address defined in the PC register, which in this case if the print continuously function, and begin execution.\\n",
+        "Changing the program counter as was done in the lab essentially tells the OS directly where it will be reading instructions. As a result, the PC jumps directly to where the machine code for the print_continuously function in memory.\\nThis leads to the print_continously function being immediately executed without the , since the PC registers dictates what instruction in the code the CPU is executing.\\nThink of it like reaching a superscript footnote when reading a book. Even though there are words after the footnote marker, many readers will instead jump to the text of the footnote immediately.\\n",
+        "When I changed PC to hold the pointer to print_continuously, the CPU began executing this function. It contains an infinite loop that prints \u201cHello, PC!\u201d repeatedly, so that is what was done.\\n",
+        "When PC held the print continuously function, the function still operated as expected without a direct call to the print continuously function. A function seeks to separate chunks of logic where a function call will execute logic or in some cases can output values. PC is set to hold the address of what was inside R0 to then executing the print continuously function provided without a return path available. This is beneficial for testing a certain amount of logic within a program promptly as the function is then run immediately from the PC register instead of calling the function directly. In comparison, a function call will take more time, but there is a return path. The \u201cMOV\u201d aspect changed the register of which the value is stored from R0 to PC through copying the data over. A call frame is not produced for the function and no additional memory is created, the PC just accesses the instructions already stored. Nevertheless, the concept of using PC to hold the function pointer is equivalent to a function call as they both seek to retrieve information from a function and execute the given logic. Thus, leading to the same output of the infinite loop from the print continuously function.\\n",
+        "After changing PC to hold the function pointer to the print continuously function, the output was actually the same as just calling the print continuously function directly. However, there\u2019s more to it than meets the surface. The function jumpAssembly takes the input argument of the address of the print continuously function. The jumpAssembly then takes this address, stores it in a local variable and then moves it into the PC, which then provides the continuous output. In retrospect to directly changing the instructions to hold the PC address, allows the processor to immediately carry out this instruction, instead of having waiting time in between to allow for the process of fetching the information, storing and moving. In this specific case, the time difference between both methods, are insignificant, but with larger codes/processors, the time difference may be a significant element to be considered.\\n",
+        "When I changed PC to hold the function point to my print continuously function, I was providing an input. From what we\u2019ve learned in class, this argument goes into R0. The assembly code then moved the value stored in R0 into PC. As soon as that happened, PC stored the location of this function and proceeded to output \"Hello PC!\" in an infinite loop as expected.\\n",
+        "The PC register is used by the processor to determine which instruction to run next. When the PC is changed to hold the function pointer, it stores the address of the print continuously function. Consequently, the processor assumes that the next instruction to run is at the address of the print function and executes it, resulting in \u201cHello, PC!\u201d being printed continuously.\\n",
+        "When I set the program counter register to point to the print continuously function, the CPU began executing the function like it was the next instruction. PC determines what code is going to be executed, and changing the code execution location to our thread function made the processor jump into that code first. This allowed our thread to begin running from the start of the print continuously function.\\n",
+        "When I changed the program counter to hold the function pointer to print_continously, I passed the address of Print_continously into R0. The jump assembly function directly moves the value in r0 into the pc register. Since pc determines what instruction to execute next, the CPU immediately started executing the instructions at the address print continuously. As a result, the program began running print continuously which is an infinite loop.\\n"
+      ],
+      "qd_results": {
+        "0": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "1": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "2": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "3": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "4": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 2,
+            "count_1": 8,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.8
+          }
+        },
+        "5": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 1,
+            "count_1": 9,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.9
+          }
+        },
+        "6": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "7": {
+          "grades": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 9,
+            "count_1": 1,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 0.9
+          }
+        },
+        "8": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "9": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "10": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "11": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "12": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 2,
+            "count_1": 8,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.8
+          }
+        },
+        "13": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "14": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "15": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "16": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "17": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "18": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "19": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        }
+      },
+      "comparison_baseline": "original baseline",
+      "comparison_results": {
+        "0": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "1": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "2": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "3": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "4": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "5": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "6": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "7": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "8": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "9": {
+          "grades": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ],
+          "stats": {
+            "count_0": 4,
+            "count_1": 6,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.6
+          }
+        },
+        "10": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "11": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "12": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "13": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "14": {
+          "grades": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "stats": {
+            "count_0": 7,
+            "count_1": 3,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 0.7
+          }
+        },
+        "15": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "16": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "17": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "18": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "19": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        }
+      }
+    },
+    {
+      "iteration": 1,
+      "qds": [
+        {
+          "name": "pc_load_equivalent_to_call",
+          "definition": "The response explicitly states that loading the program counter with a function\u2019s address causes the same effect as invoking that function (e.g., it \u201cacts like\u201d or \u201cis equivalent to\u201d a function call)."
+        },
+        {
+          "name": "pc_load_immediate_execution",
+          "definition": "The response explicitly says that once the PC is loaded with an address, the CPU begins executing instructions at that address immediately, without any additional operation."
+        },
+        {
+          "name": "pc_holds_target_address",
+          "definition": "The response mentions that the program counter contains the address of the next instruction or function to be executed."
+        }
+      ],
+      "flip_rate": 30.0,
+      "majority_violations": 3,
+      "is_best": false,
+      "sample_answers": [
+        "When we changed the PC register to hold the function pointer to our print continuously function, we are telling the CortexM4 to execute the instructions at our function\u2019s address immediately. This differs from a normal function call because it does not jump back to the line right after the function call.\\n",
+        "When we changed the program counter register to hold the function pointer to the print continuously function, it is changing where the next instruction the CPU executes is located. In this case, it was the print continuously function. This is analogous to a function call as a normal function call is almost identical to just changing PC to contain the function pointer.\\n",
+        "When the PC was changed to hold the function pointer to the print continuously function, this told the CPU that the next instruction to run would be the first instruction of the print continuously function, and to proceed from there. This is similar to what happens when a function is called the normal way, but without the initialization of stack variables.\\n",
+        "When I changed the PC to hold the function pointer to my print continuously function, the processor directly jumped to that function\u2019s address. This is because of the assembly, which takes an argument, stores it in r0, and moves it to the PC register. This then causes the immediate execution of the print_continuously function, outputting messages in the Cortex-M4. By doing this, we have bypassed many steps just by manipulating the PC.\\n",
+        "The PC has the instruction that the computer will need to execute. The CPU goes to the PC address, if the PC contains an address for a function then it goes to that address and executes the function, in this case constantly printed out Hello PC!. This is essentially calling a function in code but having the CPU execute it directly instead.\\n",
+        "The jumpAssembly function is responsible for moving the R0 value into the PC (program counter). When the print continuously function is used as a pointer to this move function, it moved the function\u2019s address from R0 to PC. This causes the CPU to \u201cmanually\u201d run the print continuously function since PC determines program run flow. This change outwardly worked the same as the normal function call before, however this time, it is a direct manipulation of the registers to trigger the function.\\n",
+        "When I changed the Program Counter to hold the address of print_continuously, it caused the CPU to jump to that function and start executing it. It\u2019s as if the function was already running, because we manually placed its address into the stack like it had been interrupted. Once the system call restored the context from the stack, the CPU resumed execution starting from that address so it began running the thread function we pointed to\\n",
+        "Looking at the output of our code, the code still outputs \u201cHello, PC!\u201d continuously, regardless of if the function was called in main or by manipulation of the PC register. However, these outcomes are vastly different when considered how the function was executed. The PC register is one that holds the address of the next instruction that needs to be executed, and so the print_continuously function wouldn\u2019t initially held inside the PC before runtime. Instead, the CPU would call the print_continuously function in the main program, pushing a return address into the stack before jumping (Setting the address into the PC). This provides a way for the program to return to the main program if print_continously function hypothetically had a way to finish its instruction. Conversely, using a no return function called jumpAssembly, taking the address of our print_continuously function (and consequently being stored into r0), and moving it from the r0 register to the PC register does not provide a way to go back to the main program because it wasn\u2019t manually coded in. This causes the program to permanently execute the print_continously function, without a way to go back to the main program.\\n",
+        "The data stored in the program counter (PC) determines the next instruction that the computer will execute. By assigning a function pointer to PC that points to the print continuously function (an infinite loop), the operating system (OS) immediately goes to the address of the pointer in the next step of the program and executes the function. This creates an environment in which the program runs indefinitely.\\n",
+        "When changing the PC to hold the function pointer, R0 moves into the PC. Register 0, R0, is the input argument of the function call. Once this occurs, the PC stores function location. Since the PC is the register that contains the location of the next program instruction, the next instruction becomes the print continuously function as it is in the R0 position This causes the function to be ran and produce the output of \u201cHello PC!\u201d in an infinite loop, as defined in the function.\\n",
+        "In the call to the assembly function, we input a pointer to our print continuously function. This is placed into R0, which is the typical register for function parameters. The assembly code then moves the function pointer from R0 to PC. PC is the program counter, and it holds the address of what will run next in the program. Since the print continuously function is placed in the PC, it will be run and \u201cHello World!\u201d is continuously printed.\\n",
+        "In this lab, we implemented the jump assembly function to move the memory address of the print continuously function from the R0 register to the program counter (PC) register. Once this switch is made, the CPU will move to the memory address defined in the PC register, which in this case if the print continuously function, and begin execution.\\n",
+        "Changing the program counter as was done in the lab essentially tells the OS directly where it will be reading instructions. As a result, the PC jumps directly to where the machine code for the print_continuously function in memory.\\nThis leads to the print_continously function being immediately executed without the , since the PC registers dictates what instruction in the code the CPU is executing.\\nThink of it like reaching a superscript footnote when reading a book. Even though there are words after the footnote marker, many readers will instead jump to the text of the footnote immediately.\\n",
+        "When I changed PC to hold the pointer to print_continuously, the CPU began executing this function. It contains an infinite loop that prints \u201cHello, PC!\u201d repeatedly, so that is what was done.\\n",
+        "When PC held the print continuously function, the function still operated as expected without a direct call to the print continuously function. A function seeks to separate chunks of logic where a function call will execute logic or in some cases can output values. PC is set to hold the address of what was inside R0 to then executing the print continuously function provided without a return path available. This is beneficial for testing a certain amount of logic within a program promptly as the function is then run immediately from the PC register instead of calling the function directly. In comparison, a function call will take more time, but there is a return path. The \u201cMOV\u201d aspect changed the register of which the value is stored from R0 to PC through copying the data over. A call frame is not produced for the function and no additional memory is created, the PC just accesses the instructions already stored. Nevertheless, the concept of using PC to hold the function pointer is equivalent to a function call as they both seek to retrieve information from a function and execute the given logic. Thus, leading to the same output of the infinite loop from the print continuously function.\\n",
+        "After changing PC to hold the function pointer to the print continuously function, the output was actually the same as just calling the print continuously function directly. However, there\u2019s more to it than meets the surface. The function jumpAssembly takes the input argument of the address of the print continuously function. The jumpAssembly then takes this address, stores it in a local variable and then moves it into the PC, which then provides the continuous output. In retrospect to directly changing the instructions to hold the PC address, allows the processor to immediately carry out this instruction, instead of having waiting time in between to allow for the process of fetching the information, storing and moving. In this specific case, the time difference between both methods, are insignificant, but with larger codes/processors, the time difference may be a significant element to be considered.\\n",
+        "When I changed PC to hold the function point to my print continuously function, I was providing an input. From what we\u2019ve learned in class, this argument goes into R0. The assembly code then moved the value stored in R0 into PC. As soon as that happened, PC stored the location of this function and proceeded to output \"Hello PC!\" in an infinite loop as expected.\\n",
+        "The PC register is used by the processor to determine which instruction to run next. When the PC is changed to hold the function pointer, it stores the address of the print continuously function. Consequently, the processor assumes that the next instruction to run is at the address of the print function and executes it, resulting in \u201cHello, PC!\u201d being printed continuously.\\n",
+        "When I set the program counter register to point to the print continuously function, the CPU began executing the function like it was the next instruction. PC determines what code is going to be executed, and changing the code execution location to our thread function made the processor jump into that code first. This allowed our thread to begin running from the start of the print continuously function.\\n",
+        "When I changed the program counter to hold the function pointer to print_continously, I passed the address of Print_continously into R0. The jump assembly function directly moves the value in r0 into the pc register. Since pc determines what instruction to execute next, the CPU immediately started executing the instructions at the address print continuously. As a result, the program began running print continuously which is an infinite loop.\\n"
+      ],
+      "qd_results": {
+        "0": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "1": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "2": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 2,
+            "count_1": 8,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.8
+          }
+        },
+        "3": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "4": {
+          "grades": [
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 1,
+            "count_1": 9,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.9
+          }
+        },
+        "5": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "6": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "7": {
+          "grades": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 10,
+            "count_1": 0,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 1.0
+          }
+        },
+        "8": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "9": {
+          "grades": [
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 3,
+            "count_1": 7,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.7
+          }
+        },
+        "10": {
+          "grades": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 9,
+            "count_1": 1,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 0.9
+          }
+        },
+        "11": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "12": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 1,
+            "count_1": 9,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.9
+          }
+        },
+        "13": {
+          "grades": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          "has_flip": true,
+          "stats": {
+            "count_0": 3,
+            "count_1": 7,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.7
+          }
+        },
+        "14": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "15": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "16": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "17": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "18": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "19": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "has_flip": false,
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        }
+      },
+      "comparison_baseline": "original baseline",
+      "comparison_results": {
+        "0": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "1": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "2": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "3": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "4": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "5": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "6": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "7": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "8": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "9": {
+          "grades": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ],
+          "stats": {
+            "count_0": 4,
+            "count_1": 6,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 0.6
+          }
+        },
+        "10": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "11": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "12": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "13": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "14": {
+          "grades": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "stats": {
+            "count_0": 7,
+            "count_1": 3,
+            "total": 10,
+            "majority": 0,
+            "majority_ratio": 0.7
+          }
+        },
+        "15": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "16": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "17": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "18": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        },
+        "19": {
+          "grades": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stats": {
+            "count_0": 0,
+            "count_1": 10,
+            "total": 10,
+            "majority": 1,
+            "majority_ratio": 1.0
+          }
+        }
+      }
+    }
+  ],
+  "per_answer_results": [
+    {
+      "answer_index": 0,
+      "question_text": "When we changed the PC register to hold the function pointer to our print continuously function, we are telling the CortexM4 to execute the instructions at our function\u2019s address immediately. This differs from a normal function call because it does not jump back to the line right after the function call.\\n",
+      "usernames": [
+        "a329liu"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 1,
+      "question_text": "When we changed the program counter register to hold the function pointer to the print continuously function, it is changing where the next instruction the CPU executes is located. In this case, it was the print continuously function. This is analogous to a function call as a normal function call is almost identical to just changing PC to contain the function pointer.\\n",
+      "usernames": [
+        "a329liu"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 2,
+      "question_text": "When the PC was changed to hold the function pointer to the print continuously function, this told the CPU that the next instruction to run would be the first instruction of the print continuously function, and to proceed from there. This is similar to what happens when a function is called the normal way, but without the initialization of stack variables.\\n",
+      "usernames": [
+        "a7lang"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 3,
+      "question_text": "When I changed the PC to hold the function pointer to my print continuously function, the processor directly jumped to that function\u2019s address. This is because of the assembly, which takes an argument, stores it in r0, and moves it to the PC register. This then causes the immediate execution of the print_continuously function, outputting messages in the Cortex-M4. By doing this, we have bypassed many steps just by manipulating the PC.\\n",
+      "usernames": [
+        "almedina"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 4,
+      "question_text": "The PC has the instruction that the computer will need to execute. The CPU goes to the PC address, if the PC contains an address for a function then it goes to that address and executes the function, in this case constantly printed out Hello PC!. This is essentially calling a function in code but having the CPU execute it directly instead.\\n",
+      "usernames": [
+        "b2lovegr"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "baseline_flip": false,
+      "qd_flip": true,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 5,
+      "question_text": "The jumpAssembly function is responsible for moving the R0 value into the PC (program counter). When the print continuously function is used as a pointer to this move function, it moved the function\u2019s address from R0 to PC. This causes the CPU to \u201cmanually\u201d run the print continuously function since PC determines program run flow. This change outwardly worked the same as the normal function call before, however this time, it is a direct manipulation of the registers to trigger the function.\\n",
+      "usernames": [
+        "ebougani"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": true,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 6,
+      "question_text": "When I changed the Program Counter to hold the address of print_continuously, it caused the CPU to jump to that function and start executing it. It\u2019s as if the function was already running, because we manually placed its address into the stack like it had been interrupted. Once the system call restored the context from the stack, the CPU resumed execution starting from that address so it began running the thread function we pointed to\\n",
+      "usernames": [
+        "i2kapur"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 7,
+      "question_text": "Looking at the output of our code, the code still outputs \u201cHello, PC!\u201d continuously, regardless of if the function was called in main or by manipulation of the PC register. However, these outcomes are vastly different when considered how the function was executed. The PC register is one that holds the address of the next instruction that needs to be executed, and so the print_continuously function wouldn\u2019t initially held inside the PC before runtime. Instead, the CPU would call the print_continuously function in the main program, pushing a return address into the stack before jumping (Setting the address into the PC). This provides a way for the program to return to the main program if print_continously function hypothetically had a way to finish its instruction. Conversely, using a no return function called jumpAssembly, taking the address of our print_continuously function (and consequently being stored into r0), and moving it from the r0 register to the PC register does not provide a way to go back to the main program because it wasn\u2019t manually coded in. This causes the program to permanently execute the print_continously function, without a way to go back to the main program.\\n",
+      "usernames": [
+        "j254kim"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "baseline_flip": false,
+      "qd_flip": true,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 8,
+      "question_text": "The data stored in the program counter (PC) determines the next instruction that the computer will execute. By assigning a function pointer to PC that points to the print continuously function (an infinite loop), the operating system (OS) immediately goes to the address of the pointer in the next step of the program and executes the function. This creates an environment in which the program runs indefinitely.\\n",
+      "usernames": [
+        "jdoehler"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 9,
+      "question_text": "When changing the PC to hold the function pointer, R0 moves into the PC. Register 0, R0, is the input argument of the function call. Once this occurs, the PC stores function location. Since the PC is the register that contains the location of the next program instruction, the next instruction becomes the print continuously function as it is in the R0 position This causes the function to be ran and produce the output of \u201cHello PC!\u201d in an infinite loop, as defined in the function.\\n",
+      "usernames": [
+        "kbsavla"
+      ],
+      "baseline_scores": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": true,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 10,
+      "question_text": "In the call to the assembly function, we input a pointer to our print continuously function. This is placed into R0, which is the typical register for function parameters. The assembly code then moves the function pointer from R0 to PC. PC is the program counter, and it holds the address of what will run next in the program. Since the print continuously function is placed in the PC, it will be run and \u201cHello World!\u201d is continuously printed.\\n",
+      "usernames": [
+        "kdqi"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 11,
+      "question_text": "In this lab, we implemented the jump assembly function to move the memory address of the print continuously function from the R0 register to the program counter (PC) register. Once this switch is made, the CPU will move to the memory address defined in the PC register, which in this case if the print continuously function, and begin execution.\\n",
+      "usernames": [
+        "m6riley"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 12,
+      "question_text": "Changing the program counter as was done in the lab essentially tells the OS directly where it will be reading instructions. As a result, the PC jumps directly to where the machine code for the print_continuously function in memory.\\nThis leads to the print_continously function being immediately executed without the , since the PC registers dictates what instruction in the code the CPU is executing.\\nThink of it like reaching a superscript footnote when reading a book. Even though there are words after the footnote marker, many readers will instead jump to the text of the footnote immediately.\\n",
+      "usernames": [
+        "memilne"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": true,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 13,
+      "question_text": "When I changed PC to hold the pointer to print_continuously, the CPU began executing this function. It contains an infinite loop that prints \u201cHello, PC!\u201d repeatedly, so that is what was done.\\n",
+      "usernames": [
+        "mvasudev"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 14,
+      "question_text": "When PC held the print continuously function, the function still operated as expected without a direct call to the print continuously function. A function seeks to separate chunks of logic where a function call will execute logic or in some cases can output values. PC is set to hold the address of what was inside R0 to then executing the print continuously function provided without a return path available. This is beneficial for testing a certain amount of logic within a program promptly as the function is then run immediately from the PC register instead of calling the function directly. In comparison, a function call will take more time, but there is a return path. The \u201cMOV\u201d aspect changed the register of which the value is stored from R0 to PC through copying the data over. A call frame is not produced for the function and no additional memory is created, the PC just accesses the instructions already stored. Nevertheless, the concept of using PC to hold the function pointer is equivalent to a function call as they both seek to retrieve information from a function and execute the given logic. Thus, leading to the same output of the infinite loop from the print continuously function.\\n",
+      "usernames": [
+        "p64jain"
+      ],
+      "baseline_scores": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": true,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 15,
+      "question_text": "After changing PC to hold the function pointer to the print continuously function, the output was actually the same as just calling the print continuously function directly. However, there\u2019s more to it than meets the surface. The function jumpAssembly takes the input argument of the address of the print continuously function. The jumpAssembly then takes this address, stores it in a local variable and then moves it into the PC, which then provides the continuous output. In retrospect to directly changing the instructions to hold the PC address, allows the processor to immediately carry out this instruction, instead of having waiting time in between to allow for the process of fetching the information, storing and moving. In this specific case, the time difference between both methods, are insignificant, but with larger codes/processors, the time difference may be a significant element to be considered.\\n",
+      "usernames": [
+        "rbharadi"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 16,
+      "question_text": "When I changed PC to hold the function point to my print continuously function, I was providing an input. From what we\u2019ve learned in class, this argument goes into R0. The assembly code then moved the value stored in R0 into PC. As soon as that happened, PC stored the location of this function and proceeded to output \"Hello PC!\" in an infinite loop as expected.\\n",
+      "usernames": [
+        "s6ke"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 17,
+      "question_text": "The PC register is used by the processor to determine which instruction to run next. When the PC is changed to hold the function pointer, it stores the address of the print continuously function. Consequently, the processor assumes that the next instruction to run is at the address of the print function and executes it, resulting in \u201cHello, PC!\u201d being printed continuously.\\n",
+      "usernames": [
+        "sana"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 18,
+      "question_text": "When I set the program counter register to point to the print continuously function, the CPU began executing the function like it was the next instruction. PC determines what code is going to be executed, and changing the code execution location to our thread function made the processor jump into that code first. This allowed our thread to begin running from the start of the print continuously function.\\n",
+      "usernames": [
+        "trutherf"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "answer_index": 19,
+      "question_text": "When I changed the program counter to hold the function pointer to print_continously, I passed the address of Print_continously into R0. The jump assembly function directly moves the value in r0 into the pc register. Since pc determines what instruction to execute next, the CPU immediately started executing the instructions at the address print continuously. As a result, the program began running print continuously which is an infinite loop.\\n",
+      "usernames": [
+        "z63yang"
+      ],
+      "baseline_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "qd_scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_flip": false,
+      "qd_flip": false,
+      "borderline_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q5",
+  "response_id": "R9",
+  "response_text": "If the thread function only printed once and then returned, the processor would attempt to continue execution from the address stored in the link register (LR), which we manually set to 0xFFFFFFFD. This value tells the processor to return to thread mode using the process stack, but since there is no valid return context prepared beyond the thread function, the processor would be left executing an undefined or invalid instruction. As a result, the system would likely crash and enter a hard fault. In bare-metal embedded systems, there is no underlying OS to manage thread cleanup or schedule a new task, so it is critical that thread functions do not return. Instead, they should remain in an infinite loop to keep the system stable and prevent unintended behavior.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:28:32.544319",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:28:44.588855",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:28:55.556129",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:29:04.769857",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:29:16.851939",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:29:28.614438",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:29:38.381642",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:29:46.716599",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:29:54.425777",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:30:03.643903",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 60.0,
+    "flip_rate": 40.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 4,
+    "fail_count": 6
+  }
+}

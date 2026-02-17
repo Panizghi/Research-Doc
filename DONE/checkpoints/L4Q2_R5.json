@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q2",
+  "response_id": "R5",
+  "response_text": "The PendSV_Handler function executes a context switch by saving the current thread\u2019s CPU state (register values) to its stack and loading the next thread\u2019s saved state from its stack. More specifically, the PendSV_Handler function saves context by pushing registers R4-R11 onto the current thread\u2019s stack. Next, it stores the stack pointer (the current value of PSP) in the thread\u2019s metadata so it can resume later. Then, it calls osSched() which updates the current thread and sets PSP to the next thread\u2019s saved stack pointer. After, it restores the context by popping R4-R11 from the new thread\u2019s stack, restoring its state. Finally, it returns from interrupt by restoring R0-R3, R12, LR, PC, and xPSR, completing the context switch.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:40:05.957613",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:40:16.109334",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:40:28.506025",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:40:38.559162",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:40:47.793089",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:40:58.574751",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:41:06.419469",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:41:15.721888",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:41:25.034557",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:41:35.425060",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 0,
+    "fail_count": 10
+  }
+}

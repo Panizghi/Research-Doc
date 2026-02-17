@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q1",
+  "response_id": "R16",
+  "response_text": "A round-robin scheduling can work with queues because they are both based on FIFO. As the process is created and ready to be executed, it can be added to the queue. As the processes get executed, they can be dequeued and enqueued as required based on the completion state of the process. This could be beneficial if there is an incoming of different processes as it can allow all of them to have a turn. For example, processes one and two are added in the first 5 time units and continuously switch between each other. A third process is added at 20 time units. Since a queue is being used, it can be enqueued after the last task and process one and two will be enqueued after task three. This ensures that task three does not starve. Additionally, process scheduling often requires dynamic scheduling, which can be easier to achieve using a queue. Though it is faster to access elements using an array, making storage and retrieval of data more efficient. This could be beneficial as it is just as important to ensure fast switching between data. Therefore, both a queue and an array could be useful. One is more useful for sequencing the threads dynamically, while the other is more efficient at managing the threads and the switching.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:19:48.964762",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:19:57.574506",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:20:05.993908",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:20:21.898286",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:20:39.769067",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:20:53.084207",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:21:04.074644",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:21:12.253709",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:21:19.772500",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T07:21:36.000396",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 80.0,
+    "flip_rate": 20.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 2,
+    "fail_count": 8
+  }
+}

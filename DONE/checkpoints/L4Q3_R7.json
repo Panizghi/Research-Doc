@@ -1,0 +1,77 @@
+{
+  "question_id": "L4Q3",
+  "response_id": "R7",
+  "response_text": "Modifying the OS scheduler to always pick the thread with the highest priority, without any additional control, leads to priority inversion and potential starvation of lower-priority tasks. If a high-priority thread never yields or blocks, it can monopolize the CPU indefinitely, preventing other threads from executing. This breaks fairness and can render the system unresponsive or deadlocked if the high-priority thread depends on resources managed by lower-priority threads. For example, if a low-priority thread holds a lock needed by the high-priority thread, and the high-priority thread preempts all others, the system could deadlock. Proper priority-based systems typically include mechanisms like priority inheritance or aging to mitigate such issues. Without these, blindly prioritizing the highest-priority task results in fragile and unfair scheduling behavior.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:57:34.239714",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:57:39.622571",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:57:47.405094",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:57:55.278531",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:58:02.445769",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:58:07.819839",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:58:14.323754",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:58:20.994766",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:58:30.946162",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T07:58:40.409231",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

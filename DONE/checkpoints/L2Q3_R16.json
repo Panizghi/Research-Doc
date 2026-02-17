@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q3",
+  "response_id": "R16",
+  "response_text": "To set up a \u201cthread\u2019s stack\u201d means to properly allocate space in memory with all required information so that the CPU can run the thread properly. First, we obtain a new stack pointer. We do this by initializing the stack pointer, and then continuously decrementing until we\u2019ve pushed all the registers into the stack, thus setting up the stack\u2019s context. Storing the register values in the stack as the thread\u2019s context allows for maintain our threads. If we chose to come back to this thread later in our code, we can then load the thread context into the registers and the thread ca resume where it left off. Once this is done, we perform a system call which will use the __set_PSP function to switch the PSP\u2019s current stack to our new thread stack, and the runFirstThread function will pop the register values from the thread stack and move them into the hardware registers.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:13:30.463933",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:13:42.432992",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:13:54.479181",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:14:06.233217",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:14:19.120447",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:14:31.562101",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:14:41.623384",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:14:46.857126",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:15:00.138733",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T04:15:12.139471",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 90.0,
+    "flip_rate": 10.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 1,
+    "fail_count": 9
+  }
+}

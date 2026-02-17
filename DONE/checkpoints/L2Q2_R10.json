@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q2",
+  "response_id": "R10",
+  "response_text": "A system call is a mechanism that allows a user-mode program to request a service from the operating system's kernel, which runs in a more privileged mode. It acts as a secure interface for programs to access protected resources or perform tasks they aren\u2019t allowed to handle directly\u2014such as interacting with hardware, managing files, or creating processes. To make a system call, a program executes a special instruction (like SVC on ARM processors), which triggers a switch from user mode to kernel mode. The operating system then performs the requested operation with the necessary privileges and returns control to the user program, usually with a result or status code. In our lab, we used system calls to invoke kernel-level functions from our application code. For instance, by issuing SVC instructions with different values, we were able to trigger specific actions like printing messages, demonstrating how system calls provide controlled access to privileged operations while maintaining system integrity.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:28:47.690292",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:28:55.250489",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:29:04.448114",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:29:14.047826",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:29:23.097920",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:29:27.746093",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:29:32.249385",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:29:36.816187",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:29:40.762833",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:29:45.983598",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

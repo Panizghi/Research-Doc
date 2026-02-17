@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q5",
+  "response_id": "R15",
+  "response_text": "Our thread function would most likely crash or result in a hard fault by only printing once instead of continuously, due to the way the thread function is set up. The thread function is set up in a way where the function is told where to go once the thread function has finished (back to beginning). In this specific case, the return address (which is stored in the LR register) is pointing towards the beginning of the stack to ensure that the function loops continuously. This is what causes the thread function to loop continuously, now if in this specific case is removed, which removes the continuously looping. The thread function has no set up on what to do for the return, and thus once the thread function has finished, it will have no instructions on the return and what to do afterwards and then results in a hard fault. The processor will try to branch to an undefined or invalid memory address after the function, meaning that the CPU will be attempting to follow instructions from an illegal action and since this is not possible, a hard fault will occur. If valid instructions are provided on the return of the thread function, then the CPU would be able follow through on these instructions and thus result in not a hard fault, but that is not the case in this specific example/question.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:38:06.203691",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:38:17.355803",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:38:25.492926",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T05:38:37.091157",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:38:47.786424",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:38:59.413759",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:39:15.114961",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:39:25.535318",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:39:32.562390",
+      "method": "baseline"
+    },
+    {
+      "grade": 0,
+      "raw_response": "Grade: 0",
+      "timestamp": "2025-11-12T05:39:42.310402",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 90.0,
+    "flip_rate": 10.0,
+    "majority": 0,
+    "sample_size": 10,
+    "pass_count": 1,
+    "fail_count": 9
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q4",
+  "response_id": "R1",
+  "response_text": "When an exception or interrupt occurs and the CPU tries to switch from the thread to something else, it needs to know PSP (the stack pointer) for the thread to know where to push registers onto the stack. It must be a valid PSP address in order for it to work. But if PSP was not set, then when it tries to use the default PSP address which does not correspond to the thread. For example, the default PSP address in our case seems to be 0x0, and this address does not allow for read/write. So when the CPU attempts to push register values and write data, it would not be able to due to the restriction and it would cause a hard fault due to invalid/denied memory access.\\nNote that if PSP was a writeable, but incorrect, address however, then it may not immediately hard fault but will most likely cause many issues in the program. For example, the CPU might end up restoring garbage register values, causing an immediate hard fault if something like PC or XPSR has an incorrect value.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:30:31.717766",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:30:44.376990",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:30:55.675169",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:31:07.315854",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:31:18.492487",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:31:32.611550",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:31:48.234758",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:31:54.011145",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:32:03.634795",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T04:32:10.600498",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}

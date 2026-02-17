@@ -1,0 +1,45 @@
+2025-11-11 01:01:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:54] - Logging to file: logs/qd_analysis_20251111_010103.log
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:382] - Printing dimension comparison for L1Q4_R1
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:340] - Comparing dimension stability across versions for L1Q4_R1
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:265] - Analyzing dimension score stability for L1Q4_R1 with QD version v1
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:324] - Dimension stability analysis: 5 dimensions, avg flip_rate=3.11%
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:361] - Added v1 analysis: 5 dimensions
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:372] - Comparison complete: 1 versions analyzed
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:382] - Printing dimension comparison for L1Q4_R3
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:340] - Comparing dimension stability across versions for L1Q4_R3
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:265] - Analyzing dimension score stability for L1Q4_R3 with QD version v1
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:324] - Dimension stability analysis: 5 dimensions, avg flip_rate=3.00%
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:361] - Added v1 analysis: 5 dimensions
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:372] - Comparison complete: 1 versions analyzed
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:382] - Printing dimension comparison for L1Q4_R11
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:340] - Comparing dimension stability across versions for L1Q4_R11
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:265] - Analyzing dimension score stability for L1Q4_R11 with QD version v1
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:324] - Dimension stability analysis: 5 dimensions, avg flip_rate=15.00%
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:361] - Added v1 analysis: 5 dimensions
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:372] - Comparison complete: 1 versions analyzed
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:382] - Printing dimension comparison for L1Q4_R13
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:340] - Comparing dimension stability across versions for L1Q4_R13
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:265] - Analyzing dimension score stability for L1Q4_R13 with QD version v1
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:324] - Dimension stability analysis: 5 dimensions, avg flip_rate=18.00%
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:361] - Added v1 analysis: 5 dimensions
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:372] - Comparison complete: 1 versions analyzed
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:382] - Printing dimension comparison for L1Q4_R14
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:340] - Comparing dimension stability across versions for L1Q4_R14
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:265] - Analyzing dimension score stability for L1Q4_R14 with QD version v1
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:324] - Dimension stability analysis: 5 dimensions, avg flip_rate=27.00%
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:361] - Added v1 analysis: 5 dimensions
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:372] - Comparison complete: 1 versions analyzed
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:382] - Printing dimension comparison for L1Q4_R22
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:340] - Comparing dimension stability across versions for L1Q4_R22
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:265] - Analyzing dimension score stability for L1Q4_R22 with QD version v1
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:324] - Dimension stability analysis: 5 dimensions, avg flip_rate=10.00%
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:361] - Added v1 analysis: 5 dimensions
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:372] - Comparison complete: 1 versions analyzed
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:382] - Printing dimension comparison for L1Q4_R25
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:340] - Comparing dimension stability across versions for L1Q4_R25
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:265] - Analyzing dimension score stability for L1Q4_R25 with QD version v1
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:324] - Dimension stability analysis: 5 dimensions, avg flip_rate=20.00%
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:361] - Added v1 analysis: 5 dimensions
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:372] - Comparison complete: 1 versions analyzed
+2025-11-11 03:39:03 - qd_operation_analysis - INFO - [qd_operation_analysis.py:68] - Loading QD lineage for L1Q4 from qd_history
+2025-11-11 03:39:04 - qd_operation_analysis - INFO - [qd_operation_analysis.py:83] - Loaded 1 QD versions for L1Q4

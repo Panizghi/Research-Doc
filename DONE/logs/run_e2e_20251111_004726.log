@@ -1,0 +1,45 @@
+2025-11-11 00:47:26 - run_single_question_e2e - INFO - [run_single_question_e2e.py:80] - Logging to file: logs/run_e2e_20251111_004726.log
+2025-11-11 00:47:26 - run_single_question_e2e - INFO - [run_single_question_e2e.py:609] - Running script with JSON path: /var/folders/tq/51lzs6fs387bwv1r_7v0yn9w0000gn/T/tmpau5l_5s1.json and num_iterations: 20
+2025-11-11 00:47:26 - run_single_question_e2e - INFO - [run_single_question_e2e.py:157] - ================================================================================
+2025-11-11 00:47:26 - run_single_question_e2e - INFO - [run_single_question_e2e.py:158] - Starting end-to-end pipeline
+2025-11-11 00:47:26 - run_single_question_e2e - INFO - [run_single_question_e2e.py:159] - ================================================================================
+2025-11-11 00:47:26 - run_single_question_e2e - INFO - [run_single_question_e2e.py:160] - JSON path: /var/folders/tq/51lzs6fs387bwv1r_7v0yn9w0000gn/T/tmpau5l_5s1.json
+2025-11-11 00:47:26 - run_single_question_e2e - INFO - [run_single_question_e2e.py:161] - Num iterations: 20
+2025-11-11 00:47:26 - run_single_question_e2e - INFO - [run_single_question_e2e.py:170] - Loading question data from JSON
+2025-11-11 00:47:26 - run_single_question_e2e - INFO - [run_single_question_e2e.py:182] - Successfully loaded JSON file: /var/folders/tq/51lzs6fs387bwv1r_7v0yn9w0000gn/T/tmpau5l_5s1.json
+2025-11-11 00:47:26 - run_single_question_e2e - INFO - [run_single_question_e2e.py:209] - Processing question: L1Q4
+2025-11-11 00:47:26 - run_single_question_e2e - INFO - [run_single_question_e2e.py:210] - Question text: You are a helpful teaching assistant giving detailed, actionable feedback to students on their lab r...
+2025-11-11 00:47:26 - run_single_question_e2e - INFO - [run_single_question_e2e.py:211] - Number of responses: 28
+2025-11-11 00:47:26 - run_single_question_e2e - INFO - [run_single_question_e2e.py:212] - Iterations per response: 20
+2025-11-11 00:47:26 - run_single_question_e2e - INFO - [run_single_question_e2e.py:222] - Initializing checkpoints for all responses
+2025-11-11 00:47:26 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q4_R1
+2025-11-11 00:47:26 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q4_R2
+2025-11-11 00:47:26 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q4_R3
+2025-11-11 00:47:26 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q4_R4
+2025-11-11 00:47:26 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q4_R5
+2025-11-11 00:47:26 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q4_R6
+2025-11-11 00:47:26 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q4_R7
+2025-11-11 00:47:26 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q4_R8
+2025-11-11 00:47:26 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q4_R9
+2025-11-11 00:47:27 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q4_R12
+2025-11-11 00:47:27 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q4_R13
+2025-11-11 00:47:27 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q4_R14
+2025-11-11 00:47:27 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q4_R15
+2025-11-11 00:47:27 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q4_R16
+2025-11-11 00:47:27 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q4_R17
+2025-11-11 00:47:27 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q4_R19
+2025-11-11 00:47:27 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q4_R20
+2025-11-11 00:47:27 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q4_R21
+2025-11-11 00:47:27 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q4_R22
+2025-11-11 00:47:27 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q4_R23
+2025-11-11 00:47:27 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q4_R24
+2025-11-11 00:47:27 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q4_R25
+2025-11-11 00:47:27 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q4_R26
+2025-11-11 00:47:27 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q4_R27
+2025-11-11 00:47:27 - run_single_question_e2e - INFO - [run_single_question_e2e.py:93] - Creating new checkpoint for L1Q4_R28
+2025-11-11 00:47:27 - run_single_question_e2e - INFO - [run_single_question_e2e.py:238] - Ensuring QDs exist
+2025-11-11 00:47:27 - run_single_question_e2e - INFO - [run_single_question_e2e.py:111] - Checking QDs for L1Q4
+2025-11-11 00:47:28 - run_single_question_e2e - INFO - [run_single_question_e2e.py:133] - QDs already exist for L1Q4 (initial version v1, latest v6, best v6, 4 dimensions)
+2025-11-11 00:47:30 - run_single_question_e2e - INFO - [run_single_question_e2e.py:252] - Starting grading phase
+2025-11-11 00:47:30 - run_single_question_e2e - INFO - [run_single_question_e2e.py:259] - Grading response 1/28: R1
+2025-11-11 00:59:12 - run_single_question_e2e - WARNING - [run_single_question_e2e.py:622] - Script interrupted by user

@@ -1,0 +1,77 @@
+{
+  "question_id": "L2Q2",
+  "response_id": "R16",
+  "response_text": "In simple words, a system call is a jacket function that initiates the SVC instruction to be called. Where in this specific case, the function name is defined, and then within that function, the SVC instruction is made. The SVC instruction then must be specifically defined and told what the purpose and what happens after being called. A benefit to using this, is to be able to name the function a useful and appropriate name, while the SVC instruction is an arbitrary number value. So every time that SVC instruction needs to be called, instead of having to just know what number what does, the function that describes what it does can be used. System calls can be used at the bridge between the kernel and user code, by making users use the system call rather than directly using the SVC instruction. This is done to protect hardware and security and provide support in trouble shooting or changing instructions. In terms of hardware and security, it ensures that users are not making code that directly references hardware, and thus protects the actual processor. It also helps when trouble shooting or changing the instructions, as it would just have to be changed in the system call, rather than going to every line of code and changing that.\\n",
+  "baseline_iterations": [
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:36:40.407268",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:36:46.840665",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:36:52.647470",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:36:58.382070",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:37:04.352343",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:37:09.064522",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:37:14.324902",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:37:25.444555",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:37:30.465786",
+      "method": "baseline"
+    },
+    {
+      "grade": 1,
+      "raw_response": "Grade: 1",
+      "timestamp": "2025-11-12T03:37:36.349031",
+      "method": "baseline"
+    }
+  ],
+  "qd_initial_iterations": [],
+  "qd_refined_iterations": [],
+  "baseline_metrics": {
+    "consensus": 100.0,
+    "flip_rate": 0.0,
+    "majority": 1,
+    "sample_size": 10,
+    "pass_count": 10,
+    "fail_count": 0
+  }
+}
